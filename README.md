@@ -1,4 +1,4 @@
-# ⚽ FIFA World Cup 2026 — Projet Data FrenchTeam
+# ⚽ FIFA World Cup 2026 | Projet Data FrenchTeam
 
 ## 🎯 Objectifs
 - Prédire le résultat de chaque match (V/N/D) et le nombre de buts
