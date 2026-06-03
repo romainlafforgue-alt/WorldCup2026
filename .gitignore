@@ -1,0 +1,16 @@
+# Données brutes
+data/*.csv
+data/*.zip
+
+# Environnements Python
+__pycache__/
+*.pyc
+.env
+mon_env/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Modèles
+models/*.pkl
