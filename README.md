@@ -1,8 +1,8 @@
 # ⚽ FIFA World Cup 2026 | Projet Data FrenchTeam
 
 ## 🎯 Objectifs
-- Prédire le résultat de chaque match (V/N/D) et le nombre de buts
-- Prédire le vainqueur du tournoi, top buteur, passeur et MVP
+- Prédire le résultat de chaque match (V/N/D) et le nombre de buts.
+- Prédire le vainqueur du tournoi, top buteur, passeur et MVP.
 
 ## 👥 Équipe — FrenchTeam
 | Membre   | Rôle Scrum    | Rôle Tech       |
