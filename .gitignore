@@ -1,7 +1,3 @@
-# Données brutes
-data/*.csv
-data/*.zip
-
 # Environnements Python
 __pycache__/
 *.pyc
