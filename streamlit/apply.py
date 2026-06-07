@@ -816,56 +816,124 @@ elif page == "🏆 Tableau final":
             f"</div></div>"
         )
 
-    # ── Construire le bracket HTML ───────────────────────────────────────
-    r32d = "".join(mc(e1, e2, w, "#4FC3F7") for e1, e2, w, *_ in matchs_r32[:8])
-    r16d = "".join(mc(e1, e2, w, "#FF9800") for e1, e2, w, *_ in matchs_r16d)
-    qfd_h = "".join(mc(e1, e2, w, "#FFD700") for e1, e2, w, *_ in matchs_qfd)
-    sfd_h = mc_big(sf_d[0], sf_d[1], demi1_w, "#8a2020")
+    # ── Bracket style FIFA : stub par match + barre verticale ────────────
+    CR32, CR16, CQF, CSF = "#4FC3F7", "#FF9800", "#FFD700", "#8a2020"
+    mR = matchs_r32
+    ST = 14  # longueur du stub horizontal par match (px)
+    OL = 12  # longueur de la ligne de sortie vers le tour suivant (px)
 
-    r32a = "".join(mc(e1, e2, w, "#4FC3F7") for e1, e2, w, *_ in matchs_r32[8:])
-    r16a = "".join(mc(e1, e2, w, "#FF9800") for e1, e2, w, *_ in matchs_r16a)
-    qfa_h = "".join(mc(e1, e2, w, "#FFD700") for e1, e2, w, *_ in matchs_qfa)
-    sfa_h = mc_big(sf_a[0], sf_a[1], demi2_w, "#8a2020")
+    def bpr(m1h, m2h, color, gap="3px"):
+        """Dallas : stub droit par match + barre verticale limitee centre-a-centre."""
+        top = f"<div style='display:flex;align-items:center'>{m1h}<div style='width:{ST}px;height:1px;background:{color};flex-shrink:0'></div></div>"
+        bot = f"<div style='display:flex;align-items:center'>{m2h}<div style='width:{ST}px;height:1px;background:{color};flex-shrink:0'></div></div>"
+        # flex:1/2/1 => barre occupe les 50% centraux (de centre-s1 a centre-s2)
+        vbar = (
+            f"<div style='display:flex;flex-direction:column;width:1px;flex-shrink:0'>"
+            f"<div style='flex:1'></div>"
+            f"<div style='flex:2;background:{color}'></div>"
+            f"<div style='flex:1'></div>"
+            f"</div>"
+        )
+        return (
+            f"<div style='display:flex;align-items:stretch'>"
+            f"<div style='display:flex;flex-direction:column;gap:{gap}'>{top}{bot}</div>"
+            f"{vbar}</div>"
+        )
+
+    def bpl(m1h, m2h, color, gap="3px"):
+        """Atlanta : barre verticale limitee + stub gauche par match."""
+        top = f"<div style='display:flex;align-items:center'><div style='width:{ST}px;height:1px;background:{color};flex-shrink:0'></div>{m1h}</div>"
+        bot = f"<div style='display:flex;align-items:center'><div style='width:{ST}px;height:1px;background:{color};flex-shrink:0'></div>{m2h}</div>"
+        vbar = (
+            f"<div style='display:flex;flex-direction:column;width:1px;flex-shrink:0'>"
+            f"<div style='flex:1'></div>"
+            f"<div style='flex:2;background:{color}'></div>"
+            f"<div style='flex:1'></div>"
+            f"</div>"
+        )
+        return (
+            f"<div style='display:flex;align-items:stretch'>"
+            f"{vbar}"
+            f"<div style='display:flex;flex-direction:column;gap:{gap}'>{top}{bot}</div>"
+            f"</div>"
+        )
+
+    def ol(color):
+        return f"<div style='width:{OL}px;height:1px;background:{color};flex-shrink:0;align-self:center'></div>"
+
+    def rd(m1, m2, mr16):
+        return f"<div style='display:flex;align-items:center'>{bpr(mc(*m1[:3],CR32),mc(*m2[:3],CR32),CR32)}{ol(CR32)}{mc(*mr16[:3],CR16)}</div>"
+
+    def ra(m1, m2, mr16):
+        return f"<div style='display:flex;align-items:center'>{mc(*mr16[:3],CR16)}{ol(CR16)}{bpl(mc(*m1[:3],CR32),mc(*m2[:3],CR32),CR32)}</div>"
+
+    def qd(s1, s2, mqf):
+        return f"<div style='display:flex;align-items:center'>{bpr(s1,s2,CR16,'6px')}{ol(CR16)}{mc(*mqf[:3],CQF)}</div>"
+
+    def qa(s1, s2, mqf):
+        return f"<div style='display:flex;align-items:center'>{mc(*mqf[:3],CQF)}{ol(CQF)}{bpl(s1,s2,CR16,'6px')}</div>"
+
+    def sd(s1, s2, sf_e1, sf_e2, sf_w):
+        return f"<div style='display:flex;align-items:center'>{bpr(s1,s2,CQF,'10px')}{ol(CQF)}{mc_big(sf_e1,sf_e2,sf_w,CSF)}</div>"
+
+    def sa(s1, s2, sf_e1, sf_e2, sf_w):
+        return f"<div style='display:flex;align-items:center'>{mc_big(sf_e1,sf_e2,sf_w,CSF)}{ol(CSF)}{bpl(s1,s2,CQF,'10px')}</div>"
+
+    # ── Construire les deux demi-brackets ────────────────────────────────
+    dallas = sd(
+        qd(rd(mR[1],mR[4],matchs_r16d[0]), rd(mR[0],mR[2],matchs_r16d[1]), matchs_qfd[0]),
+        qd(rd(mR[10],mR[11],matchs_r16d[2]), rd(mR[8],mR[9],matchs_r16d[3]), matchs_qfd[1]),
+        sf_d[0], sf_d[1], demi1_w
+    )
+
+    atlanta = sa(
+        qa(ra(mR[3],mR[5],matchs_r16a[0]), ra(mR[6],mR[7],matchs_r16a[1]), matchs_qfa[0]),
+        qa(ra(mR[13],mR[15],matchs_r16a[2]), ra(mR[12],mR[14],matchs_r16a[3]), matchs_qfa[1]),
+        sf_a[0], sf_a[1], demi2_w
+    )
 
     fin_h = mc_big(demi1_w, demi2_w, champion, "#FFD700")
     bro_h = mc_big(demi1_l, demi2_l, bronze_w, "#CD7F32")
 
-    bh = 480  # hauteur totale du bracket (px) — aligne automatiquement les rounds
-
-    def col(content, justify="space-around"):
-        return (f"<div style='display:flex;flex-direction:column;"
-                f"justify-content:{justify};height:{bh}px;'>{content}</div>")
-
-    labels = (
-        "<div style='display:flex;gap:3px;margin-bottom:6px;padding:0 2px'>"
-        "<div style='min-width:154px;text-align:center'><span style='color:#4FC3F7;font-size:10px;font-weight:bold'>R32 · DALLAS</span></div>"
-        "<div style='min-width:154px;text-align:center'><span style='color:#FF9800;font-size:10px;font-weight:bold'>R16</span></div>"
-        "<div style='min-width:154px;text-align:center'><span style='color:#FFD700;font-size:10px;font-weight:bold'>QF</span></div>"
-        "<div style='min-width:175px;text-align:center'><span style='color:#8a2020;font-size:10px;font-weight:bold'>DEMI-FINALES</span></div>"
-        "<div style='min-width:185px;text-align:center'><span style='color:#FFD700;font-size:11px;font-weight:bold'>FINALE · BRONZE</span></div>"
-        "<div style='min-width:175px;text-align:center'><span style='color:#8a2020;font-size:10px;font-weight:bold'>DEMI-FINALES</span></div>"
-        "<div style='min-width:154px;text-align:center'><span style='color:#FFD700;font-size:10px;font-weight:bold'>QF</span></div>"
-        "<div style='min-width:154px;text-align:center'><span style='color:#FF9800;font-size:10px;font-weight:bold'>R16</span></div>"
-        "<div style='min-width:154px;text-align:center'><span style='color:#4FC3F7;font-size:10px;font-weight:bold'>R32 · ATLANTA</span></div>"
-        "</div>"
+    header_d = (
+        f"<div style='display:flex;justify-content:space-around;margin-bottom:8px;"
+        f"padding-bottom:4px;border-bottom:1px solid #1a2a3a'>"
+        f"<b style='color:{CR32};font-size:9px'>R32</b>"
+        f"<b style='color:{CR16};font-size:9px'>R16</b>"
+        f"<b style='color:{CQF};font-size:9px'>Quarts</b>"
+        f"<b style='color:{CSF};font-size:9px'>Demis</b>"
+        f"</div>"
     )
-    center = (
-        f"<div style='display:flex;flex-direction:column;justify-content:center;"
-        f"align-items:center;height:{bh}px;min-width:185px;padding:0 8px'>"
-        f"<p style='color:#FFD700;font-size:11px;font-weight:bold;text-align:center;margin:0 0 5px'>FINALE</p>"
+    header_a = (
+        f"<div style='display:flex;justify-content:space-around;margin-bottom:8px;"
+        f"padding-bottom:4px;border-bottom:1px solid #1a2a3a'>"
+        f"<b style='color:{CSF};font-size:9px'>Demis</b>"
+        f"<b style='color:{CQF};font-size:9px'>Quarts</b>"
+        f"<b style='color:{CR16};font-size:9px'>R16</b>"
+        f"<b style='color:{CR32};font-size:9px'>R32</b>"
+        f"</div>"
+    )
+    header_c = (
+        f"<div style='text-align:center;margin-bottom:8px;padding-bottom:4px;"
+        f"border-bottom:1px solid #1a2a3a'>"
+        f"<b style='color:#FFD700;font-size:9px'>Finale · Bronze</b>"
+        f"</div>"
+    )
+    centre = (
+        f"<div style='padding:0 14px;text-align:center;flex-shrink:0'>"
+        f"<p style='color:#FFD700;font-size:11px;font-weight:bold;margin:0 0 6px'>FINALE</p>"
         f"{fin_h}"
-        f"<p style='color:#CD7F32;font-size:10px;font-weight:bold;text-align:center;margin:22px 0 5px'>BRONZE</p>"
+        f"<p style='color:#CD7F32;font-size:10px;font-weight:bold;margin:16px 0 6px'>BRONZE</p>"
         f"{bro_h}"
         f"</div>"
     )
     bracket_html = (
-        "<div style='overflow-x:auto;background:#071020;border-radius:10px;padding:15px'>"
-        f"{labels}"
-        f"<div style='display:flex;gap:3px;'>"
-        f"{col(r32d)}{col(r16d)}{col(qfd_h)}{col(sfd_h,'center')}"
-        f"{center}"
-        f"{col(sfa_h,'center')}{col(qfa_h)}{col(r16a)}{col(r32a)}"
-        "</div></div>"
+        "<div style='overflow-x:auto;background:#071020;border-radius:10px;padding:20px'>"
+        f"<div style='display:flex;align-items:flex-start;flex-wrap:nowrap'>"
+        f"<div style='display:flex;flex-direction:column'>{header_d}{dallas}</div>"
+        f"<div style='display:flex;flex-direction:column;align-items:center'>{header_c}{centre}</div>"
+        f"<div style='display:flex;flex-direction:column'>{header_a}{atlanta}</div>"
+        f"</div></div>"
     )
     st.markdown(bracket_html, unsafe_allow_html=True)
 
