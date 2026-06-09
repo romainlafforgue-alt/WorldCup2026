@@ -1,0 +1,1994 @@
+league,season,team,player,goals_p90,assists_p90,selection,goal_assist_p90,team_success
+ENG-Premier League,2526,Arsenal,Ben White,0.0,0.13,ENG,0.13,6
+ENG-Premier League,2526,Arsenal,Bukayo Saka,0.28,0.2,ENG,0.49,16
+ENG-Premier League,2526,Arsenal,Cristhian Mosquera,0.0,0.0,ESP,0.0,8
+ENG-Premier League,2526,Arsenal,David Raya,0.0,0.0,ESP,0.0,26
+ENG-Premier League,2526,Arsenal,Declan Rice,0.12,0.15,ENG,0.26,25
+ENG-Premier League,2526,Arsenal,Eberechi Eze,0.35,0.1,ENG,0.45,14
+ENG-Premier League,2526,Arsenal,Gabriel Magalhães,0.1,0.13,BRA,0.23,20
+ENG-Premier League,2526,Arsenal,Gabriel Martinelli,0.08,0.33,BRA,0.42,8
+ENG-Premier League,2526,Arsenal,Jurriën Timber,0.11,0.18,NED,0.29,20
+ENG-Premier League,2526,Arsenal,Kai Havertz,0.31,0.46,GER,0.77,4
+ENG-Premier League,2526,Arsenal,Leandro Trossard,0.27,0.27,BEL,0.54,15
+ENG-Premier League,2526,Arsenal,Martin Ødegaard,0.07,0.39,NOR,0.46,13
+ENG-Premier League,2526,Arsenal,Martín Zubimendi,0.15,0.03,ESP,0.18,25
+ENG-Premier League,2526,Arsenal,Mikel Merino,0.35,0.26,ESP,0.61,10
+ENG-Premier League,2526,Arsenal,Myles Lewis-Skelly,0.0,0.0,ENG,0.0,8
+ENG-Premier League,2526,Arsenal,Noni Madueke,0.22,0.07,ENG,0.3,9
+ENG-Premier League,2526,Arsenal,Piero Hincapié,0.05,0.1,ECU,0.15,19
+ENG-Premier League,2526,Arsenal,Riccardo Calafiori,0.05,0.11,ITA,0.16,8
+ENG-Premier League,2526,Arsenal,Viktor Gyökeres,0.57,0.04,SWE,0.61,14
+ENG-Premier League,2526,Arsenal,William Saliba,0.03,0.0,FRA,0.03,20
+ENG-Premier League,2526,Aston Villa,Amadou Onana,0.1,0.0,BEL,0.1,26
+ENG-Premier League,2526,Aston Villa,Boubacar Kamara,0.06,0.19,FRA,0.26,15
+ENG-Premier League,2526,Aston Villa,Donyell Malen,0.55,0.14,NED,0.69,10
+ENG-Premier League,2526,Aston Villa,Douglas Luiz,0.15,0.0,BRA,0.15,8
+ENG-Premier League,2526,Aston Villa,Emi Buendía,0.31,0.1,ARG,0.41,24
+ENG-Premier League,2526,Aston Villa,Emiliano Martínez,0.0,0.03,ARG,0.03,39
+ENG-Premier League,2526,Aston Villa,Evann Guessand,0.0,0.15,CIV,0.15,10
+ENG-Premier League,2526,Aston Villa,Ezri Konsa,0.0,0.0,ENG,0.0,44
+ENG-Premier League,2526,Aston Villa,Ian Maatsen,0.0,0.06,NED,0.06,27
+ENG-Premier League,2526,Aston Villa,Jadon Sancho,0.0,0.21,ENG,0.21,10
+ENG-Premier League,2526,Aston Villa,John McGinn,0.21,0.17,SCO,0.38,28
+ENG-Premier League,2526,Aston Villa,Lamare Bogarde,0.0,0.0,NED,0.0,17
+ENG-Premier League,2526,Aston Villa,Leon Bailey,0.0,0.2,JAM,0.2,9
+ENG-Premier League,2526,Aston Villa,Lucas Digne,0.0,0.29,FRA,0.29,23
+ENG-Premier League,2526,Aston Villa,Marco Bizot,0.0,0.0,NED,0.0,10
+ENG-Premier League,2526,Aston Villa,Matty Cash,0.09,0.09,POL,0.18,38
+ENG-Premier League,2526,Aston Villa,Morgan Rogers,0.27,0.16,ENG,0.44,48
+ENG-Premier League,2526,Aston Villa,Ollie Watkins,0.51,0.1,ENG,0.6,38
+ENG-Premier League,2526,Aston Villa,Pau Torres,0.0,0.0,ESP,0.0,19
+ENG-Premier League,2526,Aston Villa,Ross Barkley,0.32,0.11,ENG,0.42,15
+ENG-Premier League,2526,Aston Villa,Tyrone Mings,0.0,0.0,ENG,0.0,23
+ENG-Premier League,2526,Aston Villa,Victor Lindelöf,0.0,0.09,SWE,0.09,15
+ENG-Premier League,2526,Aston Villa,Youri Tielemans,0.0,0.19,BEL,0.19,27
+ENG-Premier League,2526,Bournemouth,Adam Smith,0.0,0.17,ENG,0.17,16
+ENG-Premier League,2526,Bournemouth,Adrien Truffert,0.03,0.13,FRA,0.16,51
+ENG-Premier League,2526,Bournemouth,Alex Scott,0.09,0.03,ENG,0.13,42
+ENG-Premier League,2526,Bournemouth,Amine Adli,0.25,0.08,MAR,0.33,17
+ENG-Premier League,2526,Bournemouth,Antoine Semenyo,0.5,0.15,GHA,0.65,38
+ENG-Premier League,2526,Bournemouth,Bafodé Diakité,0.0,0.0,FRA,0.0,27
+ENG-Premier League,2526,Bournemouth,David Brooks,0.07,0.22,WAL,0.3,20
+ENG-Premier League,2526,Bournemouth,Eli Junior Kroupi,0.7,0.0,FRA,0.7,21
+ENG-Premier League,2526,Bournemouth,Evanilson,0.2,0.03,BRA,0.23,40
+ENG-Premier League,2526,Bournemouth,James Hill,0.0,0.13,ENG,0.13,24
+ENG-Premier League,2526,Bournemouth,Justin Kluivert,0.19,0.0,NED,0.19,19
+ENG-Premier League,2526,Bournemouth,Lewis Cook,0.0,0.1,ENG,0.1,18
+ENG-Premier League,2526,Bournemouth,Marcos Senesi,0.0,0.14,ARG,0.14,53
+ENG-Premier League,2526,Bournemouth,Marcus Tavernier,0.23,0.13,ENG,0.36,44
+ENG-Premier League,2526,Bournemouth,Rayan,0.41,0.16,BRA,0.57,10
+ENG-Premier League,2526,Bournemouth,Ryan Christie,0.18,0.0,SCO,0.18,14
+ENG-Premier League,2526,Bournemouth,Tyler Adams,0.1,0.1,USA,0.2,28
+ENG-Premier League,2526,Bournemouth,Álex Jiménez,0.04,0.0,ESP,0.04,38
+ENG-Premier League,2526,Bournemouth,Đorđe Petrović,0.0,0.0,SRB,0.0,54
+ENG-Premier League,2526,Brentford,Aaron Hickey,0.0,0.0,SCO,0.0,9
+ENG-Premier League,2526,Brentford,Caoimhín Kelleher,0.0,0.0,IRL,0.0,49
+ENG-Premier League,2526,Brentford,Dango Ouattara,0.28,0.12,BFA,0.4,35
+ENG-Premier League,2526,Brentford,Igor Thiago,0.6,0.03,BRA,0.63,49
+ENG-Premier League,2526,Brentford,Jordan Henderson,0.05,0.14,ENG,0.19,28
+ENG-Premier League,2526,Brentford,Keane Lewis-Potter,0.14,0.14,ENG,0.27,32
+ENG-Premier League,2526,Brentford,Kevin Schade,0.26,0.1,GER,0.36,34
+ENG-Premier League,2526,Brentford,Kristoffer Ajer,0.0,0.05,NOR,0.05,32
+ENG-Premier League,2526,Brentford,Mathias Jensen,0.12,0.04,DEN,0.16,33
+ENG-Premier League,2526,Brentford,Michael Kayode,0.03,0.03,ITA,0.06,49
+ENG-Premier League,2526,Brentford,Mikkel Damsgaard,0.18,0.18,DEN,0.35,32
+ENG-Premier League,2526,Brentford,Nathan Collins,0.03,0.06,IRL,0.09,44
+ENG-Premier League,2526,Brentford,Rico Henry,0.0,0.07,JAM,0.07,22
+ENG-Premier League,2526,Brentford,Sepp van den Berg,0.0,0.07,NED,0.07,41
+ENG-Premier League,2526,Brentford,Vitaly Janelt,0.06,0.25,GER,0.31,21
+ENG-Premier League,2526,Brentford,Yehor Yarmoliuk,0.03,0.07,UKR,0.1,42
+ENG-Premier League,2526,Brighton,Bart Verbruggen,0.0,0.0,NED,0.0,46
+ENG-Premier League,2526,Brighton,Brajan Gruda,0.13,0.13,GER,0.25,11
+ENG-Premier League,2526,Brighton,Carlos Baleba,0.0,0.0,CMR,0.0,20
+ENG-Premier League,2526,Brighton,Danny Welbeck,0.52,0.04,ENG,0.56,28
+ENG-Premier League,2526,Brighton,Diego Gómez,0.21,0.04,PAR,0.25,29
+ENG-Premier League,2526,Brighton,Ferdi Kadioglu,0.03,0.0,TUR,0.03,41
+ENG-Premier League,2526,Brighton,Georginio Rutter,0.15,0.15,FRA,0.3,20
+ENG-Premier League,2526,Brighton,Jack Hinshelwood,0.21,0.16,ENG,0.36,23
+ENG-Premier League,2526,Brighton,James Milner,0.11,0.11,ENG,0.23,17
+ENG-Premier League,2526,Brighton,Jan Paul van Hecke,0.08,0.08,NED,0.17,44
+ENG-Premier League,2526,Brighton,Joël Veltman,0.09,0.0,NED,0.09,12
+ENG-Premier League,2526,Brighton,Kaoru Mitoma,0.16,0.05,JPN,0.21,20
+ENG-Premier League,2526,Brighton,Lewis Dunk,0.03,0.0,ENG,0.03,40
+ENG-Premier League,2526,Brighton,Mats Wieffer,0.09,0.14,NED,0.24,26
+ENG-Premier League,2526,Brighton,Maxim De Cuyper,0.13,0.19,BEL,0.32,23
+ENG-Premier League,2526,Brighton,Olivier Boscagli,0.0,0.11,FRA,0.11,10
+ENG-Premier League,2526,Brighton,Pascal Groß,0.06,0.17,GER,0.22,17
+ENG-Premier League,2526,Brighton,Yankuba Minteh,0.11,0.15,GAM,0.26,33
+ENG-Premier League,2526,Brighton,Yasin Ayari,0.14,0.14,SWE,0.28,24
+ENG-Premier League,2526,Burnley,Armando Broja,0.1,0.1,ALB,0.21,27
+ENG-Premier League,2526,Burnley,Axel Tuanzebe,0.07,0.0,COD,0.07,26
+ENG-Premier League,2526,Burnley,Bashir Humphreys,0.0,0.0,ENG,0.0,33
+ENG-Premier League,2526,Burnley,Florentino Luís,0.0,0.09,POR,0.09,45
+ENG-Premier League,2526,Burnley,Hannibal Mejbri,0.07,0.29,TUN,0.37,27
+ENG-Premier League,2526,Burnley,Hjalmar Ekdal,0.0,0.0,SWE,0.0,34
+ENG-Premier League,2526,Burnley,Jacob Bruun Larsen,0.0,0.09,DEN,0.09,29
+ENG-Premier League,2526,Burnley,Jaidon Anthony,0.26,0.07,ENG,0.33,59
+ENG-Premier League,2526,Burnley,James Ward-Prowse,0.0,0.13,ENG,0.13,16
+ENG-Premier League,2526,Burnley,Joe Worrall,0.0,0.0,ENG,0.0,11
+ENG-Premier League,2526,Burnley,Josh Cullen,0.12,0.12,IRL,0.24,29
+ENG-Premier League,2526,Burnley,Josh Laurent,0.05,0.0,ENG,0.05,40
+ENG-Premier League,2526,Burnley,Kyle Walker,0.0,0.06,ENG,0.06,66
+ENG-Premier League,2526,Burnley,Lesley Ugochukwu,0.12,0.04,FRA,0.15,50
+ENG-Premier League,2526,Burnley,Loum Tchaouna,0.14,0.07,FRA,0.21,24
+ENG-Premier League,2526,Burnley,Lucas,0.0,0.0,BRA,0.0,29
+ENG-Premier League,2526,Burnley,Lyle Foster,0.2,0.13,RSA,0.33,30
+ENG-Premier League,2526,Burnley,Marcus Edwards,0.08,0.25,ENG,0.34,18
+ENG-Premier League,2526,Burnley,Martin Dúbravka,0.0,0.0,SVK,0.0,71
+ENG-Premier League,2526,Burnley,Maxime Estève,0.0,0.0,FRA,0.0,70
+ENG-Premier League,2526,Burnley,Quilindschy Hartman,0.0,0.25,NED,0.25,40
+ENG-Premier League,2526,Burnley,Zian Flemming,0.56,0.0,NED,0.56,35
+ENG-Premier League,2526,Chelsea,Alejandro Garnacho,0.07,0.28,ARG,0.35,20
+ENG-Premier League,2526,Chelsea,Andrey Santos,0.07,0.0,BRA,0.07,18
+ENG-Premier League,2526,Chelsea,Benoît Badiashile,0.0,0.0,FRA,0.0,10
+ENG-Premier League,2526,Chelsea,Cole Palmer,0.46,0.05,ENG,0.51,33
+ENG-Premier League,2526,Chelsea,Enzo Fernández,0.29,0.12,ARG,0.4,46
+ENG-Premier League,2526,Chelsea,Estêvão Willian,0.21,0.21,BRA,0.42,11
+ENG-Premier League,2526,Chelsea,Jamie Gittens,0.0,0.36,ENG,0.36,7
+ENG-Premier League,2526,Chelsea,Jorrel Hato,0.0,0.0,NED,0.0,27
+ENG-Premier League,2526,Chelsea,Joshua Acheampong,0.14,0.0,ENG,0.14,13
+ENG-Premier League,2526,Chelsea,João Pedro,0.51,0.17,BRA,0.68,36
+ENG-Premier League,2526,Chelsea,Liam Delap,0.08,0.0,ENG,0.08,18
+ENG-Premier League,2526,Chelsea,Malo Gusto,0.08,0.12,FRA,0.2,35
+ENG-Premier League,2526,Chelsea,Marc Cucurella,0.03,0.13,ESP,0.17,37
+ENG-Premier League,2526,Chelsea,Moisés Caicedo,0.1,0.03,ECU,0.13,46
+ENG-Premier League,2526,Chelsea,Pedro Neto,0.17,0.21,POR,0.38,33
+ENG-Premier League,2526,Chelsea,Reece James,0.09,0.18,ENG,0.28,20
+ENG-Premier League,2526,Chelsea,Robert Sánchez,0.0,0.03,ESP,0.03,47
+ENG-Premier League,2526,Chelsea,Tosin Adarabioyo,0.0,0.0,ENG,0.0,14
+ENG-Premier League,2526,Chelsea,Trevoh Chalobah,0.1,0.0,ENG,0.1,37
+ENG-Premier League,2526,Chelsea,Wesley Fofana,0.0,0.05,FRA,0.05,24
+ENG-Premier League,2526,Crystal Palace,Adam Wharton,0.04,0.18,ENG,0.21,43
+ENG-Premier League,2526,Crystal Palace,Brennan Johnson,0.0,0.08,WAL,0.08,19
+ENG-Premier League,2526,Crystal Palace,Chadi Riad,0.0,0.16,MAR,0.16,8
+ENG-Premier League,2526,Crystal Palace,Chris Richards,0.03,0.0,USA,0.03,42
+ENG-Premier League,2526,Crystal Palace,Daichi Kamada,0.0,0.0,JPN,0.0,28
+ENG-Premier League,2526,Crystal Palace,Daniel Muñoz,0.15,0.11,COL,0.26,33
+ENG-Premier League,2526,Crystal Palace,Dean Henderson,0.0,0.0,ENG,0.0,51
+ENG-Premier League,2526,Crystal Palace,Ismaila Sarr,0.37,0.04,SEN,0.41,29
+ENG-Premier League,2526,Crystal Palace,Jaydee Canvot,0.0,0.0,FRA,0.0,23
+ENG-Premier League,2526,Crystal Palace,Jean-Philippe Mateta,0.49,0.0,FRA,0.49,29
+ENG-Premier League,2526,Crystal Palace,Jefferson Lerma,0.0,0.1,COL,0.1,25
+ENG-Premier League,2526,Crystal Palace,Justin Devenny,0.11,0.0,NIR,0.11,15
+ENG-Premier League,2526,Crystal Palace,Jørgen Strand Larsen,0.3,0.0,NOR,0.3,15
+ENG-Premier League,2526,Crystal Palace,Marc Guéhi,0.1,0.1,ENG,0.2,23
+ENG-Premier League,2526,Crystal Palace,Maxence Lacroix,0.03,0.06,FRA,0.09,45
+ENG-Premier League,2526,Crystal Palace,Nathaniel Clyne,0.0,0.15,ENG,0.15,12
+ENG-Premier League,2526,Crystal Palace,Tyrick Mitchell,0.03,0.06,ENG,0.08,47
+ENG-Premier League,2526,Crystal Palace,Will Hughes,0.0,0.0,ENG,0.0,18
+ENG-Premier League,2526,Crystal Palace,Yeremi Pino,0.09,0.09,ESP,0.17,28
+ENG-Premier League,2526,Everton,Beto,0.52,0.06,GNB,0.57,19
+ENG-Premier League,2526,Everton,Carlos Alcaraz,0.0,0.13,ARG,0.13,10
+ENG-Premier League,2526,Everton,Dwight McNeil,0.0,0.08,ENG,0.08,9
+ENG-Premier League,2526,Everton,Harrison Armstrong,0.0,0.0,ENG,0.0,11
+ENG-Premier League,2526,Everton,Idrissa Gana Gueye,0.09,0.13,SEN,0.22,26
+ENG-Premier League,2526,Everton,Iliman Ndiaye,0.19,0.1,SEN,0.29,44
+ENG-Premier League,2526,Everton,Jack Grealish,0.11,0.33,ENG,0.44,23
+ENG-Premier League,2526,Everton,Jake O'Brien,0.03,0.03,IRL,0.06,46
+ENG-Premier League,2526,Everton,James Garner,0.05,0.18,ENG,0.24,50
+ENG-Premier League,2526,Everton,James Tarkowski,0.05,0.08,ENG,0.14,48
+ENG-Premier League,2526,Everton,Jarrad Branthwaite,0.13,0.0,ENG,0.13,9
+ENG-Premier League,2526,Everton,Jordan Pickford,0.0,0.0,ENG,0.0,50
+ENG-Premier League,2526,Everton,Kiernan Dewsbury-Hall,0.27,0.14,ENG,0.41,39
+ENG-Premier League,2526,Everton,Merlin Röhl,0.13,0.0,GER,0.13,13
+ENG-Premier League,2526,Everton,Michael Keane,0.1,0.03,ENG,0.14,42
+ENG-Premier League,2526,Everton,Thierno Barry,0.38,0.0,FRA,0.38,34
+ENG-Premier League,2526,Everton,Tim Iroegbunam,0.0,0.12,ENG,0.12,18
+ENG-Premier League,2526,Everton,Vitaliy Mykolenko,0.0,0.03,UKR,0.03,47
+ENG-Premier League,2526,Fulham,Alex Iwobi,0.15,0.11,NGA,0.26,40
+ENG-Premier League,2526,Fulham,Antonee Robinson,0.06,0.0,USA,0.06,19
+ENG-Premier League,2526,Fulham,Bernd Leno,0.0,0.0,GER,0.0,51
+ENG-Premier League,2526,Fulham,Calvin Bassey,0.04,0.0,NGA,0.04,40
+ENG-Premier League,2526,Fulham,Emile Smith Rowe,0.14,0.0,ENG,0.14,28
+ENG-Premier League,2526,Fulham,Harry Wilson,0.34,0.24,WAL,0.57,38
+ENG-Premier League,2526,Fulham,Issa Diop,0.11,0.0,MAR,0.11,13
+ENG-Premier League,2526,Fulham,Joachim Andersen,0.0,0.03,DEN,0.03,44
+ENG-Premier League,2526,Fulham,Jorge Cuenca,0.0,0.0,ESP,0.0,11
+ENG-Premier League,2526,Fulham,Joshua King,0.07,0.14,ENG,0.21,18
+ENG-Premier League,2526,Fulham,Kenny Tete,0.05,0.0,NED,0.05,24
+ENG-Premier League,2526,Fulham,Kevin,0.09,0.09,BRA,0.17,14
+ENG-Premier League,2526,Fulham,Oscar Bobb,0.0,0.0,NOR,0.0,7
+ENG-Premier League,2526,Fulham,Raúl Jiménez,0.37,0.12,MEX,0.49,29
+ENG-Premier League,2526,Fulham,Rodrigo Muniz,0.09,0.09,BRA,0.18,12
+ENG-Premier League,2526,Fulham,Ryan Sessegnon,0.15,0.05,ENG,0.2,29
+ENG-Premier League,2526,Fulham,Samuel Chukwueze,0.25,0.33,NGA,0.58,21
+ENG-Premier League,2526,Fulham,Sander Berge,0.0,0.03,NOR,0.03,45
+ENG-Premier League,2526,Fulham,Saša Lukić,0.05,0.1,SRB,0.16,22
+ENG-Premier League,2526,Fulham,Timothy Castagne,0.0,0.0,BEL,0.0,32
+ENG-Premier League,2526,Fulham,Tom Cairney,0.23,0.0,SCO,0.23,10
+ENG-Premier League,2526,Leeds United,Anton Stach,0.19,0.11,GER,0.3,36
+ENG-Premier League,2526,Leeds United,Ao Tanaka,0.14,0.0,JPN,0.14,21
+ENG-Premier League,2526,Leeds United,Brenden Aaronson,0.15,0.18,USA,0.33,31
+ENG-Premier League,2526,Leeds United,Daniel James,0.0,0.0,WAL,0.0,16
+ENG-Premier League,2526,Leeds United,Dominic Calvert-Lewin,0.46,0.03,ENG,0.5,34
+ENG-Premier League,2526,Leeds United,Ethan Ampadu,0.03,0.03,WAL,0.06,49
+ENG-Premier League,2526,Leeds United,Gabriel Gudmundsson,0.0,0.0,SWE,0.0,45
+ENG-Premier League,2526,Leeds United,Ilia Gruev,0.0,0.2,BUL,0.2,22
+ENG-Premier League,2526,Leeds United,Jaka Bijol,0.05,0.1,SVN,0.14,26
+ENG-Premier League,2526,Leeds United,James Justin,0.09,0.05,ENG,0.14,26
+ENG-Premier League,2526,Leeds United,Jayden Bogle,0.03,0.06,ENG,0.1,44
+ENG-Premier League,2526,Leeds United,Joe Rodon,0.06,0.0,WAL,0.06,52
+ENG-Premier League,2526,Leeds United,Karl Darlow,0.0,0.0,WAL,0.0,27
+ENG-Premier League,2526,Leeds United,Lucas Perri,0.0,0.0,BRA,0.0,29
+ENG-Premier League,2526,Leeds United,Lukas Nmecha,0.5,0.08,GER,0.58,23
+ENG-Premier League,2526,Leeds United,Noah Okafor,0.46,0.06,SUI,0.52,26
+ENG-Premier League,2526,Leeds United,Pascal Struijk,0.0,0.03,NED,0.03,48
+ENG-Premier League,2526,Leeds United,Sean Longstaff,0.18,0.18,ENG,0.36,20
+ENG-Premier League,2526,Leeds United,Wilfried Gnonto,0.0,0.17,ITA,0.17,14
+ENG-Premier League,2526,Liverpool,Alexander Isak,0.39,0.13,SWE,0.52,9
+ENG-Premier League,2526,Liverpool,Alexis Mac Allister,0.07,0.14,ARG,0.2,41
+ENG-Premier League,2526,Liverpool,Alisson,0.0,0.0,BRA,0.0,31
+ENG-Premier League,2526,Liverpool,Andrew Robertson,0.08,0.0,SCO,0.08,16
+ENG-Premier League,2526,Liverpool,Cody Gakpo,0.23,0.16,NED,0.39,39
+ENG-Premier League,2526,Liverpool,Conor Bradley,0.0,0.1,NIR,0.1,13
+ENG-Premier League,2526,Liverpool,Curtis Jones,0.05,0.09,ENG,0.14,38
+ENG-Premier League,2526,Liverpool,Dominik Szoboszlai,0.17,0.19,HUN,0.36,51
+ENG-Premier League,2526,Liverpool,Florian Wirtz,0.19,0.11,GER,0.3,32
+ENG-Premier League,2526,Liverpool,Giorgi Mamardashvili,0.0,0.0,GEO,0.0,18
+ENG-Premier League,2526,Liverpool,Hugo Ekitike,0.55,0.2,FRA,0.75,25
+ENG-Premier League,2526,Liverpool,Ibrahima Konaté,0.03,0.0,FRA,0.03,45
+ENG-Premier League,2526,Liverpool,Jeremie Frimpong,0.0,0.09,NED,0.09,13
+ENG-Premier League,2526,Liverpool,Joe Gomez,0.0,0.3,ENG,0.3,14
+ENG-Premier League,2526,Liverpool,Milos Kerkez,0.08,0.04,HUN,0.12,36
+ENG-Premier League,2526,Liverpool,Mohamed Salah,0.29,0.29,EGY,0.59,35
+ENG-Premier League,2526,Liverpool,Rio Ngumoha,0.32,0.16,ENG,0.48,11
+ENG-Premier League,2526,Liverpool,Ryan Gravenberch,0.15,0.09,NED,0.24,42
+ENG-Premier League,2526,Liverpool,Virgil van Dijk,0.16,0.0,NED,0.16,53
+ENG-Premier League,2526,Manchester City,Abdukodir Khusanov,0.0,0.0,UZB,0.0,13
+ENG-Premier League,2526,Manchester City,Antoine Semenyo,0.45,0.06,GHA,0.52,14
+ENG-Premier League,2526,Manchester City,Bernardo Silva,0.06,0.13,POR,0.19,30
+ENG-Premier League,2526,Manchester City,Erling Haaland,0.82,0.24,NOR,1.07,32
+ENG-Premier League,2526,Manchester City,Gianluigi Donnarumma,0.0,0.0,ITA,0.0,29
+ENG-Premier League,2526,Manchester City,Jeremy Doku,0.25,0.25,BEL,0.5,18
+ENG-Premier League,2526,Manchester City,Joško Gvardiol,0.13,0.13,CRO,0.26,13
+ENG-Premier League,2526,Manchester City,Marc Guéhi,0.07,0.07,ENG,0.13,12
+ENG-Premier League,2526,Manchester City,Matheus Nunes,0.03,0.16,POR,0.19,28
+ENG-Premier League,2526,Manchester City,Nathan Aké,0.0,0.0,NED,0.0,9
+ENG-Premier League,2526,Manchester City,Nico O’Reilly,0.17,0.1,ENG,0.27,25
+ENG-Premier League,2526,Manchester City,Nicolás González,0.06,0.0,ESP,0.06,17
+ENG-Premier League,2526,Manchester City,Omar Marmoush,0.39,0.39,EGY,0.77,5
+ENG-Premier League,2526,Manchester City,Oscar Bobb,0.0,0.19,NOR,0.19,5
+ENG-Premier League,2526,Manchester City,Phil Foden,0.3,0.22,ENG,0.52,19
+ENG-Premier League,2526,Manchester City,Rayan Aït-Nouri,0.0,0.18,ALG,0.18,9
+ENG-Premier League,2526,Manchester City,Rayan Cherki,0.2,0.6,FRA,0.81,19
+ENG-Premier League,2526,Manchester City,Rodri,0.06,0.0,ESP,0.06,15
+ENG-Premier League,2526,Manchester City,Rúben Dias,0.08,0.0,POR,0.08,22
+ENG-Premier League,2526,Manchester City,Sávio,0.11,0.11,BRA,0.22,7
+ENG-Premier League,2526,Manchester City,Tijjani Reijnders,0.28,0.11,NED,0.39,17
+ENG-Premier League,2526,Manchester Utd,Altay Bayındır,0.0,0.0,TUR,0.0,11
+ENG-Premier League,2526,Manchester Utd,Amad Diallo,0.08,0.12,CIV,0.19,33
+ENG-Premier League,2526,Manchester Utd,Ayden Heaven,0.0,0.1,ENG,0.1,15
+ENG-Premier League,2526,Manchester Utd,Benjamin Šeško,0.6,0.05,SVN,0.66,30
+ENG-Premier League,2526,Manchester Utd,Bruno Fernandes,0.26,0.62,POR,0.88,46
+ENG-Premier League,2526,Manchester Utd,Bryan Mbeumo,0.38,0.1,CMR,0.48,36
+ENG-Premier League,2526,Manchester Utd,Casemiro,0.32,0.07,BRA,0.39,31
+ENG-Premier League,2526,Manchester Utd,Diogo Dalot,0.03,0.1,POR,0.14,40
+ENG-Premier League,2526,Manchester Utd,Harry Maguire,0.05,0.11,ENG,0.16,19
+ENG-Premier League,2526,Manchester Utd,Joshua Zirkzee,0.29,0.14,NED,0.43,8
+ENG-Premier League,2526,Manchester Utd,Kobbie Mainoo,0.05,0.11,ENG,0.16,22
+ENG-Premier League,2526,Manchester Utd,Leny Yoro,0.0,0.0,FRA,0.0,33
+ENG-Premier League,2526,Manchester Utd,Lisandro Martínez,0.0,0.0,ARG,0.0,15
+ENG-Premier League,2526,Manchester Utd,Luke Shaw,0.03,0.03,ENG,0.06,45
+ENG-Premier League,2526,Manchester Utd,Manuel Ugarte,0.0,0.0,URU,0.0,23
+ENG-Premier League,2526,Manchester Utd,Mason Mount,0.27,0.0,ENG,0.27,15
+ENG-Premier League,2526,Manchester Utd,Matheus Cunha,0.36,0.07,BRA,0.43,35
+ENG-Premier League,2526,Manchester Utd,Matthijs de Ligt,0.08,0.0,NED,0.08,20
+ENG-Premier League,2526,Manchester Utd,Noussair Mazraoui,0.0,0.0,MAR,0.0,10
+ENG-Premier League,2526,Manchester Utd,Patrick Dorgu,0.25,0.25,DEN,0.5,20
+ENG-Premier League,2526,Manchester Utd,Senne Lammens,0.0,0.0,BEL,0.0,39
+ENG-Premier League,2526,Newcastle United,Aaron Ramsdale,0.0,0.0,ENG,0.0,17
+ENG-Premier League,2526,Newcastle United,Anthony Elanga,0.0,0.07,SWE,0.07,28
+ENG-Premier League,2526,Newcastle United,Anthony Gordon,0.3,0.1,ENG,0.4,28
+ENG-Premier League,2526,Newcastle United,Bruno Guimarães,0.33,0.18,BRA,0.51,36
+ENG-Premier League,2526,Newcastle United,Dan Burn,0.04,0.08,ENG,0.12,34
+ENG-Premier League,2526,Newcastle United,Fabian Schär,0.0,0.0,SUI,0.0,13
+ENG-Premier League,2526,Newcastle United,Harvey Barnes,0.32,0.05,ENG,0.37,31
+ENG-Premier League,2526,Newcastle United,Jacob Murphy,0.17,0.11,ENG,0.28,19
+ENG-Premier League,2526,Newcastle United,Jacob Ramsey,0.12,0.19,ENG,0.31,29
+ENG-Premier League,2526,Newcastle United,Joe Willock,0.0,0.18,ENG,0.18,18
+ENG-Premier League,2526,Newcastle United,Joelinton,0.09,0.05,BRA,0.14,27
+ENG-Premier League,2526,Newcastle United,Kieran Trippier,0.0,0.06,ENG,0.06,27
+ENG-Premier League,2526,Newcastle United,Lewis Hall,0.04,0.04,ENG,0.08,39
+ENG-Premier League,2526,Newcastle United,Lewis Miley,0.06,0.24,ENG,0.3,22
+ENG-Premier League,2526,Newcastle United,Malick Thiaw,0.12,0.0,GER,0.12,52
+ENG-Premier League,2526,Newcastle United,Nick Pope,0.0,0.0,ENG,0.0,38
+ENG-Premier League,2526,Newcastle United,Nick Woltemade,0.38,0.14,GER,0.52,29
+ENG-Premier League,2526,Newcastle United,Sandro Tonali,0.0,0.07,ITA,0.07,37
+ENG-Premier League,2526,Newcastle United,Sven Botman,0.05,0.05,NED,0.1,27
+ENG-Premier League,2526,Newcastle United,Tino Livramento,0.0,0.07,ENG,0.07,14
+ENG-Premier League,2526,Newcastle United,William Osula,0.77,0.0,DEN,0.77,14
+ENG-Premier League,2526,Newcastle United,Yoane Wissa,0.17,0.0,COD,0.17,11
+ENG-Premier League,2526,Nottingham Forest,Callum Hudson-Odoi,0.15,0.2,ENG,0.34,26
+ENG-Premier League,2526,Nottingham Forest,Chris Wood,0.3,0.0,NZL,0.3,14
+ENG-Premier League,2526,Nottingham Forest,Dan Ndoye,0.08,0.08,SUI,0.15,17
+ENG-Premier League,2526,Nottingham Forest,Dilane Bakwa,0.0,0.33,FRA,0.33,10
+ENG-Premier League,2526,Nottingham Forest,Elliot Anderson,0.11,0.11,ENG,0.22,50
+ENG-Premier League,2526,Nottingham Forest,Ibrahim Sangaré,0.09,0.09,CIV,0.17,26
+ENG-Premier League,2526,Nottingham Forest,Igor Jesus,0.23,0.16,BRA,0.39,37
+ENG-Premier League,2526,Nottingham Forest,Jair Cunha,0.0,0.0,BRA,0.0,7
+ENG-Premier League,2526,Nottingham Forest,Matz Sels,0.0,0.0,BEL,0.0,39
+ENG-Premier League,2526,Nottingham Forest,Morato,0.07,0.0,BRA,0.07,23
+ENG-Premier League,2526,Nottingham Forest,Morgan Gibbs-White,0.44,0.12,ENG,0.55,45
+ENG-Premier League,2526,Nottingham Forest,Murillo,0.04,0.0,BRA,0.04,29
+ENG-Premier League,2526,Nottingham Forest,Neco Williams,0.06,0.08,WAL,0.14,47
+ENG-Premier League,2526,Nottingham Forest,Nicolás Domínguez,0.08,0.08,ARG,0.15,19
+ENG-Premier League,2526,Nottingham Forest,Nicolò Savona,0.18,0.0,ITA,0.18,18
+ENG-Premier League,2526,Nottingham Forest,Nikola Milenković,0.0,0.0,SRB,0.0,51
+ENG-Premier League,2526,Nottingham Forest,Ola Aina,0.0,0.0,NGA,0.0,19
+ENG-Premier League,2526,Nottingham Forest,Omari Hutchinson,0.05,0.27,ENG,0.32,24
+ENG-Premier League,2526,Nottingham Forest,Ryan Yates,0.0,0.29,ENG,0.29,7
+ENG-Premier League,2526,Nottingham Forest,Taiwo Awoniyi,0.73,0.18,NGA,0.91,4
+ENG-Premier League,2526,Sunderland,Bertrand Traoré,0.14,0.0,BFA,0.14,9
+ENG-Premier League,2526,Sunderland,Brian Brobbey,0.33,0.05,NED,0.37,30
+ENG-Premier League,2526,Sunderland,Chemsdine Talbi,0.23,0.06,MAR,0.29,14
+ENG-Premier League,2526,Sunderland,Chris Rigg,0.12,0.12,ENG,0.24,11
+ENG-Premier League,2526,Sunderland,Daniel Ballard,0.08,0.0,NIR,0.08,34
+ENG-Premier League,2526,Sunderland,Eliezer Mayenda,0.24,0.0,ESP,0.24,9
+ENG-Premier League,2526,Sunderland,Enzo Le Fée,0.15,0.18,FRA,0.34,43
+ENG-Premier League,2526,Sunderland,Granit Xhaka,0.03,0.19,SUI,0.22,39
+ENG-Premier League,2526,Sunderland,Habib Diarra,0.13,0.13,SEN,0.26,19
+ENG-Premier League,2526,Sunderland,Luke O'Nien,0.0,0.16,ENG,0.16,7
+ENG-Premier League,2526,Sunderland,Lutsharel Geertruida,0.0,0.0,NED,0.0,23
+ENG-Premier League,2526,Sunderland,Noah Sadiki,0.0,0.03,COD,0.03,42
+ENG-Premier League,2526,Sunderland,Nordi Mukiele,0.1,0.1,FRA,0.19,40
+ENG-Premier League,2526,Sunderland,Omar Alderete,0.03,0.03,PAR,0.06,40
+ENG-Premier League,2526,Sunderland,Reinildo Mandava,0.0,0.05,MOZ,0.05,26
+ENG-Premier League,2526,Sunderland,Robin Roefs,0.0,0.0,NED,0.0,46
+ENG-Premier League,2526,Sunderland,Simon Adingra,0.14,0.0,CIV,0.14,8
+ENG-Premier League,2526,Sunderland,Trai Hume,0.06,0.03,NIR,0.09,42
+ENG-Premier League,2526,Sunderland,Wilson Isidor,0.46,0.0,HAI,0.46,17
+ENG-Premier League,2526,Tottenham Hotspur,Antonín Kinský,0.0,0.0,CZE,0.0,7
+ENG-Premier League,2526,Tottenham Hotspur,Archie Gray,0.12,0.12,ENG,0.24,28
+ENG-Premier League,2526,Tottenham Hotspur,Brennan Johnson,0.3,0.0,WAL,0.3,5
+ENG-Premier League,2526,Tottenham Hotspur,Conor Gallagher,0.08,0.08,ENG,0.15,23
+ENG-Premier League,2526,Tottenham Hotspur,Cristian Romero,0.19,0.05,ARG,0.24,31
+ENG-Premier League,2526,Tottenham Hotspur,Destiny Udogie,0.0,0.07,ITA,0.07,25
+ENG-Premier League,2526,Tottenham Hotspur,Djed Spence,0.0,0.0,ENG,0.0,31
+ENG-Premier League,2526,Tottenham Hotspur,Dominic Solanke,0.27,0.0,ENG,0.27,21
+ENG-Premier League,2526,Tottenham Hotspur,Guglielmo Vicario,0.0,0.0,ITA,0.0,50
+ENG-Premier League,2526,Tottenham Hotspur,João Palhinha,0.2,0.08,POR,0.29,37
+ENG-Premier League,2526,Tottenham Hotspur,Kevin Danso,0.0,0.0,AUT,0.0,26
+ENG-Premier League,2526,Tottenham Hotspur,Lucas Bergvall,0.09,0.28,SWE,0.37,18
+ENG-Premier League,2526,Tottenham Hotspur,Mathys Tel,0.27,0.07,FRA,0.33,23
+ENG-Premier League,2526,Tottenham Hotspur,Micky van de Ven,0.12,0.03,NED,0.15,47
+ENG-Premier League,2526,Tottenham Hotspur,Mohammed Kudus,0.12,0.29,GHA,0.41,20
+ENG-Premier League,2526,Tottenham Hotspur,Pape Matar Sarr,0.13,0.26,SEN,0.39,23
+ENG-Premier League,2526,Tottenham Hotspur,Pedro Porro,0.03,0.06,ESP,0.1,40
+ENG-Premier League,2526,Tottenham Hotspur,Radu Drăgușin,0.0,0.0,ROU,0.0,13
+ENG-Premier League,2526,Tottenham Hotspur,Randal Kolo Muani,0.05,0.05,FRA,0.11,31
+ENG-Premier League,2526,Tottenham Hotspur,Richarlison,0.5,0.18,BRA,0.69,27
+ENG-Premier League,2526,Tottenham Hotspur,Rodrigo Bentancur,0.05,0.05,URU,0.1,25
+ENG-Premier League,2526,Tottenham Hotspur,Wilson Odobert,0.0,0.18,FRA,0.18,13
+ENG-Premier League,2526,Tottenham Hotspur,Xavi Simons,0.1,0.26,NED,0.36,33
+ENG-Premier League,2526,Tottenham Hotspur,Yves Bissouma,0.0,0.0,MLI,0.0,17
+ENG-Premier League,2526,West Ham United,Aaron Wan-Bissaka,0.0,0.09,COD,0.09,43
+ENG-Premier League,2526,West Ham United,Alphonse Areola,0.0,0.05,FRA,0.05,37
+ENG-Premier League,2526,West Ham United,Axel Disasi,0.0,0.0,FRA,0.0,17
+ENG-Premier League,2526,West Ham United,Callum Wilson,0.5,0.07,ENG,0.58,24
+ENG-Premier League,2526,West Ham United,Crysencio Summerville,0.18,0.07,NED,0.26,42
+ENG-Premier League,2526,West Ham United,El Hadji Malick Diouf,0.0,0.17,SEN,0.17,47
+ENG-Premier League,2526,West Ham United,Freddie Potts,0.0,0.08,ENG,0.08,25
+ENG-Premier League,2526,West Ham United,Jarrod Bowen,0.24,0.29,ENG,0.53,63
+ENG-Premier League,2526,West Ham United,Jean-Clair Todibo,0.0,0.05,FRA,0.05,36
+ENG-Premier League,2526,West Ham United,Konstantinos Mavropanos,0.11,0.0,GRE,0.11,44
+ENG-Premier League,2526,West Ham United,Kyle Walker-Peters,0.07,0.0,ENG,0.07,25
+ENG-Premier League,2526,West Ham United,Lucas Paquetá,0.24,0.06,BRA,0.3,32
+ENG-Premier League,2526,West Ham United,Mads Hermansen,0.0,0.06,DEN,0.06,28
+ENG-Premier League,2526,West Ham United,Mateus Fernandes,0.09,0.12,POR,0.21,50
+ENG-Premier League,2526,West Ham United,Max Kilman,0.0,0.0,ENG,0.0,37
+ENG-Premier League,2526,West Ham United,Oliver Scarles,0.0,0.0,ENG,0.0,16
+ENG-Premier League,2526,West Ham United,Pablo,0.0,0.11,BRA,0.11,12
+ENG-Premier League,2526,West Ham United,Soungoutou Magassa,0.09,0.0,FRA,0.09,23
+ENG-Premier League,2526,West Ham United,Tomáš Souček,0.2,0.0,CZE,0.2,41
+ENG-Premier League,2526,West Ham United,Valentín Castellanos,0.39,0.0,ARG,0.39,16
+ENG-Premier League,2526,Wolves,Adam Armstrong,0.16,0.16,ENG,0.32,20
+ENG-Premier League,2526,Wolves,André,0.03,0.0,BRA,0.03,53
+ENG-Premier League,2526,Wolves,Angel Gomes,0.0,0.0,ENG,0.0,8
+ENG-Premier League,2526,Wolves,David Møller Wolfe,0.0,0.17,NOR,0.17,23
+ENG-Premier League,2526,Wolves,Emmanuel Agbadou,0.0,0.0,CIV,0.0,27
+ENG-Premier League,2526,Wolves,Hugo Bueno,0.04,0.08,ESP,0.11,44
+ENG-Premier League,2526,Wolves,Hwang Hee-chan,0.12,0.12,KOR,0.25,29
+ENG-Premier League,2526,Wolves,Jackson Tchatchoua,0.0,0.05,CMR,0.05,37
+ENG-Premier League,2526,Wolves,Jean-Ricner Bellegarde,0.07,0.07,HAI,0.14,30
+ENG-Premier League,2526,Wolves,Jhon Arias,0.08,0.0,COL,0.08,21
+ENG-Premier League,2526,Wolves,José Sá,0.0,0.0,POR,0.0,37
+ENG-Premier League,2526,Wolves,João Gomes,0.03,0.03,BRA,0.06,56
+ENG-Premier League,2526,Wolves,Jørgen Strand Larsen,0.06,0.06,NOR,0.13,26
+ENG-Premier League,2526,Wolves,Ladislav Krejčí,0.08,0.04,CZE,0.11,45
+ENG-Premier League,2526,Wolves,Marshall Munetsi,0.1,0.1,ZIM,0.21,19
+ENG-Premier League,2526,Wolves,Mateus Mane,0.15,0.05,POR,0.2,30
+ENG-Premier League,2526,Wolves,Matt Doherty,0.0,0.0,IRL,0.0,15
+ENG-Premier League,2526,Wolves,Rodrigo Gomes,0.28,0.0,POR,0.28,18
+ENG-Premier League,2526,Wolves,Sam Johnstone,0.0,0.0,ENG,0.0,24
+ENG-Premier League,2526,Wolves,Santiago Bueno,0.11,0.04,URU,0.14,47
+ENG-Premier League,2526,Wolves,Tolu Arokodare,0.19,0.06,NGA,0.25,28
+ENG-Premier League,2526,Wolves,Toti Gomes,0.0,0.0,POR,0.0,33
+ENG-Premier League,2526,Wolves,Yerson Mosquera,0.0,0.0,COL,0.0,40
+ESP-La Liga,2526,Alavés,Abde Rebbach,0.06,0.24,ALG,0.3,21
+ESP-La Liga,2526,Alavés,Ander Guevara,0.14,0.14,ESP,0.28,14
+ESP-La Liga,2526,Alavés,Antonio Blanco,0.06,0.09,ESP,0.14,52
+ESP-La Liga,2526,Alavés,Antonio Sivera,0.0,0.0,ESP,0.0,56
+ESP-La Liga,2526,Alavés,Calebe,0.0,0.0,BRA,0.0,8
+ESP-La Liga,2526,Alavés,Carles Aleñá,0.0,0.18,ESP,0.18,35
+ESP-La Liga,2526,Alavés,Carlos Vicente,0.36,0.0,ESP,0.36,19
+ESP-La Liga,2526,Alavés,Denis Suárez,0.06,0.13,ESP,0.19,21
+ESP-La Liga,2526,Alavés,Facundo Garcés,0.0,0.0,MAS,0.0,11
+ESP-La Liga,2526,Alavés,Ibrahim Diabaté,0.31,0.0,CIV,0.31,8
+ESP-La Liga,2526,Alavés,Jon Guridi,0.0,0.0,ESP,0.0,25
+ESP-La Liga,2526,Alavés,Jon Pacheco,0.0,0.0,ESP,0.0,29
+ESP-La Liga,2526,Alavés,Jonny Castro,0.0,0.0,ESP,0.0,52
+ESP-La Liga,2526,Alavés,Lucas Boyé,0.51,0.05,ARG,0.55,32
+ESP-La Liga,2526,Alavés,Nahuel Tenaglia,0.06,0.0,ARG,0.06,53
+ESP-La Liga,2526,Alavés,Pablo Ibáñez,0.04,0.04,ESP,0.08,33
+ESP-La Liga,2526,Alavés,Toni Martínez,0.46,0.1,ESP,0.56,41
+ESP-La Liga,2526,Alavés,Victor Parada,0.0,0.13,ESP,0.13,38
+ESP-La Liga,2526,Alavés,Youssef Lekhedim,0.0,0.07,ESP,0.07,22
+ESP-La Liga,2526,Alavés,Ángel Pérez,0.07,0.21,ESP,0.28,25
+ESP-La Liga,2526,Athletic Club,Adama Boiro,0.0,0.0,ESP,0.0,20
+ESP-La Liga,2526,Athletic Club,Aitor Paredes,0.11,0.0,ESP,0.11,28
+ESP-La Liga,2526,Athletic Club,Alejandro Rego,0.07,0.07,ESP,0.14,23
+ESP-La Liga,2526,Athletic Club,Andoni Gorosabel,0.0,0.07,ESP,0.07,26
+ESP-La Liga,2526,Athletic Club,Aymeric Laporte,0.0,0.04,ESP,0.04,35
+ESP-La Liga,2526,Athletic Club,Daniel Vivian,0.04,0.0,ESP,0.04,44
+ESP-La Liga,2526,Athletic Club,Gorka Guruzeta,0.38,0.11,ESP,0.5,37
+ESP-La Liga,2526,Athletic Club,Iñaki Williams,0.13,0.25,GHA,0.38,34
+ESP-La Liga,2526,Athletic Club,Iñigo Lekue,0.0,0.0,ESP,0.0,14
+ESP-La Liga,2526,Athletic Club,Iñigo Ruiz de Galarreta,0.04,0.08,ESP,0.12,37
+ESP-La Liga,2526,Athletic Club,Jesús Areso,0.0,0.06,ESP,0.06,23
+ESP-La Liga,2526,Athletic Club,Mikel Jauregizar,0.06,0.0,ESP,0.06,45
+ESP-La Liga,2526,Athletic Club,Mikel Vesga,0.0,0.0,ESP,0.0,13
+ESP-La Liga,2526,Athletic Club,Nico Williams,0.32,0.16,ESP,0.48,27
+ESP-La Liga,2526,Athletic Club,Oihan Sancet,0.2,0.0,ESP,0.2,25
+ESP-La Liga,2526,Athletic Club,Roberto Navarro,0.41,0.07,ESP,0.48,23
+ESP-La Liga,2526,Athletic Club,Unai Gómez,0.1,0.1,ESP,0.19,24
+ESP-La Liga,2526,Athletic Club,Unai Simón,0.0,0.0,ESP,0.0,54
+ESP-La Liga,2526,Athletic Club,Yeray Álvarez,0.0,0.0,ESP,0.0,9
+ESP-La Liga,2526,Athletic Club,Yuri Berchiche,0.0,0.2,ESP,0.2,40
+ESP-La Liga,2526,Athletic Club,Álex Berenguer,0.08,0.13,ESP,0.21,31
+ESP-La Liga,2526,Atlético Madrid,Ademola Lookman,0.58,0.0,NGA,0.58,11
+ESP-La Liga,2526,Atlético Madrid,Alexander Sørloth,0.59,0.0,NOR,0.59,27
+ESP-La Liga,2526,Atlético Madrid,Antoine Griezmann,0.43,0.24,FRA,0.67,23
+ESP-La Liga,2526,Atlético Madrid,Clément Lenglet,0.0,0.06,FRA,0.06,21
+ESP-La Liga,2526,Atlético Madrid,Conor Gallagher,0.27,0.0,ENG,0.27,7
+ESP-La Liga,2526,Atlético Madrid,Dávid Hancko,0.0,0.07,SVK,0.07,31
+ESP-La Liga,2526,Atlético Madrid,Giuliano Simeone,0.17,0.26,ARG,0.43,26
+ESP-La Liga,2526,Atlético Madrid,Jan Oblak,0.0,0.0,SVN,0.0,31
+ESP-La Liga,2526,Atlético Madrid,Johnny Cardoso,0.0,0.0,USA,0.0,13
+ESP-La Liga,2526,Atlético Madrid,José María Giménez,0.0,0.08,URU,0.08,14
+ESP-La Liga,2526,Atlético Madrid,Juan Musso,0.0,0.0,ARG,0.0,13
+ESP-La Liga,2526,Atlético Madrid,Julián Álvarez,0.38,0.19,ARG,0.57,20
+ESP-La Liga,2526,Atlético Madrid,Koke,0.08,0.08,ESP,0.16,28
+ESP-La Liga,2526,Atlético Madrid,Marc Pubill,0.07,0.07,ESP,0.13,16
+ESP-La Liga,2526,Atlético Madrid,Marcos Llorente,0.0,0.17,ESP,0.17,26
+ESP-La Liga,2526,Atlético Madrid,Matteo Ruggeri,0.0,0.15,ITA,0.15,23
+ESP-La Liga,2526,Atlético Madrid,Nahuel Molina,0.14,0.14,ARG,0.27,18
+ESP-La Liga,2526,Atlético Madrid,Nicolás González,0.31,0.0,ARG,0.31,15
+ESP-La Liga,2526,Atlético Madrid,Obed Vargas,0.0,0.12,MEX,0.12,14
+ESP-La Liga,2526,Atlético Madrid,Pablo Barrios,0.05,0.05,ESP,0.11,16
+ESP-La Liga,2526,Atlético Madrid,Robin Le Normand,0.05,0.05,ESP,0.1,20
+ESP-La Liga,2526,Atlético Madrid,Thiago Almada,0.21,0.07,ARG,0.27,17
+ESP-La Liga,2526,Atlético Madrid,Álex Baena,0.12,0.17,ESP,0.29,20
+ESP-La Liga,2526,Barcelona,Alejandro Balde,0.0,0.1,ESP,0.1,24
+ESP-La Liga,2526,Barcelona,Dani Olmo,0.3,0.35,ESP,0.65,17
+ESP-La Liga,2526,Barcelona,Eric García,0.03,0.03,ESP,0.07,22
+ESP-La Liga,2526,Barcelona,Fermin López,0.3,0.45,ESP,0.75,18
+ESP-La Liga,2526,Barcelona,Ferrán Torres,0.73,0.09,ESP,0.82,20
+ESP-La Liga,2526,Barcelona,Frenkie de Jong,0.06,0.28,NED,0.33,21
+ESP-La Liga,2526,Barcelona,Gavi,0.0,0.16,ESP,0.16,6
+ESP-La Liga,2526,Barcelona,Gerard Martín,0.0,0.0,ESP,0.0,16
+ESP-La Liga,2526,Barcelona,Joan García,0.0,0.0,ESP,0.0,21
+ESP-La Liga,2526,Barcelona,João Cancelo,0.19,0.19,POR,0.38,6
+ESP-La Liga,2526,Barcelona,Jules Koundé,0.04,0.12,FRA,0.16,22
+ESP-La Liga,2526,Barcelona,Lamine Yamal,0.64,0.44,ESP,1.07,23
+ESP-La Liga,2526,Barcelona,Marc Bernal,0.23,0.11,ESP,0.34,10
+ESP-La Liga,2526,Barcelona,Marc Casado,0.0,0.09,ESP,0.09,10
+ESP-La Liga,2526,Barcelona,Marcus Rashford,0.41,0.36,ENG,0.77,25
+ESP-La Liga,2526,Barcelona,Pau Cubarsí,0.03,0.0,ESP,0.03,29
+ESP-La Liga,2526,Barcelona,Pedri,0.09,0.38,ESP,0.47,21
+ESP-La Liga,2526,Barcelona,Raphinha,0.85,0.2,BRA,1.04,9
+ESP-La Liga,2526,Barcelona,Robert Lewandowski,0.76,0.11,POL,0.87,19
+ESP-La Liga,2526,Barcelona,Ronald Araújo,0.25,0.0,URU,0.25,15
+ESP-La Liga,2526,Barcelona,Roony Bardghji,0.14,0.14,SWE,0.28,8
+ESP-La Liga,2526,Barcelona,Wojciech Szczęsny,0.0,0.0,POL,0.0,15
+ESP-La Liga,2526,Celta Vigo,Borja Iglesias,0.66,0.09,ESP,0.76,26
+ESP-La Liga,2526,Celta Vigo,Bryan Zaragoza,0.08,0.08,ESP,0.16,12
+ESP-La Liga,2526,Celta Vigo,Carl Starfelt,0.0,0.0,SWE,0.0,17
+ESP-La Liga,2526,Celta Vigo,Carlos Dominguez,0.0,0.0,ESP,0.0,12
+ESP-La Liga,2526,Celta Vigo,Fer López,0.08,0.08,ESP,0.15,19
+ESP-La Liga,2526,Celta Vigo,Ferran Jutglà,0.49,0.16,ESP,0.65,24
+ESP-La Liga,2526,Celta Vigo,Fran Beltrán,0.0,0.0,ESP,0.0,6
+ESP-La Liga,2526,Celta Vigo,Hugo Sotelo,0.0,0.13,ESP,0.13,25
+ESP-La Liga,2526,Celta Vigo,Hugo Álvarez,0.27,0.13,ESP,0.4,23
+ESP-La Liga,2526,Celta Vigo,Iago Aspas,0.39,0.24,ESP,0.63,12
+ESP-La Liga,2526,Celta Vigo,Ilaix Moriba,0.07,0.11,GUI,0.18,30
+ESP-La Liga,2526,Celta Vigo,Ionuț Radu,0.0,0.0,ROU,0.0,48
+ESP-La Liga,2526,Celta Vigo,Javi Rodríguez,0.0,0.04,ESP,0.04,33
+ESP-La Liga,2526,Celta Vigo,Javi Rueda,0.13,0.38,ESP,0.51,15
+ESP-La Liga,2526,Celta Vigo,Jones El-Abdellaoui,0.26,0.0,MAR,0.26,12
+ESP-La Liga,2526,Celta Vigo,Joseph Aidoo,0.0,0.0,GHA,0.0,13
+ESP-La Liga,2526,Celta Vigo,Manu Fernández,0.0,0.0,ESP,0.0,11
+ESP-La Liga,2526,Celta Vigo,Marcos Alonso,0.03,0.0,ESP,0.03,37
+ESP-La Liga,2526,Celta Vigo,Miguel Román,0.07,0.0,ESP,0.07,13
+ESP-La Liga,2526,Celta Vigo,Pablo Durán,0.13,0.13,ESP,0.25,23
+ESP-La Liga,2526,Celta Vigo,Sergio Carreira,0.07,0.03,ESP,0.1,40
+ESP-La Liga,2526,Celta Vigo,Williot Swedberg,0.35,0.35,SWE,0.71,16
+ESP-La Liga,2526,Celta Vigo,Yoel Lago,0.0,0.0,ESP,0.0,15
+ESP-La Liga,2526,Celta Vigo,Óscar Mingueza,0.05,0.18,ESP,0.23,26
+ESP-La Liga,2526,Elche,Adrià Pedrosa,0.08,0.08,ESP,0.17,27
+ESP-La Liga,2526,Elche,Aleix Febas,0.06,0.06,ESP,0.11,52
+ESP-La Liga,2526,Elche,André Silva,0.49,0.0,POR,0.49,35
+ESP-La Liga,2526,Elche,Buba Sangaré,0.0,0.0,ESP,0.0,9
+ESP-La Liga,2526,Elche,David Affengruber,0.03,0.03,AUT,0.06,49
+ESP-La Liga,2526,Elche,Germán Valera,0.13,0.16,ESP,0.28,48
+ESP-La Liga,2526,Elche,Gonzalo Villar,0.13,0.0,ESP,0.13,10
+ESP-La Liga,2526,Elche,Grady Diangana,0.1,0.0,COD,0.1,14
+ESP-La Liga,2526,Elche,Héctor Fort,0.37,0.37,ESP,0.75,6
+ESP-La Liga,2526,Elche,Iñaki Peña,0.0,0.0,ESP,0.0,28
+ESP-La Liga,2526,Elche,John Donald,0.14,0.0,ESP,0.14,17
+ESP-La Liga,2526,Elche,Josan,0.0,0.48,ESP,0.48,8
+ESP-La Liga,2526,Elche,Léo Pétrot,0.0,0.0,FRA,0.0,26
+ESP-La Liga,2526,Elche,Marc Aguado,0.04,0.07,ESP,0.11,38
+ESP-La Liga,2526,Elche,Martim Neto,0.13,0.33,POR,0.47,23
+ESP-La Liga,2526,Elche,Matías Dituro,0.0,0.0,ARG,0.0,29
+ESP-La Liga,2526,Elche,Pedro Bigas,0.04,0.13,ESP,0.17,30
+ESP-La Liga,2526,Elche,Rafa Mir,0.4,0.0,ESP,0.4,24
+ESP-La Liga,2526,Elche,Rodrigo Mendoza,0.11,0.0,ESP,0.11,15
+ESP-La Liga,2526,Elche,Tete Morente,0.1,0.1,ESP,0.19,13
+ESP-La Liga,2526,Elche,Víctor Chust,0.04,0.0,ESP,0.04,35
+ESP-La Liga,2526,Elche,Álvaro Núñez,0.0,0.11,ESP,0.11,20
+ESP-La Liga,2526,Elche,Álvaro Rodríguez,0.29,0.2,URU,0.49,36
+ESP-La Liga,2526,Espanyol,Carlos Romero,0.17,0.08,ESP,0.25,47
+ESP-La Liga,2526,Espanyol,Charles Pickel,0.13,0.0,COD,0.13,12
+ESP-La Liga,2526,Espanyol,Clemens Riedel,0.0,0.06,GER,0.06,22
+ESP-La Liga,2526,Espanyol,Edu Expósito,0.04,0.21,ESP,0.25,36
+ESP-La Liga,2526,Espanyol,Fernando Calero,0.0,0.0,ESP,0.0,33
+ESP-La Liga,2526,Espanyol,Javi Puado,0.27,0.0,ESP,0.27,13
+ESP-La Liga,2526,Espanyol,Jofre,0.1,0.0,ESP,0.1,21
+ESP-La Liga,2526,Espanyol,Kiké,0.42,0.05,ESP,0.47,26
+ESP-La Liga,2526,Espanyol,Leandro Cabrera,0.08,0.0,URU,0.08,55
+ESP-La Liga,2526,Espanyol,Marko Dmitrović,0.0,0.0,SRB,0.0,54
+ESP-La Liga,2526,Espanyol,Omar El Hilali,0.0,0.06,MAR,0.06,46
+ESP-La Liga,2526,Espanyol,Pere Milla,0.32,0.05,ESP,0.36,23
+ESP-La Liga,2526,Espanyol,Pol Lozano,0.08,0.04,ESP,0.13,36
+ESP-La Liga,2526,Espanyol,Ramón Terrats,0.09,0.17,ESP,0.26,21
+ESP-La Liga,2526,Espanyol,Roberto Férnandez,0.26,0.11,ESP,0.38,35
+ESP-La Liga,2526,Espanyol,Rubén,0.0,0.11,ESP,0.11,10
+ESP-La Liga,2526,Espanyol,Tyrhys Dolan,0.07,0.19,ENG,0.26,39
+ESP-La Liga,2526,Espanyol,Urko González,0.0,0.03,ESP,0.03,45
+ESP-La Liga,2526,Getafe,Abdel Abqar,0.0,0.13,MAR,0.13,14
+ESP-La Liga,2526,Getafe,Adrián Liso,0.16,0.0,ESP,0.16,18
+ESP-La Liga,2526,Getafe,Allan Nyom,0.0,0.17,CMR,0.17,8
+ESP-La Liga,2526,Getafe,Borja Mayoral,0.34,0.09,ESP,0.43,15
+ESP-La Liga,2526,Getafe,David Soria,0.0,0.0,ESP,0.0,38
+ESP-La Liga,2526,Getafe,Davinchi,0.0,0.0,ESP,0.0,10
+ESP-La Liga,2526,Getafe,Diego Rico,0.0,0.0,ESP,0.0,23
+ESP-La Liga,2526,Getafe,Djené,0.0,0.0,TOG,0.0,29
+ESP-La Liga,2526,Getafe,Domingos Duarte,0.03,0.03,POR,0.06,35
+ESP-La Liga,2526,Getafe,Iglesias,0.03,0.06,ESP,0.08,34
+ESP-La Liga,2526,Getafe,Javier Muñoz,0.0,0.0,ESP,0.0,7
+ESP-La Liga,2526,Getafe,Kiko Femenía,0.04,0.04,ESP,0.09,24
+ESP-La Liga,2526,Getafe,Luis Milla,0.03,0.28,ESP,0.3,35
+ESP-La Liga,2526,Getafe,Luis Vázquez,0.23,0.08,ARG,0.3,7
+ESP-La Liga,2526,Getafe,Mario Martín,0.08,0.04,ESP,0.13,27
+ESP-La Liga,2526,Getafe,Martin Satriano,0.34,0.06,URU,0.39,13
+ESP-La Liga,2526,Getafe,Mauro Arambarri,0.17,0.06,URU,0.22,37
+ESP-La Liga,2526,Getafe,Zaid Romero,0.07,0.0,ARG,0.07,8
+ESP-La Liga,2526,Getafe,Álex Sancris,0.0,0.13,ESP,0.13,9
+ESP-La Liga,2526,Girona,Alejandro Francés,0.0,0.16,ESP,0.16,19
+ESP-La Liga,2526,Girona,Arnau Martinez,0.07,0.1,ESP,0.17,35
+ESP-La Liga,2526,Girona,Axel Witsel,0.04,0.07,BEL,0.11,41
+ESP-La Liga,2526,Girona,Azzedine Ounahi,0.26,0.1,MAR,0.36,23
+ESP-La Liga,2526,Girona,Bryan Gil,0.0,0.17,ESP,0.17,21
+ESP-La Liga,2526,Girona,Claudio Echeverri,0.14,0.14,ARG,0.29,12
+ESP-La Liga,2526,Girona,Daley Blind,0.0,0.0,NED,0.0,45
+ESP-La Liga,2526,Girona,Fran Beltrán,0.09,0.0,ESP,0.09,10
+ESP-La Liga,2526,Girona,Hugo Rincón,0.05,0.05,ESP,0.1,28
+ESP-La Liga,2526,Girona,Iván Martín,0.0,0.04,ESP,0.04,36
+ESP-La Liga,2526,Girona,Joel Roca,0.18,0.06,ESP,0.24,26
+ESP-La Liga,2526,Girona,Paulo Gazzaniga,0.0,0.0,ARG,0.0,47
+ESP-La Liga,2526,Girona,Portu,0.0,0.0,ESP,0.0,11
+ESP-La Liga,2526,Girona,Thomas Lemar,0.21,0.07,FRA,0.29,16
+ESP-La Liga,2526,Girona,Viktor Tsyhankov,0.21,0.17,UKR,0.38,39
+ESP-La Liga,2526,Girona,Vitor Reis,0.03,0.03,BRA,0.06,48
+ESP-La Liga,2526,Girona,Vladyslav Vanat,0.42,0.05,UKR,0.46,26
+ESP-La Liga,2526,Girona,Yaser Asprilla,0.0,0.0,COL,0.0,14
+ESP-La Liga,2526,Girona,Álex Moreno,0.0,0.11,ESP,0.11,40
+ESP-La Liga,2526,Levante,Adrián de la Fuente,0.1,0.03,ESP,0.13,47
+ESP-La Liga,2526,Levante,Alan Matturro,0.1,0.1,URU,0.19,22
+ESP-La Liga,2526,Levante,Brugui,0.09,0.09,ESP,0.18,20
+ESP-La Liga,2526,Levante,Carlos Espí,0.74,0.0,ESP,0.74,22
+ESP-La Liga,2526,Levante,Carlos Álvarez,0.14,0.05,ESP,0.19,35
+ESP-La Liga,2526,Levante,Diego Pampín,0.0,0.0,ESP,0.0,15
+ESP-La Liga,2526,Levante,Iker Losada,0.3,0.1,ESP,0.4,16
+ESP-La Liga,2526,Levante,Iván Romero,0.28,0.04,ESP,0.32,31
+ESP-La Liga,2526,Levante,Jeremy Toljan,0.03,0.11,GER,0.14,56
+ESP-La Liga,2526,Levante,Kareem Tunde,0.0,0.08,ESP,0.08,20
+ESP-La Liga,2526,Levante,Karl Etta Eyong,0.38,0.13,CMR,0.51,32
+ESP-La Liga,2526,Levante,Kervin Arriaga,0.18,0.18,HON,0.35,29
+ESP-La Liga,2526,Levante,Manu Sánchez,0.03,0.06,ESP,0.1,45
+ESP-La Liga,2526,Levante,Mathew Ryan,0.0,0.0,AUS,0.0,56
+ESP-La Liga,2526,Levante,Matias Moreno,0.0,0.0,ARG,0.0,32
+ESP-La Liga,2526,Levante,Olasagasti,0.05,0.26,ESP,0.31,32
+ESP-La Liga,2526,Levante,Oriol Rey,0.0,0.07,ESP,0.07,25
+ESP-La Liga,2526,Levante,Pablo Martínez,0.05,0.24,ESP,0.29,28
+ESP-La Liga,2526,Levante,Paco Cortés,0.0,0.0,ESP,0.0,6
+ESP-La Liga,2526,Levante,Ugo Raghouber,0.0,0.0,FRA,0.0,9
+ESP-La Liga,2526,Levante,Unai Elgezabal,0.09,0.0,ESP,0.09,24
+ESP-La Liga,2526,Levante,Unai Vencedor Paris,0.0,0.0,ESP,0.0,16
+ESP-La Liga,2526,Levante,Víctor García,0.17,0.09,ESP,0.26,15
+ESP-La Liga,2526,Mallorca,Antonio Raillo,0.0,0.04,ESP,0.04,32
+ESP-La Liga,2526,Mallorca,Antonio Sánchez,0.0,0.0,ESP,0.0,21
+ESP-La Liga,2526,Mallorca,David López,0.0,0.0,ESP,0.0,19
+ESP-La Liga,2526,Mallorca,Jan Virgili,0.1,0.2,ESP,0.3,31
+ESP-La Liga,2526,Mallorca,Johan Mojica,0.0,0.13,COL,0.13,44
+ESP-La Liga,2526,Mallorca,Leo Román,0.0,0.0,ESP,0.0,50
+ESP-La Liga,2526,Mallorca,Manu Morlanes,0.15,0.0,ESP,0.15,29
+ESP-La Liga,2526,Mallorca,Martin Valjent,0.0,0.0,SVK,0.0,56
+ESP-La Liga,2526,Mallorca,Mateo Joseph,0.11,0.16,ESP,0.26,29
+ESP-La Liga,2526,Mallorca,Mateu Morey,0.13,0.0,ESP,0.13,18
+ESP-La Liga,2526,Mallorca,Omar Mascarell,0.08,0.08,EQG,0.16,35
+ESP-La Liga,2526,Mallorca,Pablo Maffeo,0.03,0.07,ESP,0.1,41
+ESP-La Liga,2526,Mallorca,Pablo Torre,0.23,0.23,ESP,0.45,27
+ESP-La Liga,2526,Mallorca,Samu Costa,0.23,0.07,POR,0.3,42
+ESP-La Liga,2526,Mallorca,Sergi Darder,0.03,0.17,ESP,0.2,43
+ESP-La Liga,2526,Mallorca,Takuma Asano,0.14,0.0,JPN,0.14,11
+ESP-La Liga,2526,Mallorca,Toni Lato,0.0,0.15,ESP,0.15,10
+ESP-La Liga,2526,Mallorca,Vedat Muriqi,0.66,0.03,KVX,0.69,51
+ESP-La Liga,2526,Mallorca,Zito Luvumbo,0.0,0.35,ANG,0.35,5
+ESP-La Liga,2526,Osasuna,Abel Bretones,0.06,0.11,ESP,0.17,27
+ESP-La Liga,2526,Osasuna,Aimar Oroz,0.0,0.08,ESP,0.08,29
+ESP-La Liga,2526,Osasuna,Ante Budimir,0.52,0.0,CRO,0.52,38
+ESP-La Liga,2526,Osasuna,Catena,0.09,0.06,ESP,0.15,45
+ESP-La Liga,2526,Osasuna,Enzo Boyomo,0.04,0.07,CMR,0.11,39
+ESP-La Liga,2526,Osasuna,Iker Muñoz,0.0,0.0,ESP,0.0,12
+ESP-La Liga,2526,Osasuna,Javi Galán,0.0,0.05,ESP,0.05,24
+ESP-La Liga,2526,Osasuna,Jon Moncayola,0.0,0.12,ESP,0.12,45
+ESP-La Liga,2526,Osasuna,Jorge Herrando,0.0,0.06,ESP,0.06,26
+ESP-La Liga,2526,Osasuna,Juan Cruz Armada,0.0,0.0,ESP,0.0,9
+ESP-La Liga,2526,Osasuna,Lucas Torró,0.0,0.04,ESP,0.04,37
+ESP-La Liga,2526,Osasuna,Moi Gómez,0.0,0.15,ESP,0.15,15
+ESP-La Liga,2526,Osasuna,Raúl,0.61,0.09,ESP,0.69,20
+ESP-La Liga,2526,Osasuna,Raúl Moro,0.0,0.29,ESP,0.29,12
+ESP-La Liga,2526,Osasuna,Rubén García,0.08,0.2,ESP,0.28,30
+ESP-La Liga,2526,Osasuna,Sergio Herrera,0.0,0.0,ESP,0.0,47
+ESP-La Liga,2526,Osasuna,Valentin Rosier,0.04,0.04,FRA,0.07,37
+ESP-La Liga,2526,Osasuna,Víctor Muñoz,0.2,0.07,ESP,0.27,32
+ESP-La Liga,2526,Oviedo,Aarón Escandell,0.0,0.03,ESP,0.03,56
+ESP-La Liga,2526,Oviedo,Alberto Reina,0.15,0.04,ESP,0.18,43
+ESP-La Liga,2526,Oviedo,Dani Calvo,0.0,0.0,ESP,0.0,24
+ESP-La Liga,2526,Oviedo,David Carmo,0.05,0.0,ANG,0.05,35
+ESP-La Liga,2526,Oviedo,David Costas,0.04,0.0,ESP,0.04,35
+ESP-La Liga,2526,Oviedo,Eric Bailly,0.07,0.0,CIV,0.07,22
+ESP-La Liga,2526,Oviedo,Federico Viñas,0.33,0.04,URU,0.37,38
+ESP-La Liga,2526,Oviedo,Haissem Hassan,0.0,0.14,EGY,0.14,33
+ESP-La Liga,2526,Oviedo,Ilyas Chaira,0.22,0.07,MAR,0.29,39
+ESP-La Liga,2526,Oviedo,Javi López,0.0,0.05,ESP,0.05,28
+ESP-La Liga,2526,Oviedo,Josip Brekalo,0.0,0.0,CRO,0.0,14
+ESP-La Liga,2526,Oviedo,Kwasi Sibo,0.0,0.0,GHA,0.0,26
+ESP-La Liga,2526,Oviedo,Leander Dendoncker,0.07,0.0,BEL,0.07,25
+ESP-La Liga,2526,Oviedo,Lucas Ahijado,0.0,0.08,ESP,0.08,24
+ESP-La Liga,2526,Oviedo,Luka Ilić,0.12,0.0,SRB,0.12,16
+ESP-La Liga,2526,Oviedo,Nacho Vidal,0.0,0.0,ESP,0.0,32
+ESP-La Liga,2526,Oviedo,Nicolas Fonseca,0.0,0.0,URU,0.0,22
+ESP-La Liga,2526,Oviedo,Rahim Bonkano,0.0,0.0,NIG,0.0,32
+ESP-La Liga,2526,Oviedo,Salomón Rondón,0.17,0.0,VEN,0.17,17
+ESP-La Liga,2526,Oviedo,Santi Cazorla,0.0,0.1,ESP,0.1,16
+ESP-La Liga,2526,Oviedo,Santiago Colombatto,0.0,0.04,ARG,0.04,34
+ESP-La Liga,2526,Oviedo,Thiago Fernández,0.0,0.44,ARG,0.44,16
+ESP-La Liga,2526,Rayo Vallecano,Alexandre Alemão,0.32,0.0,BRA,0.32,12
+ESP-La Liga,2526,Rayo Vallecano,Alfonso Espino,0.12,0.0,URU,0.12,23
+ESP-La Liga,2526,Rayo Vallecano,Andrei Ratiu,0.0,0.13,ROU,0.13,31
+ESP-La Liga,2526,Rayo Vallecano,Augusto Batalla,0.0,0.0,ARG,0.0,37
+ESP-La Liga,2526,Rayo Vallecano,Florian Lejeune,0.06,0.03,FRA,0.08,43
+ESP-La Liga,2526,Rayo Vallecano,Francisco Perez,0.15,0.07,ESP,0.22,17
+ESP-La Liga,2526,Rayo Vallecano,Gerard Gumbau,0.0,0.23,ESP,0.23,21
+ESP-La Liga,2526,Rayo Vallecano,Ilias Akhomach,0.0,0.13,MAR,0.13,11
+ESP-La Liga,2526,Rayo Vallecano,Isaac Palazón Camacho,0.12,0.12,ESP,0.24,31
+ESP-La Liga,2526,Rayo Vallecano,Iván Balliu,0.0,0.0,ALB,0.0,7
+ESP-La Liga,2526,Rayo Vallecano,Jorge de Frutos,0.37,0.04,ESP,0.4,23
+ESP-La Liga,2526,Rayo Vallecano,Luiz Felipe,0.0,0.0,ITA,0.0,4
+ESP-La Liga,2526,Rayo Vallecano,Nobel Mendy,0.1,0.0,SEN,0.1,26
+ESP-La Liga,2526,Rayo Vallecano,Pathé Ciss,0.09,0.05,SEN,0.14,24
+ESP-La Liga,2526,Rayo Vallecano,Pedro Díaz,0.0,0.05,ESP,0.05,31
+ESP-La Liga,2526,Rayo Vallecano,Pep Chavarría,0.03,0.07,ESP,0.1,34
+ESP-La Liga,2526,Rayo Vallecano,Sergio Camello,0.55,0.11,ESP,0.66,14
+ESP-La Liga,2526,Rayo Vallecano,Unai López,0.0,0.22,ESP,0.22,13
+ESP-La Liga,2526,Rayo Vallecano,Álvaro García,0.17,0.21,ESP,0.39,29
+ESP-La Liga,2526,Rayo Vallecano,Óscar Valentín,0.04,0.0,ESP,0.04,19
+ESP-La Liga,2526,Real Betis,Abde Ezzalzouli,0.4,0.32,MAR,0.72,34
+ESP-La Liga,2526,Real Betis,Aitor Ruibal,0.2,0.1,ESP,0.3,21
+ESP-La Liga,2526,Real Betis,Antony,0.29,0.22,BRA,0.51,36
+ESP-La Liga,2526,Real Betis,Cucho,0.38,0.1,COL,0.49,35
+ESP-La Liga,2526,Real Betis,Cédric Bakambu,0.47,0.16,COD,0.63,10
+ESP-La Liga,2526,Real Betis,Diego Llorente,0.07,0.0,ESP,0.07,12
+ESP-La Liga,2526,Real Betis,Giovani Lo Celso,0.13,0.19,ARG,0.32,16
+ESP-La Liga,2526,Real Betis,Héctor Bellerín,0.1,0.15,ESP,0.25,27
+ESP-La Liga,2526,Real Betis,Junior Firpo,0.0,0.11,DOM,0.11,15
+ESP-La Liga,2526,Real Betis,Marc Bartra,0.05,0.0,ESP,0.05,29
+ESP-La Liga,2526,Real Betis,Marc Roca,0.04,0.04,ESP,0.09,30
+ESP-La Liga,2526,Real Betis,Natan,0.0,0.0,BRA,0.0,41
+ESP-La Liga,2526,Real Betis,Nelson Deossa,0.0,0.0,COL,0.0,13
+ESP-La Liga,2526,Real Betis,Pablo Fornals,0.28,0.19,ESP,0.47,38
+ESP-La Liga,2526,Real Betis,Pau López,0.0,0.0,ESP,0.0,11
+ESP-La Liga,2526,Real Betis,Ricardo Rodríguez,0.0,0.06,SUI,0.06,17
+ESP-La Liga,2526,Real Betis,Rodrigo Riquelme,0.11,0.11,ESP,0.22,11
+ESP-La Liga,2526,Real Betis,Sergi Altimira,0.08,0.15,ESP,0.23,19
+ESP-La Liga,2526,Real Betis,Sofyan Amrabat,0.0,0.0,MAR,0.0,18
+ESP-La Liga,2526,Real Betis,Valentín Gómez,0.05,0.0,ARG,0.05,28
+ESP-La Liga,2526,Real Betis,Álvaro Fidalgo,0.17,0.0,MEX,0.17,8
+ESP-La Liga,2526,Real Betis,Álvaro Vallés,0.0,0.0,ESP,0.0,36
+ESP-La Liga,2526,Real Betis,Ángel Ortíz,0.0,0.0,ESP,0.0,9
+ESP-La Liga,2526,Real Madrid,Andriy Lunin,0.0,0.0,UKR,0.0,8
+ESP-La Liga,2526,Real Madrid,Antonio Rüdiger,0.06,0.0,GER,0.06,16
+ESP-La Liga,2526,Real Madrid,Arda Güler,0.18,0.4,TUR,0.58,21
+ESP-La Liga,2526,Real Madrid,Aurélien Tchouaméni,0.03,0.0,FRA,0.03,26
+ESP-La Liga,2526,Real Madrid,Brahim Díaz,0.07,0.43,MAR,0.5,11
+ESP-La Liga,2526,Real Madrid,Dani Carvajal,0.0,0.09,ESP,0.09,10
+ESP-La Liga,2526,Real Madrid,Dani Ceballos,0.0,0.0,ESP,0.0,6
+ESP-La Liga,2526,Real Madrid,Dean Huijsen,0.09,0.09,ESP,0.18,18
+ESP-La Liga,2526,Real Madrid,Eduardo Camavinga,0.06,0.0,FRA,0.06,16
+ESP-La Liga,2526,Real Madrid,Federico Valverde,0.16,0.26,URU,0.43,28
+ESP-La Liga,2526,Real Madrid,Fran Garcia,0.1,0.1,ESP,0.19,10
+ESP-La Liga,2526,Real Madrid,Franco Mastantuono,0.09,0.0,ARG,0.09,9
+ESP-La Liga,2526,Real Madrid,Gonzalo García,0.56,0.09,ESP,0.65,12
+ESP-La Liga,2526,Real Madrid,Jude Bellingham,0.28,0.19,ENG,0.47,19
+ESP-La Liga,2526,Real Madrid,Kylian Mbappé,0.87,0.17,FRA,1.04,26
+ESP-La Liga,2526,Real Madrid,Raúl Asencio,0.11,0.0,ESP,0.11,17
+ESP-La Liga,2526,Real Madrid,Rodrygo,0.13,0.39,BRA,0.53,5
+ESP-La Liga,2526,Real Madrid,Thiago Pinar,0.0,0.3,ESP,0.3,6
+ESP-La Liga,2526,Real Madrid,Thibaut Courtois,0.0,0.0,BEL,0.0,28
+ESP-La Liga,2526,Real Madrid,Trent Alexander-Arnold,0.0,0.31,ENG,0.31,14
+ESP-La Liga,2526,Real Madrid,Vinicius Júnior,0.51,0.16,BRA,0.67,30
+ESP-La Liga,2526,Real Madrid,Álvaro Carreras,0.08,0.12,ESP,0.19,23
+ESP-La Liga,2526,Real Madrid,Éder Militão,0.16,0.08,BRA,0.24,9
+ESP-La Liga,2526,Real Sociedad,Aihen Muñoz,0.11,0.0,ESP,0.11,19
+ESP-La Liga,2526,Real Sociedad,Ander Barrenetxea,0.15,0.26,ESP,0.41,27
+ESP-La Liga,2526,Real Sociedad,Aritz Elustondo,0.0,0.12,ESP,0.12,15
+ESP-La Liga,2526,Real Sociedad,Arsen Zakharyan,0.0,0.0,RUS,0.0,13
+ESP-La Liga,2526,Real Sociedad,Beñat Turrientes,0.0,0.2,ESP,0.2,21
+ESP-La Liga,2526,Real Sociedad,Brais Méndez,0.33,0.11,ESP,0.43,27
+ESP-La Liga,2526,Real Sociedad,Carlos Soler,0.16,0.12,ESP,0.27,39
+ESP-La Liga,2526,Real Sociedad,Duje Ćaleta-Car,0.04,0.0,CRO,0.04,33
+ESP-La Liga,2526,Real Sociedad,Gonçalo Guedes,0.39,0.2,POR,0.59,26
+ESP-La Liga,2526,Real Sociedad,Igor Zubeldia,0.0,0.04,ESP,0.04,37
+ESP-La Liga,2526,Real Sociedad,Jon Aramburu,0.03,0.0,VEN,0.03,49
+ESP-La Liga,2526,Real Sociedad,Jon Gorrotxategi,0.04,0.12,ESP,0.16,39
+ESP-La Liga,2526,Real Sociedad,Jon Martin,0.08,0.0,ESP,0.08,44
+ESP-La Liga,2526,Real Sociedad,Luka Sučić,0.26,0.09,CRO,0.35,17
+ESP-La Liga,2526,Real Sociedad,Mikel Oyarzabal,0.5,0.13,ESP,0.63,45
+ESP-La Liga,2526,Real Sociedad,Orri Steinn Óskarsson,0.97,0.0,ISL,0.97,15
+ESP-La Liga,2526,Real Sociedad,Pablo Marín,0.0,0.06,ESP,0.06,35
+ESP-La Liga,2526,Real Sociedad,Sergio Gómez,0.0,0.2,ESP,0.2,45
+ESP-La Liga,2526,Real Sociedad,Takefusa Kubo,0.12,0.24,JPN,0.36,22
+ESP-La Liga,2526,Real Sociedad,Yangel Herrera,0.0,0.0,VEN,0.0,16
+ESP-La Liga,2526,Real Sociedad,Álex Remiro,0.0,0.0,ESP,0.0,60
+ESP-La Liga,2526,Sevilla,Akor Adams,0.44,0.13,NGA,0.57,40
+ESP-La Liga,2526,Sevilla,Alexis Sánchez,0.28,0.14,CHI,0.41,32
+ESP-La Liga,2526,Sevilla,Batista Mendy,0.06,0.0,FRA,0.06,26
+ESP-La Liga,2526,Sevilla,Carmona,0.04,0.11,ESP,0.14,47
+ESP-La Liga,2526,Sevilla,Castrin,0.07,0.0,ESP,0.07,16
+ESP-La Liga,2526,Sevilla,Chidera Ejuke,0.1,0.1,NGA,0.19,15
+ESP-La Liga,2526,Sevilla,César Azpilicueta,0.0,0.07,ESP,0.07,16
+ESP-La Liga,2526,Sevilla,Djibril Sow,0.21,0.16,SUI,0.37,43
+ESP-La Liga,2526,Sevilla,Gabriel Suazo,0.0,0.09,CHI,0.09,37
+ESP-La Liga,2526,Sevilla,Isaac Romero,0.24,0.0,ESP,0.24,21
+ESP-La Liga,2526,Sevilla,Joaquín Martínez Gauna,0.13,0.19,ESP,0.32,24
+ESP-La Liga,2526,Sevilla,Juanlu Sánchez,0.0,0.14,ESP,0.14,36
+ESP-La Liga,2526,Sevilla,Kike Salas,0.08,0.0,ESP,0.08,38
+ESP-La Liga,2526,Sevilla,Lucien Agoume,0.03,0.1,FRA,0.13,48
+ESP-La Liga,2526,Sevilla,Marcão,0.1,0.0,BRA,0.1,15
+ESP-La Liga,2526,Sevilla,Neal Maupay,0.21,0.1,FRA,0.31,14
+ESP-La Liga,2526,Sevilla,Nemanja Gudelj,0.08,0.0,SRB,0.08,41
+ESP-La Liga,2526,Sevilla,Odysseas Vlachodimos,0.0,0.0,GRE,0.0,52
+ESP-La Liga,2526,Sevilla,Peque,0.18,0.09,ESP,0.27,15
+ESP-La Liga,2526,Sevilla,Ruben Vargas,0.17,0.34,SUI,0.51,27
+ESP-La Liga,2526,Sevilla,Tanguy Nianzou,0.0,0.0,FRA,0.0,16
+ESP-La Liga,2526,Valencia,Arnaut Danjuma,0.17,0.11,NED,0.28,28
+ESP-La Liga,2526,Valencia,Baptiste Santamaria,0.12,0.12,FRA,0.24,17
+ESP-La Liga,2526,Valencia,Copete,0.0,0.0,ESP,0.0,32
+ESP-La Liga,2526,Valencia,César Tárrega,0.0,0.0,ESP,0.0,41
+ESP-La Liga,2526,Valencia,Diego López,0.2,0.05,ESP,0.26,30
+ESP-La Liga,2526,Valencia,Dimitri Foulquier,0.0,0.0,FRA,0.0,21
+ESP-La Liga,2526,Valencia,Domingos André Ribeiro Almeida,0.0,0.18,POR,0.18,14
+ESP-La Liga,2526,Valencia,Eray Cömert,0.13,0.07,SUI,0.2,21
+ESP-La Liga,2526,Valencia,Filip Ugrinic,0.0,0.18,SUI,0.18,24
+ESP-La Liga,2526,Valencia,Guido Rodríguez,0.28,0.0,ARG,0.28,19
+ESP-La Liga,2526,Valencia,Hugo Duro,0.45,0.0,ESP,0.45,34
+ESP-La Liga,2526,Valencia,Javier Guerra,0.17,0.26,ESP,0.44,31
+ESP-La Liga,2526,Valencia,Jesus Vazquez,0.0,0.0,ESP,0.0,18
+ESP-La Liga,2526,Valencia,José Luis García Vayá,0.08,0.0,ESP,0.08,34
+ESP-La Liga,2526,Valencia,José Luis Gayà,0.04,0.07,ESP,0.11,37
+ESP-La Liga,2526,Valencia,Julen Agirrezabala,0.0,0.0,ESP,0.0,30
+ESP-La Liga,2526,Valencia,Largie Ramazani,0.44,0.07,BEL,0.51,20
+ESP-La Liga,2526,Valencia,Lucas Beltrán,0.07,0.13,ARG,0.2,21
+ESP-La Liga,2526,Valencia,Luis Rioja,0.1,0.21,ESP,0.31,38
+ESP-La Liga,2526,Valencia,Mouctar Diakhaby,0.17,0.0,GUI,0.17,11
+ESP-La Liga,2526,Valencia,Stole Dimitrievski,0.0,0.0,MKD,0.0,25
+ESP-La Liga,2526,Valencia,Thierry Correia,0.0,0.13,POR,0.13,24
+ESP-La Liga,2526,Valencia,Umar Sadiq,0.4,0.2,NGA,0.59,14
+ESP-La Liga,2526,Valencia,Unai Núñez,0.0,0.0,ESP,0.0,12
+ESP-La Liga,2526,Villarreal,Alberto Moleiro,0.36,0.18,ESP,0.54,31
+ESP-La Liga,2526,Villarreal,Alfonso Pedraza,0.05,0.16,ESP,0.21,24
+ESP-La Liga,2526,Villarreal,Arnau Tenas,0.0,0.0,ESP,0.0,16
+ESP-La Liga,2526,Villarreal,Ayoze Pérez,0.4,0.32,ESP,0.72,20
+ESP-La Liga,2526,Villarreal,Daniel Parejo,0.06,0.0,ESP,0.06,24
+ESP-La Liga,2526,Villarreal,Georges Mikautadze,0.55,0.26,GEO,0.81,30
+ESP-La Liga,2526,Villarreal,Gerard Moreno,0.67,0.0,ESP,0.67,16
+ESP-La Liga,2526,Villarreal,Juan Foyth,0.0,0.0,ARG,0.0,9
+ESP-La Liga,2526,Villarreal,Luiz Lúcio Reis Júnior,0.0,0.0,BRA,0.0,30
+ESP-La Liga,2526,Villarreal,Nicolas Pépé,0.3,0.3,CIV,0.6,35
+ESP-La Liga,2526,Villarreal,Pape Gueye,0.21,0.08,SEN,0.3,28
+ESP-La Liga,2526,Villarreal,Pau Navarro,0.0,0.0,ESP,0.0,26
+ESP-La Liga,2526,Villarreal,Rafa Marín,0.05,0.0,ESP,0.05,26
+ESP-La Liga,2526,Villarreal,Renato Veiga,0.0,0.0,POR,0.0,37
+ESP-La Liga,2526,Villarreal,Santi Comesaña,0.11,0.22,ESP,0.34,29
+ESP-La Liga,2526,Villarreal,Santiago Mouriño,0.04,0.08,URU,0.11,31
+ESP-La Liga,2526,Villarreal,Sergi Cardona,0.05,0.18,ESP,0.23,26
+ESP-La Liga,2526,Villarreal,Tajon Buchanan,0.35,0.05,CAN,0.4,18
+ESP-La Liga,2526,Villarreal,Tani Oluwaseyi,0.2,0.2,CAN,0.4,15
+ESP-La Liga,2526,Villarreal,Thomas Partey,0.0,0.0,GHA,0.0,13
+FRA-Ligue 1,2526,Angers,Amine Sbai,0.15,0.05,MAR,0.2,26
+FRA-Ligue 1,2526,Angers,Branco van den Boomen,0.0,0.07,NED,0.07,21
+FRA-Ligue 1,2526,Angers,Carlens Arcus,0.0,0.13,HAI,0.13,27
+FRA-Ligue 1,2526,Angers,Florent Hanin,0.0,0.0,ALG,0.0,14
+FRA-Ligue 1,2526,Angers,Goduine Koyalipou,0.27,0.13,CTA,0.4,7
+FRA-Ligue 1,2526,Angers,Haris Belkebla,0.0,0.0,ALG,0.0,47
+FRA-Ligue 1,2526,Angers,Hervé Koffi,0.0,0.0,BFA,0.0,36
+FRA-Ligue 1,2526,Angers,Himad Abdelli,0.19,0.0,ALG,0.19,13
+FRA-Ligue 1,2526,Angers,Jacques Ekomie,0.0,0.0,GAB,0.0,35
+FRA-Ligue 1,2526,Angers,Jordan Lefort,0.0,0.06,MTN,0.06,48
+FRA-Ligue 1,2526,Angers,Lanroy Machine,0.17,0.0,FRA,0.17,7
+FRA-Ligue 1,2526,Angers,Lilian Raolisoa,0.09,0.18,FRA,0.27,31
+FRA-Ligue 1,2526,Angers,Louis Mouton,0.1,0.05,FRA,0.14,28
+FRA-Ligue 1,2526,Angers,Marius Louer,0.0,0.0,FRA,0.0,13
+FRA-Ligue 1,2526,Angers,Ousmane Camara,0.03,0.0,MLI,0.03,38
+FRA-Ligue 1,2526,Angers,Pierrick Capelle,0.0,0.14,FRA,0.14,10
+FRA-Ligue 1,2526,Angers,Prosper Peter,0.35,0.0,NGA,0.35,28
+FRA-Ligue 1,2526,Angers,Sidiki Cherif,0.31,0.0,FRA,0.31,16
+FRA-Ligue 1,2526,Angers,Yassin Belkhdim,0.08,0.08,FRA,0.17,32
+FRA-Ligue 1,2526,Auxerre,Bryan Okoh,0.27,0.0,SUI,0.27,15
+FRA-Ligue 1,2526,Auxerre,Clément Akpa,0.0,0.0,CIV,0.0,29
+FRA-Ligue 1,2526,Auxerre,Danny Loader,0.11,0.11,CMR,0.21,36
+FRA-Ligue 1,2526,Auxerre,Donovan Léon,0.0,0.0,GUF,0.0,35
+FRA-Ligue 1,2526,Auxerre,Elisha Owusu,0.0,0.0,GHA,0.0,31
+FRA-Ligue 1,2526,Auxerre,Francisco Sierralta,0.1,0.0,CHI,0.1,15
+FRA-Ligue 1,2526,Auxerre,Fredrik Oppegard,0.0,0.0,NOR,0.0,19
+FRA-Ligue 1,2526,Auxerre,Gideon Mensah,0.0,0.08,GHA,0.08,28
+FRA-Ligue 1,2526,Auxerre,Ibrahim Osman,0.0,0.29,GHA,0.29,11
+FRA-Ligue 1,2526,Auxerre,Josué Casimir,0.06,0.0,HAI,0.06,25
+FRA-Ligue 1,2526,Auxerre,Kévin Danois,0.1,0.03,FRA,0.13,39
+FRA-Ligue 1,2526,Auxerre,Lamine Sy,0.0,0.0,MTN,0.0,21
+FRA-Ligue 1,2526,Auxerre,Lassine Sinayoko,0.39,0.13,MLI,0.52,37
+FRA-Ligue 1,2526,Auxerre,Marvin Senaya,0.05,0.0,GHA,0.05,28
+FRA-Ligue 1,2526,Auxerre,Naouirou Ahamada,0.0,0.13,FRA,0.13,7
+FRA-Ligue 1,2526,Auxerre,Oussama El Azzouzi,0.11,0.0,MAR,0.11,11
+FRA-Ligue 1,2526,Auxerre,Romain Faivre,0.0,0.31,FRA,0.31,7
+FRA-Ligue 1,2526,Auxerre,Rudy Matondo,0.0,0.0,FRA,0.0,8
+FRA-Ligue 1,2526,Auxerre,Sekou Mara,0.22,0.15,FRA,0.37,17
+FRA-Ligue 1,2526,Auxerre,Sinaly Diomande,0.08,0.08,CIV,0.17,29
+FRA-Ligue 1,2526,Auxerre,Théo De Percin,0.0,0.0,MTQ,0.0,9
+FRA-Ligue 1,2526,Brest,Bradley Locko,0.0,0.14,FRA,0.14,23
+FRA-Ligue 1,2526,Brest,Brendan Chardonnet,0.04,0.11,FRA,0.14,43
+FRA-Ligue 1,2526,Brest,Daouda Guindo,0.05,0.05,MLI,0.11,26
+FRA-Ligue 1,2526,Brest,Grégoire Coudert,0.0,0.0,FRA,0.0,40
+FRA-Ligue 1,2526,Brest,Hugo Magnetti,0.03,0.03,FRA,0.07,46
+FRA-Ligue 1,2526,Brest,Joris Chotard,0.06,0.03,FRA,0.1,47
+FRA-Ligue 1,2526,Brest,Junior Diaz,0.0,0.0,CIV,0.0,24
+FRA-Ligue 1,2526,Brest,Junior Dina Ebimbe,0.39,0.0,CMR,0.39,21
+FRA-Ligue 1,2526,Brest,Kamory Doumbia,0.26,0.21,MLI,0.46,25
+FRA-Ligue 1,2526,Brest,Kenny Lala,0.0,0.1,MAD,0.1,52
+FRA-Ligue 1,2526,Brest,Lucas Tousart,0.11,0.0,FRA,0.11,17
+FRA-Ligue 1,2526,Brest,Ludovic Ajorque,0.26,0.29,FRA,0.54,49
+FRA-Ligue 1,2526,Brest,Mama Samba Baldé,0.25,0.25,GNB,0.5,18
+FRA-Ligue 1,2526,Brest,Pathé Mboup,0.09,0.0,SEN,0.09,18
+FRA-Ligue 1,2526,Brest,Radosław Majecki,0.0,0.0,POL,0.0,15
+FRA-Ligue 1,2526,Brest,Romain Del Castillo,0.31,0.1,FRA,0.41,44
+FRA-Ligue 1,2526,Brest,Rémy Labeau Lascary,0.37,0.07,GLP,0.45,21
+FRA-Ligue 1,2526,Brest,Soumaïla Coulibaly,0.0,0.0,FRA,0.0,28
+FRA-Ligue 1,2526,Le Havre,Abdoulaye Touré,0.24,0.0,GUI,0.24,8
+FRA-Ligue 1,2526,Le Havre,Arouna Sangante,0.04,0.04,SEN,0.08,33
+FRA-Ligue 1,2526,Le Havre,Ayumu Seko,0.0,0.0,JPN,0.0,38
+FRA-Ligue 1,2526,Le Havre,Felix Mambimbi,0.17,0.0,SUI,0.17,8
+FRA-Ligue 1,2526,Le Havre,Fodé Doucouré,0.22,0.07,MLI,0.29,19
+FRA-Ligue 1,2526,Le Havre,Gautier Lloris,0.04,0.04,FRA,0.08,31
+FRA-Ligue 1,2526,Le Havre,Issa Soumaré,0.24,0.15,SEN,0.4,43
+FRA-Ligue 1,2526,Le Havre,Loïc Nego,0.0,0.0,HUN,0.0,34
+FRA-Ligue 1,2526,Le Havre,Lucas Gourna-Douath,0.0,0.0,FRA,0.0,18
+FRA-Ligue 1,2526,Le Havre,Mbwana Samatta,0.12,0.06,TAN,0.18,21
+FRA-Ligue 1,2526,Le Havre,Mory Diaw,0.0,0.03,SEN,0.03,41
+FRA-Ligue 1,2526,Le Havre,Rassoul Ndiaye,0.14,0.14,SEN,0.28,32
+FRA-Ligue 1,2526,Le Havre,Simon Ebonog,0.05,0.0,CMR,0.05,31
+FRA-Ligue 1,2526,Le Havre,Sofiane Boufal,0.09,0.35,MAR,0.44,16
+FRA-Ligue 1,2526,Le Havre,Stephan Zagadou,0.18,0.0,FRA,0.18,5
+FRA-Ligue 1,2526,Le Havre,Yanis Zouaoui,0.04,0.04,ALG,0.08,37
+FRA-Ligue 1,2526,Le Havre,Yassine Kechta,0.14,0.07,MAR,0.2,22
+FRA-Ligue 1,2526,Lens,Abdallah Sima,0.25,0.25,SEN,0.5,11
+FRA-Ligue 1,2526,Lens,Adrien Thomasson,0.1,0.3,FRA,0.4,33
+FRA-Ligue 1,2526,Lens,Andrija Bulatović,0.0,0.47,MNE,0.47,8
+FRA-Ligue 1,2526,Lens,Florian Sotoca,0.18,0.0,FRA,0.18,8
+FRA-Ligue 1,2526,Lens,Florian Thauvin,0.41,0.22,FRA,0.63,27
+FRA-Ligue 1,2526,Lens,Ismaëlo Ganiou,0.13,0.0,FRA,0.13,25
+FRA-Ligue 1,2526,Lens,Jonathan Gradit,0.0,0.0,FRA,0.0,8
+FRA-Ligue 1,2526,Lens,Malang Sarr,0.0,0.03,FRA,0.03,33
+FRA-Ligue 1,2526,Lens,Mamadou Sangare,0.12,0.15,MLI,0.27,29
+FRA-Ligue 1,2526,Lens,Matthieu Udol,0.03,0.21,FRA,0.24,35
+FRA-Ligue 1,2526,Lens,Morgan Guilavogui,0.18,0.0,GUI,0.18,5
+FRA-Ligue 1,2526,Lens,Nidal Celik,0.0,0.0,BIH,0.0,9
+FRA-Ligue 1,2526,Lens,Odsonne Édouard,0.6,0.15,FRA,0.75,19
+FRA-Ligue 1,2526,Lens,Rayan Fofana,0.56,0.0,FRA,0.56,8
+FRA-Ligue 1,2526,Lens,Robin Risser,0.0,0.03,FRA,0.03,35
+FRA-Ligue 1,2526,Lens,Ruben Aguilar,0.1,0.1,FRA,0.21,21
+FRA-Ligue 1,2526,Lens,Samson Baidoo,0.1,0.05,AUT,0.15,14
+FRA-Ligue 1,2526,Lens,Saud Abdulhamid,0.13,0.27,KSA,0.4,17
+FRA-Ligue 1,2526,Lens,Wesley Saïd,0.54,0.09,FRA,0.63,21
+FRA-Ligue 1,2526,Lille,Alexsandro Ribeiro,0.0,0.0,BRA,0.0,5
+FRA-Ligue 1,2526,Lille,Ayyoub Bouaddi,0.0,0.04,MAR,0.04,26
+FRA-Ligue 1,2526,Lille,Aïssa Mandi,0.04,0.0,ALG,0.04,28
+FRA-Ligue 1,2526,Lille,Benjamin André,0.08,0.08,FRA,0.15,20
+FRA-Ligue 1,2526,Lille,Berke Özer,0.0,0.03,TUR,0.03,34
+FRA-Ligue 1,2526,Lille,Calvin Verdonk,0.0,0.0,IDN,0.0,10
+FRA-Ligue 1,2526,Lille,Chancel Mbemba,0.0,0.0,COD,0.0,15
+FRA-Ligue 1,2526,Lille,Ethan Mbappé,0.48,0.16,FRA,0.63,10
+FRA-Ligue 1,2526,Lille,Félix Correia,0.18,0.22,POR,0.39,22
+FRA-Ligue 1,2526,Lille,Hákon Haraldsson,0.29,0.07,ISL,0.37,26
+FRA-Ligue 1,2526,Lille,Matias Fernandez-Pardo,0.3,0.19,BEL,0.49,26
+FRA-Ligue 1,2526,Lille,Nabil Bentaleb,0.14,0.14,ALG,0.28,19
+FRA-Ligue 1,2526,Lille,Nathan Ngoy,0.04,0.07,BEL,0.11,31
+FRA-Ligue 1,2526,Lille,Ngal'Ayel Mukau,0.06,0.0,COD,0.06,21
+FRA-Ligue 1,2526,Lille,Olivier Giroud,0.39,0.06,FRA,0.45,25
+FRA-Ligue 1,2526,Lille,Osame Sahraoui,0.18,0.36,MAR,0.53,6
+FRA-Ligue 1,2526,Lille,Romain Perraud,0.12,0.16,FRA,0.28,26
+FRA-Ligue 1,2526,Lille,Thomas Meunier,0.09,0.09,BEL,0.19,19
+FRA-Ligue 1,2526,Lille,Tiago Santos,0.0,0.0,POR,0.0,8
+FRA-Ligue 1,2526,Lorient,Abdoulaye Faye,0.0,0.0,SEN,0.0,31
+FRA-Ligue 1,2526,Lorient,Arsène Kouassi,0.07,0.21,BFA,0.28,41
+FRA-Ligue 1,2526,Lorient,Arthur Avom,0.08,0.04,CMR,0.13,31
+FRA-Ligue 1,2526,Lorient,Bamba Dieng,0.74,0.07,SEN,0.82,15
+FRA-Ligue 1,2526,Lorient,Bamo Meïté,0.0,0.14,CIV,0.14,29
+FRA-Ligue 1,2526,Lorient,Darlin Yongwa,0.0,0.07,CMR,0.07,20
+FRA-Ligue 1,2526,Lorient,Dermane Karim,0.07,0.13,TOG,0.2,25
+FRA-Ligue 1,2526,Lorient,Igor Carioca,0.07,0.0,BRA,0.07,24
+FRA-Ligue 1,2526,Lorient,Jean-Victor Makengo,0.2,0.1,FRA,0.3,26
+FRA-Ligue 1,2526,Lorient,Joel Mvuka,0.0,0.0,NOR,0.0,18
+FRA-Ligue 1,2526,Lorient,Laurent Abergel,0.04,0.0,FRA,0.04,41
+FRA-Ligue 1,2526,Lorient,Mohamed Bamba,0.13,0.26,CIV,0.4,16
+FRA-Ligue 1,2526,Lorient,Montassar Talbi,0.0,0.03,TUN,0.03,44
+FRA-Ligue 1,2526,Lorient,Nathaniel Adjei,0.0,0.0,GHA,0.0,13
+FRA-Ligue 1,2526,Lorient,Noah Cadiou,0.14,0.05,GLP,0.19,33
+FRA-Ligue 1,2526,Lorient,Pablo Pagis,0.51,0.26,FRA,0.77,29
+FRA-Ligue 1,2526,Lorient,Panos Katseris,0.12,0.24,GRE,0.36,9
+FRA-Ligue 1,2526,Lorient,Sambou Soumano,0.38,0.19,SEN,0.57,17
+FRA-Ligue 1,2526,Lorient,Théo Le Bris,0.1,0.1,FRA,0.19,26
+FRA-Ligue 1,2526,Lorient,Tosin Aiyegun,0.42,0.0,BEN,0.42,16
+FRA-Ligue 1,2526,Lorient,Yvon Mvogo,0.0,0.0,SUI,0.0,43
+FRA-Ligue 1,2526,Lyon,Abner,0.13,0.08,BRA,0.21,25
+FRA-Ligue 1,2526,Lyon,Adam Karabec,0.1,0.0,CZE,0.1,8
+FRA-Ligue 1,2526,Lyon,Afonso Moreira,0.21,0.37,POR,0.57,23
+FRA-Ligue 1,2526,Lyon,Ainsley Maitland-Niles,0.04,0.14,ENG,0.18,35
+FRA-Ligue 1,2526,Lyon,Clinton Mata,0.0,0.0,ANG,0.0,40
+FRA-Ligue 1,2526,Lyon,Corentin Tolisso,0.43,0.16,FRA,0.59,32
+FRA-Ligue 1,2526,Lyon,Dominik Greif,0.0,0.03,SVK,0.03,37
+FRA-Ligue 1,2526,Lyon,Endrick,0.37,0.52,BRA,0.89,20
+FRA-Ligue 1,2526,Lyon,Hans Hateboer,0.0,0.0,NED,0.0,9
+FRA-Ligue 1,2526,Lyon,Khalis Merah,0.0,0.08,FRA,0.08,11
+FRA-Ligue 1,2526,Lyon,Malick Fofana,0.24,0.12,BEL,0.36,7
+FRA-Ligue 1,2526,Lyon,Martin Satriano,0.26,0.13,URU,0.39,9
+FRA-Ligue 1,2526,Lyon,Moussa Niakhate,0.0,0.07,SEN,0.07,34
+FRA-Ligue 1,2526,Lyon,Nicolás Tagliafico,0.0,0.21,ARG,0.21,15
+FRA-Ligue 1,2526,Lyon,Noah Nartey,0.33,0.0,DEN,0.33,7
+FRA-Ligue 1,2526,Lyon,Pavel Šulc,0.63,0.17,CZE,0.8,22
+FRA-Ligue 1,2526,Lyon,Roman Yaremchuk,0.64,0.16,UKR,0.8,9
+FRA-Ligue 1,2526,Lyon,Ruben Kluivert,0.12,0.23,NED,0.35,19
+FRA-Ligue 1,2526,Lyon,Tanner Tessmann,0.05,0.0,USA,0.05,21
+FRA-Ligue 1,2526,Lyon,Tyler Morton,0.07,0.07,ENG,0.14,30
+FRA-Ligue 1,2526,Marseille,Amine Gouiri,0.54,0.2,ALG,0.75,22
+FRA-Ligue 1,2526,Marseille,Angel Gomes,0.3,0.0,ENG,0.3,9
+FRA-Ligue 1,2526,Marseille,Arthur Vermeeren,0.0,0.11,BEL,0.11,14
+FRA-Ligue 1,2526,Marseille,Benjamin Pavard,0.05,0.09,FRA,0.14,24
+FRA-Ligue 1,2526,Marseille,Bilal Nadir,0.0,0.6,MAR,0.6,5
+FRA-Ligue 1,2526,Marseille,CJ Egan-Riley,0.0,0.0,ENG,0.0,9
+FRA-Ligue 1,2526,Marseille,Emerson Palmieri,0.0,0.13,ITA,0.13,30
+FRA-Ligue 1,2526,Marseille,Facundo Medina,0.0,0.07,ARG,0.07,23
+FRA-Ligue 1,2526,Marseille,Geoffrey Kondogbia,0.0,0.0,CTA,0.0,6
+FRA-Ligue 1,2526,Marseille,Gerónimo Rulli,0.0,0.0,ARG,0.0,35
+FRA-Ligue 1,2526,Marseille,Hamed Junior Traorè,0.29,0.15,CIV,0.44,12
+FRA-Ligue 1,2526,Marseille,Igor Paixão,0.27,0.23,BRA,0.5,28
+FRA-Ligue 1,2526,Marseille,Leonardo Balerdi,0.0,0.04,ARG,0.04,33
+FRA-Ligue 1,2526,Marseille,Mason Greenwood,0.58,0.26,ENG,0.84,36
+FRA-Ligue 1,2526,Marseille,Matt O'Riley,0.12,0.24,DEN,0.36,9
+FRA-Ligue 1,2526,Marseille,Michael Amir Murillo,0.18,0.09,PAN,0.27,13
+FRA-Ligue 1,2526,Marseille,Nayef Aguerd,0.06,0.0,MAR,0.06,17
+FRA-Ligue 1,2526,Marseille,Pierre Højbjerg,0.13,0.17,DEN,0.3,40
+FRA-Ligue 1,2526,Marseille,Pierre-Emerick Aubameyang,0.44,0.22,GAB,0.66,26
+FRA-Ligue 1,2526,Marseille,Quinten Timber,0.0,0.0,NED,0.0,16
+FRA-Ligue 1,2526,Marseille,Timothy Weah,0.08,0.08,USA,0.16,34
+FRA-Ligue 1,2526,Metz,Alpha Touré,0.0,0.06,SEN,0.06,37
+FRA-Ligue 1,2526,Metz,Benjamin Stambouli,0.0,0.0,FRA,0.0,26
+FRA-Ligue 1,2526,Metz,Boubacar Traoré,0.06,0.0,MLI,0.06,32
+FRA-Ligue 1,2526,Metz,Bouna Sarr,0.0,0.0,SEN,0.0,22
+FRA-Ligue 1,2526,Metz,Cheikh Tidiane Sabaly,0.0,0.19,SEN,0.19,24
+FRA-Ligue 1,2526,Metz,Fodé Ballo-Touré,0.0,0.0,SEN,0.0,22
+FRA-Ligue 1,2526,Metz,Gauthier Hein,0.31,0.27,FRA,0.57,62
+FRA-Ligue 1,2526,Metz,Giorgi Abuashvili,0.26,0.0,GEO,0.26,20
+FRA-Ligue 1,2526,Metz,Giorgi Kvilitaia,0.36,0.0,GEO,0.36,14
+FRA-Ligue 1,2526,Metz,Habib Diallo,0.19,0.05,SEN,0.24,49
+FRA-Ligue 1,2526,Metz,Heorhii Tsitaishvili,0.11,0.07,GEO,0.18,59
+FRA-Ligue 1,2526,Metz,Ibou Sané,0.17,0.17,SEN,0.33,11
+FRA-Ligue 1,2526,Metz,Jean-Philippe Gbamin,0.04,0.04,CIV,0.07,63
+FRA-Ligue 1,2526,Metz,Jessy Deminguet,0.09,0.0,FRA,0.09,47
+FRA-Ligue 1,2526,Metz,Jonathan Fischer,0.0,0.0,DEN,0.0,56
+FRA-Ligue 1,2526,Metz,Koffi Kouao,0.08,0.04,CIV,0.12,48
+FRA-Ligue 1,2526,Metz,Maxime Colin,0.0,0.0,FRA,0.0,39
+FRA-Ligue 1,2526,Metz,Michel Mboula,0.0,0.0,GAB,0.0,14
+FRA-Ligue 1,2526,Metz,Pape Mamadou Sy,0.0,0.0,SEN,0.0,20
+FRA-Ligue 1,2526,Metz,Sadibou Sané,0.09,0.05,SEN,0.14,48
+FRA-Ligue 1,2526,Metz,Terry Yegbe,0.0,0.05,GHA,0.05,51
+FRA-Ligue 1,2526,Monaco,Aladji Bamba,0.0,0.22,FRA,0.22,17
+FRA-Ligue 1,2526,Monaco,Aleksandr Golovin,0.27,0.27,RUS,0.55,19
+FRA-Ligue 1,2526,Monaco,Ansu Fati,0.91,0.0,ESP,0.91,23
+FRA-Ligue 1,2526,Monaco,Caio Henrique Oliveira Silva,0.0,0.12,BRA,0.12,24
+FRA-Ligue 1,2526,Monaco,Christian Mawissa,0.0,0.0,FRA,0.0,22
+FRA-Ligue 1,2526,Monaco,Denis Zakaria,0.09,0.04,SUI,0.13,32
+FRA-Ligue 1,2526,Monaco,Eric Dier,0.13,0.0,ENG,0.13,15
+FRA-Ligue 1,2526,Monaco,Folarin Balogun,0.52,0.16,USA,0.69,36
+FRA-Ligue 1,2526,Monaco,Jordan Teze,0.04,0.07,NED,0.11,44
+FRA-Ligue 1,2526,Monaco,Kassoum Ouattara,0.0,0.28,FRA,0.28,20
+FRA-Ligue 1,2526,Monaco,Krépin Diatta,0.0,0.09,SEN,0.09,17
+FRA-Ligue 1,2526,Monaco,Lamine Camara,0.15,0.19,SEN,0.34,27
+FRA-Ligue 1,2526,Monaco,Lukáš Hrádecký,0.0,0.0,FIN,0.0,27
+FRA-Ligue 1,2526,Monaco,Maghnes Akliouche,0.23,0.23,FRA,0.45,38
+FRA-Ligue 1,2526,Monaco,Mamadou Coulibaly,0.2,0.2,FRA,0.39,30
+FRA-Ligue 1,2526,Monaco,Mika Biereth,0.17,0.17,DEN,0.34,23
+FRA-Ligue 1,2526,Monaco,Mohammed Salisu,0.08,0.0,GHA,0.08,21
+FRA-Ligue 1,2526,Monaco,Philipp Köhn,0.0,0.0,SUI,0.0,27
+FRA-Ligue 1,2526,Monaco,Simon Adingra,0.32,0.21,CIV,0.53,15
+FRA-Ligue 1,2526,Monaco,Takumi Minamino,0.29,0.19,JPN,0.48,14
+FRA-Ligue 1,2526,Monaco,Thilo Kehrer,0.0,0.0,GER,0.0,35
+FRA-Ligue 1,2526,Monaco,Vanderson,0.0,0.29,BRA,0.29,11
+FRA-Ligue 1,2526,Monaco,Wout Faes,0.0,0.0,BEL,0.0,23
+FRA-Ligue 1,2526,Nantes,Ali Yousuf,0.0,0.0,LBY,0.0,15
+FRA-Ligue 1,2526,Nantes,Anthony Lopes,0.0,0.0,POR,0.0,51
+FRA-Ligue 1,2526,Nantes,Bahereba Guirassy,0.22,0.11,FRA,0.33,11
+FRA-Ligue 1,2526,Nantes,Chidozie Awaziem,0.04,0.08,NGA,0.12,40
+FRA-Ligue 1,2526,Nantes,Dehmaine Assoumani,0.07,0.0,FRA,0.07,19
+FRA-Ligue 1,2526,Nantes,Deiver Machado,0.0,0.1,COL,0.1,13
+FRA-Ligue 1,2526,Nantes,Fabien Centonze,0.37,0.0,FRA,0.37,13
+FRA-Ligue 1,2526,Nantes,Francis Coquelin,0.0,0.14,FRA,0.14,6
+FRA-Ligue 1,2526,Nantes,Frederic Guilbert,0.0,0.0,FRA,0.0,6
+FRA-Ligue 1,2526,Nantes,Ibrahima Sissoko,0.0,0.0,MLI,0.0,16
+FRA-Ligue 1,2526,Nantes,Ignatius Ganago,0.29,0.1,CMR,0.39,7
+FRA-Ligue 1,2526,Nantes,Johann Lepenant,0.0,0.04,FRA,0.04,33
+FRA-Ligue 1,2526,Nantes,Junior Mwanga,0.07,0.07,FRA,0.14,27
+FRA-Ligue 1,2526,Nantes,Kelvin Amian,0.0,0.05,FRA,0.05,40
+FRA-Ligue 1,2526,Nantes,Kwon Hyeokkyu,0.0,0.0,KOR,0.0,14
+FRA-Ligue 1,2526,Nantes,Louis Leroux,0.06,0.06,FRA,0.12,24
+FRA-Ligue 1,2526,Nantes,Matthis Abline,0.21,0.14,FRA,0.35,49
+FRA-Ligue 1,2526,Nantes,Mohamed Kaba,0.0,0.18,GUI,0.18,10
+FRA-Ligue 1,2526,Nantes,Mostafa Mohamed,0.31,0.0,EGY,0.31,24
+FRA-Ligue 1,2526,Nantes,Nicolas Cozza,0.0,0.04,FRA,0.04,36
+FRA-Ligue 1,2526,Nantes,Rémy Cabella,0.27,0.0,FRA,0.27,14
+FRA-Ligue 1,2526,Nantes,Tylel Tati,0.0,0.0,FRA,0.0,37
+FRA-Ligue 1,2526,Nantes,Yassine Benhattab,0.0,0.0,FRA,0.0,9
+FRA-Ligue 1,2526,Nantes,Youssef El-Arabi,0.29,0.0,MAR,0.29,14
+FRA-Ligue 1,2526,Nice,Abdulai Juma Bah,0.0,0.0,SLE,0.0,42
+FRA-Ligue 1,2526,Nice,Ali Abdi,0.23,0.0,TUN,0.23,17
+FRA-Ligue 1,2526,Nice,Antoine Mendy,0.04,0.0,SEN,0.04,38
+FRA-Ligue 1,2526,Nice,Charles Vanhoutte,0.0,0.1,BEL,0.1,33
+FRA-Ligue 1,2526,Nice,Dante,0.0,0.11,BRA,0.11,13
+FRA-Ligue 1,2526,Nice,Elye Wahi,0.49,0.1,CIV,0.59,15
+FRA-Ligue 1,2526,Nice,Hicham Boudaoui,0.05,0.11,ALG,0.16,33
+FRA-Ligue 1,2526,Nice,Isak Jansson,0.14,0.0,SWE,0.14,12
+FRA-Ligue 1,2526,Nice,Jeremie Boga,0.28,0.28,CIV,0.56,14
+FRA-Ligue 1,2526,Nice,Jonathan Clauss,0.04,0.21,FRA,0.25,54
+FRA-Ligue 1,2526,Nice,Kaïl Boudache,0.17,0.0,FRA,0.17,9
+FRA-Ligue 1,2526,Nice,Kevin Carlos,0.0,0.0,ESP,0.0,16
+FRA-Ligue 1,2526,Nice,Kojo Peprah Oppong,0.04,0.0,GHA,0.04,43
+FRA-Ligue 1,2526,Nice,Maxime Dupé,0.0,0.0,FRA,0.0,15
+FRA-Ligue 1,2526,Nice,Melvin Bard,0.08,0.04,FRA,0.11,51
+FRA-Ligue 1,2526,Nice,Mohamed Ali Cho,0.22,0.16,FRA,0.38,35
+FRA-Ligue 1,2526,Nice,Morgan Sanson,0.0,0.1,FRA,0.1,39
+FRA-Ligue 1,2526,Nice,Salis Abdul Samed,0.0,0.0,GHA,0.0,17
+FRA-Ligue 1,2526,Nice,Sofiane Diop,0.34,0.08,MAR,0.42,43
+FRA-Ligue 1,2526,Nice,Terem Moffi,0.37,0.0,NGA,0.37,11
+FRA-Ligue 1,2526,Nice,Tiago Gouveia,0.0,0.0,POR,0.0,17
+FRA-Ligue 1,2526,Nice,Tom Louchet,0.2,0.13,FRA,0.33,28
+FRA-Ligue 1,2526,Nice,Yehvann Diouf,0.0,0.0,SEN,0.0,45
+FRA-Ligue 1,2526,Paris FC,Adama Camara,0.04,0.0,FRA,0.04,34
+FRA-Ligue 1,2526,Paris FC,Alimami Gory,0.46,0.09,MLI,0.55,20
+FRA-Ligue 1,2526,Paris FC,Ciro Immobile,0.26,0.26,ITA,0.51,10
+FRA-Ligue 1,2526,Paris FC,Diego Coppola,0.0,0.15,ITA,0.15,16
+FRA-Ligue 1,2526,Paris FC,Hamari Traoré,0.0,0.08,MLI,0.08,17
+FRA-Ligue 1,2526,Paris FC,Ilan Kebbal,0.36,0.16,ALG,0.53,38
+FRA-Ligue 1,2526,Paris FC,Jean-Philippe Krasso,0.16,0.16,CIV,0.33,17
+FRA-Ligue 1,2526,Paris FC,Jonathan Ikone,0.25,0.08,FRA,0.33,11
+FRA-Ligue 1,2526,Paris FC,Kevin Trapp,0.0,0.0,GER,0.0,29
+FRA-Ligue 1,2526,Paris FC,Luca Koleosho,0.49,0.16,ITA,0.65,9
+FRA-Ligue 1,2526,Paris FC,Marshall Munetsi,0.37,0.09,ZIM,0.46,10
+FRA-Ligue 1,2526,Paris FC,Maxime Lopez,0.0,0.14,FRA,0.14,36
+FRA-Ligue 1,2526,Paris FC,Moses Simon,0.13,0.13,NGA,0.27,30
+FRA-Ligue 1,2526,Paris FC,Moustapha Mbow,0.0,0.03,SEN,0.03,43
+FRA-Ligue 1,2526,Paris FC,Nhoa Sangui,0.0,0.0,FRA,0.0,29
+FRA-Ligue 1,2526,Paris FC,Obed Nkambadio,0.0,0.0,FRA,0.0,21
+FRA-Ligue 1,2526,Paris FC,Otavio Ataide,0.05,0.0,BRA,0.05,31
+FRA-Ligue 1,2526,Paris FC,Pierre Lees-Melou,0.05,0.15,FRA,0.2,26
+FRA-Ligue 1,2526,Paris FC,Rudy Matondo,0.24,0.0,FRA,0.24,9
+FRA-Ligue 1,2526,Paris FC,Samir Chergui,0.08,0.0,ALG,0.08,23
+FRA-Ligue 1,2526,Paris FC,Thibault De Smet,0.0,0.08,BEL,0.08,22
+FRA-Ligue 1,2526,Paris FC,Timothée Kolodziejczak,0.0,0.0,FRA,0.0,14
+FRA-Ligue 1,2526,Paris FC,Vincent Marchetti,0.22,0.11,FRA,0.33,19
+FRA-Ligue 1,2526,Paris FC,Willem Geubbels,0.44,0.0,FRA,0.44,17
+FRA-Ligue 1,2526,Paris Saint-Germain,Achraf Hakimi,0.13,0.13,MAR,0.26,15
+FRA-Ligue 1,2526,Paris Saint-Germain,Bradley Barcola,0.57,0.05,FRA,0.62,15
+FRA-Ligue 1,2526,Paris Saint-Germain,Dro Fernández,0.13,0.0,ESP,0.13,7
+FRA-Ligue 1,2526,Paris Saint-Germain,Désiré Doué,0.47,0.27,FRA,0.73,14
+FRA-Ligue 1,2526,Paris Saint-Germain,Fabián Ruiz Peña,0.08,0.32,ESP,0.4,12
+FRA-Ligue 1,2526,Paris Saint-Germain,Gonçalo Ramos,0.41,0.07,POR,0.48,13
+FRA-Ligue 1,2526,Paris Saint-Germain,Ibrahim Mbaye,0.27,0.18,SEN,0.45,11
+FRA-Ligue 1,2526,Paris Saint-Germain,Illia Zabarnyi,0.04,0.0,UKR,0.04,25
+FRA-Ligue 1,2526,Paris Saint-Germain,João Neves,0.35,0.07,POR,0.42,14
+FRA-Ligue 1,2526,Paris Saint-Germain,Khvicha Kvaratskhelia,0.49,0.24,GEO,0.73,11
+FRA-Ligue 1,2526,Paris Saint-Germain,Lee Kang-in,0.18,0.24,KOR,0.41,16
+FRA-Ligue 1,2526,Paris Saint-Germain,Lucas Beraldo,0.11,0.06,BRA,0.17,15
+FRA-Ligue 1,2526,Paris Saint-Germain,Lucas Chevalier,0.0,0.0,FRA,0.0,13
+FRA-Ligue 1,2526,Paris Saint-Germain,Lucas Hernández,0.0,0.15,FRA,0.15,13
+FRA-Ligue 1,2526,Paris Saint-Germain,Marquinhos,0.0,0.0,BRA,0.0,6
+FRA-Ligue 1,2526,Paris Saint-Germain,Matvei Safonov,0.0,0.0,RUS,0.0,14
+FRA-Ligue 1,2526,Paris Saint-Germain,Nuno Mendes,0.29,0.36,POR,0.64,12
+FRA-Ligue 1,2526,Paris Saint-Germain,Ousmane Dembélé,0.85,0.59,FRA,1.44,8
+FRA-Ligue 1,2526,Paris Saint-Germain,Senny Mayulu,0.22,0.22,FRA,0.43,15
+FRA-Ligue 1,2526,Paris Saint-Germain,Vitinha,0.04,0.3,POR,0.34,19
+FRA-Ligue 1,2526,Paris Saint-Germain,Warren Zaïre-Emery,0.11,0.15,FRA,0.26,23
+FRA-Ligue 1,2526,Paris Saint-Germain,Willian Pacho,0.0,0.0,ECU,0.0,22
+FRA-Ligue 1,2526,Rennes,Abdelhamid Ait Boudlal,0.13,0.06,MAR,0.19,28
+FRA-Ligue 1,2526,Rennes,Alidu Seidu,0.0,0.08,GHA,0.08,24
+FRA-Ligue 1,2526,Rennes,Anthony Rouault,0.05,0.0,FRA,0.05,23
+FRA-Ligue 1,2526,Rennes,Arnaud Nordin,0.16,0.47,FRA,0.63,4
+FRA-Ligue 1,2526,Rennes,Breel Embolo,0.43,0.14,SUI,0.58,34
+FRA-Ligue 1,2526,Rennes,Brice Samba,0.0,0.0,FRA,0.0,44
+FRA-Ligue 1,2526,Rennes,Djaoui Cissé,0.0,0.0,FRA,0.0,14
+FRA-Ligue 1,2526,Rennes,Esteban Lepaul,0.72,0.18,FRA,0.9,38
+FRA-Ligue 1,2526,Rennes,Jérémy Jacquet,0.0,0.0,FRA,0.0,29
+FRA-Ligue 1,2526,Rennes,Kader Meïté,0.5,0.34,FRA,0.84,5
+FRA-Ligue 1,2526,Rennes,Lilian Brassier,0.0,0.04,FRA,0.04,35
+FRA-Ligue 1,2526,Rennes,Ludovic Blas,0.29,0.23,FRA,0.52,30
+FRA-Ligue 1,2526,Rennes,Mahamadou Nagida,0.0,0.0,CMR,0.0,14
+FRA-Ligue 1,2526,Rennes,Mahdi Camara,0.1,0.03,FRA,0.14,41
+FRA-Ligue 1,2526,Rennes,Musa Al-Taamari,0.24,0.24,JOR,0.49,32
+FRA-Ligue 1,2526,Rennes,Przemysław Frankowski,0.07,0.15,POL,0.22,16
+FRA-Ligue 1,2526,Rennes,Quentin Merlin,0.04,0.18,FRA,0.21,43
+FRA-Ligue 1,2526,Rennes,Sebastian Szymański,0.12,0.35,POL,0.46,12
+FRA-Ligue 1,2526,Rennes,Seko Fofana,0.14,0.0,CIV,0.14,12
+FRA-Ligue 1,2526,Rennes,Valentin Rongier,0.07,0.16,FRA,0.23,44
+FRA-Ligue 1,2526,Strasbourg,Abdoul Ouattara,0.1,0.0,FRA,0.1,27
+FRA-Ligue 1,2526,Strasbourg,Andrew Omobamidele,0.07,0.0,IRL,0.07,21
+FRA-Ligue 1,2526,Strasbourg,Ben Chilwell,0.0,0.11,ENG,0.11,24
+FRA-Ligue 1,2526,Strasbourg,Diego Moreira,0.18,0.27,BEL,0.44,31
+FRA-Ligue 1,2526,Strasbourg,Félix Lemaréchal,0.0,0.32,FRA,0.32,6
+FRA-Ligue 1,2526,Strasbourg,Gessime Yassine,0.0,0.18,MAR,0.18,9
+FRA-Ligue 1,2526,Strasbourg,Guela Doué,0.09,0.26,CIV,0.35,32
+FRA-Ligue 1,2526,Strasbourg,Ismaël Doukouré,0.0,0.09,FRA,0.09,31
+FRA-Ligue 1,2526,Strasbourg,Joaquín Panichelli,0.66,0.04,ARG,0.7,29
+FRA-Ligue 1,2526,Strasbourg,Julio Enciso,0.14,0.29,PAR,0.43,30
+FRA-Ligue 1,2526,Strasbourg,Lucas Høgsberg,0.0,0.0,DEN,0.0,31
+FRA-Ligue 1,2526,Strasbourg,Mamadou Sarr,0.0,0.0,SEN,0.0,16
+FRA-Ligue 1,2526,Strasbourg,Martial Godo,0.57,0.06,CIV,0.62,23
+FRA-Ligue 1,2526,Strasbourg,Mike Penders,0.0,0.0,BEL,0.0,47
+FRA-Ligue 1,2526,Strasbourg,Rafael Gonçalves,0.0,0.15,POR,0.15,13
+FRA-Ligue 1,2526,Strasbourg,Samir El Mourabet,0.04,0.08,MAR,0.13,28
+FRA-Ligue 1,2526,Strasbourg,Samuel Amo-Ameyaw,0.17,0.17,ENG,0.34,18
+FRA-Ligue 1,2526,Strasbourg,Sebastian Nanasi,0.6,0.17,SWE,0.77,17
+FRA-Ligue 1,2526,Strasbourg,Valentín Barco,0.08,0.17,ARG,0.25,33
+FRA-Ligue 1,2526,Toulouse,Alexis Vossah,0.08,0.08,FRA,0.16,15
+FRA-Ligue 1,2526,Toulouse,Aron Dønnum,0.15,0.15,NOR,0.3,37
+FRA-Ligue 1,2526,Toulouse,Charlie Cresswell,0.11,0.07,ENG,0.18,35
+FRA-Ligue 1,2526,Toulouse,Cristian Cásseres Jr.,0.07,0.1,VEN,0.17,38
+FRA-Ligue 1,2526,Toulouse,Dayann Methalie,0.09,0.05,FRA,0.14,29
+FRA-Ligue 1,2526,Toulouse,Djibril Sidibé,0.12,0.16,FRA,0.28,34
+FRA-Ligue 1,2526,Toulouse,Emersonn,0.34,0.11,BRA,0.45,18
+FRA-Ligue 1,2526,Toulouse,Francis Abu,0.0,0.0,GHA,0.0,7
+FRA-Ligue 1,2526,Toulouse,Frank Magri,0.36,0.07,CMR,0.43,17
+FRA-Ligue 1,2526,Toulouse,Guillaume Restes,0.0,0.0,FRA,0.0,45
+FRA-Ligue 1,2526,Toulouse,Jacen Russell-Rowe,0.19,0.0,CAN,0.19,10
+FRA-Ligue 1,2526,Toulouse,Mario Sauer,0.14,0.0,SVK,0.14,16
+FRA-Ligue 1,2526,Toulouse,Mark McKenzie,0.0,0.07,USA,0.07,38
+FRA-Ligue 1,2526,Toulouse,Pape Demba Diop,0.07,0.14,SEN,0.21,21
+FRA-Ligue 1,2526,Toulouse,Rafik Messali,0.0,0.0,FRA,0.0,2
+FRA-Ligue 1,2526,Toulouse,Rasmus Nicolaisen,0.03,0.0,DEN,0.03,41
+FRA-Ligue 1,2526,Toulouse,Santiago Hidalgo,0.26,0.39,ARG,0.64,15
+FRA-Ligue 1,2526,Toulouse,Seny Koumbassa,0.17,0.0,FRA,0.17,12
+FRA-Ligue 1,2526,Toulouse,Warren Kamanzi,0.1,0.1,NOR,0.21,20
+FRA-Ligue 1,2526,Toulouse,Yann Gboho,0.27,0.1,FRA,0.37,37
+ITA-Serie A,2526,Atalanta,Ademola Lookman,0.23,0.0,NGA,0.23,13
+ITA-Serie A,2526,Atalanta,Berat Djimsiti,0.0,0.0,ALB,0.0,25
+ITA-Serie A,2526,Atalanta,Charles De Ketelaere,0.12,0.21,BEL,0.33,20
+ITA-Serie A,2526,Atalanta,Davide Zappacosta,0.11,0.11,ITA,0.21,24
+ITA-Serie A,2526,Atalanta,Giacomo Raspadori,0.34,0.11,ITA,0.45,8
+ITA-Serie A,2526,Atalanta,Gianluca Scamacca,0.68,0.07,ITA,0.75,14
+ITA-Serie A,2526,Atalanta,Giorgio Scalvini,0.15,0.05,ITA,0.2,15
+ITA-Serie A,2526,Atalanta,Honest Ahanor,0.0,0.0,ITA,0.0,15
+ITA-Serie A,2526,Atalanta,Isak Hien,0.05,0.0,SWE,0.05,24
+ITA-Serie A,2526,Atalanta,Kamaldeen Sulemana,0.18,0.09,GHA,0.27,12
+ITA-Serie A,2526,Atalanta,Lazar Samardzic,0.17,0.09,SRB,0.26,14
+ITA-Serie A,2526,Atalanta,Lorenzo Bernasconi,0.0,0.17,ITA,0.17,9
+ITA-Serie A,2526,Atalanta,Marco Carnesecchi,0.0,0.0,ITA,0.0,35
+ITA-Serie A,2526,Atalanta,Mario Pašalić,0.14,0.19,CRO,0.33,28
+ITA-Serie A,2526,Atalanta,Marten de Roon,0.03,0.07,NED,0.1,27
+ITA-Serie A,2526,Atalanta,Nicola Zalewski,0.09,0.19,POL,0.28,13
+ITA-Serie A,2526,Atalanta,Nikola Krstović,0.5,0.25,MNE,0.75,16
+ITA-Serie A,2526,Atalanta,Odilon Kossounou,0.09,0.0,CIV,0.09,11
+ITA-Serie A,2526,Atalanta,Raoul Bellanova,0.0,0.07,ITA,0.07,26
+ITA-Serie A,2526,Atalanta,Sead Kolašinac,0.0,0.0,BIH,0.0,16
+ITA-Serie A,2526,Atalanta,Yunus Musah,0.16,0.0,USA,0.16,9
+ITA-Serie A,2526,Atalanta,Éderson,0.08,0.04,BRA,0.12,18
+ITA-Serie A,2526,Bologna,Babis Lykogiannis,0.0,0.14,GRE,0.14,8
+ITA-Serie A,2526,Bologna,Benjamín Domínguez,0.0,0.49,ARG,0.49,6
+ITA-Serie A,2526,Bologna,Eivind Helland,0.0,0.0,NOR,0.0,8
+ITA-Serie A,2526,Bologna,Emil Holm,0.14,0.55,SWE,0.69,9
+ITA-Serie A,2526,Bologna,Federico Bernardeschi,0.3,0.15,ITA,0.44,10
+ITA-Serie A,2526,Bologna,Federico Ravaglia,0.0,0.0,ITA,0.0,29
+ITA-Serie A,2526,Bologna,Giovanni Fabbian,0.26,0.0,ITA,0.26,7
+ITA-Serie A,2526,Bologna,Jens Odgaard,0.33,0.07,DEN,0.39,21
+ITA-Serie A,2526,Bologna,Jhon Lucumí,0.04,0.0,COL,0.04,28
+ITA-Serie A,2526,Bologna,Jonathan Rowe,0.17,0.11,ENG,0.28,20
+ITA-Serie A,2526,Bologna,João Mário Lopes,0.12,0.0,POR,0.12,7
+ITA-Serie A,2526,Bologna,Juan Miranda,0.03,0.1,ESP,0.14,36
+ITA-Serie A,2526,Bologna,Lewis Ferguson,0.06,0.0,SCO,0.06,28
+ITA-Serie A,2526,Bologna,Lorenzo De Silvestri,0.0,0.0,ITA,0.0,4
+ITA-Serie A,2526,Bologna,Martin Vitík,0.0,0.0,CZE,0.0,18
+ITA-Serie A,2526,Bologna,Nadir Zortea,0.0,0.1,ITA,0.1,27
+ITA-Serie A,2526,Bologna,Nicolò Cambiaghi,0.18,0.24,ITA,0.42,19
+ITA-Serie A,2526,Bologna,Nicolò Casale,0.0,0.0,ITA,0.0,13
+ITA-Serie A,2526,Bologna,Nikola Moro,0.1,0.0,CRO,0.1,17
+ITA-Serie A,2526,Bologna,Remo Freuler,0.04,0.08,SUI,0.12,29
+ITA-Serie A,2526,Bologna,Riccardo Orsolini,0.43,0.04,ITA,0.47,31
+ITA-Serie A,2526,Bologna,Santiago Castro,0.27,0.08,ARG,0.34,34
+ITA-Serie A,2526,Bologna,Simon Sohm,0.0,0.0,SUI,0.0,7
+ITA-Serie A,2526,Bologna,Thijs Dallinga,0.22,0.22,NED,0.44,10
+ITA-Serie A,2526,Bologna,Tommaso Pobega,0.19,0.06,ITA,0.25,21
+ITA-Serie A,2526,Bologna,Torbjørn Heggem,0.0,0.0,NOR,0.0,31
+ITA-Serie A,2526,Bologna,Łukasz Skorupski,0.0,0.0,POL,0.0,15
+ITA-Serie A,2526,Cagliari,Adam Obert,0.0,0.1,SVK,0.1,40
+ITA-Serie A,2526,Cagliari,Alberto Dossena,0.0,0.1,ITA,0.1,12
+ITA-Serie A,2526,Cagliari,Alessandro Deiola,0.0,0.13,ITA,0.13,21
+ITA-Serie A,2526,Cagliari,Elia Caprile,0.0,0.0,ITA,0.0,53
+ITA-Serie A,2526,Cagliari,Gabriele Zappa,0.0,0.17,ITA,0.17,27
+ITA-Serie A,2526,Cagliari,Gennaro Borrelli,0.35,0.07,ITA,0.42,25
+ITA-Serie A,2526,Cagliari,Gianluca Gaetano,0.09,0.19,ITA,0.28,30
+ITA-Serie A,2526,Cagliari,Ibrahim Sulemana,0.1,0.0,GHA,0.1,15
+ITA-Serie A,2526,Cagliari,Juan Rodríguez,0.07,0.0,URU,0.07,23
+ITA-Serie A,2526,Cagliari,Luca Mazzitelli,0.23,0.23,ITA,0.47,9
+ITA-Serie A,2526,Cagliari,Marco Palestra,0.03,0.12,ITA,0.15,46
+ITA-Serie A,2526,Cagliari,Matteo Prati,0.07,0.0,ITA,0.07,20
+ITA-Serie A,2526,Cagliari,Michael Folorunsho,0.09,0.0,ITA,0.09,30
+ITA-Serie A,2526,Cagliari,Michel Ndary Adopo,0.03,0.06,FRA,0.09,46
+ITA-Serie A,2526,Cagliari,Riyad Idrissi,0.23,0.0,ITA,0.23,15
+ITA-Serie A,2526,Cagliari,Sebastiano Esposito,0.24,0.17,ITA,0.4,37
+ITA-Serie A,2526,Cagliari,Sebastiano Luperto,0.05,0.0,ITA,0.05,24
+ITA-Serie A,2526,Cagliari,Semih Kılıçsoy,0.37,0.0,TUR,0.37,15
+ITA-Serie A,2526,Cagliari,Yerry Mina,0.08,0.0,COL,0.08,29
+ITA-Serie A,2526,Cagliari,Zé Pedro Figueiredo,0.0,0.05,POR,0.05,26
+ITA-Serie A,2526,Como,Alberto Moreno,0.15,0.07,ESP,0.22,9
+ITA-Serie A,2526,Como,Anastasios Douvikas,0.55,0.04,GRE,0.59,20
+ITA-Serie A,2526,Como,Assane Diao,0.17,0.08,SEN,0.25,11
+ITA-Serie A,2526,Como,Diego Carlos,0.05,0.0,BRA,0.05,15
+ITA-Serie A,2526,Como,Ignace Van Der Brempt,0.0,0.1,BEL,0.1,10
+ITA-Serie A,2526,Como,Ivan Smolčić,0.0,0.05,CRO,0.05,10
+ITA-Serie A,2526,Como,Jacobo Ramón,0.07,0.0,ESP,0.07,24
+ITA-Serie A,2526,Como,Jayden Addai,0.39,0.0,NED,0.39,6
+ITA-Serie A,2526,Como,Jean Butez,0.0,0.03,FRA,0.03,29
+ITA-Serie A,2526,Como,Jesus Rodríguez,0.1,0.47,ESP,0.57,12
+ITA-Serie A,2526,Como,Lucas Da Cunha,0.2,0.13,FRA,0.33,24
+ITA-Serie A,2526,Como,Marc-Oliver Kempf,0.15,0.04,GER,0.19,20
+ITA-Serie A,2526,Como,Martin Baturina,0.34,0.17,CRO,0.52,17
+ITA-Serie A,2526,Como,Maxence Caqueret,0.12,0.36,FRA,0.48,10
+ITA-Serie A,2526,Como,Máximo Perrone,0.1,0.13,ARG,0.23,21
+ITA-Serie A,2526,Como,Mërgim Vojvoda,0.11,0.11,KVX,0.23,14
+ITA-Serie A,2526,Como,Nicolas-Gerrit Kühn,0.14,0.14,GER,0.27,6
+ITA-Serie A,2526,Como,Nicolás Paz,0.38,0.19,ARG,0.56,27
+ITA-Serie A,2526,Como,Sergi Roberto,0.0,0.0,ESP,0.0,7
+ITA-Serie A,2526,Como,Álex Valle,0.04,0.18,ESP,0.22,17
+ITA-Serie A,2526,Como,Álvaro Morata,0.0,0.1,ESP,0.1,6
+ITA-Serie A,2526,Cremonese,Alberto Grassi,0.0,0.0,ITA,0.0,31
+ITA-Serie A,2526,Cremonese,Alessio Zerbin,0.0,0.16,ITA,0.16,24
+ITA-Serie A,2526,Cremonese,Antonio Sanabria,0.1,0.1,PAR,0.19,12
+ITA-Serie A,2526,Cremonese,Emil Audero,0.0,0.0,IDN,0.0,50
+ITA-Serie A,2526,Cremonese,Federico Baschirotto,0.07,0.0,ITA,0.07,38
+ITA-Serie A,2526,Cremonese,Federico Bonazzoli,0.36,0.04,ITA,0.39,45
+ITA-Serie A,2526,Cremonese,Federico Ceccherini,0.0,0.19,ITA,0.19,13
+ITA-Serie A,2526,Cremonese,Filippo Terracciano,0.06,0.0,ITA,0.06,45
+ITA-Serie A,2526,Cremonese,Francesco Folino,0.12,0.0,ITA,0.12,15
+ITA-Serie A,2526,Cremonese,Franco Vázquez,0.17,0.17,ARG,0.34,11
+ITA-Serie A,2526,Cremonese,Giuseppe Pezzella,0.0,0.03,ITA,0.03,47
+ITA-Serie A,2526,Cremonese,Jamie Vardy,0.3,0.09,ENG,0.38,32
+ITA-Serie A,2526,Cremonese,Jari Vandeputte,0.05,0.23,BEL,0.28,28
+ITA-Serie A,2526,Cremonese,Martín Payero,0.06,0.0,ARG,0.06,17
+ITA-Serie A,2526,Cremonese,Matteo Bianchetti,0.0,0.08,ITA,0.08,37
+ITA-Serie A,2526,Cremonese,Morten Thorsby,0.14,0.0,NOR,0.14,12
+ITA-Serie A,2526,Cremonese,Romano Floriani,0.0,0.08,ITA,0.08,23
+ITA-Serie A,2526,Cremonese,Sebastiano Luperto,0.0,0.07,ITA,0.07,26
+ITA-Serie A,2526,Cremonese,Tommaso Barbieri,0.0,0.05,ITA,0.05,25
+ITA-Serie A,2526,Cremonese,Warren Bondo,0.0,0.0,FRA,0.0,30
+ITA-Serie A,2526,Cremonese,Youssef Maleh,0.08,0.0,MAR,0.08,22
+ITA-Serie A,2526,Fiorentina,Albert Guðmundsson,0.2,0.16,ISL,0.36,28
+ITA-Serie A,2526,Fiorentina,Cher Ndour,0.14,0.0,ITA,0.14,22
+ITA-Serie A,2526,Fiorentina,David de Gea,0.0,0.0,ESP,0.0,49
+ITA-Serie A,2526,Fiorentina,Dodô,0.03,0.06,BRA,0.09,46
+ITA-Serie A,2526,Fiorentina,Fabiano Parisi,0.06,0.06,ITA,0.12,21
+ITA-Serie A,2526,Fiorentina,Giovanni Fabbian,0.0,0.0,ITA,0.0,5
+ITA-Serie A,2526,Fiorentina,Hans Nicolussi Caviglia,0.0,0.15,ITA,0.15,12
+ITA-Serie A,2526,Fiorentina,Jack Harrison,0.09,0.28,ENG,0.37,10
+ITA-Serie A,2526,Fiorentina,Jacopo Fazzini,0.0,0.0,ITA,0.0,8
+ITA-Serie A,2526,Fiorentina,Luca Ranieri,0.04,0.0,ITA,0.04,34
+ITA-Serie A,2526,Fiorentina,Manor Solomon,0.2,0.1,ISR,0.3,15
+ITA-Serie A,2526,Fiorentina,Marco Brescianini,0.1,0.1,ITA,0.21,13
+ITA-Serie A,2526,Fiorentina,Marin Pongračić,0.0,0.0,CRO,0.0,41
+ITA-Serie A,2526,Fiorentina,Moise Kean,0.35,0.04,ITA,0.4,32
+ITA-Serie A,2526,Fiorentina,Niccolò Fortini,0.0,0.0,ITA,0.0,12
+ITA-Serie A,2526,Fiorentina,Nicolò Fagioli,0.07,0.11,ITA,0.18,42
+ITA-Serie A,2526,Fiorentina,Pablo Marí,0.0,0.0,ESP,0.0,19
+ITA-Serie A,2526,Fiorentina,Pietro Comuzzo,0.05,0.0,ITA,0.05,28
+ITA-Serie A,2526,Fiorentina,Roberto Piccoli,0.22,0.05,ITA,0.27,20
+ITA-Serie A,2526,Fiorentina,Robin Gosens,0.14,0.05,GER,0.19,24
+ITA-Serie A,2526,Fiorentina,Rolando Mandragora,0.26,0.11,ITA,0.37,33
+ITA-Serie A,2526,Fiorentina,Simon Sohm,0.0,0.13,SUI,0.13,15
+ITA-Serie A,2526,Genoa,Aarón Martín,0.04,0.21,ESP,0.25,37
+ITA-Serie A,2526,Genoa,Alessandro Marcandalli,0.0,0.07,ITA,0.07,36
+ITA-Serie A,2526,Genoa,Amorim,0.0,0.0,BRA,0.0,8
+ITA-Serie A,2526,Genoa,Brooke Norton-Cuffy,0.08,0.04,ENG,0.12,38
+ITA-Serie A,2526,Genoa,Caleb Ekuban,0.36,0.09,GHA,0.45,15
+ITA-Serie A,2526,Genoa,Jeff Ekhator,0.28,0.0,ITA,0.28,15
+ITA-Serie A,2526,Genoa,Johan Vásquez,0.03,0.0,MEX,0.03,49
+ITA-Serie A,2526,Genoa,Junior Messias,0.39,0.13,BRA,0.53,7
+ITA-Serie A,2526,Genoa,Justin Bijlow,0.0,0.0,NED,0.0,20
+ITA-Serie A,2526,Genoa,Leo Skiri Østigård,0.17,0.03,NOR,0.21,38
+ITA-Serie A,2526,Genoa,Lorenzo Colombo,0.27,0.04,ITA,0.31,32
+ITA-Serie A,2526,Genoa,Mikael Ellertsson,0.03,0.03,ISL,0.07,43
+ITA-Serie A,2526,Genoa,Morten Frendrup,0.03,0.0,DEN,0.03,45
+ITA-Serie A,2526,Genoa,Morten Thorsby,0.25,0.12,NOR,0.37,13
+ITA-Serie A,2526,Genoa,Nicola Leali,0.0,0.0,ITA,0.0,27
+ITA-Serie A,2526,Genoa,Patrizio Masini,0.0,0.06,ITA,0.06,22
+ITA-Serie A,2526,Genoa,Ruslan Malinovskyi,0.24,0.12,UKR,0.36,32
+ITA-Serie A,2526,Genoa,Sebastian Otoa,0.0,0.0,DEN,0.0,17
+ITA-Serie A,2526,Genoa,Stefano Sabelli,0.0,0.0,ITA,0.0,10
+ITA-Serie A,2526,Genoa,Vitinha,0.2,0.04,POR,0.24,34
+ITA-Serie A,2526,Hellas Verona,Abdou Harroui,0.1,0.0,NED,0.1,21
+ITA-Serie A,2526,Hellas Verona,Al-Musrati,0.0,0.11,LBY,0.11,19
+ITA-Serie A,2526,Hellas Verona,Amin Sarr,0.0,0.08,SWE,0.08,33
+ITA-Serie A,2526,Hellas Verona,Andrias Edmundsson,0.0,0.0,FRO,0.0,20
+ITA-Serie A,2526,Hellas Verona,Antoine Bernede,0.04,0.08,FRA,0.12,38
+ITA-Serie A,2526,Hellas Verona,Armel Bella Kotchap,0.0,0.0,GER,0.0,27
+ITA-Serie A,2526,Hellas Verona,Cheikh Niasse,0.0,0.09,SEN,0.09,20
+ITA-Serie A,2526,Hellas Verona,Daniel Mosquera,0.0,0.3,COL,0.3,12
+ITA-Serie A,2526,Hellas Verona,Daniel Oyegoke,0.0,0.0,ENG,0.0,8
+ITA-Serie A,2526,Hellas Verona,Domagoj Bradarić,0.0,0.05,CRO,0.05,39
+ITA-Serie A,2526,Hellas Verona,Gift Orban,0.31,0.09,NGA,0.4,33
+ITA-Serie A,2526,Hellas Verona,Giovane,0.18,0.23,BRA,0.41,23
+ITA-Serie A,2526,Hellas Verona,Jean-Daniel Akpa-Akpro,0.06,0.0,CIV,0.06,19
+ITA-Serie A,2526,Hellas Verona,Kieron Bowie,0.3,0.0,SCO,0.3,18
+ITA-Serie A,2526,Hellas Verona,Lorenzo Montipò,0.0,0.03,ITA,0.03,54
+ITA-Serie A,2526,Hellas Verona,Martin Frese,0.07,0.0,DEN,0.07,40
+ITA-Serie A,2526,Hellas Verona,Nicolás Valentini,0.0,0.0,ARG,0.0,22
+ITA-Serie A,2526,Hellas Verona,Rafik Belghali,0.09,0.0,ALG,0.09,28
+ITA-Serie A,2526,Hellas Verona,Roberto Gagliardini,0.04,0.0,ITA,0.04,36
+ITA-Serie A,2526,Hellas Verona,Suat Serdar,0.16,0.0,GER,0.16,24
+ITA-Serie A,2526,Hellas Verona,Unai Núñez,0.0,0.0,ESP,0.0,26
+ITA-Serie A,2526,Hellas Verona,Victor Nelsson,0.0,0.0,DEN,0.0,59
+ITA-Serie A,2526,Inter,Alessandro Bastoni,0.04,0.16,ITA,0.2,21
+ITA-Serie A,2526,Inter,Andy Diouf,0.18,0.0,FRA,0.18,5
+ITA-Serie A,2526,Inter,Ange-Yoan Bonny,0.39,0.32,FRA,0.71,11
+ITA-Serie A,2526,Inter,Carlos Augusto,0.05,0.05,BRA,0.1,19
+ITA-Serie A,2526,Inter,Davide Frattesi,0.0,0.0,ITA,0.0,4
+ITA-Serie A,2526,Inter,Denzel Dumfries,0.2,0.07,NED,0.27,14
+ITA-Serie A,2526,Inter,Federico Dimarco,0.23,0.53,ITA,0.77,27
+ITA-Serie A,2526,Inter,Francesco Acerbi,0.0,0.07,ITA,0.07,18
+ITA-Serie A,2526,Inter,Francesco Esposito,0.4,0.17,ITA,0.57,18
+ITA-Serie A,2526,Inter,Hakan Çalhanoğlu,0.49,0.22,TUR,0.71,16
+ITA-Serie A,2526,Inter,Henrikh Mkhitaryan,0.23,0.06,ARM,0.29,12
+ITA-Serie A,2526,Inter,Lautaro Martínez,0.71,0.25,ARG,0.96,21
+ITA-Serie A,2526,Inter,Luis Henrique,0.06,0.11,BRA,0.17,14
+ITA-Serie A,2526,Inter,Manuel Akanji,0.06,0.0,SUI,0.06,26
+ITA-Serie A,2526,Inter,Marcus Thuram,0.62,0.28,FRA,0.9,19
+ITA-Serie A,2526,Inter,Nicolò Barella,0.11,0.29,ITA,0.39,25
+ITA-Serie A,2526,Inter,Petar Sučić,0.1,0.1,CRO,0.2,21
+ITA-Serie A,2526,Inter,Piotr Zieliński,0.26,0.13,POL,0.4,26
+ITA-Serie A,2526,Inter,Stefan de Vrij,0.0,0.0,NED,0.0,8
+ITA-Serie A,2526,Inter,Yann Aurel Bisseck,0.14,0.05,GER,0.19,19
+ITA-Serie A,2526,Inter,Yann Sommer,0.0,0.0,SUI,0.0,30
+ITA-Serie A,2526,Juventus,Andrea Cambiaso,0.1,0.13,ITA,0.23,26
+ITA-Serie A,2526,Juventus,Dušan Vlahović,0.65,0.09,SRB,0.74,12
+ITA-Serie A,2526,Juventus,Fabio Miretti,0.15,0.29,ITA,0.44,6
+ITA-Serie A,2526,Juventus,Federico Gatti,0.16,0.0,ITA,0.16,13
+ITA-Serie A,2526,Juventus,Filip Kostić,0.56,0.19,SRB,0.75,4
+ITA-Serie A,2526,Juventus,Francisco Conceição,0.13,0.22,POR,0.35,18
+ITA-Serie A,2526,Juventus,Gleison Bremer,0.17,0.12,BRA,0.29,19
+ITA-Serie A,2526,Juventus,Jeremie Boga,0.53,0.0,CIV,0.53,6
+ITA-Serie A,2526,Juventus,Jonathan David,0.3,0.2,CAN,0.51,14
+ITA-Serie A,2526,Juventus,Kenan Yıldız,0.32,0.19,TUR,0.51,26
+ITA-Serie A,2526,Juventus,Khéphren Thuram,0.11,0.11,FRA,0.22,25
+ITA-Serie A,2526,Juventus,Lloyd Kelly,0.03,0.03,ENG,0.06,30
+ITA-Serie A,2526,Juventus,Loïs Openda,0.14,0.0,BEL,0.14,8
+ITA-Serie A,2526,Juventus,Manuel Locatelli,0.03,0.06,ITA,0.09,28
+ITA-Serie A,2526,Juventus,Mattia Perin,0.0,0.0,ITA,0.0,9
+ITA-Serie A,2526,Juventus,Michele Di Gregorio,0.0,0.0,ITA,0.0,25
+ITA-Serie A,2526,Juventus,Pierre Kalulu,0.05,0.11,FRA,0.16,30
+ITA-Serie A,2526,Juventus,Teun Koopmeiners,0.0,0.0,NED,0.0,22
+ITA-Serie A,2526,Juventus,Weston McKennie,0.16,0.16,USA,0.32,31
+ITA-Serie A,2526,Lazio,Adam Marušić,0.03,0.06,MNE,0.1,30
+ITA-Serie A,2526,Lazio,Alessio Romagnoli,0.0,0.0,ITA,0.0,30
+ITA-Serie A,2526,Lazio,Boulaye Dia,0.07,0.14,SEN,0.22,11
+ITA-Serie A,2526,Lazio,Daniel Maldini,0.26,0.13,ITA,0.39,11
+ITA-Serie A,2526,Lazio,Danilo Cataldi,0.14,0.14,ITA,0.27,26
+ITA-Serie A,2526,Lazio,Edoardo Motta,0.0,0.0,ITA,0.0,10
+ITA-Serie A,2526,Lazio,Fisayo Dele-Bashiru,0.08,0.0,NGA,0.08,16
+ITA-Serie A,2526,Lazio,Gustav Isaksen,0.28,0.06,DEN,0.34,19
+ITA-Serie A,2526,Lazio,Ivan Provedel,0.0,0.0,ITA,0.0,27
+ITA-Serie A,2526,Lazio,Kenneth Taylor,0.19,0.13,NED,0.32,17
+ITA-Serie A,2526,Lazio,Luca Pellegrini,0.06,0.0,ITA,0.06,18
+ITA-Serie A,2526,Lazio,Manuel Lazzari,0.0,0.0,ITA,0.0,10
+ITA-Serie A,2526,Lazio,Mario Gila,0.0,0.0,ESP,0.0,28
+ITA-Serie A,2526,Lazio,Matteo Cancellieri,0.21,0.1,ITA,0.31,22
+ITA-Serie A,2526,Lazio,Mattia Zaccagni,0.13,0.0,ITA,0.13,21
+ITA-Serie A,2526,Lazio,Mattéo Guendouzi,0.13,0.06,FRA,0.19,12
+ITA-Serie A,2526,Lazio,Matías Vecino,0.0,0.15,URU,0.15,4
+ITA-Serie A,2526,Lazio,Nicolò Rovella,0.0,0.18,ITA,0.18,6
+ITA-Serie A,2526,Lazio,Nuno Tavares,0.0,0.0,POR,0.0,18
+ITA-Serie A,2526,Lazio,Oliver Nielsen,0.0,0.0,DEN,0.0,19
+ITA-Serie A,2526,Lazio,Patric,0.0,0.0,ESP,0.0,8
+ITA-Serie A,2526,Lazio,Pedro,0.46,0.18,ESP,0.64,13
+ITA-Serie A,2526,Lazio,Reda Belahyane,0.0,0.3,MAR,0.3,10
+ITA-Serie A,2526,Lazio,Tijjani Noslin,0.31,0.16,NED,0.47,14
+ITA-Serie A,2526,Lazio,Toma Bašić,0.1,0.16,CRO,0.26,20
+ITA-Serie A,2526,Lazio,Valentín Castellanos,0.26,0.39,ARG,0.65,7
+ITA-Serie A,2526,Lecce,Antonino Gallo,0.0,0.12,ITA,0.12,43
+ITA-Serie A,2526,Lecce,Corrie Ndaba,0.0,0.0,IRL,0.0,12
+ITA-Serie A,2526,Lecce,Danilo Veiga,0.0,0.03,POR,0.03,42
+ITA-Serie A,2526,Lecce,Francesco Camarda,0.13,0.0,ITA,0.13,10
+ITA-Serie A,2526,Lecce,Jamil Siebert,0.05,0.0,GER,0.05,29
+ITA-Serie A,2526,Lecce,Kialonda,0.0,0.0,ANG,0.0,25
+ITA-Serie A,2526,Lecce,Konan N'dri,0.33,0.0,CIV,0.33,14
+ITA-Serie A,2526,Lecce,Lameck Banda,0.26,0.21,ZAM,0.46,22
+ITA-Serie A,2526,Lecce,Lassana Coulibaly,0.1,0.03,MLI,0.13,34
+ITA-Serie A,2526,Lecce,Medon Berisha,0.21,0.31,ALB,0.52,10
+ITA-Serie A,2526,Lecce,Mohamed Kaba,0.0,0.0,GUI,0.0,12
+ITA-Serie A,2526,Lecce,Nikola Štulić,0.21,0.0,SRB,0.21,22
+ITA-Serie A,2526,Lecce,Omri Gandelman,0.18,0.09,ISR,0.28,12
+ITA-Serie A,2526,Lecce,Oumar Ngom,0.0,0.0,MTN,0.0,15
+ITA-Serie A,2526,Lecce,Riccardo Sottil,0.08,0.17,ITA,0.25,14
+ITA-Serie A,2526,Lecce,Santiago Pierotti,0.03,0.07,ARG,0.1,34
+ITA-Serie A,2526,Lecce,Tete Morente,0.0,0.0,ESP,0.0,14
+ITA-Serie A,2526,Lecce,Tiago Gabriel,0.06,0.0,POR,0.06,46
+ITA-Serie A,2526,Lecce,Walid Cheddira,0.27,0.09,MAR,0.36,16
+ITA-Serie A,2526,Lecce,Wladimiro Falcone,0.0,0.0,ITA,0.0,50
+ITA-Serie A,2526,Lecce,Ylber Ramadani,0.03,0.0,ALB,0.03,45
+ITA-Serie A,2526,Lecce,Youssef Maleh,0.0,0.0,MAR,0.0,9
+ITA-Serie A,2526,Milan,Adrien Rabiot,0.21,0.14,FRA,0.35,25
+ITA-Serie A,2526,Milan,Alexis Saelemaekers,0.1,0.1,BEL,0.19,30
+ITA-Serie A,2526,Milan,Ardon Jashari,0.0,0.13,SUI,0.13,7
+ITA-Serie A,2526,Milan,Christian Pulisic,0.45,0.22,USA,0.67,14
+ITA-Serie A,2526,Milan,Christopher Nkunku,0.46,0.2,FRA,0.66,13
+ITA-Serie A,2526,Milan,Davide Bartesaghi,0.07,0.0,ITA,0.07,27
+ITA-Serie A,2526,Milan,Fikayo Tomori,0.0,0.07,ENG,0.07,21
+ITA-Serie A,2526,Milan,Koni De Winter,0.05,0.05,BEL,0.1,21
+ITA-Serie A,2526,Milan,Luka Modrić,0.06,0.1,CRO,0.16,26
+ITA-Serie A,2526,Milan,Matteo Gabbia,0.0,0.0,ITA,0.0,25
+ITA-Serie A,2526,Milan,Mike Maignan,0.0,0.0,FRA,0.0,35
+ITA-Serie A,2526,Milan,Niclas Füllkrug,0.14,0.0,GER,0.14,6
+ITA-Serie A,2526,Milan,Pervis Estupiñán,0.09,0.09,ECU,0.17,6
+ITA-Serie A,2526,Milan,Rafael Leão,0.44,0.15,POR,0.58,22
+ITA-Serie A,2526,Milan,Ruben Loftus-Cheek,0.24,0.08,ENG,0.32,11
+ITA-Serie A,2526,Milan,Samuele Ricci,0.07,0.27,ITA,0.34,17
+ITA-Serie A,2526,Milan,Santiago Giménez,0.0,0.1,MEX,0.1,11
+ITA-Serie A,2526,Milan,Strahinja Pavlović,0.16,0.03,SRB,0.19,33
+ITA-Serie A,2526,Milan,Youssouf Fofana,0.08,0.12,FRA,0.2,21
+ITA-Serie A,2526,Milan,Zachary Athekame,0.22,0.22,SUI,0.43,11
+ITA-Serie A,2526,Napoli,Alessandro Buongiorno,0.0,0.04,ITA,0.04,29
+ITA-Serie A,2526,Napoli,Alex Meret,0.0,0.09,ITA,0.09,12
+ITA-Serie A,2526,Napoli,Alisson Santos,0.43,0.0,BRA,0.43,9
+ITA-Serie A,2526,Napoli,Amir Rrahmani,0.1,0.05,KVX,0.15,15
+ITA-Serie A,2526,Napoli,Andre-Frank Zambo Anguissa,0.29,0.07,CMR,0.36,14
+ITA-Serie A,2526,Napoli,Antonio Vergara,0.15,0.29,ITA,0.44,9
+ITA-Serie A,2526,Napoli,Billy Gilmour,0.11,0.0,SCO,0.11,5
+ITA-Serie A,2526,Napoli,David Neres,0.29,0.29,BRA,0.59,7
+ITA-Serie A,2526,Napoli,Elif Elmas,0.05,0.15,MKD,0.2,22
+ITA-Serie A,2526,Napoli,Giovanni Di Lorenzo,0.08,0.04,ITA,0.12,23
+ITA-Serie A,2526,Napoli,Juan Jesus,0.0,0.0,BRA,0.0,18
+ITA-Serie A,2526,Napoli,Kevin De Bruyne,0.39,0.15,BEL,0.54,8
+ITA-Serie A,2526,Napoli,Leonardo Spinazzola,0.14,0.14,ITA,0.28,20
+ITA-Serie A,2526,Napoli,Mathías Olivera,0.0,0.0,URU,0.0,13
+ITA-Serie A,2526,Napoli,Matteo Politano,0.08,0.2,ITA,0.29,23
+ITA-Serie A,2526,Napoli,Miguel Gutiérrez,0.06,0.06,ESP,0.12,18
+ITA-Serie A,2526,Napoli,Noa Lang,0.14,0.27,NED,0.41,4
+ITA-Serie A,2526,Napoli,Rasmus Højlund,0.39,0.16,DEN,0.56,31
+ITA-Serie A,2526,Napoli,Sam Beukema,0.11,0.0,NED,0.11,19
+ITA-Serie A,2526,Napoli,Scott McTominay,0.32,0.1,SCO,0.42,27
+ITA-Serie A,2526,Napoli,Stanislav Lobotka,0.04,0.04,SVK,0.07,30
+ITA-Serie A,2526,Napoli,Vanja Milinković-Savić,0.0,0.04,SRB,0.04,24
+ITA-Serie A,2526,Parma,Abdoulaye Ndiaye,0.0,0.0,SEN,0.0,10
+ITA-Serie A,2526,Parma,Adrian Benedyczak,0.18,0.18,POL,0.37,7
+ITA-Serie A,2526,Parma,Adrian Bernabe,0.11,0.04,ESP,0.15,33
+ITA-Serie A,2526,Parma,Alessandro Circati,0.03,0.0,AUS,0.03,34
+ITA-Serie A,2526,Parma,Christian Ordoñez,0.08,0.0,ARG,0.08,14
+ITA-Serie A,2526,Parma,Edoardo Corvi,0.0,0.0,ITA,0.0,18
+ITA-Serie A,2526,Parma,Emanuele Valeri,0.0,0.07,ITA,0.07,32
+ITA-Serie A,2526,Parma,Enrico Delprato,0.06,0.0,ITA,0.06,40
+ITA-Serie A,2526,Parma,Gabriel Strefezza,0.18,0.18,BRA,0.36,13
+ITA-Serie A,2526,Parma,Gaetano Oristanio,0.1,0.0,ITA,0.1,13
+ITA-Serie A,2526,Parma,Hans Nicolussi Caviglia,0.0,0.31,ITA,0.31,11
+ITA-Serie A,2526,Parma,Jacob Ondrejka,0.0,0.0,SWE,0.0,14
+ITA-Serie A,2526,Parma,Lautaro Valenti,0.0,0.0,ARG,0.0,31
+ITA-Serie A,2526,Parma,Mandela Keita,0.03,0.03,BEL,0.06,37
+ITA-Serie A,2526,Parma,Mariano Troilo,0.06,0.0,ARG,0.06,26
+ITA-Serie A,2526,Parma,Mateo Pellegrino,0.27,0.03,ARG,0.3,38
+ITA-Serie A,2526,Parma,Mathias Løvik,0.0,0.0,NOR,0.0,8
+ITA-Serie A,2526,Parma,Nahuel Estévez,0.0,0.09,ARG,0.09,11
+ITA-Serie A,2526,Parma,Oliver Jensen,0.05,0.05,DEN,0.1,28
+ITA-Serie A,2526,Parma,Patrick Cutrone,0.1,0.0,ITA,0.1,11
+ITA-Serie A,2526,Parma,Pontus Almqvist,0.0,0.2,SWE,0.2,7
+ITA-Serie A,2526,Parma,Sascha Britschgi,0.0,0.09,SUI,0.09,27
+ITA-Serie A,2526,Parma,Zion Suzuki,0.0,0.0,JPN,0.0,28
+ITA-Serie A,2526,Pisa,Adrian Šemper,0.0,0.0,CRO,0.0,42
+ITA-Serie A,2526,Pisa,Antonio Caracciolo,0.06,0.0,ITA,0.06,60
+ITA-Serie A,2526,Pisa,Arturo Calabresi,0.0,0.0,ITA,0.0,30
+ITA-Serie A,2526,Pisa,Ebenezer Akinsanmiro,0.0,0.06,NGA,0.06,29
+ITA-Serie A,2526,Pisa,Felipe Loyola,0.17,0.0,CHI,0.17,15
+ITA-Serie A,2526,Pisa,Filip Stojilković,0.0,0.0,SUI,0.0,16
+ITA-Serie A,2526,Pisa,Francesco Coppola,0.0,0.0,ITA,0.0,15
+ITA-Serie A,2526,Pisa,Gabriele Piccinini,0.0,0.0,ITA,0.0,20
+ITA-Serie A,2526,Pisa,Giovanni Bonfanti,0.0,0.0,ITA,0.0,11
+ITA-Serie A,2526,Pisa,Henrik Meister,0.12,0.0,DEN,0.12,28
+ITA-Serie A,2526,Pisa,Idrissa Touré,0.04,0.0,GER,0.04,46
+ITA-Serie A,2526,Pisa,Juan Cuadrado,0.18,0.0,COL,0.18,9
+ITA-Serie A,2526,Pisa,M'Bala Nzola,0.26,0.0,ANG,0.26,15
+ITA-Serie A,2526,Pisa,Malthe Hojholt,0.0,0.0,DEN,0.0,23
+ITA-Serie A,2526,Pisa,Marius Marin,0.0,0.0,ROU,0.0,22
+ITA-Serie A,2526,Pisa,Mattéo Tramoni,0.11,0.11,FRA,0.23,35
+ITA-Serie A,2526,Pisa,Mehdi Léris,0.09,0.14,ALG,0.24,42
+ITA-Serie A,2526,Pisa,Michel Aebischer,0.03,0.06,SUI,0.09,49
+ITA-Serie A,2526,Pisa,Nícolas Andrade,0.0,0.0,BRA,0.0,14
+ITA-Serie A,2526,Pisa,Raúl Albiol,0.0,0.18,ESP,0.18,11
+ITA-Serie A,2526,Pisa,Rosen Bozhinov,0.0,0.0,BUL,0.0,10
+ITA-Serie A,2526,Pisa,Samuele Angori,0.0,0.07,ITA,0.07,52
+ITA-Serie A,2526,Pisa,Simone Canestrelli,0.03,0.0,ITA,0.03,65
+ITA-Serie A,2526,Pisa,Simone Scuffet,0.0,0.0,ITA,0.0,15
+ITA-Serie A,2526,Pisa,Stefano Moreo,0.27,0.04,ITA,0.31,51
+ITA-Serie A,2526,Pisa,İsak Vural,0.0,0.0,TUR,0.0,16
+ITA-Serie A,2526,Roma,Bryan Cristante,0.06,0.03,ITA,0.09,26
+ITA-Serie A,2526,Roma,Daniele Ghilardi,0.0,0.0,ITA,0.0,15
+ITA-Serie A,2526,Roma,Devyne Rensch,0.08,0.3,NED,0.38,15
+ITA-Serie A,2526,Roma,Donyell Malen,0.86,0.12,NED,0.98,17
+ITA-Serie A,2526,Roma,Evan Ferguson,0.35,0.23,IRL,0.58,6
+ITA-Serie A,2526,Roma,Gianluca Mancini,0.12,0.06,ITA,0.18,26
+ITA-Serie A,2526,Roma,Jan Ziółkowski,0.0,0.0,POL,0.0,5
+ITA-Serie A,2526,Roma,Kostas Tsimikas,0.0,0.0,GRE,0.0,7
+ITA-Serie A,2526,Roma,Lorenzo Pellegrini,0.25,0.12,ITA,0.37,14
+ITA-Serie A,2526,Roma,Manu Koné,0.07,0.11,FRA,0.18,20
+ITA-Serie A,2526,Roma,Mario Hermoso,0.13,0.09,ESP,0.22,17
+ITA-Serie A,2526,Roma,Matìas Soulé,0.25,0.21,ARG,0.46,17
+ITA-Serie A,2526,Roma,Mile Svilar,0.0,0.0,SRB,0.0,31
+ITA-Serie A,2526,Roma,Neil El Aynaoui,0.09,0.18,MAR,0.27,11
+ITA-Serie A,2526,Roma,Niccolò Pisilli,0.14,0.28,ITA,0.42,16
+ITA-Serie A,2526,Roma,Obite N'Dicka,0.1,0.0,CIV,0.1,25
+ITA-Serie A,2526,Roma,Paulo Dybala,0.13,0.4,ARG,0.53,10
+ITA-Serie A,2526,Roma,Stephan El Shaarawy,0.14,0.27,ITA,0.41,3
+ITA-Serie A,2526,Roma,Wesley,0.18,0.0,BRA,0.18,17
+ITA-Serie A,2526,Roma,Zeki Çelik,0.03,0.07,TUR,0.1,27
+ITA-Serie A,2526,Sassuolo,Alieu Fadera,0.18,0.09,GAM,0.27,11
+ITA-Serie A,2526,Sassuolo,Andrea Pinamonti,0.32,0.11,ITA,0.42,39
+ITA-Serie A,2526,Sassuolo,Arijanet Muric,0.0,0.0,KVX,0.0,43
+ITA-Serie A,2526,Sassuolo,Armand Lauriente,0.24,0.31,FRA,0.56,38
+ITA-Serie A,2526,Sassuolo,Aster Vranckx,0.0,0.0,BEL,0.0,9
+ITA-Serie A,2526,Sassuolo,Cristian Volpato,0.17,0.34,ITA,0.51,14
+ITA-Serie A,2526,Sassuolo,Domenico Berardi,0.37,0.18,ITA,0.55,30
+ITA-Serie A,2526,Sassuolo,Fali Candé,0.0,0.0,GNB,0.0,6
+ITA-Serie A,2526,Sassuolo,Ismaël Koné,0.2,0.0,CAN,0.2,39
+ITA-Serie A,2526,Sassuolo,Jay Idzes,0.0,0.0,IDN,0.0,42
+ITA-Serie A,2526,Sassuolo,Josh Doig,0.0,0.0,SCO,0.0,31
+ITA-Serie A,2526,Sassuolo,Kristian Thorstvedt,0.15,0.15,NOR,0.29,36
+ITA-Serie A,2526,Sassuolo,Luca Lipani,0.0,0.09,ITA,0.09,14
+ITA-Serie A,2526,Sassuolo,M'Bala Nzola,0.19,0.19,ANG,0.38,7
+ITA-Serie A,2526,Sassuolo,Nemanja Matić,0.03,0.03,SRB,0.07,39
+ITA-Serie A,2526,Sassuolo,Sebastian Walukiewicz,0.0,0.03,POL,0.03,40
+ITA-Serie A,2526,Sassuolo,Stefano Turati,0.0,0.0,ITA,0.0,7
+ITA-Serie A,2526,Sassuolo,Tarik Muharemovic,0.06,0.06,BIH,0.13,46
+ITA-Serie A,2526,Sassuolo,Ulisses Garcia,0.1,0.19,SUI,0.29,10
+ITA-Serie A,2526,Sassuolo,Woyo Coulibaly,0.0,0.0,MLI,0.0,16
+ITA-Serie A,2526,Torino,Adrien Tameze,0.0,0.0,CMR,0.0,26
+ITA-Serie A,2526,Torino,Alberto Paleari,0.0,0.0,ITA,0.0,45
+ITA-Serie A,2526,Torino,Ardian Ismajli,0.0,0.05,ALB,0.05,28
+ITA-Serie A,2526,Torino,Cesare Casadei,0.27,0.0,ITA,0.27,36
+ITA-Serie A,2526,Torino,Che Adams,0.29,0.1,SCO,0.38,30
+ITA-Serie A,2526,Torino,Cristiano Biraghi,0.0,0.0,ITA,0.0,11
+ITA-Serie A,2526,Torino,Cyril Ngonge,0.09,0.09,BEL,0.18,20
+ITA-Serie A,2526,Torino,Duván Zapata,0.24,0.08,COL,0.33,22
+ITA-Serie A,2526,Torino,Emirhan İlkhan,0.09,0.18,TUR,0.27,25
+ITA-Serie A,2526,Torino,Enzo Ebosse,0.0,0.08,CMR,0.08,18
+ITA-Serie A,2526,Torino,Franco Israel,0.0,0.0,URU,0.0,18
+ITA-Serie A,2526,Torino,Giovanni Simeone,0.44,0.0,ARG,0.44,37
+ITA-Serie A,2526,Torino,Guillermo Maripán,0.08,0.0,CHI,0.08,37
+ITA-Serie A,2526,Torino,Gvidas Gineitis,0.0,0.05,LTU,0.05,32
+ITA-Serie A,2526,Torino,Kristjan Asllani,0.0,0.0,ALB,0.0,20
+ITA-Serie A,2526,Torino,Luca Marianucci,0.0,0.0,ITA,0.0,10
+ITA-Serie A,2526,Torino,Marcus Pedersen,0.04,0.08,NOR,0.13,35
+ITA-Serie A,2526,Torino,Matteo Prati,0.0,0.15,ITA,0.15,10
+ITA-Serie A,2526,Torino,Nikola Vlašić,0.24,0.09,CRO,0.33,57
+ITA-Serie A,2526,Torino,Rafel Obrador,0.08,0.24,ESP,0.32,20
+ITA-Serie A,2526,Torino,Saúl Coco,0.03,0.03,EQG,0.06,55
+ITA-Serie A,2526,Torino,Valentino Lazaro,0.0,0.08,AUT,0.08,48
+ITA-Serie A,2526,Torino,Zakaria Aboukhlal,0.0,0.0,MAR,0.0,11
+ITA-Serie A,2526,Udinese,Adam Buksa,0.29,0.0,POL,0.29,14
+ITA-Serie A,2526,Udinese,Alessandro Zanoli,0.07,0.14,ITA,0.21,18
+ITA-Serie A,2526,Udinese,Arthur Atta,0.18,0.11,FRA,0.28,36
+ITA-Serie A,2526,Udinese,Christian Kabasele,0.12,0.0,BEL,0.12,29
+ITA-Serie A,2526,Udinese,Hassane Kamara,0.0,0.1,CIV,0.1,26
+ITA-Serie A,2526,Udinese,Jakub Piotrowski,0.05,0.05,POL,0.11,23
+ITA-Serie A,2526,Udinese,Jesper Karlström,0.03,0.0,SWE,0.03,45
+ITA-Serie A,2526,Udinese,Jordan Zemura,0.0,0.08,ZIM,0.08,16
+ITA-Serie A,2526,Udinese,Jurgen Ekkelenkamp,0.21,0.12,NED,0.33,30
+ITA-Serie A,2526,Udinese,Keinan Davis,0.44,0.17,ENG,0.61,28
+ITA-Serie A,2526,Udinese,Kingsley Ehizibue,0.1,0.0,NED,0.1,23
+ITA-Serie A,2526,Udinese,Lennon Miller,0.0,0.18,SCO,0.18,14
+ITA-Serie A,2526,Udinese,Maduka Okoye,0.0,0.0,NGA,0.0,32
+ITA-Serie A,2526,Udinese,Nicolò Bertola,0.0,0.05,ITA,0.05,25
+ITA-Serie A,2526,Udinese,Nicolò Zaniolo,0.2,0.24,ITA,0.44,27
+ITA-Serie A,2526,Udinese,Oier Zarraga,0.0,0.0,ESP,0.0,10
+ITA-Serie A,2526,Udinese,Oumar Solet,0.09,0.03,FRA,0.12,42
+ITA-Serie A,2526,Udinese,Razvan Sava,0.0,0.0,ROU,0.0,14
+ITA-Serie A,2526,Udinese,Thomas Kristensen,0.11,0.0,DEN,0.11,31
+ITA-Serie A,2526,Udinese,Vakoun Bayo,0.0,0.4,CIV,0.4,11
+,2526,Augsburg,Alexis Claude-Maurice,0.21,0.17,FRA,0.39,43
+,2526,Augsburg,Anton Kade,0.31,0.0,GER,0.31,35
+,2526,Augsburg,Arthur Chaves,0.22,0.0,BRA,0.22,15
+,2526,Augsburg,Cedric Zesiger,0.0,0.0,SUI,0.0,40
+,2526,Augsburg,Chrislain Matsima,0.06,0.06,FRA,0.12,33
+,2526,Augsburg,Dimitris Giannoulis,0.1,0.24,GRE,0.33,39
+,2526,Augsburg,Elias Saad,0.0,0.0,TUN,0.0,14
+,2526,Augsburg,Elvis Rexhbeçaj,0.16,0.0,KVX,0.16,21
+,2526,Augsburg,Fabian Rieder,0.23,0.12,SUI,0.35,53
+,2526,Augsburg,Finn Dahmen,0.0,0.0,GER,0.0,61
+,2526,Augsburg,Han-Noah Massengo,0.07,0.04,FRA,0.11,52
+,2526,Augsburg,Jeffrey Gouweleeuw,0.0,0.11,NED,0.11,20
+,2526,Augsburg,Keven Schlotterbeck,0.0,0.04,GER,0.04,36
+,2526,Augsburg,Kristijan Jakić,0.11,0.05,CRO,0.16,27
+,2526,Augsburg,Marius Wolf,0.09,0.09,GER,0.18,19
+,2526,Augsburg,Mert Kömür,0.12,0.25,GER,0.37,28
+,2526,Augsburg,Michael Gregoritsch,0.59,0.2,AUT,0.79,14
+,2526,Augsburg,Noahkai Banks,0.05,0.05,USA,0.1,31
+,2526,Augsburg,Robin Fellhauer,0.1,0.06,GER,0.16,56
+,2526,Augsburg,Rodrigo Ribeiro,0.28,0.0,POR,0.28,13
+,2526,Bayern Munich,Aleksandar Pavlovic,0.18,0.06,GER,0.25,26
+,2526,Bayern Munich,Alphonso Davies,0.17,0.51,CAN,0.69,8
+,2526,Bayern Munich,Dayot Upamecano,0.05,0.05,FRA,0.1,19
+,2526,Bayern Munich,Harry Kane,1.36,0.19,ENG,1.55,26
+,2526,Bayern Munich,Hiroki Ito,0.1,0.2,JPN,0.29,14
+,2526,Bayern Munich,Jamal Musiala,0.4,0.53,GER,0.92,10
+,2526,Bayern Munich,Jonas Urbig,0.0,0.0,GER,0.0,15
+,2526,Bayern Munich,Jonathan Tah,0.09,0.04,GER,0.13,23
+,2526,Bayern Munich,Joshua Kimmich,0.08,0.32,GER,0.39,25
+,2526,Bayern Munich,Josip Stanišić,0.1,0.15,CRO,0.24,23
+,2526,Bayern Munich,Kim Min-jae,0.06,0.06,KOR,0.11,21
+,2526,Bayern Munich,Konrad Laimer,0.14,0.41,AUT,0.54,20
+,2526,Bayern Munich,Lennart Karl,0.35,0.35,GER,0.7,14
+,2526,Bayern Munich,Leon Goretzka,0.23,0.14,GER,0.37,20
+,2526,Bayern Munich,Luis Díaz,0.55,0.51,COL,1.07,29
+,2526,Bayern Munich,Manuel Neuer,0.0,0.0,GER,0.0,20
+,2526,Bayern Munich,Michael Olise,0.58,0.74,FRA,1.32,25
+,2526,Bayern Munich,Nicolas Jackson,0.71,0.09,SEN,0.8,11
+,2526,Bayern Munich,Raphaël Guerreiro,0.57,0.23,POR,0.8,7
+,2526,Bayern Munich,Sacha Boey,0.0,0.0,FRA,0.0,3
+,2526,Bayern Munich,Serge Gnabry,0.59,0.44,GER,1.03,14
+,2526,Bayern Munich,Tom Bischof,0.21,0.21,GER,0.41,13
+,2526,Dortmund,Carney Chukwuemeka,0.2,0.0,AUT,0.2,7
+,2526,Dortmund,Daniel Svensson,0.07,0.07,SWE,0.15,28
+,2526,Dortmund,Emre Can,0.43,0.0,GER,0.43,8
+,2526,Dortmund,Felix Nmecha,0.08,0.12,GER,0.21,28
+,2526,Dortmund,Fábio Silva,0.22,0.66,POR,0.88,10
+,2526,Dortmund,Gregor Kobel,0.0,0.0,SUI,0.0,34
+,2526,Dortmund,Jobe Bellingham,0.0,0.05,ENG,0.05,20
+,2526,Dortmund,Julian Brandt,0.39,0.22,GER,0.62,18
+,2526,Dortmund,Julian Ryerson,0.0,0.6,NOR,0.6,21
+,2526,Dortmund,Karim Adeyemi,0.53,0.3,GER,0.83,14
+,2526,Dortmund,Luca Reggiani,0.18,0.0,ITA,0.18,7
+,2526,Dortmund,Marcel Sabitzer,0.05,0.1,AUT,0.15,22
+,2526,Dortmund,Maximilian Beier,0.4,0.27,GER,0.67,18
+,2526,Dortmund,Nico Schlotterbeck,0.18,0.04,GER,0.21,29
+,2526,Dortmund,Niklas Süle,0.0,0.19,GER,0.19,7
+,2526,Dortmund,Pascal Groß,0.0,0.15,GER,0.15,5
+,2526,Dortmund,Ramy Bensebaini,0.29,0.12,ALG,0.41,13
+,2526,Dortmund,Serhou Guirassy,0.65,0.04,GUI,0.69,22
+,2526,Dortmund,Waldemar Anton,0.06,0.0,GER,0.06,33
+,2526,Dortmund,Yan Couto,0.18,0.18,BRA,0.36,14
+,2526,Eintracht Frankfurt,Ansgar Knauff,0.27,0.07,GER,0.34,26
+,2526,Eintracht Frankfurt,Arnaud Kalimuendo,0.38,0.06,FRA,0.44,31
+,2526,Eintracht Frankfurt,Arthur Theate,0.04,0.0,BEL,0.04,52
+,2526,Eintracht Frankfurt,Aurele Amenda,0.0,0.0,SUI,0.0,34
+,2526,Eintracht Frankfurt,Ayoube Amaimouni,0.31,0.46,MAR,0.77,11
+,2526,Eintracht Frankfurt,Can Uzun,0.62,0.31,TUR,0.93,27
+,2526,Eintracht Frankfurt,Ellyes Skhiri,0.0,0.0,TUN,0.0,36
+,2526,Eintracht Frankfurt,Fares Chaïbi,0.1,0.45,ALG,0.55,38
+,2526,Eintracht Frankfurt,Hugo Larsson,0.1,0.1,SWE,0.2,32
+,2526,Eintracht Frankfurt,Jean Mattéo Bahoya,0.2,0.27,FRA,0.47,28
+,2526,Eintracht Frankfurt,Jonathan Burkardt,0.88,0.07,GER,0.94,16
+,2526,Eintracht Frankfurt,Kauã Santos,0.0,0.0,BRA,0.0,32
+,2526,Eintracht Frankfurt,Mahmoud Dahoud,0.25,0.38,GER,0.63,15
+,2526,Eintracht Frankfurt,Mario Götze,0.0,0.0,GER,0.0,20
+,2526,Eintracht Frankfurt,Michael Zetterer,0.0,0.0,GER,0.0,33
+,2526,Eintracht Frankfurt,Nathaniel Brown,0.14,0.14,GER,0.27,55
+,2526,Eintracht Frankfurt,Nnamdi Collins,0.06,0.12,GER,0.18,32
+,2526,Eintracht Frankfurt,Oscar Højlund,0.08,0.08,DEN,0.17,23
+,2526,Eintracht Frankfurt,Rasmus Kristensen,0.12,0.0,DEN,0.12,30
+,2526,Eintracht Frankfurt,Ritsu Doan,0.19,0.19,JPN,0.38,44
+,2526,Eintracht Frankfurt,Robin Koch,0.1,0.03,GER,0.13,60
+,2526,Freiburg,Anthony Jung,0.0,0.0,GER,0.0,12
+,2526,Freiburg,Christian Günter,0.0,0.17,GER,0.17,31
+,2526,Freiburg,Derry Scherhant,0.35,0.07,GER,0.42,24
+,2526,Freiburg,Ifechukwu Ogbus,0.0,0.0,SUI,0.0,27
+,2526,Freiburg,Igor Matanovic,0.63,0.11,CRO,0.74,27
+,2526,Freiburg,Jan-Niklas Beste,0.11,0.11,GER,0.21,25
+,2526,Freiburg,Johan Manzambi,0.22,0.17,SUI,0.39,36
+,2526,Freiburg,Jordy Makengo,0.0,0.08,FRA,0.08,20
+,2526,Freiburg,Lucas Höler,0.13,0.04,GER,0.18,43
+,2526,Freiburg,Lukas Kübler,0.11,0.11,GER,0.23,35
+,2526,Freiburg,Matthias Ginter,0.1,0.1,GER,0.19,51
+,2526,Freiburg,Max Rosenfelder,0.0,0.0,GER,0.0,8
+,2526,Freiburg,Maximilian Eggestein,0.09,0.03,GER,0.12,57
+,2526,Freiburg,Noah Atubolu,0.0,0.0,GER,0.0,57
+,2526,Freiburg,Patrick Osterhage,0.08,0.0,GER,0.08,17
+,2526,Freiburg,Philipp Lienhart,0.07,0.0,AUT,0.07,22
+,2526,Freiburg,Philipp Treu,0.04,0.08,GER,0.12,38
+,2526,Freiburg,Vincenzo Grifo,0.37,0.21,ITA,0.58,33
+,2526,Freiburg,Yuito Suzuki,0.22,0.11,JPN,0.33,31
+,2526,Gladbach,Castrop Jens,0.17,0.06,KOR,0.23,31
+,2526,Gladbach,Fabio Chiarodia,0.0,0.0,ITA,0.0,13
+,2526,Gladbach,Florian Neuhaus,0.0,0.1,GER,0.1,9
+,2526,Gladbach,Franck Honorat,0.09,0.27,FRA,0.36,32
+,2526,Gladbach,Gio Reyna,0.17,0.0,USA,0.17,11
+,2526,Gladbach,Haris Tabakovic,0.49,0.11,BIH,0.6,34
+,2526,Gladbach,Hugo Bolin,0.16,0.16,SWE,0.33,8
+,2526,Gladbach,Joe Scally,0.07,0.1,USA,0.17,40
+,2526,Gladbach,Kevin Diks,0.18,0.0,IDN,0.18,43
+,2526,Gladbach,Kevin Stöger,0.07,0.07,AUT,0.14,25
+,2526,Gladbach,Luca Netz,0.0,0.19,GER,0.19,10
+,2526,Gladbach,Lukas Ullrich,0.0,0.0,GER,0.0,29
+,2526,Gladbach,Moritz Nicolas,0.0,0.0,GER,0.0,53
+,2526,Gladbach,Nico Elvedi,0.0,0.06,SUI,0.06,50
+,2526,Gladbach,Philipp Sander,0.07,0.0,GER,0.07,39
+,2526,Gladbach,Rocco Reitz,0.0,0.14,GER,0.14,46
+,2526,Gladbach,Shuto Machino,0.25,0.08,JPN,0.33,32
+,2526,Gladbach,Wael Mohya,0.33,0.16,GER,0.49,9
+,2526,Gladbach,Yannik Engelhardt,0.07,0.07,GER,0.14,39
+,2526,Hamburger SV,Albert Grønbaek,0.18,0.37,DEN,0.55,11
+,2526,Hamburger SV,Albert Sambi Lokonga,0.26,0.0,BEL,0.26,29
+,2526,Hamburger SV,Bakery Jatta,0.1,0.1,GAM,0.2,12
+,2526,Hamburger SV,Damion Downs,0.0,0.0,USA,0.0,8
+,2526,Hamburger SV,Daniel Elfadli,0.0,0.0,LBY,0.0,21
+,2526,Hamburger SV,Daniel Heuer Fernandes,0.0,0.0,POR,0.0,53
+,2526,Hamburger SV,Fabio Vieira,0.29,0.2,POR,0.49,36
+,2526,Hamburger SV,Giorgi Gocholeishvili,0.0,0.19,GEO,0.19,12
+,2526,Hamburger SV,Jean-Luc Dompé,0.24,0.0,FRA,0.24,14
+,2526,Hamburger SV,Jordan Torunarigha,0.0,0.0,GER,0.0,35
+,2526,Hamburger SV,Luka Vušković,0.22,0.0,CRO,0.22,41
+,2526,Hamburger SV,Miro Muheim,0.0,0.15,SUI,0.15,42
+,2526,Hamburger SV,Nicolai Remberg,0.0,0.06,GER,0.06,49
+,2526,Hamburger SV,Nicolás Capaldo,0.04,0.13,ARG,0.18,34
+,2526,Hamburger SV,Philip Otele,0.19,0.19,NGA,0.38,6
+,2526,Hamburger SV,Ransford Königsdörffer,0.19,0.04,GHA,0.23,44
+,2526,Hamburger SV,Rayan Philippe,0.35,0.0,FRA,0.35,17
+,2526,Hamburger SV,Robert Glatzel,0.44,0.29,GER,0.74,13
+,2526,Hamburger SV,Warmed Omari,0.0,0.06,COM,0.06,28
+,2526,Hamburger SV,William Mikelbrencis,0.0,0.26,FRA,0.26,34
+,2526,Heidenheim,Adrian Beck,0.1,0.1,GER,0.21,21
+,2526,Heidenheim,Arijon Ibrahimović,0.08,0.17,GER,0.25,49
+,2526,Heidenheim,Benedikt Gimber,0.0,0.0,GER,0.0,40
+,2526,Heidenheim,Budu Zivzivadze,0.47,0.0,GEO,0.47,30
+,2526,Heidenheim,Diant Ramaj,0.0,0.03,GER,0.03,67
+,2526,Heidenheim,Eren Dinkçi,0.24,0.08,GER,0.32,24
+,2526,Heidenheim,Hannes Behrens,0.07,0.14,GER,0.2,29
+,2526,Heidenheim,Jan Schöppner,0.12,0.12,GER,0.24,51
+,2526,Heidenheim,Jonas Föhrenbach,0.04,0.04,GER,0.08,51
+,2526,Heidenheim,Julian Niehues,0.2,0.0,GER,0.2,30
+,2526,Heidenheim,Luca Kerber,0.26,0.0,GER,0.26,18
+,2526,Heidenheim,Marnon Busch,0.05,0.23,GER,0.28,43
+,2526,Heidenheim,Marvin Pieringer,0.22,0.05,GER,0.27,38
+,2526,Heidenheim,Mathias Honsak,0.14,0.07,AUT,0.22,30
+,2526,Heidenheim,Mikkel Kaufmann,0.17,0.17,DEN,0.34,10
+,2526,Heidenheim,Niklas Dorsch,0.0,0.04,GER,0.04,51
+,2526,Heidenheim,Omar Traoré,0.0,0.12,GER,0.12,41
+,2526,Heidenheim,Patrick Mainka,0.06,0.06,GER,0.12,72
+,2526,Heidenheim,Sirlord Conteh,0.29,0.14,GER,0.43,16
+,2526,Heidenheim,Stefan Schimmer,0.55,0.11,GER,0.66,18
+,2526,Heidenheim,Tim Siersleben,0.0,0.0,GER,0.0,29
+,2526,Hoffenheim,Albian Hajdari,0.04,0.07,KVX,0.11,37
+,2526,Hoffenheim,Alexander Prass,0.21,0.14,AUT,0.34,25
+,2526,Hoffenheim,Andrej Kramarić,0.57,0.24,CRO,0.82,33
+,2526,Hoffenheim,Bazoumana Touré,0.19,0.35,CIV,0.55,44
+,2526,Hoffenheim,Bernardo,0.0,0.0,BRA,0.0,35
+,2526,Hoffenheim,Fisnik Asllani,0.39,0.27,KVX,0.66,41
+,2526,Hoffenheim,Grischa Prömel,0.36,0.1,GER,0.46,33
+,2526,Hoffenheim,Leon Avdullahu,0.0,0.03,KVX,0.03,44
+,2526,Hoffenheim,Oliver Baumann,0.0,0.0,GER,0.0,52
+,2526,Hoffenheim,Ozan Kabak,0.21,0.0,TUR,0.21,34
+,2526,Hoffenheim,Robin Hranáč,0.04,0.0,CZE,0.04,35
+,2526,Hoffenheim,Tim Lemperle,0.37,0.09,GER,0.46,30
+,2526,Hoffenheim,Vladimír Coufal,0.03,0.24,CZE,0.27,50
+,2526,Hoffenheim,Wouter Burger,0.15,0.19,NED,0.33,35
+,2526,Köln,Alessio Castro-Montes,0.13,0.4,BEL,0.54,15
+,2526,Köln,Cenk Özkacar,0.0,0.0,TUR,0.0,40
+,2526,Köln,Denis Huseinbasic,0.0,0.0,BIH,0.0,14
+,2526,Köln,Eric Martel,0.07,0.07,GER,0.14,50
+,2526,Köln,Jahmai Simpson-Pusey,0.0,0.0,ENG,0.0,19
+,2526,Köln,Jakub Kamiński,0.21,0.09,POL,0.3,60
+,2526,Köln,Jan Thielmann,0.18,0.06,GER,0.23,31
+,2526,Köln,Joël Schmied,0.0,0.0,SUI,0.0,27
+,2526,Köln,Kristoffer Lund,0.0,0.08,USA,0.08,47
+,2526,Köln,Linton Maina,0.18,0.0,GER,0.18,24
+,2526,Köln,Luca Waldschmidt,0.66,0.53,GER,1.2,10
+,2526,Köln,Marius Bülter,0.28,0.23,GER,0.51,29
+,2526,Köln,Marvin Schwäbe,0.0,0.0,GER,0.0,63
+,2526,Köln,Ragnar Ache,0.37,0.21,GER,0.58,38
+,2526,Köln,Rav van den Berg,0.0,0.08,NED,0.08,21
+,2526,Köln,Said El Mala,0.6,0.18,GER,0.78,37
+,2526,Köln,Sebastian Sebulonsen,0.0,0.0,NOR,0.0,52
+,2526,Köln,Timo Hübers,0.0,0.0,GER,0.0,10
+,2526,Köln,Tom Krauß,0.0,0.1,GER,0.1,32
+,2526,Köln,Ísak Jóhannesson,0.05,0.1,ISL,0.15,39
+,2526,Leverkusen,Aleix García,0.1,0.27,ESP,0.37,39
+,2526,Leverkusen,Arthur,0.08,0.24,BRA,0.32,18
+,2526,Leverkusen,Christian Kofane,0.36,0.29,CMR,0.65,18
+,2526,Leverkusen,Edmond Tapsoba,0.17,0.1,BFA,0.28,38
+,2526,Leverkusen,Ernest Poku,0.3,0.3,NED,0.61,19
+,2526,Leverkusen,Exequiel Palacios,0.0,0.08,ARG,0.08,17
+,2526,Leverkusen,Ezequiél Fernández,0.0,0.09,ARG,0.09,20
+,2526,Leverkusen,Ibrahim Maza,0.15,0.19,ALG,0.34,27
+,2526,Leverkusen,Janis Blaswich,0.0,0.0,GER,0.0,9
+,2526,Leverkusen,Jarell Quansah,0.16,0.0,ENG,0.16,34
+,2526,Leverkusen,Jonas Hofmann,0.18,0.18,GER,0.36,10
+,2526,Leverkusen,Loïc Bade,0.0,0.0,FRA,0.0,24
+,2526,Leverkusen,Lucas Vázquez,0.19,0.37,ESP,0.56,2
+,2526,Leverkusen,Malik Tillman,0.32,0.05,USA,0.38,25
+,2526,Leverkusen,Mark Flekken,0.0,0.0,NED,0.0,38
+,2526,Leverkusen,Martin Terrier,0.53,0.13,FRA,0.67,12
+,2526,Leverkusen,Montrell Culbreath,0.12,0.0,GER,0.12,13
+,2526,Leverkusen,Nathan Tella,0.1,0.41,NGA,0.52,17
+,2526,Leverkusen,Patrik Schick,0.72,0.14,CZE,0.86,29
+,2526,Leverkusen,Robert Andrich,0.07,0.0,GER,0.07,43
+,2526,Leverkusen,Álex Grimaldo,0.29,0.25,ESP,0.54,40
+,2526,Mainz 05,Andreas Hanche-Olsen,0.0,0.11,NOR,0.11,13
+,2526,Mainz 05,Anthony Caci,0.0,0.0,FRA,0.0,7
+,2526,Mainz 05,Armindo Sieb,0.33,0.0,GER,0.33,15
+,2526,Mainz 05,Arnaud Nordin,0.0,0.0,FRA,0.0,11
+,2526,Mainz 05,Benedict Hollerbach,0.1,0.31,GER,0.41,15
+,2526,Mainz 05,Daniel Batz,0.0,0.0,GER,0.0,27
+,2526,Mainz 05,Danny da Costa,0.07,0.1,GER,0.17,49
+,2526,Mainz 05,Dominik Kohr,0.08,0.0,GER,0.08,40
+,2526,Mainz 05,Kacper Potulski,0.08,0.0,POL,0.08,17
+,2526,Mainz 05,Kaishu Sano,0.03,0.06,JPN,0.09,53
+,2526,Mainz 05,Lee Jae-sung,0.16,0.08,KOR,0.25,39
+,2526,Mainz 05,Lennard Maloney,0.0,0.0,USA,0.0,12
+,2526,Mainz 05,Nadiem Amiri,0.52,0.09,GER,0.6,33
+,2526,Mainz 05,Nelson Weiper,0.0,0.0,GER,0.0,12
+,2526,Mainz 05,Nikolas Veratschnig,0.0,0.14,AUT,0.14,13
+,2526,Mainz 05,Paul Nebel,0.22,0.09,GER,0.3,37
+,2526,Mainz 05,Phillip Tietz,0.28,0.11,GER,0.39,22
+,2526,Mainz 05,Phillipp Mwene,0.04,0.09,AUT,0.13,36
+,2526,Mainz 05,Robin Zentner,0.0,0.0,GER,0.0,14
+,2526,Mainz 05,Sheraldo Becker,0.29,0.29,SUR,0.57,8
+,2526,Mainz 05,Silvan Widmer,0.1,0.05,SUI,0.15,26
+,2526,Mainz 05,Stefan Bell,0.17,0.09,GER,0.26,21
+,2526,Mainz 05,Stefan Posch,0.0,0.0,AUT,0.0,22
+,2526,RB Leipzig,Antonio Nusa,0.18,0.13,NOR,0.31,29
+,2526,RB Leipzig,Assan Ouedraogo,0.38,0.28,GER,0.66,14
+,2526,RB Leipzig,Brajan Gruda,0.36,0.36,GER,0.72,12
+,2526,RB Leipzig,Castello Lukeba,0.04,0.0,FRA,0.04,33
+,2526,RB Leipzig,Christoph Baumgartner,0.42,0.26,AUT,0.68,37
+,2526,RB Leipzig,Conrad Harder,0.29,0.29,DEN,0.58,22
+,2526,RB Leipzig,David Raum,0.11,0.25,GER,0.35,34
+,2526,RB Leipzig,El Chadaille Bitshiabu,0.0,0.0,FRA,0.0,11
+,2526,RB Leipzig,Ezechiel Banzuzi,0.0,0.15,NED,0.15,10
+,2526,RB Leipzig,Johan Bakayoko,0.23,0.0,BEL,0.23,9
+,2526,RB Leipzig,Maarten Vandevoordt,0.0,0.0,BEL,0.0,15
+,2526,RB Leipzig,Max Finkgräfe,0.18,0.18,GER,0.36,13
+,2526,RB Leipzig,Nicolas Seiwald,0.0,0.07,AUT,0.07,37
+,2526,RB Leipzig,Péter Gulácsi,0.0,0.0,HUN,0.0,32
+,2526,RB Leipzig,Ridle Baku,0.07,0.11,GER,0.18,36
+,2526,RB Leipzig,Rômulo,0.37,0.16,BRA,0.53,27
+,2526,RB Leipzig,Willi Orban,0.06,0.0,HUN,0.06,46
+,2526,RB Leipzig,Xaver Schlager,0.15,0.05,AUT,0.2,29
+,2526,RB Leipzig,Yan Diomandé,0.44,0.29,CIV,0.73,35
+,2526,St Pauli,Adam Dźwigała,0.07,0.07,POL,0.14,24
+,2526,St Pauli,Andreas Hountondji,0.34,0.0,BEN,0.34,23
+,2526,St Pauli,Arkadiusz Pyrka,0.0,0.03,POL,0.03,50
+,2526,St Pauli,Connor Metcalfe,0.0,0.3,AUS,0.3,13
+,2526,St Pauli,Danel Sinani,0.22,0.13,LUX,0.35,43
+,2526,St Pauli,Eric Smith,0.08,0.08,SWE,0.16,43
+,2526,St Pauli,Hauke Wahl,0.07,0.03,GER,0.1,47
+,2526,St Pauli,Jackson Irvine,0.0,0.06,AUS,0.06,24
+,2526,St Pauli,James Sands,0.05,0.0,USA,0.05,34
+,2526,St Pauli,Joel Fujita,0.03,0.1,JPN,0.14,53
+,2526,St Pauli,Karol Mets,0.05,0.0,EST,0.05,40
+,2526,St Pauli,Lars Ritzka,0.0,0.0,GER,0.0,21
+,2526,St Pauli,Louis Oppie,0.06,0.0,GER,0.06,34
+,2526,St Pauli,Manolis Saliakas,0.08,0.24,GRE,0.33,21
+,2526,St Pauli,Martijn Kaars,0.2,0.07,NED,0.27,27
+,2526,St Pauli,Mathias Pereira Lage,0.09,0.09,POR,0.18,37
+,2526,St Pauli,Mathias Rasmussen,0.0,0.0,NOR,0.0,17
+,2526,St Pauli,Nikola Vasilj,0.0,0.0,BIH,0.0,60
+,2526,St Pauli,Tomoya Ando,0.0,0.07,JPN,0.07,29
+,2526,Stuttgart,Alexander Nübel,0.0,0.03,GER,0.03,49
+,2526,Stuttgart,Angelo Stiller,0.07,0.16,GER,0.23,43
+,2526,Stuttgart,Atakan Karazor,0.0,0.05,TUR,0.05,29
+,2526,Stuttgart,Badredine Bouanani,0.0,0.0,ALG,0.0,5
+,2526,Stuttgart,Bilal El Khannouss,0.22,0.28,MAR,0.5,30
+,2526,Stuttgart,Chema,0.21,0.0,ESP,0.21,24
+,2526,Stuttgart,Chris Führich,0.37,0.37,GER,0.74,28
+,2526,Stuttgart,Deniz Undav,0.76,0.28,GER,1.04,36
+,2526,Stuttgart,Ermedin Demirović,0.72,0.18,BIH,0.9,17
+,2526,Stuttgart,Finn Jeltsch,0.0,0.06,GER,0.06,23
+,2526,Stuttgart,Jamie Leweling,0.27,0.34,GER,0.61,40
+,2526,Stuttgart,Josha Vagnoman,0.06,0.17,GER,0.23,29
+,2526,Stuttgart,Julian Chabot,0.0,0.0,GER,0.0,37
+,2526,Stuttgart,Lorenz Assignon,0.0,0.0,TOG,0.0,13
+,2526,Stuttgart,Luca Jaquez,0.0,0.1,SUI,0.1,13
+,2526,Stuttgart,Maximilian Mittelstädt,0.25,0.16,GER,0.41,29
+,2526,Stuttgart,Nikolas Nartey,0.29,0.21,DEN,0.5,13
+,2526,Stuttgart,Ramon Hendriks,0.0,0.13,NED,0.13,38
+,2526,Stuttgart,Tiago Tomás,0.44,0.26,POR,0.71,23
+,2526,Union Berlin,Alex Král,0.0,0.0,CZE,0.0,13
+,2526,Union Berlin,Aljoscha Kemlein,0.0,0.09,GER,0.09,31
+,2526,Union Berlin,Andrej Ilic,0.2,0.4,SRB,0.6,46
+,2526,Union Berlin,András Schäfer,0.13,0.06,HUN,0.19,22
+,2526,Union Berlin,Christopher Trimmel,0.0,0.15,AUT,0.15,31
+,2526,Union Berlin,Danilho Doekhi,0.15,0.0,NED,0.15,58
+,2526,Union Berlin,Derrick Köhn,0.05,0.09,GHA,0.14,32
+,2526,Union Berlin,Diogo Leite,0.0,0.0,POR,0.0,32
+,2526,Union Berlin,Frederik Rønnow,0.0,0.0,DEN,0.0,54
+,2526,Union Berlin,Ilyas Ansah,0.24,0.05,GER,0.29,31
+,2526,Union Berlin,Janik Haberer,0.0,0.05,GER,0.05,39
+,2526,Union Berlin,Jeong Woo-yeong,0.3,0.08,KOR,0.38,22
+,2526,Union Berlin,Leopold Querfeld,0.1,0.0,AUT,0.1,55
+,2526,Union Berlin,Livan Burcu,0.14,0.14,TUR,0.28,12
+,2526,Union Berlin,Oliver Burke,0.32,0.11,SCO,0.43,32
+,2526,Union Berlin,Rani Khedira,0.16,0.03,TUN,0.19,53
+,2526,Union Berlin,Stanley N'Soki,0.11,0.22,FRA,0.33,18
+,2526,Union Berlin,Tim Skarke,0.14,0.14,GER,0.29,12
+,2526,Union Berlin,Tom Rothe,0.17,0.0,GER,0.17,22
+,2526,Werder Bremen,Abdoul Coulibaly,0.04,0.0,GER,0.04,43
+,2526,Werder Bremen,Amos Pieper,0.0,0.0,GER,0.0,29
+,2526,Werder Bremen,Cameron Puertas,0.05,0.1,SUI,0.15,30
+,2526,Werder Bremen,Felix Agu,0.0,0.0,NGA,0.0,19
+,2526,Werder Bremen,Isaac Schmidt,0.13,0.0,SUI,0.13,13
+,2526,Werder Bremen,Jens Stage,0.37,0.07,DEN,0.44,45
+,2526,Werder Bremen,Jovan Milošević,0.55,0.18,SRB,0.74,11
+,2526,Werder Bremen,Julián Malatini,0.0,0.0,ARG,0.0,12
+,2526,Werder Bremen,Justin Njinmah,0.23,0.0,GER,0.23,45
+,2526,Werder Bremen,Keke Topp,0.14,0.14,GER,0.28,10
+,2526,Werder Bremen,Leonardo Bittencourt,0.0,0.15,GER,0.15,16
+,2526,Werder Bremen,Marco Friedl,0.04,0.0,AUT,0.04,49
+,2526,Werder Bremen,Marco Grüll,0.13,0.04,AUT,0.18,38
+,2526,Werder Bremen,Mio Backhaus,0.0,0.0,GER,0.0,56
+,2526,Werder Bremen,Niklas Stark,0.0,0.0,GER,0.0,14
+,2526,Werder Bremen,Olivier Deman,0.07,0.14,BEL,0.22,21
+,2526,Werder Bremen,Romano Schmid,0.12,0.24,AUT,0.36,57
+,2526,Werder Bremen,Samuel Mbangula,0.23,0.15,BEL,0.38,22
+,2526,Werder Bremen,Senne Lynen,0.0,0.0,BEL,0.0,54
+,2526,Werder Bremen,Yukinari Sugawara,0.0,0.22,JPN,0.22,43
+,2526,Wolfsburg,Aaron Zehnter,0.12,0.0,GER,0.12,29
+,2526,Wolfsburg,Adam Daghim,0.13,0.2,DEN,0.33,33
+,2526,Wolfsburg,Christian Eriksen,0.11,0.34,DEN,0.45,53
+,2526,Wolfsburg,Denis Vavro,0.08,0.0,SVK,0.08,27
+,2526,Wolfsburg,Dženan Pejčinović,0.49,0.0,GER,0.49,37
+,2526,Wolfsburg,Jeanuël Belocian,0.0,0.07,FRA,0.07,26
+,2526,Wolfsburg,Jenson Seelt,0.0,0.0,NED,0.0,17
+,2526,Wolfsburg,Joakim Mæhle,0.07,0.15,DEN,0.22,24
+,2526,Wolfsburg,Jonas Wind,0.19,0.0,DEN,0.19,13
+,2526,Wolfsburg,Kamil Grabara,0.0,0.0,POL,0.0,69
+,2526,Wolfsburg,Kilian Fischer,0.0,0.0,GER,0.0,21
+,2526,Wolfsburg,Konstantinos Koulierakis,0.15,0.04,GRE,0.18,54
+,2526,Wolfsburg,Lovro Majer,0.13,0.2,CRO,0.33,30
+,2526,Wolfsburg,Mattias Svanberg,0.31,0.1,SWE,0.42,24
+,2526,Wolfsburg,Maximilian Arnold,0.05,0.19,GER,0.24,41
+,2526,Wolfsburg,Mohamed Amoura,0.38,0.14,ALG,0.52,32
+,2526,Wolfsburg,Moritz Jenz,0.05,0.0,GER,0.05,44
+,2526,Wolfsburg,Patrick Wimmer,0.22,0.17,AUT,0.39,32
+,2526,Wolfsburg,Sael Kumbedi,0.0,0.25,FRA,0.25,45
+,2526,Wolfsburg,Vinicius Souza,0.0,0.0,BRA,0.0,35
+,2526,Wolfsburg,Yannick Gerhardt,0.08,0.0,GER,0.08,29
