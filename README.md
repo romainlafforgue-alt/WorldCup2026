@@ -12,6 +12,32 @@
 | Ernest   | Dev Team      | Streamlit Dev   |
 | Romain   | Dev Team      | Data Eng. + ML  |
 
+## 🚀 Installation & Lancement
+
+### 1. Récupérer le projet
+```bash
+git clone https://github.com/romainlafforgue-alt/WorldCup2026.git
+cd WorldCup2026
+```
+
+### 2. Installer les dépendances
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Lancer l'application Streamlit
+```bash
+streamlit run streamlit/apply.py
+```
+L'app s'ouvre automatiquement sur `http://localhost:8501`
+
+### Mettre à jour depuis GitHub (si tu as déjà cloné)
+```bash
+git pull
+```
+
+---
+
 ## 🗂️ Structure du projet
 ```
 WorldCup2026/
