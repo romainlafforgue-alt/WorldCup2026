@@ -53,32 +53,60 @@ QUALITE_JOUEURS = {
     'Croatia': 58, 'Uruguay': 58, 'Morocco': 55, 'Senegal': 55,
     'Mexico': 55, 'United States': 52, 'Switzerland': 50, 'Turkey': 50,
     'Austria': 47, 'Canada': 45, 'South Korea': 45, 'Sweden': 42,
-    'Ivory Coast': 38, 'Ecuador': 38, 'Egypt': 38, 'Algeria': 35,
-    'Ghana': 35, 'Czech Republic': 35, 'Scotland': 30, 'Tunisia': 30,
+    'Ivory Coast': 40, 'Ecuador': 38, 'Egypt': 38, 'Algeria': 35,
+    'Ghana': 35, 'Czech Republic': 35, 'Scotland': 33, 'Tunisia': 30,
     'Paraguay': 30, 'Bosnia and Herzegovina': 30, 'Saudi Arabia': 28,
     'Australia': 25, 'Iran': 25, 'DR Congo': 25, 'Iraq': 22,
     'Jordan': 20, 'South Africa': 20, 'Uzbekistan': 20,
     'Qatar': 18, 'Cape Verde': 15, 'Panama': 15,
-    'Haiti': 10, 'New Zealand': 10, 'Curacao': 10,
+    'New Zealand': 10, 'Haiti': 8, 'Curacao': 7,
 }
 _MOYENNE_QUALITE = sum(QUALITE_JOUEURS.values()) / len(QUALITE_JOUEURS)
 
-# Bonus pour les champions recents (gestion pression grands matchs)
-BONUS_CHAMPION = {
-    'Argentina': 0.10, 'France': 0.06, 'Germany': 0.04,
-    'Spain': 0.03, 'Brazil': 0.02,
+# Coefficient d'experience CdM (poids du palmares dans la forme recente)
+COEFFICIENT_EXPERIENCE = {
+    'France': 1.00, 'Brazil': 1.00, 'Germany': 1.00, 'Spain': 1.00,
+    'Argentina': 1.00, 'England': 1.00, 'Portugal': 1.00,
+    'Netherlands': 1.00, 'Belgium': 1.00, 'Croatia': 1.00,
+    'Uruguay': 1.00, 'Mexico': 1.00, 'United States': 1.00,
+    'Canada': 0.95, 'Japan': 0.95, 'Morocco': 0.92, 'Senegal': 0.92,
+    'South Korea': 0.92, 'Colombia': 0.90, 'Switzerland': 0.90,
+    'Iran': 0.88, 'Saudi Arabia': 0.88, 'Ghana': 0.88, 'Ivory Coast': 0.88,
+    'Ecuador': 0.85, 'Tunisia': 0.85, 'Algeria': 0.85, 'Austria': 0.85,
+    'Sweden': 0.85, 'Turkey': 0.85, 'Egypt': 0.85, 'Paraguay': 0.85,
+    'Czech Republic': 0.85, 'Norway': 0.50, 'Scotland': 0.52,
+    'Australia': 0.48, 'Iraq': 0.70, 'Jordan': 0.60, 'Uzbekistan': 0.60,
+    'Panama': 0.68, 'Curacao': 0.35, 'Cape Verde': 0.60,
+    'New Zealand': 0.60, 'Haiti': 0.40, 'South Africa': 0.72,
+    'Bosnia and Herzegovina': 0.75, 'DR Congo': 0.68, 'Qatar': 0.72,
 }
 
-# Variantes de noms dans l'historique FIFA (pour le calcul d'experience)
-_VARIANTES_NOMS = {
-    'United States': ['United States', 'USA'],
-    'South Korea':   ['South Korea', 'Korea Republic'],
-    'Iran':          ['Iran', 'IR Iran'],
-    'Czech Republic':['Czech Republic', 'Czechia'],
-    'Ivory Coast':   ["Ivory Coast", "Cote d'Ivoire", "Côte d'Ivoire"],
+# Zone de qualification -> credibilite de la confederation
+ZONE_QUALIF = {
+    'France':'UEFA','Germany':'UEFA','Spain':'UEFA','England':'UEFA',
+    'Portugal':'UEFA','Netherlands':'UEFA','Belgium':'UEFA','Croatia':'UEFA',
+    'Switzerland':'UEFA','Austria':'UEFA','Turkey':'UEFA','Scotland':'UEFA',
+    'Norway':'UEFA','Sweden':'UEFA','Bosnia and Herzegovina':'UEFA','Czech Republic':'UEFA',
+    'Argentina':'CONMEBOL','Brazil':'CONMEBOL','Colombia':'CONMEBOL',
+    'Uruguay':'CONMEBOL','Ecuador':'CONMEBOL','Paraguay':'CONMEBOL',
+    'Morocco':'CAF','Senegal':'CAF','Egypt':'CAF','Ivory Coast':'CAF',
+    'Algeria':'CAF','Tunisia':'CAF','Ghana':'CAF','South Africa':'CAF',
+    'DR Congo':'CAF','Cape Verde':'CAF',
+    'United States':'CONCACAF','Mexico':'CONCACAF','Canada':'CONCACAF',
+    'Panama':'CONCACAF','Haiti':'CONCACAF','Curacao':'CONCACAF',
+    'Japan':'AFC','South Korea':'AFC','Iran':'AFC','Saudi Arabia':'AFC',
+    'Australia':'AFC','Uzbekistan':'AFC','Iraq':'AFC','Jordan':'AFC','Qatar':'AFC',
+    'New Zealand':'OFC',
+}
+CREDIBILITE_ZONE = {
+    'UEFA':1.00,'CONMEBOL':0.95,'CAF':0.75,'AFC':0.70,'CONCACAF':0.50,'OFC':0.40,
 }
 
-_exp_cdm   = {}  # rempli au demarrage depuis results.csv
+# Bonus/plancher pour les grandes nations (gestion pression grands matchs)
+_BONUS_FORME = {'Argentina':0.10,'France':0.08,'Brazil':0.10,'Germany':0.06,'Spain':0.05}
+_PLANCHER_FORME = {'Brazil':0.75,'Germany':0.72,'Spain':0.80,'France':0.82,
+                    'Argentina':0.85,'England':0.78,'Portugal':0.75}
+
 _forme_cache = {}
 
 def _nom_modele(equipe):
@@ -91,9 +119,10 @@ def _get_qualite(nom_modele):
     return QUALITE_JOUEURS.get(nom_modele, _MOYENNE_QUALITE)
 
 def _get_coefficient(nom_modele):
-    noms = _VARIANTES_NOMS.get(nom_modele, [nom_modele])
-    nb = max([_exp_cdm.get(n, 0) for n in noms])
-    return 0.50 + min(nb / 40, 1.0) * 0.50
+    return COEFFICIENT_EXPERIENCE.get(nom_modele, 0.80)
+
+def _get_credibilite(nom_modele):
+    return CREDIBILITE_ZONE.get(ZONE_QUALIF.get(nom_modele, 'UEFA'), 0.75)
 
 def _calculer_forme(equipe, df_off, n=5):
     domicile  = df_off[(df_off['home_team'] == equipe) & (df_off['date'] < DATE_TOURNOI)].tail(n)
@@ -117,14 +146,33 @@ def _calculer_forme(equipe, df_off, n=5):
         elif nul:     points_total += 1 * poids
         poids_total += 3 * poids
     forme_brute = points_total / poids_total if poids_total > 0 else 0.5
-    coeff = _get_coefficient(equipe)
-    bonus = BONUS_CHAMPION.get(equipe, 0)
-    return min(0.5 + (forme_brute - 0.5) * coeff + bonus, 1.0)
+    coeff_final = _get_coefficient(equipe) * _get_credibilite(equipe)
+    bonus = _BONUS_FORME.get(equipe, 0)
+    forme = min(0.5 + (forme_brute - 0.5) * coeff_final + bonus, 1.0)
+    return max(forme, _PLANCHER_FORME.get(equipe, 0.0))
 
 def _get_forme(nom_modele, df_off):
     if nom_modele not in _forme_cache:
         _forme_cache[nom_modele] = _calculer_forme(nom_modele, df_off)
     return _forme_cache[nom_modele]
+
+# ── Score de force composite — coeur du modele hybride v3 ──────────
+# FORCE = 0.50 x qualite_squad + 0.35 x classement_FIFA + 0.15 x forme_recente
+_FIFA_MIN,  _FIFA_MAX  = 1198,  1877
+_QUAL_MIN,  _QUAL_MAX  = 7,     95
+_FORME_MIN, _FORME_MAX = 0.25,  0.97
+_POIDS_FORCE = {'qualite': 0.50, 'fifa': 0.35, 'forme': 0.15}
+
+def _normaliser(val, vmin, vmax):
+    return max(0.0, min(1.0, (val - vmin) / (vmax - vmin)))
+
+def _score_force(nom_modele, df_off):
+    n_qual  = _normaliser(_get_qualite(nom_modele), _QUAL_MIN, _QUAL_MAX)
+    n_fifa  = _normaliser(_get_pts_fifa(nom_modele), _FIFA_MIN, _FIFA_MAX)
+    n_forme = _normaliser(_get_forme(nom_modele, df_off), _FORME_MIN, _FORME_MAX)
+    return (_POIDS_FORCE['qualite'] * n_qual +
+            _POIDS_FORCE['fifa']    * n_fifa +
+            _POIDS_FORCE['forme']   * n_forme)
 
 st.set_page_config(
     page_title="⚽ FrenchTeam - FIFA 2026",
@@ -159,24 +207,18 @@ st.markdown("""<style>
     ::-webkit-scrollbar-thumb { background:#2a3a5c; border-radius:4px; }
 </style>""", unsafe_allow_html=True)
 
-# ── Chargement modèle ─────────────────────────────────────────────
+# ── Chargement modele hybride v3 ────────────────────────────────────
 @st.cache_resource
 def load_model():
-    modele = joblib.load(ROOT / "models/modele_niveau1_final.pkl")
-    enc_y  = joblib.load(ROOT / "models/encodeur_cible.pkl")
+    modele = joblib.load(ROOT / "models/modele_hybride.pkl")
+    enc_y  = joblib.load(ROOT / "models/encodeur_cible_hybride.pkl")
     df     = pd.read_csv(ROOT / "data/results.csv")
     df['date'] = pd.to_datetime(df['date'])
     df     = df.dropna(subset=['home_score', 'away_score'])
     df_off = df[df['tournament'] != 'Friendly'].copy()
-    # Calcul dynamique de l'experience CdM depuis l'historique complet
-    cdm  = df[df['tournament'] == 'FIFA World Cup']
-    h    = cdm.groupby('home_team').size().rename('n')
-    a    = cdm.groupby('away_team').size().rename('n')
-    exp  = pd.concat([h, a]).groupby(level=0).sum().to_dict()
-    return modele, enc_y, df_off, exp
+    return modele, enc_y, df_off
 
-modele, enc_y, df_officiel, _exp_load = load_model()
-_exp_cdm.update(_exp_load)
+modele, enc_y, df_officiel = load_model()
 
 # ── Codes ISO drapeaux ────────────────────────────────────────────
 FLAGS_ISO = {
@@ -228,46 +270,72 @@ ranking = pd.DataFrame([
     for t in equipes
 ])
 
+_CLASSES = list(enc_y.classes_)
+_IDX_A = _CLASSES.index('A_gagne')
+_IDX_B = _CLASSES.index('B_gagne')
+_IDX_N = _CLASSES.index('Nul')
+_ALPHA = 0.5  # compression des probas vers 1/3 (probas plus realistes face aux bookmakers)
+
+def _corriger_coherence(p_a, p_n, p_b, force_a, force_b):
+    """Corrige si le modele contredit le score de force."""
+    ecart = force_a - force_b
+    if abs(ecart) < 0.05:
+        return p_a, p_n, p_b
+    a_gagne = ecart > 0
+    if not ((a_gagne and p_b > p_a) or (not a_gagne and p_a > p_b)):
+        return p_a, p_n, p_b
+    force_corr = min(0.35, abs(ecart) * 0.5)
+    if a_gagne:
+        pa2 = p_a + force_corr; pb2 = max(0.08, p_b - force_corr * 0.85); pn2 = max(0.10, p_n - force_corr * 0.15)
+    else:
+        pb2 = p_b + force_corr; pa2 = max(0.08, p_a - force_corr * 0.85); pn2 = max(0.10, p_n - force_corr * 0.15)
+    t = pa2 + pn2 + pb2
+    return pa2 / t, pn2 / t, pb2 / t
+
 def predire_match(home, away):
     home_m = _nom_modele(home)
     away_m = _nom_modele(away)
 
-    def _features(a, b):
-        fa = _get_forme(a, df_officiel)
-        fb = _get_forme(b, df_officiel)
-        pa = _get_pts_fifa(a)
-        pb = _get_pts_fifa(b)
-        ef = pa - pb
-        qa = _get_qualite(a) / 100
-        qb = _get_qualite(b) / 100
-        eq = qa - qb
-        h = 0.5 if a in PAYS_HOTES_MODELE else (-0.5 if b in PAYS_HOTES_MODELE else 0.0)
-        return pd.DataFrame([{
-            'ecart_fifa_brut':      ef,
-            'ecart_fifa_normalise': ef / 100,
-            'ecart_fifa_carre':     (ef / 100) ** 2 * np.sign(ef),
-            'ecart_forme_ponderee': (fa * qa) - (fb * qb),
-            'ecart_qualite':        eq,
-            'ecart_qualite_double': eq * 2,
-            'ecart_qualite_carre':  eq ** 2 * np.sign(eq),
-            'avantage_hote':        h,
-        }])
+    fa = _score_force(home_m, df_officiel)
+    fb = _score_force(away_m, df_officiel)
+    h  = 0.5 if home_m in PAYS_HOTES_MODELE else (-0.5 if away_m in PAYS_HOTES_MODELE else 0.0)
+    ef_ab = fa - fb
+    fm    = (fa + fb) / 2
 
-    classes = list(enc_y.classes_)
-    idx_a = classes.index('A_gagne')
-    idx_b = classes.index('B_gagne')
-    idx_n = classes.index('Nul')
+    feat_ab = pd.DataFrame([{
+        'ecart_force':       ef_ab,
+        'ecart_force_carre': ef_ab ** 2 * np.sign(ef_ab),
+        'abs_ecart_force':   abs(ef_ab),
+        'force_moy':         fm,
+        'avantage_hote':     h,
+    }])
+    feat_ba = pd.DataFrame([{
+        'ecart_force':       -ef_ab,
+        'ecart_force_carre': (-ef_ab) ** 2 * np.sign(-ef_ab),
+        'abs_ecart_force':   abs(ef_ab),
+        'force_moy':         fm,
+        'avantage_hote':     -h,
+    }])
 
     # Prediction symetrique : moyenne AB et BA pour eviter le biais home/away
-    pab = modele.predict_proba(_features(home_m, away_m))[0]
-    pba = modele.predict_proba(_features(away_m, home_m))[0]
+    pab = modele.predict_proba(feat_ab)[0]
+    pba = modele.predict_proba(feat_ba)[0]
 
-    p_v = (pab[idx_a] + pba[idx_b]) / 2
-    p_d = (pab[idx_b] + pba[idx_a]) / 2
-    p_n = (pab[idx_n] + pba[idx_n]) / 2
+    p_v = (pab[_IDX_A] + pba[_IDX_B]) / 2
+    p_d = (pab[_IDX_B] + pba[_IDX_A]) / 2
+    p_n = (pab[_IDX_N] + pba[_IDX_N]) / 2
+    t = p_v + p_d + p_n
+    p_v, p_d, p_n = p_v / t, p_d / t, p_n / t
 
-    total = p_v + p_d + p_n
-    return {'V': p_v / total, 'N': p_n / total, 'D': p_d / total}
+    # Compression vers 1/3 (probas plus realistes, ne change pas le favori)
+    p_v = 1/3 + _ALPHA * (p_v - 1/3)
+    p_n = 1/3 + _ALPHA * (p_n - 1/3)
+    p_d = 1/3 + _ALPHA * (p_d - 1/3)
+    t = p_v + p_n + p_d
+    p_v, p_n, p_d = p_v / t, p_n / t, p_d / t
+
+    p_v, p_n, p_d = _corriger_coherence(p_v, p_n, p_d, fa, fb)
+    return {'V': p_v, 'N': p_n, 'D': p_d}
 
 # ── Simulation Phase de Poule ──────────────────────────────────────
 @st.cache_data(show_spinner="Simulation en cours...")
@@ -456,36 +524,46 @@ with st.sidebar:
     <div style='text-align:center'>
         <p style='color:#8a2020 !important;font-size:11px;font-weight:bold;margin:4px 0'>🇺🇸 USA · 🇨🇦 Canada · 🇲🇽 Mexico</p>
         <p style='color:#aaa !important;font-size:10px;margin:2px 0'>11 juin → 19 juillet 2026</p>
-        <p style='color:#34D399 !important;font-size:11px;font-weight:bold;margin:4px 0'>XGBoost · Accuracy 55.47%</p>
+        <p style='color:#34D399 !important;font-size:11px;font-weight:bold;margin:4px 0'>Modele Hybride v3 · Accuracy 53.94%</p>
     </div>
     """, unsafe_allow_html=True)
 
 # ════════════════════════════════════════════════════════════════
-# TABLE OFFICIELLE FIFA — Attribution des 3es (source : Annexe C FIFA)
-# frozenset(groupes_3es) → {slot: groupe_du_3e}
+# TABLE OFFICIELLE FIFA — Attribution des 3es (source : Annexe C FIFA +
+# notebooks/datacup2026_bracket.ipynb)
+# frozenset(groupes_3es) → {slot_1er: groupe_du_3e}
 # ════════════════════════════════════════════════════════════════
 _TABLE_3ES = {
-    frozenset(['E','F','G','H','I','J','K','L']): {'74':'E','77':'I','79':'A','80':'L','81':'D','82':'G','85':'B','87':'K'},
-    frozenset(['D','F','G','H','I','J','K','L']): {'74':'H','77':'I','79':'A','80':'L','81':'D','82':'G','85':'B','87':'K'},
-    frozenset(['D','E','G','H','I','J','K','L']): {'74':'E','77':'I','79':'A','80':'L','81':'D','82':'H','85':'B','87':'K'},
-    frozenset(['D','E','F','H','I','J','K','L']): {'74':'E','77':'I','79':'A','80':'L','81':'D','82':'H','85':'B','87':'K'},
-    frozenset(['D','E','F','G','I','J','K','L']): {'74':'E','77':'I','79':'A','80':'L','81':'D','82':'G','85':'B','87':'K'},
-    frozenset(['D','E','F','G','H','J','K','L']): {'74':'E','77':'J','79':'A','80':'L','81':'D','82':'H','85':'B','87':'K'},
-    frozenset(['D','E','F','G','H','I','K','L']): {'74':'E','77':'I','79':'A','80':'L','81':'D','82':'H','85':'B','87':'K'},
-    frozenset(['D','E','F','G','H','I','J','L']): {'74':'E','77':'I','79':'A','80':'L','81':'D','82':'H','85':'B','87':'J'},
-    frozenset(['D','E','F','G','H','I','J','K']): {'74':'E','77':'I','79':'A','80':'K','81':'D','82':'H','85':'B','87':'J'},
-    frozenset(['C','D','E','F','G','H','I','J']): {'74':'C','77':'I','79':'A','80':'J','81':'D','82':'H','85':'B','87':'E'},
-    frozenset(['C','D','E','F','G','H','I','K']): {'74':'C','77':'I','79':'A','80':'K','81':'D','82':'H','85':'B','87':'E'},
-    frozenset(['C','D','E','F','G','H','I','L']): {'74':'C','77':'I','79':'A','80':'L','81':'D','82':'H','85':'B','87':'E'},
-    frozenset(['C','D','E','F','G','H','J','K']): {'74':'C','77':'J','79':'A','80':'K','81':'D','82':'H','85':'B','87':'E'},
-    frozenset(['C','D','E','F','G','H','J','L']): {'74':'C','77':'J','79':'A','80':'L','81':'D','82':'H','85':'B','87':'E'},
-    frozenset(['C','D','E','F','G','H','K','L']): {'74':'C','77':'K','79':'A','80':'L','81':'D','82':'H','85':'B','87':'E'},
-    frozenset(['C','D','E','F','G','I','J','K']): {'74':'C','77':'I','79':'A','80':'K','81':'D','82':'G','85':'B','87':'J'},
-    frozenset(['C','D','E','F','G','I','J','L']): {'74':'C','77':'I','79':'A','80':'L','81':'D','82':'G','85':'B','87':'J'},
-    frozenset(['C','D','E','F','H','I','J','K']): {'74':'C','77':'I','79':'A','80':'K','81':'D','82':'H','85':'B','87':'J'},
-    frozenset(['C','D','E','F','H','I','J','L']): {'74':'C','77':'I','79':'A','80':'L','81':'D','82':'H','85':'B','87':'J'},
-    frozenset(['C','D','E','F','H','I','K','L']): {'74':'C','77':'I','79':'A','80':'L','81':'D','82':'H','85':'B','87':'K'},
-    frozenset(['C','E','F','G','H','I','J','K']): {'74':'E','77':'I','79':'C','80':'K','81':'J','82':'H','85':'B','87':'G'},
+    frozenset(['E','F','G','H','I','J','K','L']): {'1A':'E','1B':'J','1D':'I','1E':'F','1G':'H','1I':'G','1K':'L','1L':'K'},
+    frozenset(['D','F','G','H','I','J','K','L']): {'1A':'H','1B':'G','1D':'I','1E':'D','1G':'J','1I':'F','1K':'L','1L':'K'},
+    frozenset(['D','E','G','H','I','J','K','L']): {'1A':'E','1B':'J','1D':'I','1E':'D','1G':'H','1I':'G','1K':'L','1L':'K'},
+    frozenset(['D','E','F','H','I','J','K','L']): {'1A':'E','1B':'J','1D':'I','1E':'D','1G':'H','1I':'F','1K':'L','1L':'K'},
+    frozenset(['D','E','F','G','I','J','K','L']): {'1A':'E','1B':'G','1D':'I','1E':'D','1G':'J','1I':'F','1K':'L','1L':'K'},
+    frozenset(['D','E','F','G','H','J','K','L']): {'1A':'E','1B':'G','1D':'J','1E':'D','1G':'H','1I':'F','1K':'L','1L':'K'},
+    frozenset(['D','E','F','G','H','I','K','L']): {'1A':'E','1B':'G','1D':'I','1E':'D','1G':'H','1I':'F','1K':'L','1L':'K'},
+    frozenset(['D','E','F','G','H','I','J','L']): {'1A':'E','1B':'G','1D':'J','1E':'D','1G':'H','1I':'F','1K':'L','1L':'I'},
+    frozenset(['D','E','F','G','H','I','J','K']): {'1A':'E','1B':'G','1D':'J','1E':'D','1G':'H','1I':'F','1K':'I','1L':'K'},
+    frozenset(['C','E','F','G','H','I','J','K']): {'1A':'E','1B':'G','1D':'J','1E':'C','1G':'H','1I':'F','1K':'I','1L':'K'},
+    frozenset(['C','D','E','F','G','H','I','J']): {'1A':'C','1B':'G','1D':'J','1E':'D','1G':'H','1I':'F','1K':'E','1L':'I'},
+    frozenset(['C','D','E','F','G','H','I','K']): {'1A':'C','1B':'G','1D':'E','1E':'D','1G':'H','1I':'F','1K':'I','1L':'K'},
+    frozenset(['C','D','E','F','G','H','I','L']): {'1A':'C','1B':'G','1D':'E','1E':'D','1G':'H','1I':'F','1K':'L','1L':'I'},
+    frozenset(['C','D','E','F','G','H','J','K']): {'1A':'C','1B':'G','1D':'J','1E':'D','1G':'H','1I':'F','1K':'E','1L':'K'},
+    frozenset(['C','D','E','F','G','H','J','L']): {'1A':'C','1B':'G','1D':'J','1E':'D','1G':'H','1I':'F','1K':'L','1L':'E'},
+    frozenset(['C','D','E','F','G','H','K','L']): {'1A':'C','1B':'G','1D':'E','1E':'D','1G':'H','1I':'F','1K':'L','1L':'K'},
+    frozenset(['C','D','E','F','G','I','J','K']): {'1A':'C','1B':'G','1D':'E','1E':'D','1G':'J','1I':'F','1K':'I','1L':'K'},
+    frozenset(['C','D','E','F','G','I','J','L']): {'1A':'C','1B':'G','1D':'E','1E':'D','1G':'J','1I':'F','1K':'L','1L':'I'},
+    frozenset(['C','D','E','F','G','I','K','L']): {'1A':'C','1B':'G','1D':'E','1E':'D','1G':'I','1I':'F','1K':'L','1L':'K'},
+    frozenset(['C','D','E','F','G','J','K','L']): {'1A':'C','1B':'G','1D':'E','1E':'D','1G':'J','1I':'F','1K':'L','1L':'K'},
+    frozenset(['C','D','E','F','H','I','J','K']): {'1A':'C','1B':'J','1D':'E','1E':'D','1G':'H','1I':'F','1K':'I','1L':'K'},
+    frozenset(['C','D','E','F','H','I','J','L']): {'1A':'C','1B':'J','1D':'E','1E':'D','1G':'H','1I':'F','1K':'L','1L':'I'},
+    frozenset(['C','D','E','F','H','I','K','L']): {'1A':'C','1B':'E','1D':'I','1E':'D','1G':'H','1I':'F','1K':'L','1L':'K'},
+    frozenset(['C','D','E','F','H','J','K','L']): {'1A':'C','1B':'J','1D':'E','1E':'D','1G':'H','1I':'F','1K':'L','1L':'K'},
+    frozenset(['C','D','E','F','I','J','K','L']): {'1A':'C','1B':'J','1D':'E','1E':'D','1G':'I','1I':'F','1K':'L','1L':'K'},
+}
+
+_SLOT_VERS_MATCH = {
+    '1E':'74','1I':'77','1A':'79','1L':'80',
+    '1D':'81','1G':'82','1B':'85','1K':'87',
 }
 
 _SLOTS_FALLBACK = [
@@ -500,7 +578,7 @@ def _assigner_3es(troisiemes_sorted):
     grps_set   = frozenset(grp for _, _, grp in troisiemes_sorted[:8])
     eq_par_grp = {grp: eq for eq, _, grp in troisiemes_sorted[:8]}
     if grps_set in _TABLE_3ES:
-        return {slot: eq_par_grp.get(grp, list(eq_par_grp.values())[0])
+        return {_SLOT_VERS_MATCH[slot]: eq_par_grp.get(grp, list(eq_par_grp.values())[0])
                 for slot, grp in _TABLE_3ES[grps_set].items()}
     dispo = list(troisiemes_sorted[:8])
     slots = {}
@@ -545,10 +623,10 @@ if page == "🏠 Accueil":
 
     st.divider()
     c1, c2, c3, c4 = st.columns(4)
-    c1.metric("🎯 Accuracy Modèle", "55.47%", "+3.54%")
+    c1.metric("🎯 Accuracy Modèle", "53.94%", "écart bkm 4.5%")
     c2.metric("📊 Matchs entraînement", "10 732", "depuis 2010")
     c3.metric("🏆 Équipes qualifiées", "48", "FIFA 2026")
-    c4.metric("🤖 Algorithme", "XGBoost", "optimisé")
+    c4.metric("🤖 Algorithme", "Hybride v3", "force + XGBoost")
 
     st.divider()
     col1, col2 = st.columns(2)
@@ -566,10 +644,10 @@ if page == "🏠 Accueil":
         st.markdown("### 🤖 Notre Modèle ML")
         st.markdown("""
         <div style='background:#112240;border-left:4px solid #006633;border-radius:6px;padding:15px'>
-            <p style='color:#E0E0E0 !important'>✅ <b style='color:#34D399'>Niveau 1</b> — Victoire / Nul / Défaite par match</p>
-            <p style='color:#E0E0E0 !important'>⚽ <b style='color:#4FC3F7'>Features</b> — FIFA pts, forme, buts, h2h</p>
-            <p style='color:#E0E0E0 !important'>🌳 <b style='color:#4FC3F7'>Algorithme</b> — XGBoost optimisé</p>
-            <p style='color:#E0E0E0 !important'>📈 <b style='color:#FFD700'>Accuracy</b> — 55.47% (+3.54% vs baseline)</p>
+            <p style='color:#E0E0E0 !important'>✅ <b style='color:#34D399'>Hybride v3</b> — Victoire / Nul / Défaite par match</p>
+            <p style='color:#E0E0E0 !important'>⚽ <b style='color:#4FC3F7'>Score de force</b> — 50% qualité + 35% FIFA + 15% forme</p>
+            <p style='color:#E0E0E0 !important'>🌳 <b style='color:#4FC3F7'>Algorithme</b> — XGBoost + compression probas</p>
+            <p style='color:#E0E0E0 !important'>📈 <b style='color:#FFD700'>Accuracy</b> — 53.94% (écart bookmakers 4.5%)</p>
         </div>
         """, unsafe_allow_html=True)
 
@@ -664,7 +742,7 @@ elif page == "⚽ Prédire un match":
 # ════════════════════════════════════════════════════════════════
 elif page == "📊 Phase de poule":
     st.markdown("<h1>📊 Phase de poule — 12 Groupes · 48 Équipes</h1>", unsafe_allow_html=True)
-    st.markdown("<p style='color:#aaa'>FIFA World Cup 2026 · XGBoost · Accuracy 55.47%</p>", unsafe_allow_html=True)
+    st.markdown("<p style='color:#aaa'>FIFA World Cup 2026 · Modele Hybride v3 · Accuracy 53.94%</p>", unsafe_allow_html=True)
 
     groupe_sel = st.selectbox("🏟️ Sélectionner un groupe",
                                [f"Groupe {g}" for g in GROUPES.keys()])
