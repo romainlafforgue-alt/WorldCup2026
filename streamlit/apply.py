@@ -4,6 +4,8 @@ import pandas as pd
 import numpy as np
 from pathlib import Path
 from itertools import combinations
+import textwrap
+import base64
 
 ROOT = Path(__file__).parent.parent
 
@@ -245,6 +247,28 @@ def get_flag(team, size=24):
     if iso:
         return f'<img src="https://flagcdn.com/w40/{iso}.png" width="{size}" style="vertical-align:middle;border-radius:3px">'
     return '🏳️'
+
+def get_stars(team):
+
+    points = POINTS_FIFA.get(
+        _nom_modele(team),
+        _MOYENNE_FIFA
+    )
+
+    if points >= 1800:
+        return 5
+    elif points >= 1700:
+        return 4.5
+    elif points >= 1600:
+        return 4
+    elif points >= 1500:
+        return 3.5
+    elif points >= 1400:
+        return 3
+    elif points >= 1300:
+        return 2.5
+    else:
+        return 2
 
 # ── Groupes FIFA 2026 ─────────────────────────────────────────────
 GROUPES = {
@@ -513,7 +537,6 @@ with st.sidebar:
 
     page = st.radio("", [
         "🏠 Accueil",
-        "⚽ Prédire un match",
         "📊 Phase de poule",
         "🏆 Tableau final",
         "⭐ Favoris"
@@ -600,28 +623,54 @@ def _sim_paires(paires):
         infos.append((e1, e2, w, l, pw, pl))
     return gagnants, infos
 
+def render_html(html_string):
+    """Affiche du HTML en supprimant l'indentation parasite qui casse le rendu Markdown."""
+    st.markdown(textwrap.dedent(html_string).strip(), unsafe_allow_html=True)
+
+def get_base64_image(image_path):
+    with open(image_path, "rb") as f:
+        return base64.b64encode(f.read()).decode()
+
 # ════════════════════════════════════════════════════════════════
 # ACCUEIL
 # ════════════════════════════════════════════════════════════════
+
 if page == "🏠 Accueil":
-    _, col_c, _ = st.columns([1,2,1])
+
+    img_base64 = get_base64_image("streamlit/images/WC26_accueil2.png")
+
+    _, col_c, _ = st.columns([0.2, 8, 0.2])
+
     with col_c:
-        st.markdown(f"""
-        <div style='text-align:center;padding:20px 0'>
+        render_html(f"""
+        <div style='
+            text-align:center;
+            padding:140px 0;
+            background-image: linear-gradient(rgba(10,15,30,0.75), rgba(10,15,30,0.75)), url("data:image/jpeg;base64,{img_base64}");
+            background-size:cover;
+            background-position:center;
+            border-radius:12px;
+        '>
             <h1 style='font-size:2.5rem;color:#FFD700;font-family:Arial Black;margin:12px 0 4px;border:none'>
                 ⚽ FRENCH TEAM
             </h1>
             <p style='color:#34D399 !important;font-size:15px;font-weight:bold;margin:0'>
                 FIFA World Cup 2026 — Prédictions Data
             </p>
-            <div style='background:linear-gradient(90deg,#8a2020,#003087,#006633);height:4px;border-radius:2px;margin:12px auto;width:60%'></div>
+            <div style='background:linear-gradient(90deg,#8a2020,#003087,#006633);
+                        height:4px;
+                        border-radius:2px;
+                        margin:12px auto;
+                        width:60%'>
+            </div>
             <p style='color:#aaa !important;font-size:13px'>
-                🇺🇸 United States &nbsp;·&nbsp; 🇨🇦 Canada &nbsp;·&nbsp; 🇲🇽 Mexico &nbsp;·&nbsp; 11 juin → 19 juillet 2026
+                🇺🇸 United States · 🇨🇦 Canada · 🇲🇽 Mexico · 11 juin → 19 juillet 2026
             </p>
         </div>
-        """, unsafe_allow_html=True)
+        """)
 
     st.divider()
+
     c1, c2, c3, c4 = st.columns(4)
     c1.metric("🎯 Accuracy Modèle", "53.94%", "écart bkm 4.5%")
     c2.metric("📊 Matchs entraînement", "10 732", "depuis 2010")
@@ -629,113 +678,185 @@ if page == "🏠 Accueil":
     c4.metric("🤖 Algorithme", "Hybride v3", "force + XGBoost")
 
     st.divider()
+
+    st.markdown("## ⚔️ Simulateur de confrontation")
+
     col1, col2 = st.columns(2)
+
+    with col1:
+        home = st.selectbox("Equipe 1", equipes, key="home_accueil")
+
+    with col2:
+        away = st.selectbox("Equipe 2", equipes, key="away_accueil")
+
+    # =====================================================
+    # DRAPEAUX + ÉTOILES
+    # =====================================================
+
+    stars_home = get_stars(home)
+    stars_away = get_stars(away)
+
+    flag_home = get_flag(home, 60)
+    flag_away = get_flag(away, 60)
+
+    card1, card2 = st.columns(2)
+
+    with card1:
+        render_html(f"""
+        <div style="
+            background:#112240;
+            border-top:5px solid #006633;
+            border-radius:12px;
+            padding:25px;
+            text-align:center;
+        ">
+            <div style="font-size:60px">
+                {flag_home}
+            </div>
+            <h2 style="color:white">
+                {home}
+            </h2>
+            <div style="font-size:26px;color:#FFD700">
+                {'⭐' * round(stars_home)}
+            </div>
+            <p style="color:#FFD700;font-weight:bold">
+                {stars_home}/5
+            </p>
+        </div>
+        """)
+
+    with card2:
+        render_html(f"""
+        <div style="
+            background:#112240;
+            border-top:5px solid #8a2020;
+            border-radius:12px;
+            padding:25px;
+            text-align:center;
+        ">
+            <div style="font-size:60px">
+                {flag_away}
+            </div>
+            <h2 style="color:white">
+                {away}
+            </h2>
+            <div style="font-size:26px;color:#FFD700">
+                {'⭐' * round(stars_away)}
+            </div>
+            <p style="color:#FFD700;font-weight:bold">
+                {stars_away}/5
+            </p>
+        </div>
+        """)
+
+    # =====================================================
+    # PROBABILITÉS
+    # =====================================================
+
+    st.divider()
+
+    probas = predire_match(home, away)
+
+    st.markdown("### 📊 Probabilités du match")
+
+    c1, c2, c3 = st.columns(3)
+    c1.metric(home, f"{probas['V'] * 100:.1f}%")
+    c2.metric("Match nul", f"{probas['N'] * 100:.1f}%")
+    c3.metric(away, f"{probas['D'] * 100:.1f}%")
+
+    # =====================================================
+    # INFORMATIONS COUPE DU MONDE
+    # =====================================================
+
+    st.divider()
+
+    col1, col2 = st.columns(2)
+
     with col1:
         st.markdown("### 📅 Calendrier")
         st.markdown("""
-        <div style='background:#112240;border-left:4px solid #8a2020;border-radius:6px;padding:15px'>
-            <p style='color:#E0E0E0 !important'>🟢 <b style='color:#FFD700'>11 juin 2026</b> — Match ouverture (Mexico City)</p>
-            <p style='color:#E0E0E0 !important'>📋 <b style='color:#4FC3F7'>11 juin → 4 juillet</b> — Phase de poule (12 groupes)</p>
-            <p style='color:#E0E0E0 !important'>⚔️ <b style='color:#4FC3F7'>4 → 18 juillet</b> — Phases éliminatoires</p>
-            <p style='color:#E0E0E0 !important'>🏆 <b style='color:#8a2020'>19 juillet 2026</b> — FINALE (New York / NJ)</p>
+        <div style='background:#112240;
+                    border-left:4px solid #8a2020;
+                    border-radius:6px;
+                    padding:15px'>
+            <p style='color:#E0E0E0 !important'>
+                🟢 <b style='color:#FFD700'>11 juin 2026</b>
+                — Match ouverture (Mexico City)
+            </p>
+            <p style='color:#E0E0E0 !important'>
+                📋 <b style='color:#4FC3F7'>11 juin → 4 juillet</b>
+                — Phase de poule
+            </p>
+            <p style='color:#E0E0E0 !important'>
+                ⚔️ <b style='color:#4FC3F7'>4 → 18 juillet</b>
+                — Phases éliminatoires
+            </p>
+            <p style='color:#E0E0E0 !important'>
+                🏆 <b style='color:#8a2020'>19 juillet 2026</b>
+                — Finale
+            </p>
         </div>
         """, unsafe_allow_html=True)
+
     with col2:
         st.markdown("### 🤖 Notre Modèle ML")
         st.markdown("""
-        <div style='background:#112240;border-left:4px solid #006633;border-radius:6px;padding:15px'>
-            <p style='color:#E0E0E0 !important'>✅ <b style='color:#34D399'>Hybride v3</b> — Victoire / Nul / Défaite par match</p>
-            <p style='color:#E0E0E0 !important'>⚽ <b style='color:#4FC3F7'>Score de force</b> — 50% qualité + 35% FIFA + 15% forme</p>
-            <p style='color:#E0E0E0 !important'>🌳 <b style='color:#4FC3F7'>Algorithme</b> — XGBoost + compression probas</p>
-            <p style='color:#E0E0E0 !important'>📈 <b style='color:#FFD700'>Accuracy</b> — 53.94% (écart bookmakers 4.5%)</p>
+        <div style='background:#112240;
+                    border-left:4px solid #006633;
+                    border-radius:6px;
+                    padding:15px'>
+            <p style='color:#E0E0E0 !important'>
+                ✅ <b style='color:#34D399'>Hybride v3</b>
+            </p>
+            <p style='color:#E0E0E0 !important'>
+                ⚽ <b style='color:#4FC3F7'>Score de force</b>
+            </p>
+            <p style='color:#E0E0E0 !important'>
+                🌳 <b style='color:#4FC3F7'>XGBoost</b>
+            </p>
+            <p style='color:#E0E0E0 !important'>
+                📈 <b style='color:#FFD700'>Accuracy 53.94%</b>
+            </p>
         </div>
         """, unsafe_allow_html=True)
 
     st.divider()
+
     st.markdown("### 👥 FrenchTeam — Wild Code School 2026")
+
     c1, c2, c3, c4 = st.columns(4)
+
     membres = [
-        ("🧑‍✈️","Aurélien","Product Owner","Power BI","#8a2020"),
-        ("🔧","Cédric","Scrum Master","Coordination","#4FC3F7"),
-        ("💻","Ernest","Dev Team","Streamlit Dev","#34D399"),
-        ("📊","Romain","Dev Team","Data Eng. + ML","#FFD700"),
+        ("🧑‍✈️", "Aurélien", "Product Owner", "Power BI", "#8a2020"),
+        ("🔧", "Cédric", "Scrum Master", "Coordination", "#4FC3F7"),
+        ("💻", "Ernest", "Dev Team", "Streamlit Dev", "#34D399"),
+        ("📊", "Romain", "Dev Team", "Data Eng. + ML", "#FFD700"),
     ]
-    for col, (ico, nom, scrum, tech, color) in zip([c1,c2,c3,c4], membres):
-        col.markdown(f"""
-        <div style='background:#112240;border-top:4px solid {color};border-radius:6px;padding:15px;text-align:center'>
-            <div style='font-size:32px'>{ico}</div>
-            <h4 style='color:{color} !important;margin:8px 0;border:none'>{nom}</h4>
-            <p style='color:#aaa !important;font-size:11px;margin:2px;font-weight:bold'>{scrum}</p>
-            <p style='color:#777 !important;font-size:10px'>{tech}</p>
-        </div>
-        """, unsafe_allow_html=True)
 
-# ════════════════════════════════════════════════════════════════
-# PRÉDICTION
-# ════════════════════════════════════════════════════════════════
-elif page == "⚽ Prédire un match":
-    st.markdown("<h1>⚽ Prédire un match</h1>", unsafe_allow_html=True)
-
-    col1, col2, col3 = st.columns([2,1,2])
-    with col1:
-        home = st.selectbox("🏠 Équipe domicile", equipes,
-                            index=equipes.index("France") if "France" in equipes else 0)
-    with col2:
-        st.markdown("<br><br>", unsafe_allow_html=True)
-        st.markdown('<div style="text-align:center;color:#FFFFFF;font-size:1.4rem;font-weight:bold;padding:14px">VS</div>', unsafe_allow_html=True)
-    with col3:
-        away = st.selectbox("✈️ Équipe extérieure", equipes,
-                            index=equipes.index("Argentina") if "Argentina" in equipes else 1)
-
-    st.markdown("<br>", unsafe_allow_html=True)
-    if st.button("🔮 LANCER LA PRÉDICTION", type="primary"):
-        if home == away:
-            st.error("⚠️ Choisissez deux équipes différentes !")
-        else:
-            probas = predire_match(home, away)
-            v, n, d = probas.get('V',0), probas.get('N',0), probas.get('D',0)
-            fh = get_flag(home, 36)
-            fa = get_flag(away, 36)
-
-            st.divider()
-            st.markdown(f"""
-            <h2 style='text-align:center;color:#FFFFFF;border:none'>
-                {fh} {home} &nbsp;<span style='color:#8a2020'>VS</span>&nbsp; {away} {fa}
-            </h2>
-            """, unsafe_allow_html=True)
-
-            favori = home if v >= d and v >= n else (away if d > v and d >= n else "Nul")
-            fav_color = "#27843a" if favori == home else ("#8a2020" if favori == away else "#888")
-            st.markdown(f"""
-            <div style='background:#0D1B2A;border-radius:12px;padding:20px;margin:15px 0'>
-              <div style='display:flex;justify-content:space-between;align-items:center;margin-bottom:12px'>
-                <div style='display:flex;align-items:center;gap:8px'>{fh}<span style='color:#FFFFFF;font-size:16px;font-weight:bold'>{home}</span></div>
-                <span style='color:#aaa;font-size:12px'>Probabilites</span>
-                <div style='display:flex;align-items:center;gap:8px'><span style='color:#FFFFFF;font-size:16px;font-weight:bold'>{away}</span>{fa}</div>
-              </div>
-              <div style='display:flex;border-radius:8px;overflow:hidden;height:52px;margin-bottom:10px'>
-                <div style='flex:{v:.4f};background:#27843a;display:flex;align-items:center;justify-content:center'>
-                  <span style='color:white;font-weight:bold;font-size:16px'>{v:.1%}</span>
-                </div>
-                <div style='flex:{n:.4f};background:#888;display:flex;align-items:center;justify-content:center'>
-                  <span style='color:white;font-weight:bold;font-size:12px'>Nul {n:.1%}</span>
-                </div>
-                <div style='flex:{d:.4f};background:#8a2020;display:flex;align-items:center;justify-content:center'>
-                  <span style='color:white;font-weight:bold;font-size:16px'>{d:.1%}</span>
-                </div>
-              </div>
-              <div style='display:flex;justify-content:space-between'>
-                <span style='color:#27843a;font-size:12px;font-weight:bold'>Victoire {home}</span>
-                <span style='color:#888;font-size:12px;font-weight:bold'>Match Nul</span>
-                <span style='color:#8a2020;font-size:12px;font-weight:bold'>Victoire {away}</span>
-              </div>
+    for col, (ico, nom, role, tech, color) in zip([c1, c2, c3, c4], membres):
+        col.markdown(
+            f"""
+            <div style='background:#112240;
+                        border-top:4px solid {color};
+                        border-radius:6px;
+                        padding:15px;
+                        text-align:center'>
+                <div style='font-size:32px'>{ico}</div>
+                <h4 style='color:{color} !important'>
+                    {nom}
+                </h4>
+                <p style='color:#aaa !important'>
+                    {role}
+                </p>
+                <p style='color:#777 !important'>
+                    {tech}
+                </p>
             </div>
-            <div style='text-align:center;padding:8px;background:rgba({("39,132,58" if favori==home else ("138,32,32" if favori==away else "100,100,100"))},0.2);
-                        border-radius:8px;border:1px solid {fav_color}'>
-              <span style='color:{fav_color};font-weight:bold;font-size:15px'>
-                {"Favori : " + favori if favori != "Nul" else "Match tres equilibre"}</span>
-            </div>
-            """, unsafe_allow_html=True)
+            """,
+            unsafe_allow_html=True
+        )
+
+
 
 # ════════════════════════════════════════════════════════════════
 # PHASE DE POULE
