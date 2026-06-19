@@ -539,7 +539,8 @@ with st.sidebar:
         "🏠 Accueil",
         "📊 Phase de poule",
         "🏆 Tableau final",
-        "⭐ Favoris"
+        "⭐ Favoris",
+        "👕 Équipes"
     ])
 
     st.markdown("""
@@ -637,24 +638,21 @@ def get_base64_image(image_path):
 
 if page == "🏠 Accueil":
 
-    img_base64 = get_base64_image("streamlit/images/WC26_accueil2.png")
-
     _, col_c, _ = st.columns([0.2, 8, 0.2])
 
     with col_c:
-        render_html(f"""
+        render_html("""
         <div style='
             text-align:center;
-            padding:140px 0;
-            background-image: linear-gradient(rgba(10,15,30,0.75), rgba(10,15,30,0.75)), url("data:image/jpeg;base64,{img_base64}");
-            background-size:cover;
-            background-position:center;
+            padding:clamp(40px, 8vh, 120px) 0;
+            background:linear-gradient(135deg, #0d1b3e 0%, #1a1a2e 40%, #0f2027 100%);
             border-radius:12px;
+            border:1px solid rgba(255,255,255,0.05);
         '>
-            <h1 style='font-size:2.5rem;color:#FFD700;font-family:Arial Black;margin:12px 0 4px;border:none'>
+            <h1 style='font-size:clamp(1.6rem, 3vw, 2.8rem);color:#FFD700;font-family:Arial Black;margin:12px 0 4px;border:none'>
                 ⚽ FRENCH TEAM
             </h1>
-            <p style='color:#34D399 !important;font-size:15px;font-weight:bold;margin:0'>
+            <p style='color:#34D399 !important;font-size:clamp(12px, 1.5vw, 16px);font-weight:bold;margin:0'>
                 FIFA World Cup 2026 — Prédictions Data
             </p>
             <div style='background:linear-gradient(90deg,#8a2020,#003087,#006633);
@@ -663,7 +661,7 @@ if page == "🏠 Accueil":
                         margin:12px auto;
                         width:60%'>
             </div>
-            <p style='color:#aaa !important;font-size:13px'>
+            <p style='color:#aaa !important;font-size:clamp(11px, 1.2vw, 14px)'>
                 🇺🇸 United States · 🇨🇦 Canada · 🇲🇽 Mexico · 11 juin → 19 juillet 2026
             </p>
         </div>
@@ -887,9 +885,6 @@ elif page == "📊 Phase de poule":
 
     st.markdown("<br>", unsafe_allow_html=True)
 
-    # Matchs prédits
-    st.markdown("### ⚔️ Matchs prédits")
-    resultats = []
     stats_g = {t: {'pts':0,'j':0,'g':0,'n':0,'p':0,'bp':0,'bc':0} for t in teams}
 
     for home, away in combinations(teams, 2):
@@ -904,29 +899,14 @@ elif page == "📊 Phase de poule":
             stats_g[away]['bp'] += buts_away; stats_g[away]['bc'] += buts_home
 
             if v > n and v > d:
-                pred = f"✅ {home}"
                 stats_g[home]['pts'] += 3; stats_g[home]['g'] += 1; stats_g[away]['p'] += 1
             elif d > n and d > v:
-                pred = f"✅ {away}"
                 stats_g[away]['pts'] += 3; stats_g[away]['g'] += 1; stats_g[home]['p'] += 1
             else:
-                pred = "🤝 Nul"
                 stats_g[home]['pts'] += 1; stats_g[home]['n'] += 1
                 stats_g[away]['pts'] += 1; stats_g[away]['n'] += 1
-
-            resultats.append({
-                "Match":          f"{home} vs {away}",
-                "% Victoire 1":   f"{v:.0%}",
-                "% Nul":          f"{n:.0%}",
-                "% Victoire 2":   f"{d:.0%}",
-                "Score prédit":   f"{buts_home} - {buts_away}",
-                "Prédiction":     pred
-            })
         except:
             pass
-
-    if resultats:
-        st.dataframe(pd.DataFrame(resultats), use_container_width=True, hide_index=True)
 
     # Classement groupe
     st.markdown("### 📋 Classement simulé du groupe")
@@ -941,7 +921,6 @@ elif page == "📊 Phase de poule":
             "Pos": rank,
             "Équipe": team,
             "J": s['j'], "G": s['g'], "N": s['n'], "D": s['p'],
-            "BP": s['bp'], "BC": s['bc'], "Diff": s['bp']-s['bc'],
             "Pts": s['pts'],
             "Statut": qualif
         })
@@ -1097,19 +1076,19 @@ elif page == "🏆 Tableau final":
     header_d = (
         f"<div style='display:flex;justify-content:space-around;margin-bottom:8px;"
         f"padding-bottom:4px;border-bottom:1px solid #1a2a3a'>"
-        f"<b style='color:{CR32};font-size:9px'>R32</b>"
-        f"<b style='color:{CR16};font-size:9px'>R16</b>"
+        f"<b style='color:{CR32};font-size:9px'>16ème</b>"
+        f"<b style='color:{CR16};font-size:9px'>8ème</b>"
         f"<b style='color:{CQF};font-size:9px'>Quarts</b>"
-        f"<b style='color:{CSF};font-size:9px'>Demis</b>"
+        f"<b style='color:{CSF};font-size:9px'>Demi</b>"
         f"</div>"
     )
     header_a = (
         f"<div style='display:flex;justify-content:space-around;margin-bottom:8px;"
         f"padding-bottom:4px;border-bottom:1px solid #1a2a3a'>"
-        f"<b style='color:{CSF};font-size:9px'>Demis</b>"
+        f"<b style='color:{CSF};font-size:9px'>Demi</b>"
         f"<b style='color:{CQF};font-size:9px'>Quarts</b>"
-        f"<b style='color:{CR16};font-size:9px'>R16</b>"
-        f"<b style='color:{CR32};font-size:9px'>R32</b>"
+        f"<b style='color:{CR16};font-size:9px'>8ème</b>"
+        f"<b style='color:{CR32};font-size:9px'>16ème</b>"
         f"</div>"
     )
     header_c = (
@@ -1158,11 +1137,53 @@ elif page == "🏆 Tableau final":
 # FAVORIS
 # ════════════════════════════════════════════════════════════════
 elif page == "⭐ Favoris":
-    st.markdown("<h1>Favoris — FIFA World Cup 2026</h1>", unsafe_allow_html=True)
-    st.markdown("<p style='color:#aaa'>Classement predictif base sur la simulation complete du tournoi</p>", unsafe_allow_html=True)
+    st.markdown("<h1>⭐ Favoris — FIFA World Cup 2026</h1>", unsafe_allow_html=True)
+    st.markdown(
+        "<p style='color:#aaa'>Probabilites issues de 5000 simulations Monte Carlo du bracket officiel</p>",
+        unsafe_allow_html=True
+    )
 
-    with st.spinner("Chargement simulation..."):
-        res_fav = simuler_tournoi_complet()
+    @st.cache_data
+    def monte_carlo_bracket(n_sims=5000):
+        """Monte Carlo sur la phase knockout. R32 bracket fixe, matchs stochastiques."""
+        res = simuler_tournoi_complet()
+
+        # On construit les paires R32 a partir des matchs joues
+        r32_paires = [(e1, e2) for e1, e2, w, l, pw, pl in res['matchs_r32']]
+
+        # Cache local des probas pour eviter de rappeler predire_match N fois
+        _cache = {}
+        def prob_e1(eq1, eq2):
+            key = (eq1, eq2)
+            if key not in _cache:
+                p = predire_match(eq1, eq2)
+                v, n, d = p.get('V',0), p.get('N',0), p.get('D',0)
+                denom = (v + d) if (v + d) > 0 else 1
+                _cache[key] = (v + n * v / denom) / ((v + n * v / denom) + (d + n * d / denom))
+            return _cache[key]
+
+        def match_s(eq1, eq2):
+            return eq1 if np.random.random() < prob_e1(eq1, eq2) else eq2
+
+        wins = {}
+        for _ in range(n_sims):
+            vr32   = [match_s(a, b) for a, b in r32_paires]
+            r16_d  = [(vr32[1],vr32[4]),(vr32[0],vr32[2]),(vr32[10],vr32[11]),(vr32[8],vr32[9])]
+            r16_a  = [(vr32[3],vr32[5]),(vr32[6],vr32[7]),(vr32[13],vr32[15]),(vr32[12],vr32[14])]
+            vr16_d = [match_s(a, b) for a, b in r16_d]
+            vr16_a = [match_s(a, b) for a, b in r16_a]
+            sf_d_t = [match_s(vr16_d[0],vr16_d[1]), match_s(vr16_d[2],vr16_d[3])]
+            sf_a_t = [match_s(vr16_a[0],vr16_a[1]), match_s(vr16_a[2],vr16_a[3])]
+            fin_d  = match_s(sf_d_t[0], sf_d_t[1])
+            fin_a  = match_s(sf_a_t[0], sf_a_t[1])
+            champ  = match_s(fin_d, fin_a)
+            wins[champ] = wins.get(champ, 0) + 1
+
+        return wins, n_sims
+
+    with st.spinner("5000 simulations Monte Carlo en cours..."):
+        res_fav     = simuler_tournoi_complet()
+        wins_mc, n  = monte_carlo_bracket(5000)
 
     champion_f  = res_fav['champion']
     finaliste_f = res_fav['finaliste']
@@ -1170,76 +1191,326 @@ elif page == "⭐ Favoris":
     bronze_l_f  = res_fav['bronze_l']
     sf1, sf2, sf3, sf4 = res_fav['sf']
     qf_l        = res_fav['qf_loosers']
+    r16_l       = res_fav['r16_loosers']
 
-    # Classement par performance dans le tournoi (top 12 affiches)
-    tournoi_rank = [
-        (champion_f,  "Champion du Monde",   "#FFD700", "1"),
-        (finaliste_f, "Finaliste",            "#C0C0C0", "2"),
-        (bronze_f,    "3eme place",           "#CD7F32", "3"),
-        (bronze_l_f,  "4eme place",           "#4FC3F7", "4"),
-    ] + [
-        (t, "Demi-finaliste", "#3a7bd5", str(5 + i))
-        for i, t in enumerate([x for x in (sf1, sf2, sf3, sf4) if x not in (champion_f, finaliste_f, bronze_f, bronze_l_f)])
-    ] + [
-        (t, "Quart de finaliste", "#2a4a7f", str(7 + i))
-        for i, t in enumerate(qf_l[:4])
-    ]
+    # Etiquettes par performance dans la simulation deterministe
+    labels = {}
+    labels[champion_f]  = ("Champion du Monde", "#FFD700")
+    labels[finaliste_f] = ("Finaliste",          "#C0C0C0")
+    labels[bronze_f]    = ("3eme place",         "#CD7F32")
+    labels[bronze_l_f]  = ("4eme place",         "#4FC3F7")
+    for t in (sf1, sf2, sf3, sf4):
+        if t not in labels:
+            labels[t] = ("Demi-finaliste", "#3a7bd5")
+    for t in qf_l:
+        if t not in labels:
+            labels[t] = ("Quart de finaliste", "#2a5090")
+    for t in r16_l:
+        if t not in labels:
+            labels[t] = ("16eme de finale", "#1a3060")
 
-    cols = st.columns(4)
-    for idx, (team, label, color, rang) in enumerate(tournoi_rank[:12]):
-        cols[idx % 4].markdown(f"""
-        <div style='background:#0D1B2A;border:1px solid #1e2d3d;border-top:3px solid {color};
-                    border-radius:8px;padding:16px 10px;text-align:center;margin:5px 0'>
-            <div style='display:inline-flex;align-items:center;justify-content:center;
-                        background:{color}22;border:1px solid {color};border-radius:50%;
-                        width:28px;height:28px;font-size:12px;font-weight:bold;
-                        color:{color};margin-bottom:10px'>{rang}</div>
-            <div style='margin:8px 0'>{get_flag(team, 44)}</div>
-            <p style='color:#FFFFFF;font-size:13px;font-weight:bold;margin:6px 0'>{team}</p>
-            <p style='color:{color};font-size:10px;font-weight:bold;margin:3px 0'>{label}</p>
+    # Toutes les equipes ayant gagne au moins 1 simulation, triees par % decroissant
+    all_teams_mc = sorted(wins_mc.items(), key=lambda x: x[1], reverse=True)
+
+    # Barre calibree sur le max
+    max_pct = all_teams_mc[0][1] / n * 100 if all_teams_mc else 1
+
+    # En-tete du tableau
+    st.markdown("""
+    <div style='display:flex;align-items:center;background:#0a1220;
+                border-radius:6px;padding:8px 16px;margin-bottom:4px;gap:16px'>
+        <div style='width:30px'></div>
+        <div style='width:32px'></div>
+        <div style='flex:1;color:#aaa;font-size:11px;font-weight:bold'>EQUIPE</div>
+        <div style='flex:2;color:#aaa;font-size:11px;font-weight:bold'>% VICTOIRE (5000 sims)</div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    for rang, (team, wins_count) in enumerate(all_teams_mc, 1):
+        pct           = wins_count / n * 100
+        bw            = (pct / max_pct * 100) if max_pct > 0 else 0
+        label, color  = labels.get(team, ("Qualifie", "#555555"))
+        flag          = get_flag(team, 26)
+        st.markdown(f"""
+        <div style='display:flex;align-items:center;background:#0D1B2A;
+                    border-left:4px solid {color};border-radius:6px;
+                    padding:9px 16px;margin:3px 0;gap:16px'>
+            <div style='display:flex;align-items:center;justify-content:center;
+                        background:{color}22;border:1.5px solid {color};border-radius:50%;
+                        width:28px;height:28px;flex-shrink:0;
+                        font-size:11px;font-weight:bold;color:{color}'>{rang}</div>
+            <div style='width:32px;flex-shrink:0'>{flag}</div>
+            <div style='flex:1;min-width:120px'>
+                <span style='color:white;font-size:13px;font-weight:bold'>{team}</span><br>
+                <span style='color:{color};font-size:9px'>{label}</span>
+            </div>
+            <div style='flex:2;display:flex;align-items:center;gap:10px'>
+                <div style='flex:1;background:#1a2a3a;border-radius:4px;height:10px;overflow:hidden'>
+                    <div style='width:{bw:.1f}%;height:100%;
+                                background:linear-gradient(90deg,{color},{color}66);
+                                border-radius:4px'></div>
+                </div>
+                <span style='color:{color};font-size:13px;font-weight:bold;
+                             min-width:50px;text-align:right'>{pct:.1f}%</span>
+            </div>
         </div>
         """, unsafe_allow_html=True)
 
-    st.divider()
-    st.markdown("### Comparer deux equipes")
-    c1, c2 = st.columns(2)
-    with c1:
-        t1 = st.selectbox("Equipe 1", equipes,
-                           index=equipes.index("France") if "France" in equipes else 0)
-    with c2:
-        t2 = st.selectbox("Equipe 2", equipes,
-                           index=equipes.index("Argentina") if "Argentina" in equipes else 1)
+# ════════════════════════════════════════════════════════════════
+# EQUIPES
+# ════════════════════════════════════════════════════════════════
+elif page == "👕 Équipes":
+    import streamlit.components.v1 as components
+    import pydeck as pdk
 
-    if st.button("COMPARER CES DEUX EQUIPES", type="primary"):
-        if t1 == t2:
-            st.error("Choisissez deux equipes differentes !")
-        else:
-            probas = predire_match(t1, t2)
-            v, n, d = probas.get('V',0), probas.get('N',0), probas.get('D',0)
-            fh2, fa2 = get_flag(t1, 32), get_flag(t2, 32)
-            favori2 = t1 if v >= d and v >= n else (t2 if d > v and d >= n else "Nul")
-            fav_c2  = "#27843a" if favori2 == t1 else ("#8a2020" if favori2 == t2 else "#888")
+    @st.cache_data
+    def load_joueurs_equipe():
+        pf = pd.read_csv(ROOT / "data/players_final_clean.csv", encoding='utf-8')
+        ov = pd.read_csv(ROOT / "data/df_joueurs_notes_a_jour.csv", encoding='utf-8')
+        return pf.merge(
+            ov[['nom_joueur', 'equipe_nationale', 'overall']],
+            on=['nom_joueur', 'equipe_nationale'], how='left'
+        )
+
+    df_joueurs    = load_joueurs_equipe()
+    equipes_dispo = sorted(df_joueurs['equipe_nationale'].unique())
+
+    # Formations officielles : (label, n_def, lignes_mid, n_att)
+    # lignes_mid = liste de nb joueurs par ligne (ex: [2,3] = 2 DM + 3 AM)
+    FORMATIONS = {
+        'Algeria':       ('4-3-3',   4, [3],    3),
+        'Argentina':     ('4-3-3',   4, [3],    3),
+        'Australia':     ('4-2-3-1', 4, [2, 3], 1),
+        'Brazil':        ('4-2-3-1', 4, [2, 3], 1),
+        'England':       ('4-2-3-1', 4, [2, 3], 1),
+        'France':        ('4-3-3',   4, [3],    3),
+        'Germany':       ('4-2-3-1', 4, [2, 3], 1),
+        'Ghana':         ('4-2-3-1', 4, [2, 3], 1),
+        'Japan':         ('4-2-3-1', 4, [2, 3], 1),
+        'Mexico':        ('4-3-3',   4, [3],    3),
+        'Morocco':       ('4-1-4-1', 4, [1, 4], 1),
+        'Netherlands':   ('4-3-3',   4, [3],    3),
+        'Paraguay':      ('4-4-2',   4, [4],    2),
+        'Portugal':      ('4-3-3',   4, [3],    3),
+        'South Africa':  ('4-3-3',   4, [3],    3),
+        'South Korea':   ('4-2-3-1', 4, [2, 3], 1),
+        'Spain':         ('4-3-3',   4, [3],    3),
+        'United States': ('4-3-3',   4, [3],    3),
+        'Uruguay':       ('4-4-2',   4, [4],    2),
+    }
+    DEFAULT_FORM = ('4-3-3', 4, [3], 3)
+
+    CAMPS_BASE = {
+        'Algeria':       {'ville': 'Philadelphia, Pennsylvania', 'lat': 39.9526, 'lon': -75.1652},
+        'Argentina':     {'ville': 'East Rutherford, New Jersey','lat': 40.8136, 'lon': -74.0744},
+        'Australia':     {'ville': 'Kansas City, Missouri',      'lat': 39.0997, 'lon': -94.5786},
+        'Brazil':        {'ville': 'Los Angeles, California',    'lat': 34.0522, 'lon': -118.2437},
+        'England':       {'ville': 'Boston, Massachusetts',      'lat': 42.3601, 'lon': -71.0589},
+        'France':        {'ville': 'Miami, Florida',             'lat': 25.7617, 'lon': -80.1918},
+        'Germany':       {'ville': 'Dallas, Texas',              'lat': 32.7767, 'lon': -96.7970},
+        'Ghana':         {'ville': 'Atlanta, Georgia',           'lat': 33.7490, 'lon': -84.3880},
+        'Japan':         {'ville': 'Seattle, Washington',        'lat': 47.6062, 'lon': -122.3321},
+        'Mexico':        {'ville': 'Guadalajara, Mexique',       'lat': 20.6597, 'lon': -103.3496},
+        'Morocco':       {'ville': 'New York, New Jersey',       'lat': 40.7128, 'lon': -74.0060},
+        'Netherlands':   {'ville': 'Dallas, Texas',              'lat': 32.8500, 'lon': -96.7500},
+        'Paraguay':      {'ville': 'Dallas, Texas',              'lat': 32.8000, 'lon': -96.8500},
+        'Portugal':      {'ville': 'Philadelphia, Pennsylvania', 'lat': 39.9400, 'lon': -75.1500},
+        'South Africa':  {'ville': 'Houston, Texas',             'lat': 29.7604, 'lon': -95.3698},
+        'South Korea':   {'ville': 'Los Angeles, California',    'lat': 34.0195, 'lon': -118.4912},
+        'Spain':         {'ville': 'New York, New Jersey',       'lat': 40.7128, 'lon': -74.0060},
+        'United States': {'ville': 'Kansas City, Missouri',      'lat': 39.0997, 'lon': -94.5786},
+        'Uruguay':       {'ville': 'Atlanta, Georgia',           'lat': 33.7700, 'lon': -84.4000},
+    }
+
+    # Selecteur + stats
+    col_sel, col_flag, col_m1, col_m2, col_m3 = st.columns([3, 1, 1, 1, 1])
+    with col_sel:
+        equipe_choisie = st.selectbox("", equipes_dispo, label_visibility="collapsed")
+    joueurs_eq = df_joueurs[df_joueurs['equipe_nationale'] == equipe_choisie].copy()
+
+    with col_flag:
+        if len(joueurs_eq) > 0:
+            st.markdown(
+                f"<img src='{joueurs_eq['drapeau_equipe'].iloc[0]}' style='height:34px;margin-top:6px'>",
+                unsafe_allow_html=True
+            )
+    with col_m1:
+        st.metric("Overall moy.", f"{joueurs_eq['overall'].mean():.0f}/100")
+    with col_m2:
+        st.metric("Buts saison", f"{joueurs_eq['buts_marques'].sum():.0f}")
+    with col_m3:
+        st.metric("Effectif", len(joueurs_eq))
+
+    # Formation de l'equipe
+    label_form, n_def, mid_rows, n_att = FORMATIONS.get(equipe_choisie, DEFAULT_FORM)
+    n_mid = sum(mid_rows)
+
+    def top_pos(poste, n):
+        return joueurs_eq[joueurs_eq['poste'] == poste].nlargest(n, 'minutes_jouees').reset_index(drop=True)
+
+    gk   = top_pos('Gardien',   1)
+    defs = top_pos('Défenseur', n_def)
+    mids = top_pos('Milieu',    n_mid)
+    atts = top_pos('Attaquant', n_att)
+
+    titulaires_idx = set(gk.index) | set(defs.index) | set(mids.index) | set(atts.index)
+    remplacants    = joueurs_eq[~joueurs_eq.index.isin(titulaires_idx)].sort_values('overall', ascending=False)
+
+    # Calcul des coordonnees (left%, top%) selon la formation
+    def row_coords(n, top_pct, margin=11):
+        if n == 1:
+            return [(50, top_pct)]
+        step = (100 - 2 * margin) / (n - 1)
+        return [(margin + i * step, top_pct) for i in range(n)]
+
+    # Y selon nombre de lignes de milieu
+    if len(mid_rows) == 1:
+        y_gk, y_def, y_att = 87, 70, 23
+        y_mids = [49]
+    elif len(mid_rows) == 2:
+        y_gk, y_def, y_att = 87, 70, 22
+        y_mids = [55, 38]
+    else:
+        y_gk, y_def, y_att = 87, 70, 20
+        y_mids = [58, 45, 32]
+
+    all_coords  = [(50, y_gk)] + row_coords(n_def, y_def)
+    all_players = list(gk.iterrows()) + list(defs.iterrows())
+    offset = 0
+    for i, (n_row, y_row) in enumerate(zip(mid_rows, y_mids)):
+        all_coords  += row_coords(n_row, y_row)
+        all_players += list(mids.iloc[offset:offset + n_row].iterrows())
+        offset += n_row
+    all_coords  += row_coords(n_att, y_att)
+    all_players += list(atts.iterrows())
+
+    # Balises HTML joueurs
+    def pcard(row, left, top):
+        nom   = row['nom_joueur'].split()[-1]
+        photo = row['photo_joueur']
+        ov    = f"{row['overall']:.0f}" if pd.notna(row['overall']) else "?"
+        return (
+            f'<div class="player" style="left:{left:.1f}%;top:{top}%">'
+            f'<img src="{photo}" onerror="this.style.opacity=0.2">'
+            f'<div class="nom">{nom}</div>'
+            f'<div class="note">{ov}</div>'
+            f'</div>'
+        )
+
+    phtml = "".join(pcard(r, lx, ty) for (_, r), (lx, ty) in zip(all_players, all_coords))
+
+    pitch_html = f"""<!DOCTYPE html>
+<html><head><style>
+  *{{margin:0;padding:0;box-sizing:border-box}}
+  body{{background:#0f111a;font-family:Arial,sans-serif}}
+  .pitch{{
+    position:relative;width:100%;height:480px;
+    background:linear-gradient(180deg,
+      #3d9e3d 0%,#2e7e2e 16%,#3d9e3d 33%,
+      #2e7e2e 50%,#3d9e3d 66%,#2e7e2e 83%,#3d9e3d 100%);
+    border-radius:8px;border:3px solid rgba(255,255,255,0.75);overflow:hidden
+  }}
+  .player{{
+    position:absolute;transform:translate(-50%,-50%);
+    text-align:center;width:64px
+  }}
+  .player img{{
+    width:50px;height:50px;border-radius:50%;object-fit:cover;
+    border:2.5px solid white;display:block;margin:0 auto;
+    box-shadow:0 2px 10px rgba(0,0,0,0.7)
+  }}
+  .nom{{
+    color:white;font-size:8.5px;font-weight:bold;margin-top:3px;
+    line-height:1.2;text-shadow:1px 1px 3px #000,-1px -1px 3px #000
+  }}
+  .note{{color:#FFD700;font-size:8px;text-shadow:1px 1px 2px #000}}
+</style></head>
+<body><div class="pitch">
+  <svg style="position:absolute;top:0;left:0;width:100%;height:100%"
+       viewBox="0 0 100 100" preserveAspectRatio="none">
+    <rect x="2" y="1" width="96" height="98"
+          fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="0.5"/>
+    <line x1="2" y1="50" x2="98" y2="50"
+          stroke="rgba(255,255,255,0.45)" stroke-width="0.4"/>
+    <circle cx="50" cy="50" r="11"
+            fill="none" stroke="rgba(255,255,255,0.45)" stroke-width="0.4"/>
+    <circle cx="50" cy="50" r="0.7" fill="rgba(255,255,255,0.8)"/>
+    <rect x="28" y="1"   width="44" height="14"
+          fill="none" stroke="rgba(255,255,255,0.45)" stroke-width="0.4"/>
+    <rect x="40" y="1"   width="20" height="5.5"
+          fill="none" stroke="rgba(255,255,255,0.45)" stroke-width="0.4"/>
+    <circle cx="50" cy="11.5" r="0.7" fill="rgba(255,255,255,0.8)"/>
+    <rect x="28" y="85"  width="44" height="14"
+          fill="none" stroke="rgba(255,255,255,0.45)" stroke-width="0.4"/>
+    <rect x="40" y="93.5" width="20" height="5.5"
+          fill="none" stroke="rgba(255,255,255,0.45)" stroke-width="0.4"/>
+    <circle cx="50" cy="88.5" r="0.7" fill="rgba(255,255,255,0.8)"/>
+  </svg>
+  {phtml}
+</div></body></html>"""
+
+    col_terrain, col_bench = st.columns([3, 2])
+
+    with col_terrain:
+        st.markdown(
+            f"<p style='color:#aaa;font-size:12px;margin-bottom:4px'>"
+            f"Formation <b style='color:#34D399'>{label_form}</b> · 11 de depart</p>",
+            unsafe_allow_html=True
+        )
+        components.html(pitch_html, height=500)
+
+        # Carte camp de base
+        camp = CAMPS_BASE.get(equipe_choisie)
+        if camp:
+            st.markdown(
+                f"<p style='color:#34D399;font-size:12px;margin:8px 0 4px'>"
+                f"📍 Camp de base : <b style='color:white'>{camp['ville']}</b></p>",
+                unsafe_allow_html=True
+            )
+            carte_data = pd.DataFrame([{
+                'lat': camp['lat'], 'lon': camp['lon'],
+                'equipe': equipe_choisie, 'ville': camp['ville'],
+            }])
+            st.pydeck_chart(pdk.Deck(
+                layers=[pdk.Layer(
+                    'ScatterplotLayer', data=carte_data,
+                    get_position='[lon, lat]',
+                    get_color='[255, 215, 0, 220]',
+                    get_radius=20000, pickable=True,
+                )],
+                initial_view_state=pdk.ViewState(
+                    latitude=camp['lat'], longitude=camp['lon'], zoom=7, pitch=25
+                ),
+                map_style="https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json",
+                tooltip={'text': '{equipe}\n{ville}'},
+            ))
+
+    with col_bench:
+        st.markdown(
+            "<p style='color:#FFD700;font-size:13px;font-weight:bold;margin-bottom:8px'>Remplacants</p>",
+            unsafe_allow_html=True
+        )
+        ICONS = {'Gardien':'🧤','Défenseur':'🛡️','Milieu':'⚙️','Attaquant':'⚡'}
+        for _, j in remplacants.iterrows():
+            ov_s = f"{j['overall']:.0f}" if pd.notna(j['overall']) else "?"
+            icon = ICONS.get(j['poste'], '')
             st.markdown(f"""
-            <div style='background:#0D1B2A;border-radius:12px;padding:20px;margin:15px 0'>
-              <div style='display:flex;justify-content:space-between;align-items:center;margin-bottom:12px'>
-                <div style='display:flex;align-items:center;gap:8px'>{fh2}<span style='color:#FFFFFF;font-size:16px;font-weight:bold'>{t1}</span></div>
-                <span style='color:#555;font-size:12px'>vs</span>
-                <div style='display:flex;align-items:center;gap:8px'><span style='color:#FFFFFF;font-size:16px;font-weight:bold'>{t2}</span>{fa2}</div>
-              </div>
-              <div style='display:flex;border-radius:8px;overflow:hidden;height:48px;margin-bottom:10px'>
-                <div style='flex:{v:.4f};background:#27843a;display:flex;align-items:center;justify-content:center'>
-                  <span style='color:white;font-weight:bold;font-size:15px'>{v:.1%}</span>
+            <div style="display:flex;align-items:center;gap:10px;
+                        background:#112240;border-radius:6px;
+                        padding:6px 10px;margin-bottom:4px">
+                <img src="{j['photo_joueur']}"
+                     style="width:36px;height:36px;border-radius:50%;
+                            object-fit:cover;border:1.5px solid #4FC3F7;flex-shrink:0"
+                     onerror="this.style.background='#1a3a6b';this.removeAttribute('src')">
+                <div style="flex:1;min-width:0">
+                    <p style="color:white;font-size:11px;font-weight:bold;margin:0;
+                              white-space:nowrap;overflow:hidden;text-overflow:ellipsis">
+                        {j['nom_joueur']}
+                    </p>
+                    <p style="color:#aaa;font-size:9px;margin:0">{icon} {j['poste']}</p>
                 </div>
-                <div style='flex:{n:.4f};background:#555;display:flex;align-items:center;justify-content:center'>
-                  <span style='color:white;font-weight:bold;font-size:11px'>Nul {n:.1%}</span>
-                </div>
-                <div style='flex:{d:.4f};background:#8a2020;display:flex;align-items:center;justify-content:center'>
-                  <span style='color:white;font-weight:bold;font-size:15px'>{d:.1%}</span>
-                </div>
-              </div>
-              <div style='text-align:center;padding:6px;background:rgba(0,0,0,0.3);border-radius:6px;border:1px solid {fav_c2}'>
-                <span style='color:{fav_c2};font-weight:bold;font-size:14px'>
-                  {"Favori : " + favori2 if favori2 != "Nul" else "Match equilibre"}</span>
-              </div>
+                <span style="color:#FFD700;font-size:12px;font-weight:bold;flex-shrink:0">
+                    {ov_s}
+                </span>
             </div>
             """, unsafe_allow_html=True)
