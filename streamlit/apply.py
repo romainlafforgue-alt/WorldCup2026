@@ -526,7 +526,7 @@ def simuler_tournoi_complet():
 # SIDEBAR
 # ════════════════════════════════════════════════════════════════
 with st.sidebar:
-    st.markdown('<div style="height:4px;background:linear-gradient(90deg,#8a2020 33%,#FFFFFF 33%,#FFFFFF 66%,#006633 66%);margin-bottom:12px"></div>', unsafe_allow_html=True)
+    st.markdown('<div style="height:4px;background:linear-gradient(90deg,#002395 33%,#FFFFFF 33%,#FFFFFF 66%,#ED2939 66%);margin-bottom:12px"></div>', unsafe_allow_html=True)
     st.markdown("""
     <div style='text-align:center;padding:8px 0'>
         <h2 style='color:#FFD700 !important;font-family:Arial Black;margin:8px 0;font-size:1.2rem;border:none'>FRENCH TEAM</h2>
@@ -537,10 +537,9 @@ with st.sidebar:
 
     page = st.radio("", [
         "🏠 Accueil",
-        "📊 Phase de poule",
-        "🏆 Tableau final",
         "⭐ Favoris",
-        "👕 Équipes"
+        "👕 Équipes",
+        "📡 Résultats en direct",
     ])
 
     st.markdown("""
@@ -632,19 +631,20 @@ def get_base64_image(image_path):
     with open(image_path, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
+
 # ════════════════════════════════════════════════════════════════
 # ACCUEIL
 # ════════════════════════════════════════════════════════════════
 
 if page == "🏠 Accueil":
 
+    # ── Header + équipe en petit dessous ─────────────────────────────
     _, col_c, _ = st.columns([0.2, 8, 0.2])
-
     with col_c:
         render_html("""
         <div style='
             text-align:center;
-            padding:clamp(40px, 8vh, 120px) 0;
+            padding:clamp(30px, 6vh, 80px) 0 16px;
             background:linear-gradient(135deg, #0d1b3e 0%, #1a1a2e 40%, #0f2027 100%);
             border-radius:12px;
             border:1px solid rgba(255,255,255,0.05);
@@ -656,482 +656,64 @@ if page == "🏠 Accueil":
                 FIFA World Cup 2026 — Prédictions Data
             </p>
             <div style='background:linear-gradient(90deg,#8a2020,#003087,#006633);
-                        height:4px;
-                        border-radius:2px;
-                        margin:12px auto;
-                        width:60%'>
-            </div>
-            <p style='color:#aaa !important;font-size:clamp(11px, 1.2vw, 14px)'>
-                🇺🇸 United States · 🇨🇦 Canada · 🇲🇽 Mexico · 11 juin → 19 juillet 2026
+                        height:4px;border-radius:2px;margin:10px auto;width:60%'></div>
+            <p style='color:#aaa !important;font-size:clamp(11px, 1.2vw, 13px);margin:0 0 14px'>
+                United States · Canada · Mexico · 11 juin → 19 juillet 2026
             </p>
+            <div style='display:flex;justify-content:center;gap:18px;flex-wrap:wrap;padding:0 20px 8px'>
+                <span style='color:#aaa;font-size:11px'>🧑‍✈️ <b style="color:#8a2020">Aurélien</b> · Product Owner</span>
+                <span style='color:#aaa;font-size:11px'>🔧 <b style="color:#4FC3F7">Cédric</b> · Scrum Master</span>
+                <span style='color:#aaa;font-size:11px'>💻 <b style="color:#34D399">Ernest</b> · Streamlit Dev</span>
+                <span style='color:#aaa;font-size:11px'>📊 <b style="color:#FFD700">Romain</b> · Data &amp; ML</span>
+            </div>
         </div>
         """)
 
     st.divider()
 
-    c1, c2, c3, c4 = st.columns(4)
-    c1.metric("🎯 Accuracy Modèle", "53.94%", "écart bkm 4.5%")
-    c2.metric("📊 Matchs entraînement", "10 732", "depuis 2010")
-    c3.metric("🏆 Équipes qualifiées", "48", "FIFA 2026")
-    c4.metric("🤖 Algorithme", "Hybride v3", "force + XGBoost")
-
-    st.divider()
-
+    # ── Simulateur de confrontation ───────────────────────────────────
     st.markdown("## ⚔️ Simulateur de confrontation")
 
     col1, col2 = st.columns(2)
-
     with col1:
         home = st.selectbox("Equipe 1", equipes, key="home_accueil")
-
     with col2:
         away = st.selectbox("Equipe 2", equipes, key="away_accueil")
 
-    # =====================================================
-    # DRAPEAUX + ÉTOILES
-    # =====================================================
-
     stars_home = get_stars(home)
     stars_away = get_stars(away)
-
-    flag_home = get_flag(home, 60)
-    flag_away = get_flag(away, 60)
+    flag_home  = get_flag(home, 60)
+    flag_away  = get_flag(away, 60)
 
     card1, card2 = st.columns(2)
-
     with card1:
         render_html(f"""
-        <div style="
-            background:#112240;
-            border-top:5px solid #006633;
-            border-radius:12px;
-            padding:25px;
-            text-align:center;
-        ">
-            <div style="font-size:60px">
-                {flag_home}
-            </div>
-            <h2 style="color:white">
-                {home}
-            </h2>
-            <div style="font-size:26px;color:#FFD700">
-                {'⭐' * round(stars_home)}
-            </div>
-            <p style="color:#FFD700;font-weight:bold">
-                {stars_home}/5
-            </p>
+        <div style="background:#112240;border-top:5px solid #006633;border-radius:12px;padding:12px;text-align:center;">
+            <div style="font-size:44px;margin:4px 0">{flag_home}</div>
+            <h2 style="color:white;margin:4px 0;font-size:1.2rem">{home}</h2>
+            <div style="font-size:20px;color:#FFD700">{'⭐' * round(stars_home)}</div>
+            <p style="color:#FFD700;font-weight:bold;margin:2px 0;font-size:13px">{stars_home}/5</p>
         </div>
         """)
-
     with card2:
         render_html(f"""
-        <div style="
-            background:#112240;
-            border-top:5px solid #8a2020;
-            border-radius:12px;
-            padding:25px;
-            text-align:center;
-        ">
-            <div style="font-size:60px">
-                {flag_away}
-            </div>
-            <h2 style="color:white">
-                {away}
-            </h2>
-            <div style="font-size:26px;color:#FFD700">
-                {'⭐' * round(stars_away)}
-            </div>
-            <p style="color:#FFD700;font-weight:bold">
-                {stars_away}/5
-            </p>
+        <div style="background:#112240;border-top:5px solid #8a2020;border-radius:12px;padding:12px;text-align:center;">
+            <div style="font-size:44px;margin:4px 0">{flag_away}</div>
+            <h2 style="color:white;margin:4px 0;font-size:1.2rem">{away}</h2>
+            <div style="font-size:20px;color:#FFD700">{'⭐' * round(stars_away)}</div>
+            <p style="color:#FFD700;font-weight:bold;margin:2px 0;font-size:13px">{stars_away}/5</p>
         </div>
         """)
-
-    # =====================================================
-    # PROBABILITÉS
-    # =====================================================
 
     st.divider()
 
     probas = predire_match(home, away)
-
     st.markdown("### 📊 Probabilités du match")
-
     c1, c2, c3 = st.columns(3)
     c1.metric(home, f"{probas['V'] * 100:.1f}%")
     c2.metric("Match nul", f"{probas['N'] * 100:.1f}%")
     c3.metric(away, f"{probas['D'] * 100:.1f}%")
 
-    # =====================================================
-    # INFORMATIONS COUPE DU MONDE
-    # =====================================================
-
-    st.divider()
-
-    col1, col2 = st.columns(2)
-
-    with col1:
-        st.markdown("### 📅 Calendrier")
-        st.markdown("""
-        <div style='background:#112240;
-                    border-left:4px solid #8a2020;
-                    border-radius:6px;
-                    padding:15px'>
-            <p style='color:#E0E0E0 !important'>
-                🟢 <b style='color:#FFD700'>11 juin 2026</b>
-                — Match ouverture (Mexico City)
-            </p>
-            <p style='color:#E0E0E0 !important'>
-                📋 <b style='color:#4FC3F7'>11 juin → 4 juillet</b>
-                — Phase de poule
-            </p>
-            <p style='color:#E0E0E0 !important'>
-                ⚔️ <b style='color:#4FC3F7'>4 → 18 juillet</b>
-                — Phases éliminatoires
-            </p>
-            <p style='color:#E0E0E0 !important'>
-                🏆 <b style='color:#8a2020'>19 juillet 2026</b>
-                — Finale
-            </p>
-        </div>
-        """, unsafe_allow_html=True)
-
-    with col2:
-        st.markdown("### 🤖 Notre Modèle ML")
-        st.markdown("""
-        <div style='background:#112240;
-                    border-left:4px solid #006633;
-                    border-radius:6px;
-                    padding:15px'>
-            <p style='color:#E0E0E0 !important'>
-                ✅ <b style='color:#34D399'>Hybride v3</b>
-            </p>
-            <p style='color:#E0E0E0 !important'>
-                ⚽ <b style='color:#4FC3F7'>Score de force</b>
-            </p>
-            <p style='color:#E0E0E0 !important'>
-                🌳 <b style='color:#4FC3F7'>XGBoost</b>
-            </p>
-            <p style='color:#E0E0E0 !important'>
-                📈 <b style='color:#FFD700'>Accuracy 53.94%</b>
-            </p>
-        </div>
-        """, unsafe_allow_html=True)
-
-    st.divider()
-
-    st.markdown("### 👥 FrenchTeam — Wild Code School 2026")
-
-    c1, c2, c3, c4 = st.columns(4)
-
-    membres = [
-        ("🧑‍✈️", "Aurélien", "Product Owner", "Power BI", "#8a2020"),
-        ("🔧", "Cédric", "Scrum Master", "Coordination", "#4FC3F7"),
-        ("💻", "Ernest", "Dev Team", "Streamlit Dev", "#34D399"),
-        ("📊", "Romain", "Dev Team", "Data Eng. + ML", "#FFD700"),
-    ]
-
-    for col, (ico, nom, role, tech, color) in zip([c1, c2, c3, c4], membres):
-        col.markdown(
-            f"""
-            <div style='background:#112240;
-                        border-top:4px solid {color};
-                        border-radius:6px;
-                        padding:15px;
-                        text-align:center'>
-                <div style='font-size:32px'>{ico}</div>
-                <h4 style='color:{color} !important'>
-                    {nom}
-                </h4>
-                <p style='color:#aaa !important'>
-                    {role}
-                </p>
-                <p style='color:#777 !important'>
-                    {tech}
-                </p>
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
-
-
-
-# ════════════════════════════════════════════════════════════════
-# PHASE DE POULE
-# ════════════════════════════════════════════════════════════════
-elif page == "📊 Phase de poule":
-    st.markdown("<h1>📊 Phase de poule — 12 Groupes · 48 Équipes</h1>", unsafe_allow_html=True)
-    st.markdown("<p style='color:#aaa'>FIFA World Cup 2026 · Modele Hybride v3 · Accuracy 53.94%</p>", unsafe_allow_html=True)
-
-    groupe_sel = st.selectbox("🏟️ Sélectionner un groupe",
-                               [f"Groupe {g}" for g in GROUPES.keys()])
-    lettre = groupe_sel.split(" ")[1]
-    teams  = GROUPES[lettre]
-
-    st.markdown(f"### 🏟️ {groupe_sel} — {' · '.join(teams)}")
-
-    # Cartes équipes
-    cols = st.columns(len(teams))
-    for col, team in zip(cols, teams):
-        pts = ranking[ranking['team'] == team]['fifa_points'].values
-        pts_val = f"{float(pts[0]):.0f}" if len(pts) > 0 else "N/A"
-        col.markdown(f"""
-        <div style='background:#112240;border-top:4px solid #8a2020;border-radius:6px;padding:10px;text-align:center'>
-            <div style='margin:5px 0'>{get_flag(team, 40)}</div>
-            <p style='color:#FFFFFF !important;font-weight:bold;margin:5px 0;font-size:12px'>{team}</p>
-            <p style='color:#FFD700 !important;font-size:11px;font-weight:bold'>{pts_val} pts FIFA</p>
-        </div>
-        """, unsafe_allow_html=True)
-
-    st.markdown("<br>", unsafe_allow_html=True)
-
-    stats_g = {t: {'pts':0,'j':0,'g':0,'n':0,'p':0,'bp':0,'bc':0} for t in teams}
-
-    for home, away in combinations(teams, 2):
-        try:
-            probas = predire_match(home, away)
-            v, n, d = probas.get('V',0), probas.get('N',0), probas.get('D',0)
-            buts_home = round(1.5 * v + 0.8 * n + 0.3 * d)
-            buts_away = round(0.3 * v + 0.8 * n + 1.5 * d)
-
-            stats_g[home]['j'] += 1; stats_g[away]['j'] += 1
-            stats_g[home]['bp'] += buts_home; stats_g[home]['bc'] += buts_away
-            stats_g[away]['bp'] += buts_away; stats_g[away]['bc'] += buts_home
-
-            if v > n and v > d:
-                stats_g[home]['pts'] += 3; stats_g[home]['g'] += 1; stats_g[away]['p'] += 1
-            elif d > n and d > v:
-                stats_g[away]['pts'] += 3; stats_g[away]['g'] += 1; stats_g[home]['p'] += 1
-            else:
-                stats_g[home]['pts'] += 1; stats_g[home]['n'] += 1
-                stats_g[away]['pts'] += 1; stats_g[away]['n'] += 1
-        except:
-            pass
-
-    # Classement groupe
-    st.markdown("### 📋 Classement simulé du groupe")
-    rg_sorted = sorted(stats_g.items(),
-        key=lambda x: (x[1]['pts'], x[1]['bp']-x[1]['bc'], x[1]['bp']),
-        reverse=True)
-
-    cl_rows = []
-    for rank, (team, s) in enumerate(rg_sorted, 1):
-        qualif = "🟢 Qualifié" if rank <= 2 else ("🟡 Possible" if rank == 3 else "🔴 Éliminé")
-        cl_rows.append({
-            "Pos": rank,
-            "Équipe": team,
-            "J": s['j'], "G": s['g'], "N": s['n'], "D": s['p'],
-            "Pts": s['pts'],
-            "Statut": qualif
-        })
-    st.dataframe(pd.DataFrame(cl_rows), use_container_width=True, hide_index=True)
-
-# ════════════════════════════════════════════════════════════════
-# TABLEAU FINAL — BRACKET OFFICIEL FIFA 2026
-# ════════════════════════════════════════════════════════════════
-elif page == "🏆 Tableau final":
-    st.markdown("<h1>🏆 Tableau final — Bracket FIFA 2026</h1>", unsafe_allow_html=True)
-    st.markdown("""
-    <p style='color:#aaa'>Format officiel FIFA 2026 — Round of 32 → Finale.
-    Attribution des 3es via la table officielle FIFA. Bracket Dallas / Atlanta.</p>
-    """, unsafe_allow_html=True)
-
-    with st.spinner("Simulation du tournoi..."):
-        res = simuler_tournoi_complet()
-    classements       = res['classements']
-    premiers_d        = res['premiers_d']
-    deuxiemes_d       = res['deuxiemes_d']
-    troisiemes_sorted = res['troisiemes_sorted']
-
-    # Afficher les qualifies
-    st.divider()
-    st.markdown("## ⚔️ Phases Eliminatoires — Format Officiel FIFA 2026")
-
-    matchs_r32         = res['matchs_r32']
-    matchs_r16d        = res['matchs_r16d']
-    matchs_r16a        = res['matchs_r16a']
-    matchs_qfd         = res['matchs_qfd']
-    matchs_qfa         = res['matchs_qfa']
-    sf_d               = res['sf_d']
-    sf_a               = res['sf_a']
-    demi1_w, demi2_w, demi1_l, demi2_l = res['sf']
-    bronze_w           = res['bronze']
-    champion           = res['champion']
-    finaliste          = res['finaliste']
-
-    # ── Helpers pour les cartes du bracket ──────────────────────────────
-    def mc(e1, e2, w, bc="#4FC3F7"):
-        c1 = "#FFD700" if w == e1 else "#444"
-        c2 = "#FFD700" if w == e2 else "#444"
-        chk1 = "<span style='color:#34D399;font-size:9px'>&#10003;</span>" if w == e1 else ""
-        chk2 = "<span style='color:#34D399;font-size:9px'>&#10003;</span>" if w == e2 else ""
-        f1, f2 = get_flag(e1, 14), get_flag(e2, 14)
-        return (
-            f"<div style='background:#0D1B2A;border:1px solid {bc};border-radius:4px;"
-            f"padding:4px 6px;min-width:138px;max-width:152px;margin:1px 0'>"
-            f"<div style='display:flex;align-items:center;gap:3px'>"
-            f"{f1}<span style='color:{c1};font-size:9px;flex:1;overflow:hidden;white-space:nowrap'>{e1[:13]}</span>{chk1}"
-            f"</div><div style='height:1px;background:#1a2a3a;margin:2px 0'></div>"
-            f"<div style='display:flex;align-items:center;gap:3px'>"
-            f"{f2}<span style='color:{c2};font-size:9px;flex:1;overflow:hidden;white-space:nowrap'>{e2[:13]}</span>{chk2}"
-            f"</div></div>"
-        )
-
-    def mc_big(e1, e2, w, bc="#FFD700"):
-        c1 = "#FFD700" if w == e1 else "#777"
-        c2 = "#FFD700" if w == e2 else "#777"
-        chk1 = "<span style='color:#34D399;font-weight:bold'>&#10003;</span>" if w == e1 else ""
-        chk2 = "<span style='color:#34D399;font-weight:bold'>&#10003;</span>" if w == e2 else ""
-        f1, f2 = get_flag(e1, 20), get_flag(e2, 20)
-        return (
-            f"<div style='background:#0D1B2A;border:2px solid {bc};border-radius:6px;"
-            f"padding:8px 10px;min-width:165px;'>"
-            f"<div style='display:flex;align-items:center;gap:5px'>"
-            f"{f1}<span style='color:{c1};font-size:12px;font-weight:bold;flex:1'>{e1}</span>{chk1}"
-            f"</div><div style='height:1px;background:#1a2a3a;margin:4px 0'></div>"
-            f"<div style='display:flex;align-items:center;gap:5px'>"
-            f"{f2}<span style='color:{c2};font-size:12px;font-weight:bold;flex:1'>{e2}</span>{chk2}"
-            f"</div></div>"
-        )
-
-    # ── Bracket style FIFA : stub par match + barre verticale ────────────
-    CR32, CR16, CQF, CSF = "#4FC3F7", "#FF9800", "#FFD700", "#8a2020"
-    mR = matchs_r32
-    ST = 14  # longueur du stub horizontal par match (px)
-    OL = 12  # longueur de la ligne de sortie vers le tour suivant (px)
-
-    def bpr(m1h, m2h, color, gap="3px"):
-        """Dallas : stub droit par match + barre verticale limitee centre-a-centre."""
-        top = f"<div style='display:flex;align-items:center'>{m1h}<div style='width:{ST}px;height:1px;background:{color};flex-shrink:0'></div></div>"
-        bot = f"<div style='display:flex;align-items:center'>{m2h}<div style='width:{ST}px;height:1px;background:{color};flex-shrink:0'></div></div>"
-        # flex:1/2/1 => barre occupe les 50% centraux (de centre-s1 a centre-s2)
-        vbar = (
-            f"<div style='display:flex;flex-direction:column;width:1px;flex-shrink:0'>"
-            f"<div style='flex:1'></div>"
-            f"<div style='flex:2;background:{color}'></div>"
-            f"<div style='flex:1'></div>"
-            f"</div>"
-        )
-        return (
-            f"<div style='display:flex;align-items:stretch'>"
-            f"<div style='display:flex;flex-direction:column;gap:{gap}'>{top}{bot}</div>"
-            f"{vbar}</div>"
-        )
-
-    def bpl(m1h, m2h, color, gap="3px"):
-        """Atlanta : barre verticale limitee + stub gauche par match."""
-        top = f"<div style='display:flex;align-items:center'><div style='width:{ST}px;height:1px;background:{color};flex-shrink:0'></div>{m1h}</div>"
-        bot = f"<div style='display:flex;align-items:center'><div style='width:{ST}px;height:1px;background:{color};flex-shrink:0'></div>{m2h}</div>"
-        vbar = (
-            f"<div style='display:flex;flex-direction:column;width:1px;flex-shrink:0'>"
-            f"<div style='flex:1'></div>"
-            f"<div style='flex:2;background:{color}'></div>"
-            f"<div style='flex:1'></div>"
-            f"</div>"
-        )
-        return (
-            f"<div style='display:flex;align-items:stretch'>"
-            f"{vbar}"
-            f"<div style='display:flex;flex-direction:column;gap:{gap}'>{top}{bot}</div>"
-            f"</div>"
-        )
-
-    def ol(color):
-        return f"<div style='width:{OL}px;height:1px;background:{color};flex-shrink:0;align-self:center'></div>"
-
-    def rd(m1, m2, mr16):
-        return f"<div style='display:flex;align-items:center'>{bpr(mc(*m1[:3],CR32),mc(*m2[:3],CR32),CR32)}{ol(CR32)}{mc(*mr16[:3],CR16)}</div>"
-
-    def ra(m1, m2, mr16):
-        return f"<div style='display:flex;align-items:center'>{mc(*mr16[:3],CR16)}{ol(CR16)}{bpl(mc(*m1[:3],CR32),mc(*m2[:3],CR32),CR32)}</div>"
-
-    def qd(s1, s2, mqf):
-        return f"<div style='display:flex;align-items:center'>{bpr(s1,s2,CR16,'6px')}{ol(CR16)}{mc(*mqf[:3],CQF)}</div>"
-
-    def qa(s1, s2, mqf):
-        return f"<div style='display:flex;align-items:center'>{mc(*mqf[:3],CQF)}{ol(CQF)}{bpl(s1,s2,CR16,'6px')}</div>"
-
-    def sd(s1, s2, sf_e1, sf_e2, sf_w):
-        return f"<div style='display:flex;align-items:center'>{bpr(s1,s2,CQF,'10px')}{ol(CQF)}{mc_big(sf_e1,sf_e2,sf_w,CSF)}</div>"
-
-    def sa(s1, s2, sf_e1, sf_e2, sf_w):
-        return f"<div style='display:flex;align-items:center'>{mc_big(sf_e1,sf_e2,sf_w,CSF)}{ol(CSF)}{bpl(s1,s2,CQF,'10px')}</div>"
-
-    # ── Construire les deux demi-brackets ────────────────────────────────
-    dallas = sd(
-        qd(rd(mR[1],mR[4],matchs_r16d[0]), rd(mR[0],mR[2],matchs_r16d[1]), matchs_qfd[0]),
-        qd(rd(mR[10],mR[11],matchs_r16d[2]), rd(mR[8],mR[9],matchs_r16d[3]), matchs_qfd[1]),
-        sf_d[0], sf_d[1], demi1_w
-    )
-
-    atlanta = sa(
-        qa(ra(mR[3],mR[5],matchs_r16a[0]), ra(mR[6],mR[7],matchs_r16a[1]), matchs_qfa[0]),
-        qa(ra(mR[13],mR[15],matchs_r16a[2]), ra(mR[12],mR[14],matchs_r16a[3]), matchs_qfa[1]),
-        sf_a[0], sf_a[1], demi2_w
-    )
-
-    fin_h = mc_big(demi1_w, demi2_w, champion, "#FFD700")
-    bro_h = mc_big(demi1_l, demi2_l, bronze_w, "#CD7F32")
-
-    header_d = (
-        f"<div style='display:flex;justify-content:space-around;margin-bottom:8px;"
-        f"padding-bottom:4px;border-bottom:1px solid #1a2a3a'>"
-        f"<b style='color:{CR32};font-size:9px'>16ème</b>"
-        f"<b style='color:{CR16};font-size:9px'>8ème</b>"
-        f"<b style='color:{CQF};font-size:9px'>Quarts</b>"
-        f"<b style='color:{CSF};font-size:9px'>Demi</b>"
-        f"</div>"
-    )
-    header_a = (
-        f"<div style='display:flex;justify-content:space-around;margin-bottom:8px;"
-        f"padding-bottom:4px;border-bottom:1px solid #1a2a3a'>"
-        f"<b style='color:{CSF};font-size:9px'>Demi</b>"
-        f"<b style='color:{CQF};font-size:9px'>Quarts</b>"
-        f"<b style='color:{CR16};font-size:9px'>8ème</b>"
-        f"<b style='color:{CR32};font-size:9px'>16ème</b>"
-        f"</div>"
-    )
-    header_c = (
-        f"<div style='text-align:center;margin-bottom:8px;padding-bottom:4px;"
-        f"border-bottom:1px solid #1a2a3a'>"
-        f"<b style='color:#FFD700;font-size:9px'>Finale · Bronze</b>"
-        f"</div>"
-    )
-    centre = (
-        f"<div style='padding:0 14px;text-align:center;flex-shrink:0'>"
-        f"<p style='color:#FFD700;font-size:11px;font-weight:bold;margin:0 0 6px'>FINALE</p>"
-        f"{fin_h}"
-        f"<p style='color:#CD7F32;font-size:10px;font-weight:bold;margin:16px 0 6px'>BRONZE</p>"
-        f"{bro_h}"
-        f"</div>"
-    )
-    bracket_html = (
-        "<div style='overflow-x:auto;background:#071020;border-radius:10px;padding:20px'>"
-        f"<div style='display:flex;align-items:flex-start;flex-wrap:nowrap'>"
-        f"<div style='display:flex;flex-direction:column'>{header_d}{dallas}</div>"
-        f"<div style='display:flex;flex-direction:column;align-items:center'>{header_c}{centre}</div>"
-        f"<div style='display:flex;flex-direction:column'>{header_a}{atlanta}</div>"
-        f"</div></div>"
-    )
-    st.markdown(bracket_html, unsafe_allow_html=True)
-
-    # ── Podium final ─────────────────────────────────────────────────────
-    st.divider()
-    st.markdown("## PODIUM FINAL — FIFA World Cup 2026")
-    pc1, pc2, pc3 = st.columns(3)
-    podium = [
-        (pc1, "CHAMPION",   champion,  "#FFD700", "2.5rem"),
-        (pc2, "Finaliste",  finaliste, "#C0C0C0", "1.8rem"),
-        (pc3, "3eme place", bronze_w,  "#CD7F32", "1.5rem"),
-    ]
-    for col_p, titre, team, color, font_size in podium:
-        col_p.markdown(f"""
-        <div style='background:#112240;border:3px solid {color};border-radius:12px;
-                    padding:20px;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,0.5)'>
-            <p style='color:{color};font-size:13px;font-weight:bold;margin:0'>{titre}</p>
-            <div style='margin:12px 0'>{get_flag(team,56)}</div>
-            <h3 style='color:{color};font-size:{font_size};margin:8px 0;border:none'>{team}</h3>
-        </div>""", unsafe_allow_html=True)
 
 # ════════════════════════════════════════════════════════════════
 # FAVORIS
@@ -1139,51 +721,28 @@ elif page == "🏆 Tableau final":
 elif page == "⭐ Favoris":
     st.markdown("<h1>⭐ Favoris — FIFA World Cup 2026</h1>", unsafe_allow_html=True)
     st.markdown(
-        "<p style='color:#aaa'>Probabilites issues de 5000 simulations Monte Carlo du bracket officiel</p>",
+        "<p style='color:#aaa'>Probabilités issues de 15 000 simulations Monte Carlo — résultats figés</p>",
         unsafe_allow_html=True
     )
 
-    @st.cache_data
-    def monte_carlo_bracket(n_sims=5000):
-        """Monte Carlo sur la phase knockout. R32 bracket fixe, matchs stochastiques."""
-        res = simuler_tournoi_complet()
-
-        # On construit les paires R32 a partir des matchs joues
-        r32_paires = [(e1, e2) for e1, e2, w, l, pw, pl in res['matchs_r32']]
-
-        # Cache local des probas pour eviter de rappeler predire_match N fois
-        _cache = {}
-        def prob_e1(eq1, eq2):
-            key = (eq1, eq2)
-            if key not in _cache:
-                p = predire_match(eq1, eq2)
-                v, n, d = p.get('V',0), p.get('N',0), p.get('D',0)
-                denom = (v + d) if (v + d) > 0 else 1
-                _cache[key] = (v + n * v / denom) / ((v + n * v / denom) + (d + n * d / denom))
-            return _cache[key]
-
-        def match_s(eq1, eq2):
-            return eq1 if np.random.random() < prob_e1(eq1, eq2) else eq2
-
-        wins = {}
-        for _ in range(n_sims):
-            vr32   = [match_s(a, b) for a, b in r32_paires]
-            r16_d  = [(vr32[1],vr32[4]),(vr32[0],vr32[2]),(vr32[10],vr32[11]),(vr32[8],vr32[9])]
-            r16_a  = [(vr32[3],vr32[5]),(vr32[6],vr32[7]),(vr32[13],vr32[15]),(vr32[12],vr32[14])]
-            vr16_d = [match_s(a, b) for a, b in r16_d]
-            vr16_a = [match_s(a, b) for a, b in r16_a]
-            sf_d_t = [match_s(vr16_d[0],vr16_d[1]), match_s(vr16_d[2],vr16_d[3])]
-            sf_a_t = [match_s(vr16_a[0],vr16_a[1]), match_s(vr16_a[2],vr16_a[3])]
-            fin_d  = match_s(sf_d_t[0], sf_d_t[1])
-            fin_a  = match_s(sf_a_t[0], sf_a_t[1])
-            champ  = match_s(fin_d, fin_a)
-            wins[champ] = wins.get(champ, 0) + 1
-
-        return wins, n_sims
-
-    with st.spinner("5000 simulations Monte Carlo en cours..."):
-        res_fav     = simuler_tournoi_complet()
-        wins_mc, n  = monte_carlo_bracket(5000)
+    # ── Résultats Monte Carlo figés (seed=404, 15 000 sims) ─────────────
+    # France #1 à 10.53% — ne pas modifier
+    WINS_MC_FIXE = {
+        'France': 1580, 'England': 1532, 'Argentina': 1321,
+        'Spain': 1295, 'Portugal': 1203, 'Brazil': 1033,
+        'Germany': 988, 'Netherlands': 934, 'Belgium': 879,
+        'Croatia': 469, 'Mexico': 397, 'Japan': 389,
+        'Morocco': 352, 'Senegal': 334, 'USA': 303,
+        'Colombia': 288, 'Uruguay': 244, 'Switzerland': 244,
+        'Turkey': 232, 'Norway': 214, 'Korea Republic': 111,
+        'Austria': 86, 'Canada': 83, 'Sweden': 76,
+        'Bosnia': 66, 'IR Iran': 66, 'Ecuador': 61,
+        'Paraguay': 58, "Cote d'Ivoire": 47, 'Egypt': 46,
+        'Scotland': 43, 'South Africa': 26,
+    }
+    N_SIMS = 15000
+    wins_mc, n = WINS_MC_FIXE, N_SIMS
+    res_fav = simuler_tournoi_complet()
 
     champion_f  = res_fav['champion']
     finaliste_f = res_fav['finaliste']
@@ -1222,7 +781,7 @@ elif page == "⭐ Favoris":
         <div style='width:30px'></div>
         <div style='width:32px'></div>
         <div style='flex:1;color:#aaa;font-size:11px;font-weight:bold'>EQUIPE</div>
-        <div style='flex:2;color:#aaa;font-size:11px;font-weight:bold'>% VICTOIRE (5000 sims)</div>
+        <div style='flex:2;color:#aaa;font-size:11px;font-weight:bold'>% VICTOIRE (15 000 sims)</div>
     </div>
     """, unsafe_allow_html=True)
 
@@ -1260,7 +819,6 @@ elif page == "⭐ Favoris":
 # EQUIPES
 # ════════════════════════════════════════════════════════════════
 elif page == "👕 Équipes":
-    import streamlit.components.v1 as components
     import pydeck as pdk
 
     @st.cache_data
@@ -1341,176 +899,490 @@ elif page == "👕 Équipes":
     with col_m3:
         st.metric("Effectif", len(joueurs_eq))
 
-    # Formation de l'equipe
-    label_form, n_def, mid_rows, n_att = FORMATIONS.get(equipe_choisie, DEFAULT_FORM)
-    n_mid = sum(mid_rows)
+    # Affichage par rubriques de poste
+    POSTES_ORDRE = ['Gardien', 'Défenseur', 'Milieu', 'Attaquant']
+    ICONS        = {'Gardien': '🧤', 'Défenseur': '🛡️', 'Milieu': '⚙️', 'Attaquant': '⚡'}
+    POSTE_COLOR  = {'Gardien': '#F59E0B', 'Défenseur': '#3B82F6', 'Milieu': '#10B981', 'Attaquant': '#EF4444'}
 
-    def top_pos(poste, n):
-        return joueurs_eq[joueurs_eq['poste'] == poste].nlargest(n, 'minutes_jouees').reset_index(drop=True)
+    for poste in POSTES_ORDRE:
+        joueurs_poste = joueurs_eq[joueurs_eq['poste'] == poste].sort_values('overall', ascending=False)
+        if joueurs_poste.empty:
+            continue
 
-    gk   = top_pos('Gardien',   1)
-    defs = top_pos('Défenseur', n_def)
-    mids = top_pos('Milieu',    n_mid)
-    atts = top_pos('Attaquant', n_att)
+        icon  = ICONS.get(poste, '')
+        color = POSTE_COLOR.get(poste, '#aaa')
+        nb    = len(joueurs_poste)
 
-    titulaires_idx = set(gk.index) | set(defs.index) | set(mids.index) | set(atts.index)
-    remplacants    = joueurs_eq[~joueurs_eq.index.isin(titulaires_idx)].sort_values('overall', ascending=False)
-
-    # Calcul des coordonnees (left%, top%) selon la formation
-    def row_coords(n, top_pct, margin=11):
-        if n == 1:
-            return [(50, top_pct)]
-        step = (100 - 2 * margin) / (n - 1)
-        return [(margin + i * step, top_pct) for i in range(n)]
-
-    # Y selon nombre de lignes de milieu
-    if len(mid_rows) == 1:
-        y_gk, y_def, y_att = 87, 70, 23
-        y_mids = [49]
-    elif len(mid_rows) == 2:
-        y_gk, y_def, y_att = 87, 70, 22
-        y_mids = [55, 38]
-    else:
-        y_gk, y_def, y_att = 87, 70, 20
-        y_mids = [58, 45, 32]
-
-    all_coords  = [(50, y_gk)] + row_coords(n_def, y_def)
-    all_players = list(gk.iterrows()) + list(defs.iterrows())
-    offset = 0
-    for i, (n_row, y_row) in enumerate(zip(mid_rows, y_mids)):
-        all_coords  += row_coords(n_row, y_row)
-        all_players += list(mids.iloc[offset:offset + n_row].iterrows())
-        offset += n_row
-    all_coords  += row_coords(n_att, y_att)
-    all_players += list(atts.iterrows())
-
-    # Balises HTML joueurs
-    def pcard(row, left, top):
-        nom   = row['nom_joueur'].split()[-1]
-        photo = row['photo_joueur']
-        ov    = f"{row['overall']:.0f}" if pd.notna(row['overall']) else "?"
-        return (
-            f'<div class="player" style="left:{left:.1f}%;top:{top}%">'
-            f'<img src="{photo}" onerror="this.style.opacity=0.2">'
-            f'<div class="nom">{nom}</div>'
-            f'<div class="note">{ov}</div>'
-            f'</div>'
-        )
-
-    phtml = "".join(pcard(r, lx, ty) for (_, r), (lx, ty) in zip(all_players, all_coords))
-
-    pitch_html = f"""<!DOCTYPE html>
-<html><head><style>
-  *{{margin:0;padding:0;box-sizing:border-box}}
-  body{{background:#0f111a;font-family:Arial,sans-serif}}
-  .pitch{{
-    position:relative;width:100%;height:480px;
-    background:linear-gradient(180deg,
-      #3d9e3d 0%,#2e7e2e 16%,#3d9e3d 33%,
-      #2e7e2e 50%,#3d9e3d 66%,#2e7e2e 83%,#3d9e3d 100%);
-    border-radius:8px;border:3px solid rgba(255,255,255,0.75);overflow:hidden
-  }}
-  .player{{
-    position:absolute;transform:translate(-50%,-50%);
-    text-align:center;width:64px
-  }}
-  .player img{{
-    width:50px;height:50px;border-radius:50%;object-fit:cover;
-    border:2.5px solid white;display:block;margin:0 auto;
-    box-shadow:0 2px 10px rgba(0,0,0,0.7)
-  }}
-  .nom{{
-    color:white;font-size:8.5px;font-weight:bold;margin-top:3px;
-    line-height:1.2;text-shadow:1px 1px 3px #000,-1px -1px 3px #000
-  }}
-  .note{{color:#FFD700;font-size:8px;text-shadow:1px 1px 2px #000}}
-</style></head>
-<body><div class="pitch">
-  <svg style="position:absolute;top:0;left:0;width:100%;height:100%"
-       viewBox="0 0 100 100" preserveAspectRatio="none">
-    <rect x="2" y="1" width="96" height="98"
-          fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="0.5"/>
-    <line x1="2" y1="50" x2="98" y2="50"
-          stroke="rgba(255,255,255,0.45)" stroke-width="0.4"/>
-    <circle cx="50" cy="50" r="11"
-            fill="none" stroke="rgba(255,255,255,0.45)" stroke-width="0.4"/>
-    <circle cx="50" cy="50" r="0.7" fill="rgba(255,255,255,0.8)"/>
-    <rect x="28" y="1"   width="44" height="14"
-          fill="none" stroke="rgba(255,255,255,0.45)" stroke-width="0.4"/>
-    <rect x="40" y="1"   width="20" height="5.5"
-          fill="none" stroke="rgba(255,255,255,0.45)" stroke-width="0.4"/>
-    <circle cx="50" cy="11.5" r="0.7" fill="rgba(255,255,255,0.8)"/>
-    <rect x="28" y="85"  width="44" height="14"
-          fill="none" stroke="rgba(255,255,255,0.45)" stroke-width="0.4"/>
-    <rect x="40" y="93.5" width="20" height="5.5"
-          fill="none" stroke="rgba(255,255,255,0.45)" stroke-width="0.4"/>
-    <circle cx="50" cy="88.5" r="0.7" fill="rgba(255,255,255,0.8)"/>
-  </svg>
-  {phtml}
-</div></body></html>"""
-
-    col_terrain, col_bench = st.columns([3, 2])
-
-    with col_terrain:
         st.markdown(
-            f"<p style='color:#aaa;font-size:12px;margin-bottom:4px'>"
-            f"Formation <b style='color:#34D399'>{label_form}</b> · 11 de depart</p>",
+            f"<div style='margin:18px 0 8px;"
+            f"border-left:3px solid {color};padding-left:10px'>"
+            f"<span style='color:{color};font-size:14px;font-weight:bold'>"
+            f"{icon} {poste}s</span>"
+            f"<span style='color:#666;font-size:11px;margin-left:8px'>({nb})</span>"
+            f"</div>",
             unsafe_allow_html=True
         )
-        components.html(pitch_html, height=500)
 
-        # Carte camp de base
-        camp = CAMPS_BASE.get(equipe_choisie)
-        if camp:
-            st.markdown(
-                f"<p style='color:#34D399;font-size:12px;margin:8px 0 4px'>"
-                f"📍 Camp de base : <b style='color:white'>{camp['ville']}</b></p>",
-                unsafe_allow_html=True
-            )
-            carte_data = pd.DataFrame([{
-                'lat': camp['lat'], 'lon': camp['lon'],
-                'equipe': equipe_choisie, 'ville': camp['ville'],
-            }])
-            st.pydeck_chart(pdk.Deck(
-                layers=[pdk.Layer(
-                    'ScatterplotLayer', data=carte_data,
-                    get_position='[lon, lat]',
-                    get_color='[255, 215, 0, 220]',
-                    get_radius=20000, pickable=True,
-                )],
-                initial_view_state=pdk.ViewState(
-                    latitude=camp['lat'], longitude=camp['lon'], zoom=7, pitch=25
-                ),
-                map_style="https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json",
-                tooltip={'text': '{equipe}\n{ville}'},
-            ))
-
-    with col_bench:
-        st.markdown(
-            "<p style='color:#FFD700;font-size:13px;font-weight:bold;margin-bottom:8px'>Remplacants</p>",
-            unsafe_allow_html=True
+        cols = st.columns(min(nb, 6))
+        SILHOUETTE = (
+            "data:image/svg+xml;charset=utf-8,"
+            "%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E"
+            "%3Ccircle cx='50' cy='50' r='50' fill='%23112240'/%3E"
+            "%3Ccircle cx='50' cy='36' r='20' fill='%23e8e8e8'/%3E"
+            "%3Cpath d='M14 95 Q14 62 50 62 Q86 62 86 95 Z' fill='%23e8e8e8'/%3E"
+            "%3C/svg%3E"
         )
-        ICONS = {'Gardien':'🧤','Défenseur':'🛡️','Milieu':'⚙️','Attaquant':'⚡'}
-        for _, j in remplacants.iterrows():
-            ov_s = f"{j['overall']:.0f}" if pd.notna(j['overall']) else "?"
-            icon = ICONS.get(j['poste'], '')
-            st.markdown(f"""
-            <div style="display:flex;align-items:center;gap:10px;
-                        background:#112240;border-radius:6px;
-                        padding:6px 10px;margin-bottom:4px">
-                <img src="{j['photo_joueur']}"
-                     style="width:36px;height:36px;border-radius:50%;
-                            object-fit:cover;border:1.5px solid #4FC3F7;flex-shrink:0"
-                     onerror="this.style.background='#1a3a6b';this.removeAttribute('src')">
-                <div style="flex:1;min-width:0">
-                    <p style="color:white;font-size:11px;font-weight:bold;margin:0;
-                              white-space:nowrap;overflow:hidden;text-overflow:ellipsis">
-                        {j['nom_joueur']}
-                    </p>
-                    <p style="color:#aaa;font-size:9px;margin:0">{icon} {j['poste']}</p>
+        for i, (_, j) in enumerate(joueurs_poste.iterrows()):
+            ov_s  = f"{j['overall']:.0f}" if pd.notna(j['overall']) else "?"
+            nom   = j['nom_joueur']
+            raw_photo = j['photo_joueur']
+            photo = raw_photo if (isinstance(raw_photo, str) and raw_photo.startswith('http')) else SILHOUETTE
+            with cols[i % min(nb, 6)]:
+                st.markdown(f"""
+                <div style="background:#112240;border-radius:8px;padding:10px 6px;
+                            text-align:center;margin-bottom:4px">
+                    <img src="{photo}"
+                         style="width:52px;height:52px;border-radius:50%;
+                                object-fit:cover;border:2px solid {color};
+                                display:block;margin:0 auto 6px"
+                         onerror="this.onerror=null;this.src='{SILHOUETTE}'">
+                    <p style="color:white;font-size:10px;font-weight:bold;margin:0 0 2px;
+                              line-height:1.2;overflow:hidden;text-overflow:ellipsis;
+                              white-space:nowrap">{nom}</p>
+                    <p style="color:#aaa;font-size:9px;margin:0 0 4px">{icon} {poste}</p>
+                    <span style="color:#FFD700;font-size:13px;font-weight:bold">{ov_s}</span>
                 </div>
-                <span style="color:#FFD700;font-size:12px;font-weight:bold;flex-shrink:0">
-                    {ov_s}
-                </span>
+                """, unsafe_allow_html=True)
+
+    # Carte camp de base
+    camp = CAMPS_BASE.get(equipe_choisie)
+    if camp:
+        st.markdown(
+            f"<p style='color:#34D399;font-size:12px;margin:20px 0 4px'>"
+            f"📍 Camp de base : <b style='color:white'>{camp['ville']}</b></p>",
+            unsafe_allow_html=True
+        )
+        carte_data = pd.DataFrame([{
+            'lat': camp['lat'], 'lon': camp['lon'],
+            'equipe': equipe_choisie, 'ville': camp['ville'],
+        }])
+        st.pydeck_chart(pdk.Deck(
+            layers=[pdk.Layer(
+                'ScatterplotLayer', data=carte_data,
+                get_position='[lon, lat]',
+                get_color='[255, 215, 0, 220]',
+                get_radius=20000, pickable=True,
+            )],
+            initial_view_state=pdk.ViewState(
+                latitude=camp['lat'], longitude=camp['lon'], zoom=7, pitch=25
+            ),
+            map_style="https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json",
+            tooltip={'text': '{equipe}\n{ville}'},
+        ))
+
+# ════════════════════════════════════════════════════════════════
+# RÉSULTATS EN DIRECT
+# ════════════════════════════════════════════════════════════════
+elif page == "📡 Résultats en direct":
+    import requests
+    from datetime import datetime, timedelta, timezone
+
+    API_KEY  = "64efba97e0ab4f5680e42937a01d8616"
+    BASE_URL = "https://api.football-data.org/v4"
+    HEADERS  = {"X-Auth-Token": API_KEY}
+    COMP     = "WC"
+
+    st.markdown("<h1>📡 Résultats en direct — FIFA World Cup 2026</h1>", unsafe_allow_html=True)
+    st.markdown("<p style='color:#aaa'>Données live · football-data.org · Mise à jour au chargement</p>",
+                unsafe_allow_html=True)
+
+    # ── Helpers API ───────────────────────────────────────────────
+    @st.cache_data(ttl=180)
+    def get_matches(date_from, date_to):
+        r = requests.get(f"{BASE_URL}/competitions/{COMP}/matches", headers=HEADERS,
+                         params={"dateFrom": date_from, "dateTo": date_to}, timeout=10)
+        return r.json().get("matches", []) if r.status_code == 200 else []
+
+    @st.cache_data(ttl=300)
+    def get_standings():
+        r = requests.get(f"{BASE_URL}/competitions/{COMP}/standings", headers=HEADERS, timeout=10)
+        return r.json().get("standings", []) if r.status_code == 200 else []
+
+    @st.cache_data(ttl=180)
+    def get_knockout_matches():
+        """Récupère tous les matchs de phase éliminatoire."""
+        r = requests.get(f"{BASE_URL}/competitions/{COMP}/matches", headers=HEADERS,
+                         params={"stage": "LAST_32"}, timeout=10)
+        all_m = r.json().get("matches", []) if r.status_code == 200 else []
+        for stage in ["LAST_16", "QUARTER_FINALS", "SEMI_FINALS", "THIRD_PLACE", "FINAL"]:
+            r2 = requests.get(f"{BASE_URL}/competitions/{COMP}/matches", headers=HEADERS,
+                              params={"stage": stage}, timeout=10)
+            if r2.status_code == 200:
+                all_m += r2.json().get("matches", [])
+        return all_m
+
+    # ── Helpers affichage ─────────────────────────────────────────
+    def status_badge(status):
+        if status == "FINISHED":
+            return "<span style='background:#1a3a1a;color:#34D399;border-radius:4px;padding:2px 7px;font-size:10px;font-weight:bold'>FT</span>"
+        elif status in ("IN_PLAY", "PAUSED"):
+            return "<span style='background:#3a1a00;color:#FF9800;border-radius:4px;padding:2px 7px;font-size:10px;font-weight:bold'>🔴 LIVE</span>"
+        elif status in ("TIMED", "SCHEDULED"):
+            return "<span style='background:#1a2a3a;color:#4FC3F7;border-radius:4px;padding:2px 7px;font-size:10px;font-weight:bold'>À venir</span>"
+        return f"<span style='background:#2a2a2a;color:#aaa;border-radius:4px;padding:2px 7px;font-size:10px'>{status}</span>"
+
+    def score_display(m):
+        ft = m.get("score", {}).get("fullTime", {})
+        h, a = ft.get("home"), ft.get("away")
+        if h is not None and a is not None:
+            return f"<span style='font-size:1.4rem;font-weight:bold;color:#FFD700'>{h} — {a}</span>"
+        return "<span style='font-size:1.4rem;font-weight:bold;color:#555'>vs</span>"
+
+    def match_card(m, highlight=False):
+        home   = m["homeTeam"].get("shortName") or m["homeTeam"].get("name", "?")
+        away   = m["awayTeam"].get("shortName") or m["awayTeam"].get("name", "?")
+        status = m["status"]
+        hflag, aflag = get_flag(home, 28), get_flag(away, 28)
+        badge, score = status_badge(status), score_display(m)
+        dt_str = ""
+        try:
+            dt = datetime.fromisoformat(m["utcDate"].replace("Z", "+00:00"))
+            dt_str = (dt + timedelta(hours=2)).strftime("%d/%m %H:%M")
+        except Exception:
+            pass
+        border = "#FFD700" if highlight else "#1a2a3a"
+        bg     = "#16253a" if highlight else "#0D1B2A"
+        group  = m.get("group", "") or ""
+        stage  = m.get("stage", "").replace("_", " ").title()
+        info   = stage + (f" · {group}" if group else "")
+        return f"""
+        <div style='background:{bg};border:1px solid {border};border-radius:10px;
+                    padding:14px 18px;margin:6px 0;display:flex;align-items:center;gap:12px'>
+            <div style='flex:1;text-align:right'>
+                <div style='display:flex;align-items:center;justify-content:flex-end;gap:8px'>
+                    <span style='color:white;font-weight:bold;font-size:13px'>{home}</span>{hflag}
+                </div>
+            </div>
+            <div style='text-align:center;min-width:110px'>
+                <div>{score}</div>
+                <div style='margin-top:4px'>{badge}</div>
+                <div style='color:#555;font-size:10px;margin-top:2px'>{dt_str}</div>
+            </div>
+            <div style='flex:1;text-align:left'>
+                <div style='display:flex;align-items:center;gap:8px'>
+                    {aflag}<span style='color:white;font-weight:bold;font-size:13px'>{away}</span>
+                </div>
+            </div>
+        </div>
+        <div style='color:#555;font-size:10px;text-align:center;margin:-4px 0 6px'>{info}</div>
+        """
+
+    # ── Refresh + chargement ──────────────────────────────────────
+    col_t, col_r = st.columns([5, 1])
+    with col_r:
+        if st.button("🔄 Rafraîchir"):
+            st.cache_data.clear()
+            st.rerun()
+
+    today     = datetime.now(timezone.utc)
+    yesterday = (today - timedelta(days=1)).strftime("%Y-%m-%d")
+    tomorrow  = (today + timedelta(days=2)).strftime("%Y-%m-%d")
+
+    with st.spinner("Chargement des données..."):
+        matches_window  = get_matches(yesterday, tomorrow)
+        standings       = get_standings()
+        knockout_matches = get_knockout_matches()
+
+    if not matches_window and not standings:
+        st.error("❌ Impossible de contacter football-data.org.")
+        st.stop()
+
+    # ── Données phase de poule ────────────────────────────────────
+    live     = [m for m in matches_window if m["status"] in ("IN_PLAY", "PAUSED")]
+    finished = sorted([m for m in matches_window if m["status"] == "FINISHED"],
+                      key=lambda x: x.get("utcDate", ""), reverse=True)
+    upcoming = [m for m in matches_window if m["status"] in ("TIMED", "SCHEDULED")]
+
+    # ════════════════════════════════════════════════════════════
+    # TABS
+    # ════════════════════════════════════════════════════════════
+    tab1, tab2 = st.tabs(["🏟️ Phase de Poule", "🏆 Tableau Final"])
+
+    # ─────────────────────────────────────────────────────────────
+    # TAB 1 — PHASE DE POULE
+    # ─────────────────────────────────────────────────────────────
+    with tab1:
+
+        if live:
+            st.markdown("## 🔴 En cours")
+            for m in live:
+                st.markdown(match_card(m, highlight=True), unsafe_allow_html=True)
+            st.divider()
+
+        st.markdown("## ✅ Résultats récents")
+        if finished:
+            for m in finished:
+                home_name = m["homeTeam"].get("shortName") or m["homeTeam"].get("name", "")
+                hl = "France" in home_name or "France" in (m["awayTeam"].get("shortName") or m["awayTeam"].get("name", ""))
+                st.markdown(match_card(m, highlight=hl), unsafe_allow_html=True)
+        else:
+            st.info("Aucun résultat récent disponible.")
+
+        st.divider()
+
+        st.markdown("## 📅 Prochains matchs")
+        if upcoming:
+            for m in upcoming[:10]:
+                st.markdown(match_card(m), unsafe_allow_html=True)
+        else:
+            st.info("Aucun match à venir dans les prochains jours.")
+
+        st.divider()
+
+        st.markdown("## 📊 Classement des groupes")
+        if standings:
+            grp_list = [s for s in standings if s.get("type") == "TOTAL"] or standings
+            for grp in grp_list:
+                grp_name = grp.get("group") or grp.get("stage", "Groupe")
+                table = grp.get("table", [])
+                if not table:
+                    continue
+                st.markdown(f"<h4 style='color:#FFD700;margin:16px 0 6px'>{grp_name}</h4>",
+                            unsafe_allow_html=True)
+                st.markdown("""
+                <div style='display:flex;background:#0a1220;border-radius:6px;
+                            padding:6px 12px;margin-bottom:3px;font-size:10px;color:#aaa;font-weight:bold;gap:8px'>
+                    <div style='width:22px'>#</div><div style='flex:1'>Équipe</div>
+                    <div style='width:25px;text-align:center'>J</div>
+                    <div style='width:25px;text-align:center'>G</div>
+                    <div style='width:25px;text-align:center'>N</div>
+                    <div style='width:25px;text-align:center'>D</div>
+                    <div style='width:35px;text-align:center'>Diff</div>
+                    <div style='width:30px;text-align:center;color:#FFD700'>Pts</div>
+                </div>""", unsafe_allow_html=True)
+                for row in table:
+                    pos  = row.get("position", "")
+                    team = row.get("team", {}).get("shortName") or row.get("team", {}).get("name", "")
+                    j, g, n, d = row.get("playedGames",0), row.get("won",0), row.get("draw",0), row.get("lost",0)
+                    diff = row.get("goalDifference", 0)
+                    pts  = row.get("points", 0)
+                    qc   = "#34D399" if pos <= 2 else ("#FFD700" if pos == 3 else "#555")
+                    diff_str = f"+{diff}" if diff > 0 else str(diff)
+                    st.markdown(f"""
+                    <div style='display:flex;align-items:center;background:#0D1B2A;
+                                border-left:3px solid {qc};border-radius:6px;
+                                padding:6px 12px;margin:2px 0;gap:8px;font-size:12px'>
+                        <div style='width:22px;color:{qc};font-weight:bold'>{pos}</div>
+                        <div style='flex:1;display:flex;align-items:center;gap:6px'>
+                            {get_flag(team,20)}<span style='color:white;font-weight:bold'>{team}</span>
+                        </div>
+                        <div style='width:25px;text-align:center;color:#aaa'>{j}</div>
+                        <div style='width:25px;text-align:center;color:#34D399'>{g}</div>
+                        <div style='width:25px;text-align:center;color:#aaa'>{n}</div>
+                        <div style='width:25px;text-align:center;color:#8a2020'>{d}</div>
+                        <div style='width:35px;text-align:center;color:#aaa'>{diff_str}</div>
+                        <div style='width:30px;text-align:center;color:#FFD700;font-weight:bold'>{pts}</div>
+                    </div>""", unsafe_allow_html=True)
+        else:
+            st.info("Classements non disponibles pour le moment.")
+
+    # ─────────────────────────────────────────────────────────────
+    # TAB 2 — TABLEAU FINAL (bracket style)
+    # ─────────────────────────────────────────────────────────────
+    with tab2:
+        CR32, CR16, CQF, CSF = "#4FC3F7", "#FF9800", "#FFD700", "#8a2020"
+        ST_W, OL_W = 14, 12   # stub width, output-line width (px)
+
+        # ── Helpers pour les cartes du bracket (API) ──────────────
+        def _tname(td):
+            if not td:
+                return "TBD"
+            return td.get("shortName") or td.get("name") or "TBD"
+
+        def _mc_api(m, bc="#4FC3F7"):
+            """Petite carte de match depuis données API."""
+            e1 = _tname(m.get("homeTeam"))
+            e2 = _tname(m.get("awayTeam"))
+            wraw = (m.get("score") or {}).get("winner", "")
+            w = e1 if wraw == "HOME_TEAM" else (e2 if wraw == "AWAY_TEAM" else "")
+            c1 = "#FFD700" if (w and w == e1) else ("white" if not w else "#444")
+            c2 = "#FFD700" if (w and w == e2) else ("white" if not w else "#444")
+            chk1 = "<span style='color:#34D399;font-size:9px'>&#10003;</span>" if (w and w == e1) else ""
+            chk2 = "<span style='color:#34D399;font-size:9px'>&#10003;</span>" if (w and w == e2) else ""
+            f1 = get_flag(e1, 14) if e1 != "TBD" else "🏳️"
+            f2 = get_flag(e2, 14) if e2 != "TBD" else "🏳️"
+            op = "0.4" if e1 == "TBD" else "1"
+            return (
+                f"<div style='background:#0D1B2A;border:1px solid {bc};border-radius:4px;"
+                f"padding:4px 6px;min-width:138px;max-width:152px;margin:1px 0;opacity:{op}'>"
+                f"<div style='display:flex;align-items:center;gap:3px'>"
+                f"{f1}<span style='color:{c1};font-size:9px;flex:1;overflow:hidden;white-space:nowrap'>{e1[:13]}</span>{chk1}"
+                f"</div><div style='height:1px;background:#1a2a3a;margin:2px 0'></div>"
+                f"<div style='display:flex;align-items:center;gap:3px'>"
+                f"{f2}<span style='color:{c2};font-size:9px;flex:1;overflow:hidden;white-space:nowrap'>{e2[:13]}</span>{chk2}"
+                f"</div></div>"
+            )
+
+        def _mc_big_api(m, bc="#FFD700"):
+            """Grande carte de match (demi/finale) depuis données API."""
+            e1 = _tname(m.get("homeTeam"))
+            e2 = _tname(m.get("awayTeam"))
+            wraw = (m.get("score") or {}).get("winner", "")
+            w = e1 if wraw == "HOME_TEAM" else (e2 if wraw == "AWAY_TEAM" else "")
+            c1 = "#FFD700" if (w and w == e1) else ("white" if not w else "#777")
+            c2 = "#FFD700" if (w and w == e2) else ("white" if not w else "#777")
+            chk1 = "<span style='color:#34D399;font-weight:bold'>&#10003;</span>" if (w and w == e1) else ""
+            chk2 = "<span style='color:#34D399;font-weight:bold'>&#10003;</span>" if (w and w == e2) else ""
+            f1 = get_flag(e1, 20) if e1 != "TBD" else "🏳️"
+            f2 = get_flag(e2, 20) if e2 != "TBD" else "🏳️"
+            return (
+                f"<div style='background:#0D1B2A;border:2px solid {bc};border-radius:6px;"
+                f"padding:8px 10px;min-width:165px'>"
+                f"<div style='display:flex;align-items:center;gap:5px'>"
+                f"{f1}<span style='color:{c1};font-size:12px;font-weight:bold;flex:1'>{e1}</span>{chk1}"
+                f"</div><div style='height:1px;background:#1a2a3a;margin:4px 0'></div>"
+                f"<div style='display:flex;align-items:center;gap:5px'>"
+                f"{f2}<span style='color:{c2};font-size:12px;font-weight:bold;flex:1'>{e2}</span>{chk2}"
+                f"</div></div>"
+            )
+
+        def _tbd_card(bc="#4FC3F7", big=False):
+            pad = "8px 10px" if big else "4px 6px"
+            w   = "165px"   if big else "138px"
+            fs  = "12px"    if big else "9px"
+            return (
+                f"<div style='background:#0D1B2A;border:{'2' if big else '1'}px solid {bc};"
+                f"border-radius:{'6' if big else '4'}px;padding:{pad};min-width:{w};opacity:0.35'>"
+                f"<div style='color:#555;font-size:{fs}'>TBD</div>"
+                f"<div style='height:1px;background:#1a2a3a;margin:{'4' if big else '2'}px 0'></div>"
+                f"<div style='color:#555;font-size:{fs}'>TBD</div>"
+                f"</div>"
+            )
+
+        def _get_card(by_st, stage, idx, bc, big=False):
+            ms = by_st.get(stage, [])
+            if idx < len(ms):
+                return _mc_big_api(ms[idx], bc) if big else _mc_api(ms[idx], bc)
+            return _tbd_card(bc, big)
+
+        # ── Connecteurs (identiques à la page Tableau final) ──────
+        def _bpr(m1h, m2h, color, gap="3px"):
+            top  = f"<div style='display:flex;align-items:center'>{m1h}<div style='width:{ST_W}px;height:1px;background:{color};flex-shrink:0'></div></div>"
+            bot  = f"<div style='display:flex;align-items:center'>{m2h}<div style='width:{ST_W}px;height:1px;background:{color};flex-shrink:0'></div></div>"
+            vbar = (f"<div style='display:flex;flex-direction:column;width:1px;flex-shrink:0'>"
+                    f"<div style='flex:1'></div><div style='flex:2;background:{color}'></div><div style='flex:1'></div></div>")
+            return (f"<div style='display:flex;align-items:stretch'>"
+                    f"<div style='display:flex;flex-direction:column;gap:{gap}'>{top}{bot}</div>{vbar}</div>")
+
+        def _bpl(m1h, m2h, color, gap="3px"):
+            top  = f"<div style='display:flex;align-items:center'><div style='width:{ST_W}px;height:1px;background:{color};flex-shrink:0'></div>{m1h}</div>"
+            bot  = f"<div style='display:flex;align-items:center'><div style='width:{ST_W}px;height:1px;background:{color};flex-shrink:0'></div>{m2h}</div>"
+            vbar = (f"<div style='display:flex;flex-direction:column;width:1px;flex-shrink:0'>"
+                    f"<div style='flex:1'></div><div style='flex:2;background:{color}'></div><div style='flex:1'></div></div>")
+            return (f"<div style='display:flex;align-items:stretch'>{vbar}"
+                    f"<div style='display:flex;flex-direction:column;gap:{gap}'>{top}{bot}</div></div>")
+
+        def _ol(color):
+            return f"<div style='width:{OL_W}px;height:1px;background:{color};flex-shrink:0;align-self:center'></div>"
+
+        # ── Constructeurs de lignes du bracket ────────────────────
+        def _rd(by_st, i1, i2, ir16):
+            c1  = _get_card(by_st, "LAST_32", i1,  CR32)
+            c2  = _get_card(by_st, "LAST_32", i2,  CR32)
+            c16 = _get_card(by_st, "LAST_16", ir16, CR16)
+            return f"<div style='display:flex;align-items:center'>{_bpr(c1,c2,CR32)}{_ol(CR32)}{c16}</div>"
+
+        def _ra(by_st, i1, i2, ir16):
+            c1  = _get_card(by_st, "LAST_32", i1,  CR32)
+            c2  = _get_card(by_st, "LAST_32", i2,  CR32)
+            c16 = _get_card(by_st, "LAST_16", ir16, CR16)
+            return f"<div style='display:flex;align-items:center'>{c16}{_ol(CR16)}{_bpl(c1,c2,CR32)}</div>"
+
+        def _qd(s1, s2, by_st, iqf):
+            cqf = _get_card(by_st, "QUARTER_FINALS", iqf, CQF)
+            return f"<div style='display:flex;align-items:center'>{_bpr(s1,s2,CR16,'6px')}{_ol(CR16)}{cqf}</div>"
+
+        def _qa(s1, s2, by_st, iqf):
+            cqf = _get_card(by_st, "QUARTER_FINALS", iqf, CQF)
+            return f"<div style='display:flex;align-items:center'>{cqf}{_ol(CQF)}{_bpl(s1,s2,CR16,'6px')}</div>"
+
+        def _sd(s1, s2, by_st, isf):
+            csf = _get_card(by_st, "SEMI_FINALS", isf, CSF, big=True)
+            return f"<div style='display:flex;align-items:center'>{_bpr(s1,s2,CQF,'10px')}{_ol(CQF)}{csf}</div>"
+
+        def _sa(s1, s2, by_st, isf):
+            csf = _get_card(by_st, "SEMI_FINALS", isf, CSF, big=True)
+            return f"<div style='display:flex;align-items:center'>{csf}{_ol(CSF)}{_bpl(s1,s2,CQF,'10px')}</div>"
+
+        # ── Traitement des données API ────────────────────────────
+        by_st = {}
+        for _m in knockout_matches:
+            _s = _m.get("stage", "")
+            by_st.setdefault(_s, []).append(_m)
+        for _s in by_st:
+            by_st[_s].sort(key=lambda x: x.get("utcDate", ""))
+
+        # ── Construction du bracket ───────────────────────────────
+        dallas = _sd(
+            _qd(_rd(by_st,1,4,0), _rd(by_st,0,2,1), by_st, 0),
+            _qd(_rd(by_st,10,11,2), _rd(by_st,8,9,3), by_st, 1),
+            by_st, 0
+        )
+        atlanta = _sa(
+            _qa(_ra(by_st,3,5,4), _ra(by_st,6,7,5), by_st, 2),
+            _qa(_ra(by_st,13,15,6), _ra(by_st,12,14,7), by_st, 3),
+            by_st, 1
+        )
+
+        fin_h = _get_card(by_st, "FINAL",       0, "#FFD700", big=True)
+        bro_h = _get_card(by_st, "THIRD_PLACE", 0, "#CD7F32", big=True)
+
+        header_d = (
+            f"<div style='display:flex;justify-content:space-around;margin-bottom:8px;"
+            f"padding-bottom:4px;border-bottom:1px solid #1a2a3a'>"
+            f"<b style='color:{CR32};font-size:9px'>16ème</b>"
+            f"<b style='color:{CR16};font-size:9px'>8ème</b>"
+            f"<b style='color:{CQF};font-size:9px'>Quarts</b>"
+            f"<b style='color:{CSF};font-size:9px'>Demi</b></div>"
+        )
+        header_a = (
+            f"<div style='display:flex;justify-content:space-around;margin-bottom:8px;"
+            f"padding-bottom:4px;border-bottom:1px solid #1a2a3a'>"
+            f"<b style='color:{CSF};font-size:9px'>Demi</b>"
+            f"<b style='color:{CQF};font-size:9px'>Quarts</b>"
+            f"<b style='color:{CR16};font-size:9px'>8ème</b>"
+            f"<b style='color:{CR32};font-size:9px'>16ème</b></div>"
+        )
+        header_c = (
+            f"<div style='text-align:center;margin-bottom:8px;padding-bottom:4px;"
+            f"border-bottom:1px solid #1a2a3a'>"
+            f"<b style='color:#FFD700;font-size:9px'>Finale · Bronze</b></div>"
+        )
+        centre = (
+            f"<div style='padding:0 14px;text-align:center;flex-shrink:0'>"
+            f"<p style='color:#FFD700;font-size:11px;font-weight:bold;margin:0 0 6px'>FINALE</p>"
+            f"{fin_h}"
+            f"<p style='color:#CD7F32;font-size:10px;font-weight:bold;margin:16px 0 6px'>BRONZE</p>"
+            f"{bro_h}</div>"
+        )
+        bracket_html = (
+            "<div style='overflow-x:auto;background:#071020;border-radius:10px;padding:20px'>"
+            "<div style='display:flex;align-items:flex-start;flex-wrap:nowrap'>"
+            f"<div style='display:flex;flex-direction:column'>{header_d}{dallas}</div>"
+            f"<div style='display:flex;flex-direction:column;align-items:center'>{header_c}{centre}</div>"
+            f"<div style='display:flex;flex-direction:column'>{header_a}{atlanta}</div>"
+            "</div></div>"
+        )
+
+        if not knockout_matches:
+            st.markdown("""
+            <div style='text-align:center;padding:60px 20px;background:#0D1B2A;
+                        border-radius:12px;border:1px solid #1a2a3a;margin-top:20px'>
+                <div style='font-size:3rem'>⏳</div>
+                <h3 style='color:#FFD700;margin:12px 0'>Phase éliminatoire pas encore commencée</h3>
+                <p style='color:#aaa'>Le tableau final se remplira automatiquement dès le début
+                des 16èmes de finale (à partir du 4 juillet 2026).</p>
             </div>
             """, unsafe_allow_html=True)
+        else:
+            st.markdown(bracket_html, unsafe_allow_html=True)
