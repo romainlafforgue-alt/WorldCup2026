@@ -224,6 +224,7 @@ modele, enc_y, df_officiel = load_model()
 
 # ── Codes ISO drapeaux ────────────────────────────────────────────
 FLAGS_ISO = {
+    # Noms officiels app
     'Argentina':'ar','France':'fr','Belgium':'be','Brazil':'br',
     'England':'gb-eng','Portugal':'pt','Netherlands':'nl','Spain':'es',
     'Croatia':'hr','Germany':'de','USA':'us','Mexico':'mx',
@@ -240,10 +241,45 @@ FLAGS_ISO = {
     'Jordan':'jo','New Zealand':'nz','Paraguay':'py',
     'Uzbekistan':'uz','Qatar':'qa','Curacao':'cw',
     'Iraq':'iq','Sweden':'se','Cape Verde':'cv',
+    # Variantes noms API football-data.org
+    'United States':'us','United States of America':'us',
+    'Iran':'ir','Islamic Republic of Iran':'ir',
+    'South Korea':'kr','Republic of Korea':'kr',
+    "Côte d'Ivoire":'ci',"Ivory Coast":'ci',
+    'DR Congo':'cd','Congo DR':'cd','Democratic Republic of Congo':'cd',
+    'Türkiye':'tr','Turkiye':'tr',
+    'Bosnia and Herzegovina':'ba','Bosnia & Herzegovina':'ba',
+    'Curaçao':'cw',
+    'Scotland':'gb-sct',
+    'Wales':'gb-wls','Northern Ireland':'gb-nir',
+    'Costa Rica':'cr','Honduras':'hn','El Salvador':'sv',
+    'Venezuela':'ve','Peru':'pe','Chile':'cl','Bolivia':'bo',
+    'Nigeria':'ng','Cameroon':'cm','Mali':'ml','Guinea':'gn',
+    'Zambia':'zm','Kenya':'ke','Tanzania':'tz',
+    'United Arab Emirates':'ae','Kuwait':'kw','Bahrain':'bh','Oman':'om',
+    'Indonesia':'id','Thailand':'th','Vietnam':'vn','Philippines':'ph',
+    'India':'in','Pakistan':'pk',
+    'Albania':'al','Georgia':'ge','Slovenia':'si','Romania':'ro',
+    'Ukraine':'ua','Poland':'pl','Greece':'gr',
+    'Russia':'ru','Belarus':'by',
 }
 
 def get_flag(team, size=24):
+    # Recherche exacte d'abord
     iso = FLAGS_ISO.get(team, '')
+    # Fallback : recherche insensible à la casse
+    if not iso:
+        team_low = team.lower()
+        for k, v in FLAGS_ISO.items():
+            if k.lower() == team_low:
+                iso = v
+                break
+    # Fallback : correspondance partielle (ex: "FR France" → "France")
+    if not iso:
+        for k, v in FLAGS_ISO.items():
+            if k.lower() in team_low or team_low in k.lower():
+                iso = v
+                break
     if iso:
         return f'<img src="https://flagcdn.com/w40/{iso}.png" width="{size}" style="vertical-align:middle;border-radius:3px">'
     return '🏳️'
@@ -543,12 +579,7 @@ with st.sidebar:
     ])
 
     st.markdown("""
-    <div style='height:3px;background:linear-gradient(90deg,#8a2020,#003087,#006633);margin:10px 0;border-radius:2px'></div>
-    <div style='text-align:center'>
-        <p style='color:#8a2020 !important;font-size:11px;font-weight:bold;margin:4px 0'>🇺🇸 USA · 🇨🇦 Canada · 🇲🇽 Mexico</p>
-        <p style='color:#aaa !important;font-size:10px;margin:2px 0'>11 juin → 19 juillet 2026</p>
-        <p style='color:#34D399 !important;font-size:11px;font-weight:bold;margin:4px 0'>Modele Hybride v3 · Accuracy 53.94%</p>
-    </div>
+    <div style='height:3px;background:linear-gradient(90deg,#C8102E,#003087,#006847);margin:10px 0;border-radius:2px'></div>
     """, unsafe_allow_html=True)
 
 # ════════════════════════════════════════════════════════════════
@@ -638,36 +669,36 @@ def get_base64_image(image_path):
 
 if page == "🏠 Accueil":
 
-    # ── Header + équipe en petit dessous ─────────────────────────────
+    # ── Header style FIFA WC 2026 ─────────────────────────────────
+    _logo_b64 = get_base64_image(ROOT / "streamlit/images/logo.png")
     _, col_c, _ = st.columns([0.2, 8, 0.2])
     with col_c:
-        render_html("""
-        <div style='
-            text-align:center;
-            padding:clamp(30px, 6vh, 80px) 0 16px;
-            background:linear-gradient(135deg, #0d1b3e 0%, #1a1a2e 40%, #0f2027 100%);
-            border-radius:12px;
-            border:1px solid rgba(255,255,255,0.05);
-        '>
-            <h1 style='font-size:clamp(1.6rem, 3vw, 2.8rem);color:#FFD700;font-family:Arial Black;margin:12px 0 4px;border:none'>
-                ⚽ FRENCH TEAM
-            </h1>
-            <p style='color:#34D399 !important;font-size:clamp(12px, 1.5vw, 16px);font-weight:bold;margin:0'>
-                FIFA World Cup 2026 — Prédictions Data
-            </p>
-            <div style='background:linear-gradient(90deg,#8a2020,#003087,#006633);
-                        height:4px;border-radius:2px;margin:10px auto;width:60%'></div>
-            <p style='color:#aaa !important;font-size:clamp(11px, 1.2vw, 13px);margin:0 0 14px'>
-                United States · Canada · Mexico · 11 juin → 19 juillet 2026
-            </p>
-            <div style='display:flex;justify-content:center;gap:18px;flex-wrap:wrap;padding:0 20px 8px'>
-                <span style='color:#aaa;font-size:11px'>🧑‍✈️ <b style="color:#8a2020">Aurélien</b> · Product Owner</span>
-                <span style='color:#aaa;font-size:11px'>🔧 <b style="color:#4FC3F7">Cédric</b> · Scrum Master</span>
-                <span style='color:#aaa;font-size:11px'>💻 <b style="color:#34D399">Ernest</b> · Streamlit Dev</span>
-                <span style='color:#aaa;font-size:11px'>📊 <b style="color:#FFD700">Romain</b> · Data &amp; ML</span>
-            </div>
-        </div>
-        """)
+        st.markdown(
+            "<div style='background:linear-gradient(135deg,#0d1b3e 0%,#1a1a2e 50%,#0f2027 100%);"
+            "border-radius:14px;border:1px solid rgba(255,255,255,0.08);padding:24px 32px;"
+            "border-left:6px solid #003087;border-right:6px solid #ED2939'>"
+            "<div style='display:flex;align-items:center;gap:20px'>"
+            f"<img src='data:image/png;base64,{_logo_b64}' width='90' style='flex-shrink:0;border-radius:8px'>"
+            "<div>"
+            "<h1 style='font-family:Arial Black,sans-serif;font-size:clamp(1.4rem,2.5vw,2.2rem);"
+            "color:#FFFFFF;margin:0 0 4px;border:none;line-height:1.1'>Coupe du Monde 2026</h1>"
+            "<div style='display:inline-block;margin-bottom:8px'>"
+            "<p style='color:#FFD700;font-size:14px;font-weight:bold;margin:0 0 4px'>USA &nbsp;·&nbsp; Mexique &nbsp;·&nbsp; Canada</p>"
+            "<div style='height:4px;border-radius:2px;width:100%;"
+            "background:linear-gradient(90deg,#C8102E,#003087,#006847)'></div>"
+            "</div>"
+            "<p style='color:#aaa;font-size:12px;margin:0 0 8px'>📅 11 juin 2026 &nbsp;→&nbsp; 19 juillet 2026</p>"
+            "<div style='display:flex;gap:16px;flex-wrap:wrap'>"
+            "<span style='color:#aaa;font-size:10px'>🧑‍✈️ <b style=\"color:#ED2939\">Aurélien</b> · Product Owner</span>"
+            "<span style='color:#aaa;font-size:10px'>🔧 <b style=\"color:#4FC3F7\">Cédric</b> · Scrum Master</span>"
+            "<span style='color:#aaa;font-size:10px'>💻 <b style=\"color:#34D399\">Ernest</b> · Streamlit Dev</span>"
+            "<span style='color:#aaa;font-size:10px'>📊 <b style=\"color:#FFD700\">Romain</b> · Data &amp; ML</span>"
+            "</div>"
+            "</div>"
+            "</div>"
+            "</div>",
+            unsafe_allow_html=True
+        )
 
     st.divider()
 
@@ -720,13 +751,8 @@ if page == "🏠 Accueil":
 # ════════════════════════════════════════════════════════════════
 elif page == "⭐ Favoris":
     st.markdown("<h1>⭐ Favoris — FIFA World Cup 2026</h1>", unsafe_allow_html=True)
-    st.markdown(
-        "<p style='color:#aaa'>Probabilités issues de 15 000 simulations Monte Carlo — résultats figés</p>",
-        unsafe_allow_html=True
-    )
 
-    # ── Résultats Monte Carlo figés (seed=404, 15 000 sims) ─────────────
-    # France #1 à 10.53% — ne pas modifier
+    # ── Simulation commune aux deux onglets ──────────────────────
     WINS_MC_FIXE = {
         'France': 1580, 'England': 1532, 'Argentina': 1321,
         'Spain': 1295, 'Portugal': 1203, 'Brazil': 1033,
@@ -744,76 +770,192 @@ elif page == "⭐ Favoris":
     wins_mc, n = WINS_MC_FIXE, N_SIMS
     res_fav = simuler_tournoi_complet()
 
+    # Nombre de matchs WC prédit par équipe (format 2026 : 3 poule + R32→Finale)
     champion_f  = res_fav['champion']
     finaliste_f = res_fav['finaliste']
     bronze_f    = res_fav['bronze']
     bronze_l_f  = res_fav['bronze_l']
     sf1, sf2, sf3, sf4 = res_fav['sf']
-    qf_l        = res_fav['qf_loosers']
-    r16_l       = res_fav['r16_loosers']
+    qf_l   = res_fav['qf_loosers']
+    r16_l  = res_fav['r16_loosers']
+    r32_l  = res_fav.get('r32_loosers', [])
 
-    # Etiquettes par performance dans la simulation deterministe
-    labels = {}
-    labels[champion_f]  = ("Champion du Monde", "#FFD700")
-    labels[finaliste_f] = ("Finaliste",          "#C0C0C0")
-    labels[bronze_f]    = ("3eme place",         "#CD7F32")
-    labels[bronze_l_f]  = ("4eme place",         "#4FC3F7")
-    for t in (sf1, sf2, sf3, sf4):
-        if t not in labels:
-            labels[t] = ("Demi-finaliste", "#3a7bd5")
-    for t in qf_l:
-        if t not in labels:
-            labels[t] = ("Quart de finaliste", "#2a5090")
-    for t in r16_l:
-        if t not in labels:
-            labels[t] = ("16eme de finale", "#1a3060")
+    _wc_matches = {}
+    for t in equipes:
+        if t in (champion_f, finaliste_f, bronze_f, bronze_l_f):
+            _wc_matches[t] = 8
+        elif t in (sf1, sf2, sf3, sf4):
+            _wc_matches[t] = 7
+        elif t in qf_l:
+            _wc_matches[t] = 6
+        elif t in r16_l:
+            _wc_matches[t] = 5
+        elif t in r32_l:
+            _wc_matches[t] = 4
+        else:
+            _wc_matches[t] = 3
 
-    # Toutes les equipes ayant gagne au moins 1 simulation, triees par % decroissant
-    all_teams_mc = sorted(wins_mc.items(), key=lambda x: x[1], reverse=True)
+    tab_eq, tab_joueurs = st.tabs(["🏆 Équipes", "⚽ Joueurs"])
 
-    # Barre calibree sur le max
-    max_pct = all_teams_mc[0][1] / n * 100 if all_teams_mc else 1
+    # ════════════════════════════════════════
+    # TAB 1 — ÉQUIPES (Monte Carlo)
+    # ════════════════════════════════════════
+    with tab_eq:
+        st.markdown(
+            "<p style='color:#aaa'>Probabilités issues de 15 000 simulations Monte Carlo — résultats figés</p>",
+            unsafe_allow_html=True
+        )
 
-    # En-tete du tableau
-    st.markdown("""
-    <div style='display:flex;align-items:center;background:#0a1220;
-                border-radius:6px;padding:8px 16px;margin-bottom:4px;gap:16px'>
-        <div style='width:30px'></div>
-        <div style='width:32px'></div>
-        <div style='flex:1;color:#aaa;font-size:11px;font-weight:bold'>EQUIPE</div>
-        <div style='flex:2;color:#aaa;font-size:11px;font-weight:bold'>% VICTOIRE (15 000 sims)</div>
-    </div>
-    """, unsafe_allow_html=True)
+        champion_f  = res_fav['champion']
+        finaliste_f = res_fav['finaliste']
+        bronze_f    = res_fav['bronze']
+        bronze_l_f  = res_fav['bronze_l']
+        sf1, sf2, sf3, sf4 = res_fav['sf']
+        qf_l  = res_fav['qf_loosers']
+        r16_l = res_fav['r16_loosers']
 
-    for rang, (team, wins_count) in enumerate(all_teams_mc, 1):
-        pct           = wins_count / n * 100
-        bw            = (pct / max_pct * 100) if max_pct > 0 else 0
-        label, color  = labels.get(team, ("Qualifie", "#555555"))
-        flag          = get_flag(team, 26)
-        st.markdown(f"""
-        <div style='display:flex;align-items:center;background:#0D1B2A;
-                    border-left:4px solid {color};border-radius:6px;
-                    padding:9px 16px;margin:3px 0;gap:16px'>
-            <div style='display:flex;align-items:center;justify-content:center;
-                        background:{color}22;border:1.5px solid {color};border-radius:50%;
-                        width:28px;height:28px;flex-shrink:0;
-                        font-size:11px;font-weight:bold;color:{color}'>{rang}</div>
-            <div style='width:32px;flex-shrink:0'>{flag}</div>
-            <div style='flex:1;min-width:120px'>
-                <span style='color:white;font-size:13px;font-weight:bold'>{team}</span><br>
-                <span style='color:{color};font-size:9px'>{label}</span>
-            </div>
-            <div style='flex:2;display:flex;align-items:center;gap:10px'>
-                <div style='flex:1;background:#1a2a3a;border-radius:4px;height:10px;overflow:hidden'>
-                    <div style='width:{bw:.1f}%;height:100%;
-                                background:linear-gradient(90deg,{color},{color}66);
-                                border-radius:4px'></div>
-                </div>
-                <span style='color:{color};font-size:13px;font-weight:bold;
-                             min-width:50px;text-align:right'>{pct:.1f}%</span>
-            </div>
+        labels = {}
+        labels[champion_f]  = ("Champion du Monde", "#FFD700")
+        labels[finaliste_f] = ("Finaliste",          "#C0C0C0")
+        labels[bronze_f]    = ("3eme place",         "#CD7F32")
+        labels[bronze_l_f]  = ("4eme place",         "#4FC3F7")
+        for t in (sf1, sf2, sf3, sf4):
+            if t not in labels:
+                labels[t] = ("Demi-finaliste", "#3a7bd5")
+        for t in qf_l:
+            if t not in labels:
+                labels[t] = ("Quart de finaliste", "#2a5090")
+        for t in r16_l:
+            if t not in labels:
+                labels[t] = ("16eme de finale", "#1a3060")
+
+        all_teams_mc = sorted(wins_mc.items(), key=lambda x: x[1], reverse=True)
+        max_pct = all_teams_mc[0][1] / n * 100 if all_teams_mc else 1
+
+        st.markdown("""
+        <div style='display:flex;align-items:center;background:#0a1220;
+                    border-radius:6px;padding:8px 16px;margin-bottom:4px;gap:16px'>
+            <div style='width:30px'></div><div style='width:32px'></div>
+            <div style='flex:1;color:#aaa;font-size:11px;font-weight:bold'>EQUIPE</div>
+            <div style='flex:2;color:#aaa;font-size:11px;font-weight:bold'>% VICTOIRE (15 000 sims)</div>
         </div>
         """, unsafe_allow_html=True)
+
+        for rang, (team, wins_count) in enumerate(all_teams_mc, 1):
+            pct          = wins_count / n * 100
+            bw           = (pct / max_pct * 100) if max_pct > 0 else 0
+            label, color = labels.get(team, ("Qualifie", "#555555"))
+            flag         = get_flag(team, 26)
+            st.markdown(f"""
+            <div style='display:flex;align-items:center;background:#0D1B2A;
+                        border-left:4px solid {color};border-radius:6px;
+                        padding:9px 16px;margin:3px 0;gap:16px'>
+                <div style='display:flex;align-items:center;justify-content:center;
+                            background:{color}22;border:1.5px solid {color};border-radius:50%;
+                            width:28px;height:28px;flex-shrink:0;
+                            font-size:11px;font-weight:bold;color:{color}'>{rang}</div>
+                <div style='width:32px;flex-shrink:0'>{flag}</div>
+                <div style='flex:1;min-width:120px'>
+                    <span style='color:white;font-size:13px;font-weight:bold'>{team}</span><br>
+                    <span style='color:{color};font-size:9px'>{label}</span>
+                </div>
+                <div style='flex:2;display:flex;align-items:center;gap:10px'>
+                    <div style='flex:1;background:#1a2a3a;border-radius:4px;height:10px;overflow:hidden'>
+                        <div style='width:{bw:.1f}%;height:100%;
+                                    background:linear-gradient(90deg,{color},{color}66);
+                                    border-radius:4px'></div>
+                    </div>
+                    <span style='color:{color};font-size:13px;font-weight:bold;
+                                 min-width:50px;text-align:right'>{pct:.1f}%</span>
+                </div>
+            </div>
+            """, unsafe_allow_html=True)
+
+    # ════════════════════════════════════════
+    # TAB 2 — JOUEURS (Buteurs & Passeurs)
+    # ════════════════════════════════════════
+    with tab_joueurs:
+        st.markdown(
+            "<p style='color:#aaa'>Prédictions issues de nos modèles Random Forest — "
+            "Buteurs : score_final · Passeurs : passes_totales_ajustées</p>",
+            unsafe_allow_html=True
+        )
+
+        @st.cache_data
+        def load_joueurs_favoris():
+            return pd.read_csv(ROOT / "data/df_joueurs_passeurs.csv", encoding='utf-8')
+
+        df_j = load_joueurs_favoris()
+
+        SILHOUETTE = (
+            "data:image/svg+xml;charset=utf-8,"
+            "%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E"
+            "%3Ccircle cx='50' cy='50' r='50' fill='%23112240'/%3E"
+            "%3Ccircle cx='50' cy='36' r='20' fill='%23e8e8e8'/%3E"
+            "%3Cpath d='M14 95 Q14 62 50 62 Q86 62 86 95 Z' fill='%23e8e8e8'/%3E"
+            "%3C/svg%3E"
+        )
+
+        def player_card(row, rang, stat_val, stat_label, color, icon):
+            flag  = get_flag(row['equipe_nationale'], 18)
+            photo = row['photo_joueur']
+            if not (isinstance(photo, str) and photo.startswith('http')):
+                photo = SILHOUETTE
+            return (
+                f"<div style='display:flex;align-items:center;background:#0D1B2A;"
+                f"border-left:4px solid {color};border-radius:8px;padding:10px 14px;"
+                f"margin:4px 0;gap:12px'>"
+                f"<div style='display:flex;align-items:center;justify-content:center;"
+                f"background:{color}22;border:1.5px solid {color};border-radius:50%;"
+                f"width:28px;height:28px;flex-shrink:0;font-size:11px;font-weight:bold;color:{color}'>{rang}</div>"
+                f"<img src='{photo}' width='40' height='40' style='border-radius:50%;object-fit:cover;"
+                f"border:2px solid {color};flex-shrink:0' onerror=\"this.src='{SILHOUETTE}'\">"
+                f"<div style='flex:1;min-width:0'>"
+                f"<div style='display:flex;align-items:center;gap:6px'>"
+                f"<span style='color:white;font-size:12px;font-weight:bold'>{row['nom_joueur']}</span>"
+                f"{flag}</div>"
+                f"<span style='color:#aaa;font-size:10px'>{row['equipe_nationale']} · {row['poste']}</span>"
+                f"</div>"
+                f"<div style='text-align:right;flex-shrink:0'>"
+                f"<div style='font-size:1.3rem;font-weight:bold;color:{color}'>{icon} {stat_val:.1f}</div>"
+                f"<div style='color:#aaa;font-size:9px'>{stat_label}</div>"
+                f"</div>"
+                f"</div>"
+            )
+
+        col_b, col_p = st.columns(2)
+
+        with col_b:
+            st.markdown("### ⚽ Top 10 Buteurs prédits")
+            top_buteurs = (
+                df_j[df_j['buts_projectes'] > 0]
+                .sort_values('buts_projectes', ascending=False)
+                .head(10)
+                .reset_index(drop=True)
+            )
+            for i, row in top_buteurs.iterrows():
+                medal = ["🥇","🥈","🥉"][i] if i < 3 else str(i+1)
+                color = ["#FFD700","#C0C0C0","#CD7F32"][i] if i < 3 else "#4FC3F7"
+                st.markdown(
+                    player_card(row, medal, row['buts_projectes'], "buts prédits CdM", color, "⚽"),
+                    unsafe_allow_html=True
+                )
+
+        with col_p:
+            st.markdown("### 🎯 Top 10 Passeurs prédits")
+            top_passeurs = (
+                df_j[df_j['passes_totales_ajustees'] > 0]
+                .sort_values('passes_totales_ajustees', ascending=False)
+                .head(10)
+                .reset_index(drop=True)
+            )
+            for i, row in top_passeurs.iterrows():
+                medal = ["🥇","🥈","🥉"][i] if i < 3 else str(i+1)
+                color = ["#FFD700","#C0C0C0","#CD7F32"][i] if i < 3 else "#34D399"
+                st.markdown(
+                    player_card(row, medal, row['passes_totales_ajustees'], "passes déc. prédites CdM", color, "🎯"),
+                    unsafe_allow_html=True
+                )
 
 # ════════════════════════════════════════════════════════════════
 # EQUIPES

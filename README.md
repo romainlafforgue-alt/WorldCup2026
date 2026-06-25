@@ -36,6 +36,28 @@ L'app s'ouvre automatiquement sur `http://localhost:8501`
 git pull
 ```
 
+### 4. Pousser ses modifications sur GitHub
+```bash
+# Vérifier les fichiers modifiés
+git status
+
+# Ajouter tous les fichiers modifiés
+git add .
+
+# Créer un commit avec un message descriptif
+git commit -m "feat: description de tes modifications"
+
+# Envoyer sur GitHub
+git push origin main
+```
+
+> 💡 Si c'est ton premier push ou que Git demande tes identifiants :
+> ```bash
+> git config --global user.name "TonPrénom"
+> git config --global user.email "ton@email.com"
+> ```
+> Puis relance `git push origin main`.
+
 ---
 
 ## 🗂️ Structure du projet
