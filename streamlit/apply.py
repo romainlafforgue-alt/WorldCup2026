@@ -1174,11 +1174,27 @@ elif page == "📡 Résultats en direct":
         return f"<span style='background:#2a2a2a;color:#aaa;border-radius:4px;padding:2px 7px;font-size:10px'>{status}</span>"
 
     def score_display(m):
-        ft = m.get("score", {}).get("fullTime", {})
-        h, a = ft.get("home"), ft.get("away")
-        if h is not None and a is not None:
-            return f"<span style='font-size:1.4rem;font-weight:bold;color:#FFD700'>{h} — {a}</span>"
-        return "<span style='font-size:1.4rem;font-weight:bold;color:#555'>vs</span>"
+        score = m.get("score", {}) or {}
+        ft    = score.get("fullTime", {}) or {}
+        h, a  = ft.get("home"), ft.get("away")
+        if h is None or a is None:
+            return "<span style='font-size:1.4rem;font-weight:bold;color:#555'>vs</span>"
+        # Détection tirs au but : score.penalties non-null OU duration == PENALTY_SHOOTOUT
+        pens     = score.get("penalties", {}) or {}
+        ph, pa   = pens.get("home"), pens.get("away")
+        duration = score.get("duration", "")
+        is_pens  = (ph is not None and pa is not None) or "PENALTY" in duration.upper()
+        if is_pens:
+            ph = ph or 0
+            pa = pa or 0
+            # L'API cumule buts réguliers + pens dans fullTime → on soustrait
+            rh = h - ph if h >= ph else h
+            ra = a - pa if a >= pa else a
+            return (
+                f"<span style='font-size:1.4rem;font-weight:bold;color:#FFD700'>{rh} — {ra}</span>"
+                f"<br><span style='color:#aaa;font-size:0.8rem'>Tab. {ph} - {pa}</span>"
+            )
+        return f"<span style='font-size:1.4rem;font-weight:bold;color:#FFD700'>{h} — {a}</span>"
 
     def match_card(m, highlight=False):
         home   = m["homeTeam"].get("shortName") or m["homeTeam"].get("name", "?")
