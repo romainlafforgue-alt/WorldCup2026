@@ -1409,36 +1409,149 @@ elif page == "📡 Résultats en direct":
 
         # ── Connecteurs (identiques à la page Tableau final) ──────
         def _bpr(m1h, m2h, color, gap="3px"):
-            top  = f"<div style='display:flex;align-items:center'>{m1h}<div style='width:{ST_W}px;height:1px;background:{color};flex-shrink:0'></div></div>"
-            bot  = f"<div style='display:flex;align-items:center'>{m2h}<div style='width:{ST_W}px;height:1px;background:{color};flex-shrink:0'></div></div>"
+            # On remplace le gap par des padding sur chaque rangée :
+            # ainsi flex:1/2/1 sur la vbar tombe exactement sur le milieu
+            # de chaque rangée (incluant son padding), pour toute hauteur égale.
+            gap_n = int(gap.replace("px", ""))
+            half  = gap_n // 2
+            top  = f"<div style='display:flex;align-items:center;padding-bottom:{half}px'>{m1h}<div style='width:{ST_W}px;height:1px;background:{color};flex-shrink:0'></div></div>"
+            bot  = f"<div style='display:flex;align-items:center;padding-top:{half}px'>{m2h}<div style='width:{ST_W}px;height:1px;background:{color};flex-shrink:0'></div></div>"
             vbar = (f"<div style='display:flex;flex-direction:column;width:1px;flex-shrink:0'>"
                     f"<div style='flex:1'></div><div style='flex:2;background:{color}'></div><div style='flex:1'></div></div>")
             return (f"<div style='display:flex;align-items:stretch'>"
-                    f"<div style='display:flex;flex-direction:column;gap:{gap}'>{top}{bot}</div>{vbar}</div>")
+                    f"<div style='display:flex;flex-direction:column'>{top}{bot}</div>{vbar}</div>")
 
         def _bpl(m1h, m2h, color, gap="3px"):
-            top  = f"<div style='display:flex;align-items:center'><div style='width:{ST_W}px;height:1px;background:{color};flex-shrink:0'></div>{m1h}</div>"
-            bot  = f"<div style='display:flex;align-items:center'><div style='width:{ST_W}px;height:1px;background:{color};flex-shrink:0'></div>{m2h}</div>"
+            gap_n = int(gap.replace("px", ""))
+            half  = gap_n // 2
+            top  = f"<div style='display:flex;align-items:center;padding-bottom:{half}px'><div style='width:{ST_W}px;height:1px;background:{color};flex-shrink:0'></div>{m1h}</div>"
+            bot  = f"<div style='display:flex;align-items:center;padding-top:{half}px'><div style='width:{ST_W}px;height:1px;background:{color};flex-shrink:0'></div>{m2h}</div>"
             vbar = (f"<div style='display:flex;flex-direction:column;width:1px;flex-shrink:0'>"
                     f"<div style='flex:1'></div><div style='flex:2;background:{color}'></div><div style='flex:1'></div></div>")
             return (f"<div style='display:flex;align-items:stretch'>{vbar}"
-                    f"<div style='display:flex;flex-direction:column;gap:{gap}'>{top}{bot}</div></div>")
+                    f"<div style='display:flex;flex-direction:column'>{top}{bot}</div></div>")
 
         def _ol(color):
             return f"<div style='width:{OL_W}px;height:1px;background:{color};flex-shrink:0;align-self:center'></div>"
 
-        # ── Constructeurs de lignes du bracket ────────────────────
-        def _rd(by_st, i1, i2, ir16):
-            c1  = _get_card(by_st, "LAST_32", i1,  CR32)
-            c2  = _get_card(by_st, "LAST_32", i2,  CR32)
-            c16 = _get_card(by_st, "LAST_16", ir16, CR16)
-            return f"<div style='display:flex;align-items:center'>{_bpr(c1,c2,CR32)}{_ol(CR32)}{c16}</div>"
+        # ── Traitement des données API ────────────────────────────
+        by_st = {}
+        for _m in knockout_matches:
+            _s = _m.get("stage", "")
+            by_st.setdefault(_s, []).append(_m)
+        for _s in by_st:
+            by_st[_s].sort(key=lambda x: x.get("utcDate", ""))
 
-        def _ra(by_st, i1, i2, ir16):
-            c1  = _get_card(by_st, "LAST_32", i1,  CR32)
-            c2  = _get_card(by_st, "LAST_32", i2,  CR32)
-            c16 = _get_card(by_st, "LAST_16", ir16, CR16)
-            return f"<div style='display:flex;align-items:center'>{c16}{_ol(CR16)}{_bpl(c1,c2,CR32)}</div>"
+        # ── Structure officielle FIFA WC 2026 ─────────────────────
+        # Chaque tuple : (eq_A1, eq_A2, eq_B1, eq_B2)
+        # eq_A1/A2 jouent en 16ème, eq_B1/B2 jouent en 16ème
+        # Les gagnants se rencontrent en 8ème de finale
+        BRACKET = [
+            # Dallas (côté gauche), de haut en bas
+            ("germany",       "paraguay",   "france",      "sweden"),    # D0
+            ("south africa",  "canada",     "netherlands", "morocco"),   # D1
+            ("portugal",      "croatia",    "spain",       "austria"),   # D2
+            ("united states", "bosnia",     "belgium",     "senegal"),   # D3
+            # Atlanta (côté droit), de haut en bas
+            ("brazil",        "japan",      "ivory coast", "norway"),    # A0
+            ("mexico",        "ecuador",    "england",     "congo"),     # A1
+            ("argentina",     "cape verde", "australia",   "egypt"),     # A2
+            ("switzerland",   "algeria",    "colombia",    "ghana"),     # A3
+        ]
+
+        def _match_team(api_name, key):
+            """Correspondance approximative nom équipe API ↔ clé du bracket."""
+            an, kn = api_name.lower(), key.lower()
+            # Aliases pour les noms difficiles
+            special = {
+                "ivory coast": ["ivoire", "ivory"],
+                "united states": ["united states", "usa", "états-unis"],
+                "cape verde":    ["verde", "cabo"],
+                "congo":         ["congo"],
+                "bosnia":        ["bosnia"],
+                "south africa":  ["south africa", "afrique"],
+            }
+            if kn in special:
+                return any(a in an for a in special[kn])
+            return kn in an or an[:min(4, len(an))] == kn[:min(4, len(kn))]
+
+        def _find_r32(t1, t2):
+            """Trouve l'index du match LAST_32 entre t1 et t2."""
+            for i, m in enumerate(by_st.get("LAST_32", [])):
+                h = _tname(m.get("homeTeam"))
+                a = _tname(m.get("awayTeam"))
+                if ((_match_team(h,t1) or _match_team(h,t2)) and
+                    (_match_team(a,t1) or _match_team(a,t2))):
+                    return i
+            return None
+
+        def _find_r16(t1, t2, t3, t4):
+            """Trouve l'index du match LAST_16 dont les équipes viennent des groupes t1/t2 et t3/t4.
+            Gère aussi le cas où un adversaire est encore TBD (match programmé mais pas joué)."""
+            for i, m in enumerate(by_st.get("LAST_16", [])):
+                h = _tname(m.get("homeTeam"))
+                a = _tname(m.get("awayTeam"))
+                g1h = _match_team(h,t1) or _match_team(h,t2)
+                g2h = _match_team(h,t3) or _match_team(h,t4)
+                g1a = _match_team(a,t1) or _match_team(a,t2)
+                g2a = _match_team(a,t3) or _match_team(a,t4)
+                # Match complet : les deux équipes identifiées
+                if (g1h and g2a) or (g2h and g1a):
+                    return i
+                # Match partiel : un adversaire encore TBD → vérifier l'équipe connue
+                if h == "TBD" or a == "TBD":
+                    known = a if h == "TBD" else h
+                    if any(_match_team(known, t) for t in (t1, t2, t3, t4)):
+                        return i
+            return None
+
+        def _find_qf(t1, t2, t3, t4, t5, t6, t7, t8):
+            """Trouve le match QF dont les équipes viennent du groupe t1-t4 vs t5-t8."""
+            teams_L = [t1,t2,t3,t4]
+            teams_R = [t5,t6,t7,t8]
+            def in_grp(name, grp):
+                return any(_match_team(name, t) for t in grp)
+            for i, m in enumerate(by_st.get("QUARTER_FINALS", [])):
+                h = _tname(m.get("homeTeam"))
+                a = _tname(m.get("awayTeam"))
+                if (in_grp(h,teams_L) and in_grp(a,teams_R)) or \
+                   (in_grp(h,teams_R) and in_grp(a,teams_L)):
+                    return i
+            return None
+
+        def _find_sf(t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11,t12,t13,t14,t15,t16):
+            teams = [t1,t2,t3,t4,t5,t6,t7,t8]
+            opp   = [t9,t10,t11,t12,t13,t14,t15,t16]
+            def in_grp(name, grp):
+                return any(_match_team(name, t) for t in grp)
+            for i, m in enumerate(by_st.get("SEMI_FINALS", [])):
+                h = _tname(m.get("homeTeam"))
+                a = _tname(m.get("awayTeam"))
+                if (in_grp(h,teams) and in_grp(a,opp)) or \
+                   (in_grp(h,opp) and in_grp(a,teams)):
+                    return i
+            return None
+
+        # ── Constructeurs de lignes ───────────────────────────────
+        def _build_rd(t1, t2, t3, t4):
+            """Ligne gauche→droite : LAST_32 pair → LAST_16."""
+            ia = _find_r32(t1, t2)
+            ib = _find_r32(t3, t4)
+            i16 = _find_r16(t1, t2, t3, t4)
+            ca  = _get_card(by_st,"LAST_32", ia,  CR32) if ia  is not None else _tbd_card(CR32)
+            cb  = _get_card(by_st,"LAST_32", ib,  CR32) if ib  is not None else _tbd_card(CR32)
+            c16 = _get_card(by_st,"LAST_16", i16, CR16) if i16 is not None else _tbd_card(CR16)
+            return f"<div style='display:flex;align-items:center'>{_bpr(ca,cb,CR32)}{_ol(CR32)}{c16}</div>"
+
+        def _build_ra(t1, t2, t3, t4):
+            """Ligne droite→gauche : LAST_16 → LAST_32 pair."""
+            ia  = _find_r32(t1, t2)
+            ib  = _find_r32(t3, t4)
+            i16 = _find_r16(t1, t2, t3, t4)
+            ca  = _get_card(by_st,"LAST_32", ia,  CR32) if ia  is not None else _tbd_card(CR32)
+            cb  = _get_card(by_st,"LAST_32", ib,  CR32) if ib  is not None else _tbd_card(CR32)
+            c16 = _get_card(by_st,"LAST_16", i16, CR16) if i16 is not None else _tbd_card(CR16)
+            return f"<div style='display:flex;align-items:center'>{c16}{_ol(CR16)}{_bpl(ca,cb,CR32)}</div>"
 
         def _qd(s1, s2, by_st, iqf):
             cqf = _get_card(by_st, "QUARTER_FINALS", iqf, CQF)
@@ -1456,24 +1569,36 @@ elif page == "📡 Résultats en direct":
             csf = _get_card(by_st, "SEMI_FINALS", isf, CSF, big=True)
             return f"<div style='display:flex;align-items:center'>{csf}{_ol(CSF)}{_bpl(s1,s2,CQF,'10px')}</div>"
 
-        # ── Traitement des données API ────────────────────────────
-        by_st = {}
-        for _m in knockout_matches:
-            _s = _m.get("stage", "")
-            by_st.setdefault(_s, []).append(_m)
-        for _s in by_st:
-            by_st[_s].sort(key=lambda x: x.get("utcDate", ""))
+        # ── Construction du bracket par noms d'équipes ────────────
+        d = BRACKET  # alias court
+        # Lignes Dallas (gauche)
+        rd0 = _build_rd(*d[0])  # Allemagne/Paraguay + France/Suède
+        rd1 = _build_rd(*d[1])  # Af.du Sud/Canada + Pays-Bas/Maroc
+        rd2 = _build_rd(*d[2])  # Portugal/Croatie + Espagne/Autriche
+        rd3 = _build_rd(*d[3])  # Etats-Unis/Bosnie + Belgique/Sénégal
+        # Lignes Atlanta (droite)
+        ra0 = _build_ra(*d[4])  # Brésil/Japon + Côte d'Ivoire/Norvège
+        ra1 = _build_ra(*d[5])  # Mexique/Équateur + Angleterre/RD Congo
+        ra2 = _build_ra(*d[6])  # Argentine/Cap-Vert + Australie/Égypte
+        ra3 = _build_ra(*d[7])  # Suisse/Algérie + Colombie/Ghana
 
-        # ── Construction du bracket ───────────────────────────────
+        # QF et SF : lookup dynamique par groupes d'équipes
+        iqf0 = _find_qf(*d[0], *d[1])  # QF Dallas haut
+        iqf1 = _find_qf(*d[2], *d[3])  # QF Dallas bas
+        iqf2 = _find_qf(*d[4], *d[5])  # QF Atlanta haut
+        iqf3 = _find_qf(*d[6], *d[7])  # QF Atlanta bas
+        isf0 = _find_sf(*d[0], *d[1], *d[2], *d[3])  # SF Dallas
+        isf1 = _find_sf(*d[4], *d[5], *d[6], *d[7])  # SF Atlanta
+
         dallas = _sd(
-            _qd(_rd(by_st,1,4,0), _rd(by_st,0,2,1), by_st, 0),
-            _qd(_rd(by_st,10,11,2), _rd(by_st,8,9,3), by_st, 1),
-            by_st, 0
+            _qd(rd0, rd1, by_st, iqf0 if iqf0 is not None else 0),
+            _qd(rd2, rd3, by_st, iqf1 if iqf1 is not None else 1),
+            by_st, isf0 if isf0 is not None else 0
         )
         atlanta = _sa(
-            _qa(_ra(by_st,3,5,4), _ra(by_st,6,7,5), by_st, 2),
-            _qa(_ra(by_st,13,15,6), _ra(by_st,12,14,7), by_st, 3),
-            by_st, 1
+            _qa(ra0, ra1, by_st, iqf2 if iqf2 is not None else 2),
+            _qa(ra2, ra3, by_st, iqf3 if iqf3 is not None else 3),
+            by_st, isf1 if isf1 is not None else 1
         )
 
         fin_h = _get_card(by_st, "FINAL",       0, "#FFD700", big=True)
