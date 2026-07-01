@@ -1134,6 +1134,17 @@ elif page == "📡 Résultats en direct":
     HEADERS  = {"X-Auth-Token": API_KEY}
     COMP     = "WC"
 
+    # Traduction des phases (nomenclature française du football)
+    STAGE_FR = {
+        "GROUP_STAGE":    "Phase de groupes",
+        "LAST_32":        "16èmes de finale",
+        "LAST_16":        "8èmes de finale",
+        "QUARTER_FINALS": "Quarts de finale",
+        "SEMI_FINALS":    "Demi-finales",
+        "THIRD_PLACE":    "Match pour la 3ème place",
+        "FINAL":          "Finale",
+    }
+
     st.markdown("<h1>📡 Résultats en direct — FIFA World Cup 2026</h1>", unsafe_allow_html=True)
     st.markdown("<p style='color:#aaa'>Données live · football-data.org · Mise à jour au chargement</p>",
                 unsafe_allow_html=True)
@@ -1210,9 +1221,10 @@ elif page == "📡 Résultats en direct":
             pass
         border = "#FFD700" if highlight else "#1a2a3a"
         bg     = "#16253a" if highlight else "#0D1B2A"
-        group  = m.get("group", "") or ""
-        stage  = m.get("stage", "").replace("_", " ").title()
-        info   = stage + (f" · {group}" if group else "")
+        group    = m.get("group", "") or ""
+        stage_raw = m.get("stage", "") or ""
+        stage    = STAGE_FR.get(stage_raw, stage_raw.replace("_", " ").title())
+        info     = stage + (f" · {group}" if group else "")
         return f"""
         <div style='background:{bg};border:1px solid {border};border-radius:10px;
                     padding:14px 18px;margin:6px 0;display:flex;align-items:center;gap:12px'>
@@ -1264,12 +1276,12 @@ elif page == "📡 Résultats en direct":
     # ════════════════════════════════════════════════════════════
     # TABS
     # ════════════════════════════════════════════════════════════
-    tab1, tab2 = st.tabs(["🏟️ Phase de Poule", "🏆 Tableau Final"])
+    tab0, tab1, tab2 = st.tabs(["🗓️ Match & Résultat", "🏟️ Phase de Poule", "🏆 Phase Finale"])
 
     # ─────────────────────────────────────────────────────────────
-    # TAB 1 — PHASE DE POULE
+    # TAB 0 — MATCH & RÉSULTAT
     # ─────────────────────────────────────────────────────────────
-    with tab1:
+    with tab0:
 
         if live:
             st.markdown("## 🔴 En cours")
@@ -1295,13 +1307,17 @@ elif page == "📡 Résultats en direct":
         else:
             st.info("Aucun match à venir dans les prochains jours.")
 
-        st.divider()
+    # ─────────────────────────────────────────────────────────────
+    # TAB 1 — PHASE DE POULE
+    # ─────────────────────────────────────────────────────────────
+    with tab1:
 
         st.markdown("## 📊 Classement des groupes")
         if standings:
             grp_list = [s for s in standings if s.get("type") == "TOTAL"] or standings
             for grp in grp_list:
-                grp_name = grp.get("group") or grp.get("stage", "Groupe")
+                _grp_raw = (grp.get("group") or grp.get("stage") or "Groupe").replace("_", " ").strip()
+                grp_name = f"Groupe {_grp_raw[-1].upper()}" if _grp_raw.upper().startswith("GROUP") else _grp_raw
                 table = grp.get("table", [])
                 if not table:
                     continue
@@ -1345,7 +1361,9 @@ elif page == "📡 Résultats en direct":
             st.info("Classements non disponibles pour le moment.")
 
     # ─────────────────────────────────────────────────────────────
-    # TAB 2 — TABLEAU FINAL (bracket style)
+    # TAB 2 — PHASE FINALE (bracket "affiche", 4 quarts de tableau
+    # convergeant vers 2 demi-finales puis la finale — inspiré de
+    # la mise en page verticale type application mobile L'Équipe)
     # ─────────────────────────────────────────────────────────────
     with tab2:
         CR32, CR16, CQF, CSF = "#4FC3F7", "#FF9800", "#FFD700", "#8a2020"
@@ -1356,6 +1374,28 @@ elif page == "📡 Résultats en direct":
             if not td:
                 return "TBD"
             return td.get("shortName") or td.get("name") or "TBD"
+
+        def _score_val(m, side):
+            """Score d'une équipe ('home'/'away') pour l'affichage dans les
+            petites cartes du bracket. Gère les tirs au but comme
+            score_display (score cumulé - pens = score du temps réglementaire)."""
+            score = (m.get("score") or {})
+            ft = score.get("fullTime") or {}
+            v = ft.get(side)
+            if v is None:
+                return ""
+            pens = score.get("penalties") or {}
+            ph, pa = pens.get("home"), pens.get("away")
+            duration = score.get("duration", "")
+            is_pens = (ph is not None and pa is not None) or "PENALTY" in duration.upper()
+            if is_pens:
+                pv = pens.get(side) or 0
+                reg = v - pv if v >= pv else v
+                return (
+                    f"{reg}<span style='font-size:0.75em;opacity:0.7;margin-left:2px'>"
+                    f"({pv})</span>"
+                )
+            return str(v)
 
         def _mc_api(m, bc="#4FC3F7"):
             """Petite carte de match depuis données API."""
@@ -1424,26 +1464,26 @@ elif page == "📡 Résultats en direct":
             return _tbd_card(bc, big)
 
         # ── Connecteurs (identiques à la page Tableau final) ──────
-        def _bpr(m1h, m2h, color, gap="3px"):
+        def _bpr(m1h, m2h, color, gap="3px", mid=3):
             # On remplace le gap par des padding sur chaque rangée :
             # ainsi flex:1/2/1 sur la vbar tombe exactement sur le milieu
             # de chaque rangée (incluant son padding), pour toute hauteur égale.
             gap_n = int(gap.replace("px", ""))
             half  = gap_n // 2
-            top  = f"<div style='display:flex;align-items:center;padding-bottom:{half}px'>{m1h}<div style='width:{ST_W}px;height:1px;background:{color};flex-shrink:0'></div></div>"
-            bot  = f"<div style='display:flex;align-items:center;padding-top:{half}px'>{m2h}<div style='width:{ST_W}px;height:1px;background:{color};flex-shrink:0'></div></div>"
-            vbar = (f"<div style='display:flex;flex-direction:column;width:1px;flex-shrink:0'>"
-                    f"<div style='flex:1'></div><div style='flex:2;background:{color}'></div><div style='flex:1'></div></div>")
+            top  = f"<div style='display:flex;align-items:center;padding-bottom:{half}px'>{m1h}<div style='width:{ST_W}px;height:2px;background:{color};flex-shrink:0'></div></div>"
+            bot  = f"<div style='display:flex;align-items:center;padding-top:{half}px'>{m2h}<div style='width:{ST_W}px;height:2px;background:{color};flex-shrink:0'></div></div>"
+            vbar = (f"<div style='display:flex;flex-direction:column;width:2px;flex-shrink:0'>"
+                    f"<div style='flex:1'></div><div style='flex:{mid};background:{color}'></div><div style='flex:1'></div></div>")
             return (f"<div style='display:flex;align-items:stretch'>"
                     f"<div style='display:flex;flex-direction:column'>{top}{bot}</div>{vbar}</div>")
 
-        def _bpl(m1h, m2h, color, gap="3px"):
+        def _bpl(m1h, m2h, color, gap="3px", mid=3):
             gap_n = int(gap.replace("px", ""))
             half  = gap_n // 2
-            top  = f"<div style='display:flex;align-items:center;padding-bottom:{half}px'><div style='width:{ST_W}px;height:1px;background:{color};flex-shrink:0'></div>{m1h}</div>"
-            bot  = f"<div style='display:flex;align-items:center;padding-top:{half}px'><div style='width:{ST_W}px;height:1px;background:{color};flex-shrink:0'></div>{m2h}</div>"
-            vbar = (f"<div style='display:flex;flex-direction:column;width:1px;flex-shrink:0'>"
-                    f"<div style='flex:1'></div><div style='flex:2;background:{color}'></div><div style='flex:1'></div></div>")
+            top  = f"<div style='display:flex;align-items:center;padding-bottom:{half}px'><div style='width:{ST_W}px;height:2px;background:{color};flex-shrink:0'></div>{m1h}</div>"
+            bot  = f"<div style='display:flex;align-items:center;padding-top:{half}px'><div style='width:{ST_W}px;height:2px;background:{color};flex-shrink:0'></div>{m2h}</div>"
+            vbar = (f"<div style='display:flex;flex-direction:column;width:2px;flex-shrink:0'>"
+                    f"<div style='flex:1'></div><div style='flex:{mid};background:{color}'></div><div style='flex:1'></div></div>")
             return (f"<div style='display:flex;align-items:stretch'>{vbar}"
                     f"<div style='display:flex;flex-direction:column'>{top}{bot}</div></div>")
 
@@ -1569,22 +1609,6 @@ elif page == "📡 Résultats en direct":
             c16 = _get_card(by_st,"LAST_16", i16, CR16) if i16 is not None else _tbd_card(CR16)
             return f"<div style='display:flex;align-items:center'>{c16}{_ol(CR16)}{_bpl(ca,cb,CR32)}</div>"
 
-        def _qd(s1, s2, by_st, iqf):
-            cqf = _get_card(by_st, "QUARTER_FINALS", iqf, CQF)
-            return f"<div style='display:flex;align-items:center'>{_bpr(s1,s2,CR16,'6px')}{_ol(CR16)}{cqf}</div>"
-
-        def _qa(s1, s2, by_st, iqf):
-            cqf = _get_card(by_st, "QUARTER_FINALS", iqf, CQF)
-            return f"<div style='display:flex;align-items:center'>{cqf}{_ol(CQF)}{_bpl(s1,s2,CR16,'6px')}</div>"
-
-        def _sd(s1, s2, by_st, isf):
-            csf = _get_card(by_st, "SEMI_FINALS", isf, CSF, big=True)
-            return f"<div style='display:flex;align-items:center'>{_bpr(s1,s2,CQF,'10px')}{_ol(CQF)}{csf}</div>"
-
-        def _sa(s1, s2, by_st, isf):
-            csf = _get_card(by_st, "SEMI_FINALS", isf, CSF, big=True)
-            return f"<div style='display:flex;align-items:center'>{csf}{_ol(CSF)}{_bpl(s1,s2,CQF,'10px')}</div>"
-
         # ── Construction du bracket par noms d'équipes ────────────
         d = BRACKET  # alias court
         # Lignes Dallas (gauche)
@@ -1606,66 +1630,353 @@ elif page == "📡 Résultats en direct":
         isf0 = _find_sf(*d[0], *d[1], *d[2], *d[3])  # SF Dallas
         isf1 = _find_sf(*d[4], *d[5], *d[6], *d[7])  # SF Atlanta
 
-        dallas = _sd(
-            _qd(rd0, rd1, by_st, iqf0 if iqf0 is not None else 0),
-            _qd(rd2, rd3, by_st, iqf1 if iqf1 is not None else 1),
-            by_st, isf0 if isf0 is not None else 0
-        )
-        atlanta = _sa(
-            _qa(ra0, ra1, by_st, iqf2 if iqf2 is not None else 2),
-            _qa(ra2, ra3, by_st, iqf3 if iqf3 is not None else 3),
-            by_st, isf1 if isf1 is not None else 1
-        )
-
-        fin_h = _get_card(by_st, "FINAL",       0, "#FFD700", big=True)
-        bro_h = _get_card(by_st, "THIRD_PLACE", 0, "#CD7F32", big=True)
-
-        header_d = (
-            f"<div style='display:flex;justify-content:space-around;margin-bottom:8px;"
-            f"padding-bottom:4px;border-bottom:1px solid #1a2a3a'>"
-            f"<b style='color:{CR32};font-size:9px'>16ème</b>"
-            f"<b style='color:{CR16};font-size:9px'>8ème</b>"
-            f"<b style='color:{CQF};font-size:9px'>Quarts</b>"
-            f"<b style='color:{CSF};font-size:9px'>Demi</b></div>"
-        )
-        header_a = (
-            f"<div style='display:flex;justify-content:space-around;margin-bottom:8px;"
-            f"padding-bottom:4px;border-bottom:1px solid #1a2a3a'>"
-            f"<b style='color:{CSF};font-size:9px'>Demi</b>"
-            f"<b style='color:{CQF};font-size:9px'>Quarts</b>"
-            f"<b style='color:{CR16};font-size:9px'>8ème</b>"
-            f"<b style='color:{CR32};font-size:9px'>16ème</b></div>"
-        )
-        header_c = (
-            f"<div style='text-align:center;margin-bottom:8px;padding-bottom:4px;"
-            f"border-bottom:1px solid #1a2a3a'>"
-            f"<b style='color:#FFD700;font-size:9px'>Finale · Bronze</b></div>"
-        )
-        centre = (
-            f"<div style='padding:0 14px;text-align:center;flex-shrink:0'>"
-            f"<p style='color:#FFD700;font-size:11px;font-weight:bold;margin:0 0 6px'>FINALE</p>"
-            f"{fin_h}"
-            f"<p style='color:#CD7F32;font-size:10px;font-weight:bold;margin:16px 0 6px'>BRONZE</p>"
-            f"{bro_h}</div>"
-        )
-        bracket_html = (
-            "<div style='overflow-x:auto;background:#071020;border-radius:10px;padding:20px'>"
-            "<div style='display:flex;align-items:flex-start;flex-wrap:nowrap'>"
-            f"<div style='display:flex;flex-direction:column'>{header_d}{dallas}</div>"
-            f"<div style='display:flex;flex-direction:column;align-items:center'>{header_c}{centre}</div>"
-            f"<div style='display:flex;flex-direction:column'>{header_a}{atlanta}</div>"
-            "</div></div>"
-        )
-
         if not knockout_matches:
             st.markdown("""
             <div style='text-align:center;padding:60px 20px;background:#0D1B2A;
                         border-radius:12px;border:1px solid #1a2a3a;margin-top:20px'>
                 <div style='font-size:3rem'>⏳</div>
                 <h3 style='color:#FFD700;margin:12px 0'>Phase éliminatoire pas encore commencée</h3>
-                <p style='color:#aaa'>Le tableau final se remplira automatiquement dès le début
+                <p style='color:#aaa'>Ce tableau se remplira automatiquement dès le début
                 des 16èmes de finale (à partir du 4 juillet 2026).</p>
             </div>
             """, unsafe_allow_html=True)
         else:
-            st.markdown(bracket_html, unsafe_allow_html=True)
+            def _vline(color, h="16px"):
+                return f"<div style='width:1px;height:{h};background:{color};margin:4px auto'></div>"
+
+            def _demi_block(card_html, label, label_pos="top"):
+                lbl = f"<b style='color:{CSF};font-size:9px;text-transform:uppercase;letter-spacing:0.5px'>{label}</b>"
+                parts = [lbl, card_html] if label_pos == "top" else [card_html, lbl]
+                return (
+                    f"<div style='display:flex;flex-direction:column;align-items:center;gap:3px'>"
+                    + "".join(parts) + "</div>"
+                )
+
+            # ── En-têtes de colonnes (16èmes / 8èmes / Quarts) ────────
+            def _header3(order="ltr"):
+                items = [
+                    f"<b style='color:{CR32};font-size:9px'>16èmes</b>",
+                    f"<b style='color:{CR16};font-size:9px'>8èmes</b>",
+                    f"<b style='color:{CQF};font-size:9px'>Quarts</b>",
+                ]
+                if order == "rtl":
+                    items = items[::-1]
+                return (
+                    "<div style='display:flex;justify-content:space-around;margin-bottom:6px;"
+                    "padding-bottom:4px;border-bottom:1px solid #1a2a3a'>"
+                    + "".join(items) + "</div>"
+                )
+
+            header_l3 = _header3("ltr")
+            header_r3 = _header3("rtl")
+
+            def _with_header(header_html, block_html, pos="top"):
+                parts = [header_html, block_html] if pos == "top" else [block_html, header_html]
+                return f"<div style='display:flex;flex-direction:column'>" + "".join(parts) + "</div>"
+
+            # ── Variantes locales avec plus d'espace vertical (bracket plus haut,
+            # demi-finales mieux centrées dans chaque quart) ──────────
+            _GAP_IN, _GAP_OUT = "18px", "32px"
+
+            # Cartes 16ème/8ème un peu plus grandes.
+            def _mc_api2(m, bc="#4FC3F7"):
+                e1 = _tname(m.get("homeTeam"))
+                e2 = _tname(m.get("awayTeam"))
+                wraw = (m.get("score") or {}).get("winner", "")
+                w = e1 if wraw == "HOME_TEAM" else (e2 if wraw == "AWAY_TEAM" else "")
+                c1 = "#FFD700" if (w and w == e1) else ("white" if not w else "#444")
+                c2 = "#FFD700" if (w and w == e2) else ("white" if not w else "#444")
+                chk1 = "<span style='color:#34D399;font-size:11px'>&#10003;</span>" if (w and w == e1) else ""
+                chk2 = "<span style='color:#34D399;font-size:11px'>&#10003;</span>" if (w and w == e2) else ""
+                f1 = get_flag(e1, 18) if e1 != "TBD" else "🏳️"
+                f2 = get_flag(e2, 18) if e2 != "TBD" else "🏳️"
+                s1 = _score_val(m, "home")
+                s2 = _score_val(m, "away")
+                sp1 = f"<span style='color:{c1};font-size:11px;font-weight:bold;margin-left:6px'>{s1}</span>" if s1 != "" else ""
+                sp2 = f"<span style='color:{c2};font-size:11px;font-weight:bold;margin-left:6px'>{s2}</span>" if s2 != "" else ""
+                op = "0.4" if e1 == "TBD" else "1"
+                return (
+                    f"<div style='background:#0D1B2A;border:1px solid {bc};border-radius:5px;"
+                    f"padding:6px 9px;min-width:152px;max-width:168px;margin:1px 0;opacity:{op}'>"
+                    f"<div style='display:flex;align-items:center;gap:4px'>"
+                    f"{f1}<span style='color:{c1};font-size:11px;flex:1;overflow:hidden;white-space:nowrap'>{e1[:15]}</span>{chk1}{sp1}"
+                    f"</div><div style='height:1px;background:#1a2a3a;margin:3px 0'></div>"
+                    f"<div style='display:flex;align-items:center;gap:4px'>"
+                    f"{f2}<span style='color:{c2};font-size:11px;flex:1;overflow:hidden;white-space:nowrap'>{e2[:15]}</span>{chk2}{sp2}"
+                    f"</div></div>"
+                )
+
+            def _tbd_card2(bc="#4FC3F7"):
+                return (
+                    f"<div style='background:#0D1B2A;border:1px solid {bc};"
+                    f"border-radius:5px;padding:6px 9px;min-width:152px;opacity:0.35'>"
+                    f"<div style='color:#555;font-size:11px'>TBD</div>"
+                    f"<div style='height:1px;background:#1a2a3a;margin:3px 0'></div>"
+                    f"<div style='color:#555;font-size:11px'>TBD</div>"
+                    f"</div>"
+                )
+
+            def _get_card2(by_st, stage, idx, bc):
+                ms = by_st.get(stage, [])
+                if idx < len(ms):
+                    return _mc_api2(ms[idx], bc)
+                return _tbd_card2(bc)
+
+            # Carte encore plus grande, réservée à la Finale, pour qu'elle
+            # ressorte vraiment par rapport au reste du bracket.
+            def _mc_final_api(m, bc="#FFD700"):
+                e1 = _tname(m.get("homeTeam"))
+                e2 = _tname(m.get("awayTeam"))
+                wraw = (m.get("score") or {}).get("winner", "")
+                w = e1 if wraw == "HOME_TEAM" else (e2 if wraw == "AWAY_TEAM" else "")
+                c1 = "#FFD700" if (w and w == e1) else ("white" if not w else "#777")
+                c2 = "#FFD700" if (w and w == e2) else ("white" if not w else "#777")
+                chk1 = "<span style='color:#34D399;font-weight:bold'>&#10003;</span>" if (w and w == e1) else ""
+                chk2 = "<span style='color:#34D399;font-weight:bold'>&#10003;</span>" if (w and w == e2) else ""
+                f1 = get_flag(e1, 28) if e1 != "TBD" else "🏳️"
+                f2 = get_flag(e2, 28) if e2 != "TBD" else "🏳️"
+                s1 = _score_val(m, "home")
+                s2 = _score_val(m, "away")
+                sp1 = f"<span style='color:{c1};font-size:17px;font-weight:bold;margin-left:8px'>{s1}</span>" if s1 != "" else ""
+                sp2 = f"<span style='color:{c2};font-size:17px;font-weight:bold;margin-left:8px'>{s2}</span>" if s2 != "" else ""
+                return (
+                    f"<div style='background:#0D1B2A;border:3px solid {bc};border-radius:10px;"
+                    f"padding:14px 18px;min-width:250px'>"
+                    f"<div style='display:flex;align-items:center;gap:8px'>"
+                    f"{f1}<span style='color:{c1};font-size:17px;font-weight:bold;flex:1'>{e1}</span>{chk1}{sp1}"
+                    f"</div><div style='height:1px;background:#1a2a3a;margin:8px 0'></div>"
+                    f"<div style='display:flex;align-items:center;gap:8px'>"
+                    f"{f2}<span style='color:{c2};font-size:17px;font-weight:bold;flex:1'>{e2}</span>{chk2}{sp2}"
+                    f"</div></div>"
+                )
+
+            def _tbd_card_final():
+                return (
+                    "<div style='background:#0D1B2A;border:3px solid #FFD700;"
+                    "border-radius:10px;padding:14px 18px;min-width:250px;opacity:0.35'>"
+                    "<div style='color:#555;font-size:17px'>TBD</div>"
+                    "<div style='height:1px;background:#1a2a3a;margin:8px 0'></div>"
+                    "<div style='color:#555;font-size:17px'>TBD</div>"
+                    "</div>"
+                )
+
+            def _get_final_card(by_st):
+                ms = by_st.get("FINAL", [])
+                if 0 < len(ms):
+                    return _mc_final_api(ms[0])
+                return _tbd_card_final()
+
+            # Carte demi-finale un peu plus grande que Quarts/8ème/16ème,
+            # mais plus petite que la Finale.
+            def _mc_demi_api(m, bc):
+                e1 = _tname(m.get("homeTeam"))
+                e2 = _tname(m.get("awayTeam"))
+                wraw = (m.get("score") or {}).get("winner", "")
+                w = e1 if wraw == "HOME_TEAM" else (e2 if wraw == "AWAY_TEAM" else "")
+                c1 = "#FFD700" if (w and w == e1) else ("white" if not w else "#777")
+                c2 = "#FFD700" if (w and w == e2) else ("white" if not w else "#777")
+                chk1 = "<span style='color:#34D399;font-weight:bold'>&#10003;</span>" if (w and w == e1) else ""
+                chk2 = "<span style='color:#34D399;font-weight:bold'>&#10003;</span>" if (w and w == e2) else ""
+                f1 = get_flag(e1, 22) if e1 != "TBD" else "🏳️"
+                f2 = get_flag(e2, 22) if e2 != "TBD" else "🏳️"
+                s1 = _score_val(m, "home")
+                s2 = _score_val(m, "away")
+                sp1 = f"<span style='color:{c1};font-size:14px;font-weight:bold;margin-left:7px'>{s1}</span>" if s1 != "" else ""
+                sp2 = f"<span style='color:{c2};font-size:14px;font-weight:bold;margin-left:7px'>{s2}</span>" if s2 != "" else ""
+                return (
+                    f"<div style='background:#0D1B2A;border:2px solid {bc};border-radius:8px;"
+                    f"padding:10px 13px;min-width:195px'>"
+                    f"<div style='display:flex;align-items:center;gap:6px'>"
+                    f"{f1}<span style='color:{c1};font-size:14px;font-weight:bold;flex:1'>{e1}</span>{chk1}{sp1}"
+                    f"</div><div style='height:1px;background:#1a2a3a;margin:6px 0'></div>"
+                    f"<div style='display:flex;align-items:center;gap:6px'>"
+                    f"{f2}<span style='color:{c2};font-size:14px;font-weight:bold;flex:1'>{e2}</span>{chk2}{sp2}"
+                    f"</div></div>"
+                )
+
+            def _tbd_card_demi(bc):
+                return (
+                    f"<div style='background:#0D1B2A;border:2px solid {bc};"
+                    f"border-radius:8px;padding:10px 13px;min-width:195px;opacity:0.35'>"
+                    f"<div style='color:#555;font-size:14px'>TBD</div>"
+                    f"<div style='height:1px;background:#1a2a3a;margin:6px 0'></div>"
+                    f"<div style='color:#555;font-size:14px'>TBD</div>"
+                    f"</div>"
+                )
+
+            def _get_demi_card(by_st, idx, bc, stage="SEMI_FINALS"):
+                ms = by_st.get(stage, [])
+                if idx < len(ms):
+                    return _mc_demi_api(ms[idx], bc)
+                return _tbd_card_demi(bc)
+
+            def _r32_winner(idx):
+                """Nom du vainqueur d'un match LAST_32 déjà joué (via l'index
+                trouvé par _find_r32), même si le match LAST_16 suivant n'est
+                pas encore publié par l'API."""
+                ms = by_st.get("LAST_32", [])
+                if idx is None or idx >= len(ms):
+                    return None
+                m = ms[idx]
+                wraw = (m.get("score") or {}).get("winner", "")
+                if wraw == "HOME_TEAM":
+                    return _tname(m.get("homeTeam"))
+                if wraw == "AWAY_TEAM":
+                    return _tname(m.get("awayTeam"))
+                return None
+
+            def _partial_card2(name1, name2, bc):
+                """Carte 8ème 'partielle' : un vainqueur connu (via le score
+                du 16ème) affiché tout de suite, sans attendre que l'API
+                publie le match LAST_16 correspondant."""
+                def _row(name):
+                    if name:
+                        flag = get_flag(name, 18)
+                        return (f"{flag}<span style='color:white;font-size:11px;flex:1;"
+                                 f"overflow:hidden;white-space:nowrap'>{name[:15]}</span>")
+                    return ("🏳️<span style='color:#555;font-size:11px;flex:1'>TBD</span>")
+                return (
+                    f"<div style='background:#0D1B2A;border:1px solid {bc};border-radius:5px;"
+                    f"padding:6px 9px;min-width:152px;max-width:168px;margin:1px 0'>"
+                    f"<div style='display:flex;align-items:center;gap:4px'>{_row(name1)}</div>"
+                    f"<div style='height:1px;background:#1a2a3a;margin:3px 0'></div>"
+                    f"<div style='display:flex;align-items:center;gap:4px'>{_row(name2)}</div>"
+                    f"</div>"
+                )
+
+            def _r16_or_partial(t1, t2, t3, t4, i16, ia, ib):
+                if i16 is not None:
+                    return _get_card2(by_st, "LAST_16", i16, CR16)
+                wa, wb = _r32_winner(ia), _r32_winner(ib)
+                if wa or wb:
+                    return _partial_card2(wa, wb, CR16)
+                return _tbd_card2(CR16)
+
+            def _build_rd2(t1, t2, t3, t4):
+                ia  = _find_r32(t1, t2)
+                ib  = _find_r32(t3, t4)
+                i16 = _find_r16(t1, t2, t3, t4)
+                ca  = _get_card2(by_st,"LAST_32", ia,  CR32) if ia  is not None else _tbd_card2(CR32)
+                cb  = _get_card2(by_st,"LAST_32", ib,  CR32) if ib  is not None else _tbd_card2(CR32)
+                c16 = _r16_or_partial(t1, t2, t3, t4, i16, ia, ib)
+                return f"<div style='display:flex;align-items:center'>{_bpr(ca,cb,CR32,_GAP_IN,mid=2.9)}{_ol(CR32)}{c16}</div>"
+
+            def _build_ra2(t1, t2, t3, t4):
+                ia  = _find_r32(t1, t2)
+                ib  = _find_r32(t3, t4)
+                i16 = _find_r16(t1, t2, t3, t4)
+                ca  = _get_card2(by_st,"LAST_32", ia,  CR32) if ia  is not None else _tbd_card2(CR32)
+                cb  = _get_card2(by_st,"LAST_32", ib,  CR32) if ib  is not None else _tbd_card2(CR32)
+                c16 = _r16_or_partial(t1, t2, t3, t4, i16, ia, ib)
+                return f"<div style='display:flex;align-items:center'>{c16}{_ol(CR32)}{_bpl(ca,cb,CR32,_GAP_IN,mid=2.9)}</div>"
+
+            def _qd2(s1, s2, iqf):
+                cqf = _get_card2(by_st, "QUARTER_FINALS", iqf, CQF)
+                return f"<div style='display:flex;align-items:center'>{_bpr(s1,s2,CR16,_GAP_OUT,mid=2.5)}{_ol(CR16)}{cqf}</div>"
+
+            def _qa2(s1, s2, iqf):
+                cqf = _get_card2(by_st, "QUARTER_FINALS", iqf, CQF)
+                return f"<div style='display:flex;align-items:center'>{cqf}{_ol(CQF)}{_bpl(s1,s2,CR16,_GAP_OUT,mid=2.5)}</div>"
+
+            # Quart Haut-Gauche : Allemagne/Paraguay+France/Suède | Af.Sud/Canada+P.Bas/Maroc → QF
+            rd0t = _build_rd2(*d[0])
+            rd1t = _build_rd2(*d[1])
+            q_tl = _with_header(header_l3, _qd2(rd0t, rd1t, iqf0 if iqf0 is not None else 0), "top")
+            # Quart Haut-Droite : Portugal/Croatie+Espagne/Autriche | Etats-Unis/Bosnie+Belgique/Sénégal → QF
+            tr_r2 = _build_ra2(*d[2])
+            tr_r3 = _build_ra2(*d[3])
+            q_tr  = _with_header(header_r3, _qa2(tr_r2, tr_r3, iqf1 if iqf1 is not None else 1), "top")
+            # Quart Bas-Gauche : Brésil/Japon+CI/Norvège | Mexique/Equateur+Angleterre/RDCongo → QF
+            # (pas d'en-tête pour le bloc du bas)
+            bl_r4 = _build_rd2(*d[4])
+            bl_r5 = _build_rd2(*d[5])
+            q_bl  = _qd2(bl_r4, bl_r5, iqf2 if iqf2 is not None else 2)
+            # Quart Bas-Droite : Argentine/Cap-Vert+Australie/Egypte | Suisse/Algérie+Colombie/Ghana → QF
+            br_r6 = _build_ra2(*d[6])
+            br_r7 = _build_ra2(*d[7])
+            q_br  = _qa2(br_r6, br_r7, iqf3 if iqf3 is not None else 3)
+
+            demi_top    = _get_demi_card(by_st, isf0 if isf0 is not None else 0, CSF)
+            demi_bottom = _get_demi_card(by_st, isf1 if isf1 is not None else 1, CSF)
+            final_card  = _get_final_card(by_st)
+            bronze_card = _get_demi_card(by_st, 0, "#CD7F32", stage="THIRD_PLACE")
+
+            # Connecteur "coude" (angle droit) — le bloc Quarts et le bloc
+            # Demi-finale ne sont pas à la même hauteur (la demi-finale est
+            # rapprochée de la finale). Le coude (partie verticale) part
+            # juste à côté de la carte "Quarts", puis une longue ligne
+            # horizontale rejoint la Demi-finale (comme dessiné à la main).
+            def _elbow(color, quarts_side, quarts_high, w=70, h=120, line_len=None):
+                """quarts_side: 'left' ou 'right' (position de la carte Quarts
+                par rapport à ce connecteur). quarts_high: True si la carte
+                Quarts est plus haute que la demi-finale, False sinon.
+                Un seul coude : la partie verticale colle au bord de la
+                carte Quarts ; la ligne horizontale qui touche la
+                demi-finale est elle bien centrée au milieu du bloc (h/2).
+                'w' définit la place réservée dans la mise en page (ne
+                touche pas au bracket) ; 'line_len' (>= w) est la longueur
+                réelle du trait dessiné — le surplus déborde visuellement
+                grâce à overflow:visible, sans décaler les autres blocs."""
+                if line_len is None:
+                    line_len = w
+                y_quarts = 4 if quarts_high else h - 4
+                y_demi   = h / 2
+                if quarts_side == "left":
+                    # Le point qui touche la demi-finale reste fixe (x=w) ;
+                    # le coude côté Quarts s'éloigne vers la gauche (x négatif
+                    # si line_len > w) pour rallonger sans jamais passer
+                    # derrière la carte demi-finale (sinon le trait disparaît).
+                    bx = w - line_len
+                    path = f"M{bx},{y_quarts} V{y_demi} H{w}"
+                else:
+                    path = f"M0,{y_demi} H{line_len} V{y_quarts}"
+                return (
+                    f"<svg width='{w}' height='{h}' style='overflow:visible;flex-shrink:0;display:block'>"
+                    f"<path d='{path}' stroke='{color}' stroke-width='2' fill='none'/></svg>"
+                )
+
+            center_top = (
+                f"<div style='display:flex;align-items:center;justify-content:center'>"
+                f"{_elbow(CQF, 'left', quarts_high=True, line_len=130)}{_demi_block(demi_top,'Demi-finale')}"
+                f"{_elbow(CQF, 'right', quarts_high=True, line_len=130)}</div>"
+            )
+            center_bottom = (
+                f"<div style='display:flex;align-items:center;justify-content:center'>"
+                f"{_elbow(CQF, 'left', quarts_high=False, line_len=130)}{_demi_block(demi_bottom,'Demi-finale')}"
+                f"{_elbow(CQF, 'right', quarts_high=False, line_len=130)}</div>"
+            )
+            center_final = (
+                # position:relative + inline-block : la Finale reste centrée
+                # exactement comme avant (grâce au text-align:center du
+                # conteneur parent) ; la Petite finale est en position
+                # absolute donc ne compte pas dans ce centrage et ne peut
+                # pas décaler la Finale — elle vient juste se coller à droite.
+                "<div style='position:relative;display:inline-block'>"
+                "<div style='display:flex;flex-direction:column;align-items:center;gap:2px'>"
+                f"{_vline(CQF,'30px')}"
+                f"<p style='color:#FFD700;font-size:13px;font-weight:bold;margin:0 0 4px'>🏆 Finale · 19 juillet</p>"
+                f"{final_card}"
+                f"{_vline(CQF,'30px')}"
+                "</div>"
+                "<div style='position:absolute;top:48px;left:100%;margin-left:26px;"
+                "display:flex;flex-direction:column;align-items:center;white-space:nowrap'>"
+                f"<p style='color:#CD7F32;font-size:13px;font-weight:bold;margin:0 0 4px'>🥉 Petite finale</p>"
+                f"{bronze_card}"
+                "</div>"
+                "</div>"
+            )
+
+            bracket2_html = f"""
+            <div style='overflow-x:auto;background:#071020;border-radius:10px;padding:16px 8px;text-align:center'>
+              <div style='zoom:0.82;display:inline-grid;grid-template-columns:1fr auto 1fr;align-items:center;column-gap:2px;row-gap:0;text-align:left'>
+                <div style='display:flex;justify-content:flex-end'>{q_tl}</div>
+                <div style='align-self:end'>{center_top}</div>
+                <div style='display:flex;justify-content:flex-start'>{q_tr}</div>
+                <div style='grid-column:1 / span 3;text-align:center;padding:0'>{center_final}</div>
+                <div style='display:flex;justify-content:flex-end'>{q_bl}</div>
+                <div style='align-self:start'>{center_bottom}</div>
+                <div style='display:flex;justify-content:flex-start'>{q_br}</div>
+              </div>
+            </div>
+            """
+            render_html(bracket2_html)
